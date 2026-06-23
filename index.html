@@ -335,6 +335,68 @@
     margin-top: 0.5rem;
   }
 
+  /* OM SECTION */
+  .om-section {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 5rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .om-left h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  .om-left p {
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+
+  .om-right {
+    border-left: 1px solid var(--line);
+    padding-left: 3rem;
+  }
+
+  .om-detail {
+    margin-bottom: 2rem;
+  }
+
+  .om-detail-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+
+  .om-detail-value {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.2rem;
+  }
+
+  .om-detail-value a {
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    transition: border-color 0.2s;
+  }
+
+  .om-detail-value a:hover { border-color: var(--gold); }
+
+  @media (max-width: 768px) {
+    .om-section { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.5rem; }
+    .om-right { border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 2rem; }
+  }
+
   /* FOOTER */
   footer {
     border-top: 1px solid var(--line);
@@ -525,6 +587,31 @@
     </div>
   </div>
 </section>
+
+<hr class="divider">
+
+<div class="om-section fade-in" id="om">
+  <div class="om-left">
+    <div class="section-label">Om</div>
+    <h2>Eirik Storesletten</h2>
+    <p>Eirik Storesletten er født i 1969 og har en dyp lidenskap for kristen teologi og åndelighet. Gjennom Theologia ønsker han å gjøre teologiske ressurser tilgjengelige for alle som søker å forstå troen dypere.</p>
+    <p>Siden er et personlig prosjekt der tro møter tenkning — et sted for seriøs refleksjon over Guds ord og kirkens lære gjennom historien.</p>
+  </div>
+  <div class="om-right">
+    <div class="om-detail">
+      <div class="om-detail-label">Navn</div>
+      <div class="om-detail-value">Eirik Storesletten</div>
+    </div>
+    <div class="om-detail">
+      <div class="om-detail-label">Født</div>
+      <div class="om-detail-value">1969</div>
+    </div>
+    <div class="om-detail">
+      <div class="om-detail-label">Telefon</div>
+      <div class="om-detail-value"><a href="tel:+4791878606">918 78 606</a></div>
+    </div>
+  </div>
+</div>
 
 <footer>
   <span class="footer-logo">Theo<span>logia</span></span>
