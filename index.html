@@ -3,40 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Theologia</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>THEOLOGIA — Tro møter tenkning</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f8f6f2;--gold:#b08d57;--ink:#1f1f1f;--line:#e5dfd6;}
+:root{
+--bg:#f8f6f2;--white:#fff;--ink:#1f1f1f;--muted:#666;--gold:#b08d57;--line:#e6dfd5;
+}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink)}
-nav{position:sticky;top:0;background:rgba(248,246,242,.95);backdrop-filter:blur(8px);padding:20px 50px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
-.logo{font-family:"EB Garamond",serif;font-size:2rem}.logo span{color:var(--gold)}
-nav ul{display:flex;gap:30px;list-style:none}
-.hero{display:grid;grid-template-columns:1.2fr 1fr;min-height:80vh}
+body{font-family:Inter,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+nav{position:sticky;top:0;background:rgba(248,246,242,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:20px 50px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-family:'EB Garamond',serif;font-size:2.2rem}.logo span{color:var(--gold)}
+nav ul{display:flex;gap:28px;list-style:none}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;max-width:1400px;margin:auto}
 .hero-text{padding:90px 70px}
-.hero-text small{color:var(--gold);letter-spacing:2px}
-.hero h1{font-family:"EB Garamond",serif;font-size:5rem;font-weight:400;line-height:1}
-.hero h1 em{color:var(--gold)}
-.hero p{margin:25px 0;color:#666;max-width:500px}
-.btn{display:inline-block;background:var(--gold);color:white;padding:14px 22px;text-decoration:none}
-.hero-image{background:linear-gradient(rgba(255,255,255,.4),rgba(255,255,255,.4)),url('https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&w=1200&auto=format&fit=crop') center/cover}
-section{max-width:1200px;margin:auto;padding:60px 30px}
+.eyebrow{color:var(--gold);letter-spacing:2px;font-size:.8rem;margin-bottom:15px}
+.hero h1{font-family:'EB Garamond',serif;font-size:5.5rem;font-weight:400;line-height:1}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero p{max-width:540px;color:var(--muted);margin:25px 0}
+.btn{background:var(--gold);color:#fff;text-decoration:none;padding:14px 24px;display:inline-block}
+.hero-image{min-height:520px;background:url('https://images.unsplash.com/photo-1518562180175-34a163b1a9a6?q=80&w=1400&auto=format&fit=crop') center/cover}
+section{max-width:1280px;margin:auto;padding:60px 40px}
 .label{color:var(--gold);letter-spacing:2px;margin-bottom:25px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.card{background:white;border:1px solid var(--line);padding:25px;text-align:center}
-.card h3{font-family:"EB Garamond",serif;font-size:1.8rem;margin:10px 0}
-.three{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px}
-.panel{background:white;border:1px solid var(--line);padding:25px}
-.panel h2{font-family:"EB Garamond",serif;margin-bottom:15px}
+.card{background:#fff;border:1px solid var(--line);padding:25px;text-align:center}
+.card h3{font-family:'EB Garamond',serif;font-size:1.7rem;margin-top:8px}
+.columns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:30px}
+.panel{background:#fff;border:1px solid var(--line);padding:25px}
+.panel h2{font-family:'EB Garamond',serif;margin-bottom:15px}
 .panel li{margin:10px 0}
-.quote{background:#171717;color:white;text-align:center;padding:80px 20px}
-.quote blockquote{font-family:"EB Garamond",serif;font-size:2.4rem;font-style:italic}
+.quote{background:#171513;color:#fff;padding:70px 30px;text-align:center}
+.quote blockquote{font-family:'EB Garamond',serif;font-size:2.5rem;font-style:italic}
+.quote p{color:#d3b07c;margin-top:10px}
 .about{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:20px}
-footer{padding:30px;text-align:center;border-top:1px solid var(--line)}
+.aboutbox{background:#fff;border:1px solid var(--line);padding:20px}
+footer{text-align:center;padding:30px;border-top:1px solid var(--line)}
 @media(max-width:900px){
-.hero,.three,.about{grid-template-columns:1fr}
-.grid{grid-template-columns:repeat(2,1fr)}
-.hero h1{font-size:3.5rem}
+.hero,.columns,.about{grid-template-columns:1fr}
+.grid{grid-template-columns:1fr 1fr}
+.hero h1{font-size:3.6rem}
+nav ul{display:none}
 }
 </style>
 </head>
@@ -48,7 +53,7 @@ footer{padding:30px;text-align:center;border-top:1px solid var(--line)}
 
 <div class="hero">
 <div class="hero-text">
-<small>TEOLOGISKE RESSURSER OG STUDIER</small>
+<div class="eyebrow">TEOLOGISKE RESSURSER OG STUDIER</div>
 <h1>Tro møter <em>tenkning</em></h1>
 <p>Et samlingspunkt for bibelstudier, apologetikk, teologi, kirkehistorie og kristen refleksjon.</p>
 <a class="btn" href="#emner">UTFORSK EMNENE</a>
@@ -59,53 +64,56 @@ footer{padding:30px;text-align:center;border-top:1px solid var(--line)}
 <section id="emner">
 <div class="label">UTFORSK EMNER</div>
 <div class="grid">
-<div class="card"><h3>📖</h3>Bibelens bøker</div>
-<div class="card"><h3>🛡️</h3>Apologetikk</div>
-<div class="card"><h3>🎓</h3>Bibelskole</div>
-<div class="card"><h3>🙏</h3>Bønn</div>
-<div class="card"><h3>🔥</h3>Endetid</div>
-<div class="card"><h3>✝️</h3>Forsoning</div>
-<div class="card"><h3>👑</h3>Guds rike</div>
-<div class="card"><h3>✨</h3>Herlighet og lys</div>
-<div class="card"><h3>🕊️</h3>Tro</div>
-<div class="card"><h3>⛪</h3>Menighet</div>
-<div class="card"><h3>📚</h3>Kirkehistorie</div>
-<div class="card"><h3>📜</h3>Frelseshistorie</div>
+<div class="card"><div>I</div><h3>📖 Bibelens bøker</h3></div>
+<div class="card"><div>II</div><h3>🛡️ Apologetikk</h3></div>
+<div class="card"><div>III</div><h3>🎓 Bibelskole</h3></div>
+<div class="card"><div>IV</div><h3>🙏 Bønn</h3></div>
+<div class="card"><div>V</div><h3>🔥 Endetid</h3></div>
+<div class="card"><div>VI</div><h3>✝️ Forsoning</h3></div>
+<div class="card"><div>VII</div><h3>👑 Guds rike</h3></div>
+<div class="card"><div>VIII</div><h3>✨ Herlighet og lys</h3></div>
+<div class="card"><div>IX</div><h3>🕊️ Tro</h3></div>
+<div class="card"><div>X</div><h3>⛪ Menighet</h3></div>
+<div class="card"><div>XI</div><h3>📚 Kirkehistorie</h3></div>
+<div class="card"><div>XII</div><h3>📜 Frelseshistorie</h3></div>
 </div>
 </section>
 
 <section>
-<div class="three">
+<div class="columns">
 <div class="panel">
 <h2>Populære serier</h2>
-<ul><li>Jesaja</li><li>Romerbrevet</li><li>Hebreerbrevet</li><li>Johannes' åpenbaring</li></ul>
+<ul><li>Jesaja</li><li>Romerbrevet</li><li>Hebreerbrevet</li><li>Johannes' åpenbaring</li><li>Kirkefedrene</li></ul>
 </div>
 <div class="panel">
 <h2>Utvalgte artikler</h2>
-<ul><li>Amillennialisme</li><li>Kristi oppstandelse</li><li>Jesaja og Messias</li></ul>
+<ul><li>Amillennialisme — en bibelsk oversikt</li><li>Hvorfor tro på Kristi oppstandelse?</li><li>Jesaja og Messias</li></ul>
 </div>
 <div class="panel">
-<h2>Ressurser</h2>
-<ul><li>Bibelvers etter tema</li><li>Tidslinjer</li><li>Ordforklaringer</li></ul>
+<h2>Ressurser og verktøy</h2>
+<ul><li>Bibelvers etter tema</li><li>Tidslinjer</li><li>Ordforklaringer</li><li>Anbefalte bøker</li></ul>
 </div>
 </div>
 </section>
 
 <div class="quote">
-<blockquote>“Vårt hjerte er urolig inntil det finner hvile i deg.”</blockquote>
-<p>Augustin av Hippo</p>
+<blockquote>«Vårt hjerte er urolig inntil det finner hvile i deg.»</blockquote>
+<p>AUGUSTIN AV HIPPO</p>
 </div>
 
-<section class="about">
-<div>
-<h2 style="font-family:EB Garamond,serif">Om Theologia</h2>
-<p>Theologia er et personlig prosjekt av Eirik Storesletten med mål om å gjøre bibelsk og teologisk fordypning tilgjengelig for alle.</p>
+<section>
+<div class="about">
+<div class="aboutbox">
+<h2 style="font-family:'EB Garamond',serif">Om Theologia</h2>
+<p>Theologia er et personlig prosjekt av Eirik Storesletten – et sted der tro møter tenkning.</p>
+<p>Gjennom artikler, bibelstudier og refleksjoner ønsker siden å skape rom for fordypning, undring og samtale om kristen tro, teologi og livet med Gud.</p>
 </div>
-<div><strong>Grunnlegger</strong><br>Eirik Storesletten</div>
-<div><strong>Fokus</strong><br>Bibelstudier og teologi</div>
-<div><strong>Formål</strong><br>Fremme forståelse av Skriften</div>
+<div class="aboutbox"><strong>Grunnlegger</strong><br>Eirik Storesletten</div>
+<div class="aboutbox"><strong>Fokusområder</strong><br>Bibelstudier, teologi, apologetikk</div>
+<div class="aboutbox"><strong>Formål</strong><br>Fremme forståelse av Skriften</div>
+</div>
 </section>
 
-<footer>© 2026 Theologia</footer>
+<footer>© 2026 THEOLOGIA</footer>
 </body>
 </html>
