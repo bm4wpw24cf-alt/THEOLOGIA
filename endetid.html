@@ -85,6 +85,28 @@
   .konklusjon-box .konklusjon-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
   .konklusjon-box p { font-size: 0.92rem; color: var(--muted); margin: 0; line-height: 1.8; }
 
+  .pdf-download {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1.5rem 4rem;
+  }
+
+  .pdf-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: var(--white);
+    background: var(--gold);
+    padding: 0.75rem 1.5rem;
+    transition: opacity 0.2s;
+  }
+
+  .pdf-link:hover { opacity: 0.85; }
+
   .kommentar-seksjon {
     max-width: 800px;
     margin: 0 auto;
@@ -93,6 +115,7 @@
   }
 
   @media (max-width: 768px) {
+    .pdf-download { padding: 1.5rem; }
     .kommentar-seksjon { padding: 3rem 1.5rem 2rem; }
   }
 
@@ -130,7 +153,11 @@
 
 <div class="innhold">
 
-  <!-- INNHOLDSFORTEGNELSE -->
+  <div class="pdf-download fade-in">
+    <a href="https://github.com/bm4wpw24cf-alt/THEOLOGIA/blob/main/D%C3%B8d%2C%20helvete%20og%20evighet.pdf" target="_blank" class="pdf-link">
+      📄 Last ned fullstendig dokument (PDF)
+    </a>
+  </div>
   <div class="toc fade-in">
     <div class="toc-title">Innholdsfortegnelse</div>
     <ol>
