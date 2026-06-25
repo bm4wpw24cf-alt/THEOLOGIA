@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forsoningens natur — Theologia</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e2e2e2;
+    --bg: #f9f8f6;
+    --white: #ffffff;
+    --gold: #b08d57;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.6; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(249,248,246,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.4rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-back { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.2s; }
+  .nav-back:hover { color: var(--ink); }
+
+  .hero {
+    padding: 9rem 4rem 5rem;
+    max-width: 800px; margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+  .hero .subtitle { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; }
+  .hero-meta { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+  .pdf-actions { margin-top: 2rem; }
+  .pdf-button {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--ink);
+    background: var(--white);
+    text-decoration: none;
+    padding: 0.8rem 1.1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pdf-button:hover { background: var(--gold); color: var(--white); }
+
+  .innhold { max-width: 800px; margin: 0 auto; padding: 0 4rem; }
+  .toc { margin: 3rem 0; border: 1px solid var(--line); padding: 2rem; background: var(--white); }
+  .toc-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 0.35rem 0; border-bottom: 1px solid var(--line); }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { text-decoration: none; color: var(--ink); font-size: 0.9rem; display: flex; align-items: baseline; gap: 0.75rem; transition: color 0.2s; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: counter(toc, decimal-leading-zero); font-size: 0.7rem; color: var(--gold); min-width: 22px; }
+
+  .kapittel { margin: 4rem 0; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .kapittel-num { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .kapittel h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; margin-bottom: 1.5rem; }
+  .kapittel h3 { font-family: 'EB Garamond', serif; font-size: 1.25rem; font-weight: 400; margin: 2rem 0 0.75rem; }
+  .kapittel p { color: #333; line-height: 1.85; margin-bottom: 1rem; font-size: 0.97rem; }
+
+  .vers {
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1.25rem;
+    margin: 1.25rem 0;
+    background: var(--white);
+  }
+  .vers p { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--ink); margin: 0 0 0.25rem; }
+  .vers cite { font-size: 0.75rem; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+
+  .sitat-seksjon { background: var(--ink); color: var(--white); padding: 4rem; margin: 4rem -4rem; }
+  .sitat-seksjon blockquote { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 2.5vw, 2rem); line-height: 1.5; max-width: 600px; margin-bottom: 1rem; }
+  .sitat-seksjon cite { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+
+  .konklusjon-box { background: var(--white); border: 1px solid var(--line); padding: 2rem; margin: 2rem 0; }
+  .konklusjon-box .konklusjon-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .konklusjon-box p { font-size: 0.92rem; color: var(--muted); margin: 0; line-height: 1.8; }
+
+  .kommentar-seksjon {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 4rem 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 3rem 4rem; max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.8rem; }
+  .footer-logo { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--ink); }
+  .footer-logo span { color: var(--gold); }
+
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .innhold { padding: 0 1.5rem; }
+    .sitat-seksjon { padding: 3rem 1.5rem; margin: 3rem -1.5rem; }
+    .kommentar-seksjon { padding: 3rem 1.5rem 2rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Theo<span>logia</span></a>
+  <a href="index.html" class="nav-back">Tilbake</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Forsoning</p>
+  <h1>Forsoningens natur</h1>
+  <p class="subtitle">En teologisk utforskning av Kristi soningsverk og frelsens grunnlag</p>
+  <p class="hero-meta">Av Eirik Storesletten &nbsp;·&nbsp; PDF-ressurs</p>
+  <div class="pdf-actions">
+    <a class="pdf-button" href="forsoningens-natur.pdf">Last ned PDF</a>
+  </div>
+</div>
+
+<div class="innhold">
+  <div class="toc fade-in">
+    <div class="toc-title">Innholdsfortegnelse</div>
+    <ol>
+      <li><a href="#kap1">Innledning</a></li>
+      <li><a href="#kap2">Hva forsoning betyr</a></li>
+      <li><a href="#kap3">Kristi stedfortredende verk</a></li>
+      <li><a href="#kap4">Rettferdighet og nåde</a></li>
+      <li><a href="#kap5">Forsoningens frukt</a></li>
+    </ol>
+  </div>
+
+  <div class="kapittel fade-in" id="kap1">
+    <div class="kapittel-num">Kapittel 1</div>
+    <h2>Innledning</h2>
+    <p>Forsoningen står i sentrum av den kristne tro. Når Bibelen taler om frelse, nåde, tilgivelse og gjenopprettet fellesskap med Gud, peker alt mot Kristi verk. Spørsmålet om forsoningens natur handler derfor ikke bare om en lære blant mange, men om selve grunnlaget for evangeliet.</p>
+    <p>Denne siden gir en kort presentasjon av temaet og peker videre til PDF-dokumentet for full behandling.</p>
+  </div>
+
+  <div class="sitat-seksjon fade-in">
+    <blockquote>"Men Gud viser sin kjærlighet til oss ved at Kristus døde for oss mens vi ennå var syndere."</blockquote>
+    <cite>Romerne 5:8</cite>
+  </div>
+
+  <div class="kapittel fade-in" id="kap2">
+    <div class="kapittel-num">Kapittel 2</div>
+    <h2>Hva forsoning betyr</h2>
+    <p>Forsoning beskriver at det brutte forholdet mellom Gud og mennesket blir gjenopprettet. Synden skaper skyld, fremmedgjøring og dom, men Gud handler i Kristus for å bringe mennesket tilbake til seg selv.</p>
+    <div class="vers">
+      <p>Alt dette er av Gud, han som forsonte oss med seg selv ved Kristus.</p>
+      <cite>2. Korinterbrev 5:18</cite>
+    </div>
+    <p>Forsoningen er derfor både juridisk, relasjonell og åndelig: skyld blir tatt bort, fiendskap blir brutt, og fellesskapet med Gud blir åpnet.</p>
+  </div>
+
+  <div class="kapittel fade-in" id="kap3">
+    <div class="kapittel-num">Kapittel 3</div>
+    <h2>Kristi stedfortredende verk</h2>
+    <p>Kristus handler på menneskets vegne. Han bærer syndens konsekvens og gjør det mennesket ikke kan gjøre for seg selv. Dette er kjernen i den kristne forståelsen av frelsen: Gud frelser ikke ved å overse synden, men ved å dømme synden i Kristus og gi nåde til synderen.</p>
+    <div class="vers">
+      <p>Han som ikke visste av synd, har Gud gjort til synd for oss, for at vi i ham skulle få Guds rettferdighet.</p>
+      <cite>2. Korinterbrev 5:21</cite>
+    </div>
+  </div>
+
+  <div class="kapittel fade-in" id="kap4">
+    <div class="kapittel-num">Kapittel 4</div>
+    <h2>Rettferdighet og nåde</h2>
+    <p>Forsoningen viser både Guds hellighet og Guds kjærlighet. Gud er rettferdig og tar syndens alvor på fullt alvor. Samtidig er han nådig og gir frelse som gave. Korset holder disse sannhetene sammen uten å svekke noen av dem.</p>
+    <p>Derfor er forsoningen ikke bare et uttrykk for medfølelse, men en guddommelig handling hvor rettferdighet, kjærlighet, dom og nåde møtes.</p>
+  </div>
+
+  <div class="kapittel fade-in" id="kap5">
+    <div class="kapittel-num">Kapittel 5</div>
+    <h2>Forsoningens frukt</h2>
+    <p>Resultatet av forsoningen er tilgivelse, fred med Gud, adgang til nåden og et nytt liv i Kristus. Den troende lever ikke lenger på grunnlag av egen fortjeneste, men på grunnlag av Kristi fullbrakte verk.</p>
+    <div class="konklusjon-box">
+      <div class="konklusjon-label">Les videre</div>
+      <p>For full gjennomgang av temaet, last ned PDF-dokumentet "Forsoningens natur".</p>
+    </div>
+  </div>
+</div>
+
+<div class="kommentar-seksjon fade-in" id="kommentarer">
+  <div class="section-label">Kommentarer</div>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1.5rem;">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+  <script src="https://giscus.app/client.js"
+      data-repo="bm4wpw24cf-alt/THEOLOGIA"
+      data-repo-id="R_kgDOTCkYrA"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOTCkYrM4C_y2I"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="en"
+      crossorigin="anonymous"
+      async>
+  </script>
+</div>
+
+<footer>
+  <span class="footer-logo">Theo<span>logia</span></span>
+  <span>© 2026 — Eirik Storesletten</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
