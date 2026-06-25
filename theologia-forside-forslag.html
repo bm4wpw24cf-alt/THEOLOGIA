@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THEOLOGIA | Forsideforslag</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --ink: #1b1a18;
+    --muted: #6f6a62;
+    --line: #e5ded3;
+    --paper: #faf8f4;
+    --white: #ffffff;
+    --gold: #ad8547;
+    --deep: #25211b;
+  }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Inter, sans-serif;
+    line-height: 1.65;
+  }
+  a { color: inherit; }
+  .nav {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem clamp(1.25rem, 4vw, 4rem);
+    background: rgba(250, 248, 244, 0.92);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(10px);
+  }
+  .brand {
+    font-family: "EB Garamond", serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+    text-decoration: none;
+  }
+  .brand span { color: var(--gold); }
+  .nav-links { display: flex; gap: 1.25rem; align-items: center; }
+  .nav-links a {
+    text-decoration: none;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .hero {
+    min-height: 92vh;
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
+    align-items: stretch;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem clamp(1.5rem, 5vw, 5rem) 5rem;
+  }
+  .eyebrow {
+    margin: 0 0 1.25rem;
+    color: var(--gold);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  h1, h2, h3 {
+    font-family: "EB Garamond", serif;
+    font-weight: 400;
+    line-height: 1.06;
+  }
+  h1 {
+    margin: 0;
+    max-width: 740px;
+    font-size: clamp(3.3rem, 8vw, 7.2rem);
+  }
+  .lead {
+    max-width: 570px;
+    margin: 1.4rem 0 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 2.1rem;
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0.78rem 1.1rem;
+    border: 1px solid var(--gold);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .button.primary { background: var(--gold); color: var(--white); }
+  .button.secondary { background: transparent; color: var(--ink); }
+  .hero-image {
+    position: relative;
+    min-height: 520px;
+    background: var(--deep);
+    overflow: hidden;
+  }
+  .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: saturate(0.9) contrast(1.04);
+  }
+  .hero-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.28));
+  }
+  .wrap {
+    width: min(1180px, calc(100% - 2.5rem));
+    margin: 0 auto;
+  }
+  .section {
+    padding: clamp(3.5rem, 7vw, 6.5rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 2rem;
+    margin-bottom: 1.7rem;
+  }
+  .section h2 {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+  }
+  .section-note {
+    max-width: 440px;
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  .feature {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    border: 1px solid var(--line);
+    background: var(--white);
+  }
+  .feature-text { padding: clamp(1.5rem, 4vw, 3rem); }
+  .feature-text h3 {
+    margin: 0 0 0.8rem;
+    font-size: clamp(1.9rem, 4vw, 3.2rem);
+  }
+  .feature-text p { color: var(--muted); margin: 0 0 1.5rem; }
+  .feature-meta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.1rem;
+    color: var(--gold);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .feature-aside {
+    background: var(--deep);
+    color: var(--white);
+    padding: clamp(1.5rem, 4vw, 3rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .feature-aside blockquote {
+    margin: 0;
+    font-family: "EB Garamond", serif;
+    font-size: clamp(1.45rem, 3vw, 2.25rem);
+    line-height: 1.35;
+  }
+  .feature-aside cite {
+    margin-top: 1rem;
+    color: var(--gold);
+    font-style: normal;
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .card {
+    min-height: 245px;
+    padding: 1.4rem;
+    border: 1px solid var(--line);
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+  }
+  .card .tag {
+    color: var(--gold);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .card h3 {
+    margin: 1rem 0 0.65rem;
+    font-size: 1.65rem;
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.92rem;
+  }
+  .card a {
+    margin-top: auto;
+    padding-top: 1.4rem;
+    color: var(--ink);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .resource-band {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 1.5rem;
+    padding: clamp(1.5rem, 4vw, 2.4rem);
+    background: var(--deep);
+    color: var(--white);
+  }
+  .resource-band h2 { margin: 0 0 0.5rem; }
+  .resource-band p { margin: 0; color: rgba(255,255,255,0.72); }
+  .resource-band .button { color: var(--white); }
+  footer {
+    padding: 2.5rem 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+  }
+  @media (max-width: 920px) {
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-copy { padding-top: 7rem; }
+    .hero-image { min-height: 340px; }
+    .section-head, .feature, .resource-band { grid-template-columns: 1fr; display: grid; }
+    .grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a class="brand" href="index.html">THEO<span>LOGIA</span></a>
+  <div class="nav-links">
+    <a href="#artikler">Artikler</a>
+    <a href="#pdf">PDF</a>
+    <a href="#om">Om</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Kristne ressurser fra Eirik Storesletten</p>
+    <h1>Teologi for alvor, håp og ettertanke.</h1>
+    <p class="lead">THEOLOGIA samler bibelstudier, artikler og PDF-ressurser om endetid, dom, frelse og kristen lære i et rolig og lesbart format.</p>
+    <div class="actions">
+      <a class="button primary" href="#artikler">Les artikler</a>
+      <a class="button secondary" href="#pdf">Last ned PDF</a>
+    </div>
+  </div>
+  <div class="hero-image" aria-label="Bibel og teologisk studium">
+    <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=1600&q=85" alt="Åpen bok i et stille bibliotek">
+  </div>
+</header>
+
+<main>
+  <section class="section" id="artikler">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Utvalgt studie</h2>
+        <p class="section-note">Forsiden bør løfte én hovedressurs tydelig, før den viser resten av biblioteket.</p>
+      </div>
+      <article class="feature">
+        <div class="feature-text">
+          <div class="feature-meta">
+            <span>Systematisk teologi</span>
+            <span>7 kapitler</span>
+          </div>
+          <h3>Død, Helvete og Evighet</h3>
+          <p>En teologisk utforskning av døden, helvete, dommen og menneskets evige skjebne, med vekt på Skriftens vitnesbyrd og evangeliets alvor.</p>
+          <a class="button primary" href="theologia-preview.html">Åpne studien</a>
+        </div>
+        <div class="feature-aside">
+          <blockquote>Og disse skal gå bort til evig straff, men de rettferdige til evig liv.</blockquote>
+          <cite>Matteus 25:46</cite>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Artikler</h2>
+        <p class="section-note">Kortene gjør forsiden lettere å skanne og gir hver ressurs en klar inngang.</p>
+      </div>
+      <div class="grid">
+        <article class="card">
+          <span class="tag">Endetid</span>
+          <h3>Jesu gjenkomst</h3>
+          <p>En oversikt over håpet, alvoret og forventningen knyttet til Kristi gjenkomst.</p>
+          <a href="endetid.html">Les mer</a>
+        </article>
+        <article class="card">
+          <span class="tag">Eschatologi</span>
+          <h3>Tusenårsriket</h3>
+          <p>En gjennomgang av sentrale bibeltekster og teologiske perspektiver.</p>
+          <a href="#">Kommer</a>
+        </article>
+        <article class="card">
+          <span class="tag">Dom og håp</span>
+          <h3>Ny himmel og ny jord</h3>
+          <p>Om skapelsens gjenopprettelse og det kristne håpet etter dommen.</p>
+          <a href="#">Kommer</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="pdf">
+    <div class="wrap">
+      <div class="resource-band">
+        <div>
+          <h2>PDF-ressurser</h2>
+          <p>Last ned komplette dokumenter for lesing, utskrift og deling.</p>
+        </div>
+        <a class="button secondary" href="dod-helvete-og-evighet-komplett.pdf">Last ned PDF</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="om">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Om THEOLOGIA</h2>
+        <p class="section-note">Et forslag til roligere og mer seriøs forside: mindre rot, ett godt bilde, tydelige innganger og bedre leseflyt.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">© 2026 — THEOLOGIA</div>
+</footer>
+</body>
+</html>
