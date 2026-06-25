@@ -27,7 +27,6 @@
     line-height: 1.6;
   }
 
-  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -69,19 +68,23 @@
 
   .nav-links a:hover { color: var(--ink); }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 8rem 4rem 4rem;
+  .hero-wrap {
+    position: relative;
+    width: 100%;
     max-width: 1100px;
     margin: 0 auto;
   }
 
-  .hero-inner {
-    max-width: 680px;
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 4rem;
+    align-items: center;
+    padding: 8rem 4rem 4rem;
   }
+
+  .hero-inner { max-width: 680px; }
 
   .hero-eyebrow {
     font-size: 0.75rem;
@@ -109,7 +112,7 @@
   .hero p {
     font-size: 1.05rem;
     color: var(--muted);
-    max-width: 480px;
+    max-width: 500px;
     line-height: 1.8;
     margin-bottom: 2.5rem;
   }
@@ -131,22 +134,35 @@
 
   .hero-cta:hover { color: var(--gold); }
 
+  .hero-image {
+    align-self: stretch;
+    min-height: 420px;
+    border: 1px solid var(--line);
+    background: var(--white);
+    padding: 0.75rem;
+  }
+
+  .hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.85) contrast(1.03);
+  }
+
   .hero-verse {
     position: absolute;
-    right: 4rem;
+    right: 1rem;
     top: 50%;
     transform: translateY(-50%);
     writing-mode: vertical-rl;
     font-family: 'EB Garamond', serif;
     font-style: italic;
     font-size: 0.9rem;
-    color: var(--line);
+    color: #d4d0ca;
     letter-spacing: 0.08em;
   }
 
-  .hero-wrap { position: relative; width: 100%; max-width: 1100px; margin: 0 auto; }
-
-  /* DIVIDER */
   .divider {
     border: none;
     border-top: 1px solid var(--line);
@@ -154,7 +170,6 @@
     margin: 0 auto;
   }
 
-  /* SECTION SHARED */
   section {
     max-width: 1100px;
     margin: 0 auto;
@@ -182,46 +197,57 @@
     opacity: 0.4;
   }
 
-  /* DISCIPLINER */
-  .disciplines-grid {
+  .emner-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
+    gap: 1rem;
   }
 
-  .discipline-card {
+  .emne-card {
     background: var(--white);
-    padding: 2.5rem;
-    transition: background 0.2s;
-    cursor: default;
+    border: 1px solid var(--line);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, background 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-height: 205px;
   }
 
-  .discipline-card:hover { background: var(--bg); }
+  .emne-card:hover { border-color: var(--gold); }
+  .emne-card.active { border-color: var(--gold); background: #fdfaf5; }
 
-  .discipline-num {
+  .emne-num {
     font-family: 'EB Garamond', serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--line);
     line-height: 1;
-    margin-bottom: 1.2rem;
   }
 
-  .discipline-card h3 {
+  .emne-card h3 {
     font-family: 'EB Garamond', serif;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     font-weight: 400;
-    margin-bottom: 0.75rem;
   }
 
-  .discipline-card p {
-    font-size: 0.88rem;
+  .emne-card p {
+    font-size: 0.82rem;
     color: var(--muted);
-    line-height: 1.7;
+    line-height: 1.6;
+    flex: 1;
   }
 
-  /* ARTIKLER */
+  .emne-count {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 0.5rem;
+  }
+
   .articles-list { display: flex; flex-direction: column; gap: 0; }
 
   .article-item {
@@ -259,7 +285,6 @@
     white-space: nowrap;
   }
 
-  /* SITAT */
   .quote-section {
     background: var(--ink);
     color: var(--white);
@@ -289,7 +314,6 @@
     color: var(--gold);
   }
 
-  /* VERKTØY */
   .tools-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -303,14 +327,10 @@
     flex-direction: column;
     gap: 0.75rem;
     transition: border-color 0.2s;
+    background: transparent;
   }
 
   .tool-card:hover { border-color: var(--gold); }
-
-  .tool-icon {
-    font-size: 1.4rem;
-    margin-bottom: 0.25rem;
-  }
 
   .tool-card h3 {
     font-family: 'EB Garamond', serif;
@@ -335,7 +355,6 @@
     margin-top: 0.5rem;
   }
 
-  /* OM SECTION */
   .om-section {
     max-width: 1100px;
     margin: 0 auto;
@@ -365,9 +384,7 @@
     padding-left: 3rem;
   }
 
-  .om-detail {
-    margin-bottom: 2rem;
-  }
+  .om-detail { margin-bottom: 2rem; }
 
   .om-detail-label {
     font-size: 0.7rem;
@@ -392,62 +409,6 @@
 
   .om-detail-value a:hover { border-color: var(--gold); }
 
-  @media (max-width: 768px) {
-    .om-section { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.5rem; }
-    .om-right { border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 2rem; }
-  }
-
-  /* EMNER GRID */
-  .emner-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-  }
-
-  .emne-card {
-    background: var(--white);
-    border: 1px solid var(--line);
-    padding: 1.5rem;
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.2s, background 0.2s;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .emne-card:hover { border-color: var(--gold); }
-  .emne-card.active { border-color: var(--gold); background: #fdfaf5; }
-
-  .emne-icon { font-size: 1.4rem; }
-
-  .emne-card h3 {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-  }
-
-  .emne-card p {
-    font-size: 0.82rem;
-    color: var(--muted);
-    line-height: 1.6;
-    flex: 1;
-  }
-
-  .emne-count {
-    font-size: 0.7rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-top: 0.5rem;
-  }
-
-  @media (max-width: 768px) {
-    .emner-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  /* FOOTER */
   footer {
     border-top: 1px solid var(--line);
     padding: 3rem 4rem;
@@ -468,29 +429,36 @@
 
   .footer-logo span { color: var(--gold); }
 
-  /* RESPONSIVE */
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { display: none; }
-    .hero { padding: 7rem 1.5rem 3rem; }
-    .hero-verse { display: none; }
-    section { padding: 3.5rem 1.5rem; }
-    .disciplines-grid { grid-template-columns: 1fr; }
-    .tools-grid { grid-template-columns: 1fr; }
-    .quote-section { padding: 4rem 1.5rem; }
-    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
-    .article-item { grid-template-columns: 1fr; gap: 0.25rem; }
-  }
-
-  /* FADE IN */
   .fade-in {
     opacity: 0;
     transform: translateY(18px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
+
   .fade-in.visible {
     opacity: 1;
     transform: none;
+  }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-image { min-height: 300px; }
+    .hero-verse { display: none; }
+    .emner-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    section { padding: 3.5rem 1.5rem; }
+    .emner-grid { grid-template-columns: 1fr; }
+    .tools-grid { grid-template-columns: 1fr; }
+    .quote-section { padding: 4rem 1.5rem; }
+    .om-section { grid-template-columns: 1fr; gap: 2.5rem; padding: 3.5rem 1.5rem; }
+    .om-right { border-left: none; border-top: 1px solid var(--line); padding-left: 0; padding-top: 2rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+    .article-item { grid-template-columns: 1fr; gap: 0.25rem; }
   }
 </style>
 </head>
@@ -499,9 +467,9 @@
 <nav>
   <a href="#" class="nav-logo">Theo<span>logia</span></a>
   <ul class="nav-links">
-    <li><a href="#discipliner">Disipliner</a></li>
+    <li><a href="#emner">Emner</a></li>
     <li><a href="#artikler">Artikler</a></li>
-    <li><a href="#verktoy">Verktøy</a></li>
+    <li><a href="#ressurser">Ressurser</a></li>
     <li><a href="#om">Om</a></li>
   </ul>
 </nav>
@@ -511,8 +479,11 @@
     <div class="hero-inner">
       <p class="hero-eyebrow">Teologiske Ressurser og Studier</p>
       <h1>Tro møter<br><em>tenkning</em></h1>
-      <p>Et samlingspunkt for seriøse teologistudenter og -interesserte. Her finner du primærkilder, fagartikler og ressurser innen klassisk og moderne teologi.</p>
-      <a href="endetid.html" class="hero-cta">Utforsk ressursene →</a>
+      <p>Et samlingspunkt for bibelstudier, teologiske artikler og ressurser for alle som ønsker å forstå troen dypere.</p>
+      <a href="#artikler" class="hero-cta">Utforsk ressursene</a>
+    </div>
+    <div class="hero-image">
+      <img src="https://images.unsplash.com/photo-1504052434569-70ad5836ab65?auto=format&fit=crop&w=900&q=85" alt="Åpen bok i et stille bibliotek">
     </div>
   </div>
   <div class="hero-verse">"Søk og du skal finne" — Matt 7,7</div>
@@ -523,112 +494,40 @@
 <section id="emner" class="fade-in">
   <div class="section-label">Emner og kategorier</div>
   <div class="emner-grid">
-    <a href="endetid.html" class="emne-card active">
-      <div class="emne-icon">⏳</div>
+    <a href="theologia-preview.html" class="emne-card active">
+      <div class="emne-num">01</div>
       <h3>Endetid</h3>
       <p>Død, helvete, evighet og de siste tider. Bibelske studier om menneskets ultimate skjebne.</p>
       <span class="emne-count">1 artikkel</span>
     </a>
     <div class="emne-card">
-      <div class="emne-icon">🛡️</div>
-      <h3>Apogetisk</h3>
-      <p>Forsvar for den kristne tro. Svar på vanskelige spørsmål om Gud, Bibelen og troen.</p>
+      <div class="emne-num">02</div>
+      <h3>Apologetikk</h3>
+      <p>Forsvar for den kristne tro og svar på vanskelige spørsmål om Gud, Bibelen og troen.</p>
       <span class="emne-count">Kommer snart</span>
     </div>
     <div class="emne-card">
-      <div class="emne-icon">📖</div>
+      <div class="emne-num">03</div>
       <h3>Bibelens bøker</h3>
-      <p>Grundige gjennomganger av enkeltbøker i Bibelen, fra Genesis til Åpenbaringen.</p>
+      <p>Gjennomganger av enkeltbøker i Bibelen, fra Første Mosebok til Åpenbaringen.</p>
       <span class="emne-count">Kommer snart</span>
     </div>
     <div class="emne-card">
-      <div class="emne-icon">🎓</div>
-      <h3>Bibelskole</h3>
-      <p>Strukturerte undervisningsmoduler for dypere bibel- og teologistudium.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">🙏</div>
-      <h3>Bønn</h3>
-      <p>Teologi og praksis rundt bønn. Hva Bibelen lærer om samtale med Gud.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">✝️</div>
+      <div class="emne-num">04</div>
       <h3>Forsoning</h3>
-      <p>Kristi soningsverk og dens betydning for menneskeheten. Frelse og nåde.</p>
+      <p>Kristi soningsverk og dets betydning for frelse, nåde og menneskets gjenopprettelse.</p>
       <span class="emne-count">Kommer snart</span>
     </div>
     <div class="emne-card">
-      <div class="emne-icon">👑</div>
+      <div class="emne-num">05</div>
       <h3>Guds rike</h3>
-      <p>Hva er Guds rike? Studier om rikets natur, komme og fremtid.</p>
+      <p>Studier om rikets natur, nåværende virkelighet og fremtidige fullendelse.</p>
       <span class="emne-count">Kommer snart</span>
     </div>
     <div class="emne-card">
-      <div class="emne-icon">✨</div>
-      <h3>Herlighet og lys</h3>
-      <p>Guds herlighet åpenbart i Skriften. Studier om Guds nærvær og hellighet.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">❤️</div>
-      <h3>Intimitet med Gud</h3>
-      <p>Det personlige forholdet til Gud. Åndelig vekst og nærhet til Skaperen.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">🌿</div>
-      <h3>Karakter</h3>
-      <p>Kristen karakterdannelse og helliggjørelse. Å bli mer lik Kristus i hverdagen.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">⛪</div>
-      <h3>Menighet</h3>
-      <p>Kirkens vesen, oppdrag og liv. Fellesskap, nådegaver og tjeneste.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">👤</div>
-      <h3>Mennesket og Guds frelsesplan</h3>
-      <p>Hvem er mennesket? Skapelse, syndefall og Guds plan for gjenopprettelse.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">🔤</div>
-      <h3>Ordstudie</h3>
-      <p>Grundige studier av bibelske nøkkelord på hebraisk og gresk.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">📜</div>
-      <h3>Rettferdighet</h3>
-      <p>Guds rettferdighet og rettferdiggjørelse. Hva det betyr å stå rett for Gud.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">📚</div>
+      <div class="emne-num">06</div>
       <h3>Teologi</h3>
-      <p>Systematisk og historisk teologi. Klassiske læresetninger og moderne debatter.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">🕊️</div>
-      <h3>Tro</h3>
-      <p>Hva er tro? Bibelske og teologiske studier om troens vesen og liv.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">👼</div>
-      <h3>Usynlige vesener</h3>
-      <p>Engler, demoner og åndelige makter. Hva Bibelen lærer om den usynlige verden.</p>
-      <span class="emne-count">Kommer snart</span>
-    </div>
-    <div class="emne-card">
-      <div class="emne-icon">🌟</div>
-      <h3>Velsignelser</h3>
-      <p>Guds velsignelser over sitt folk. Bibelske løfter og deres betydning for livet.</p>
+      <p>Systematisk og historisk teologi, klassiske læresetninger og sentrale debatter.</p>
       <span class="emne-count">Kommer snart</span>
     </div>
   </div>
@@ -639,49 +538,52 @@
 <section id="artikler" class="fade-in">
   <div class="section-label">Utvalgte artikler</div>
   <div class="articles-list">
-    <a href="endetid.html" class="article-item">
+    <a href="theologia-preview.html" class="article-item">
       <div>
         <p class="article-tag">Endetid</p>
         <h3>Død, Helvete og Evighet — En teologisk utforskning av skjebnen til de ufrelste</h3>
       </div>
       <span class="article-meta">7 kapitler</span>
     </a>
+    <a href="dod-helvete-og-evighet-komplett.pdf" class="article-item">
+      <div>
+        <p class="article-tag">PDF</p>
+        <h3>Død, helvete og evighet — komplett dokument</h3>
+      </div>
+      <span class="article-meta">8 sider</span>
+    </a>
   </div>
 </section>
+
+<div class="quote-section">
   <div class="quote-inner">
-    <blockquote>
-      "Vårt hjerte er urolig inntil det finner hvile i deg."
-    </blockquote>
+    <blockquote>"Vårt hjerte er urolig inntil det finner hvile i deg."</blockquote>
     <p class="quote-source">Augustin av Hippo — Bekjennelser, bok I</p>
   </div>
 </div>
 
-<section id="verktoy" class="fade-in">
+<section id="ressurser" class="fade-in">
   <div class="section-label">Ressurser og verktøy</div>
   <div class="tools-grid">
     <div class="tool-card">
-      <div class="tool-icon">📜</div>
-      <h3>Primærkildebibliotek</h3>
-      <p>Tilgang til klassiske tekster fra Augustin, Aquinas, Luther, Calvin og andre sentrale teologer i norsk og latinsk versjon.</p>
-      <a href="#" class="tool-link">Åpne biblioteket →</a>
+      <h3>PDF-bibliotek</h3>
+      <p>Komplette dokumenter for lesing, utskrift og deling.</p>
+      <a href="dod-helvete-og-evighet-komplett.pdf" class="tool-link">Last ned PDF</a>
     </div>
     <div class="tool-card">
-      <div class="tool-icon">🔍</div>
-      <h3>Leksikon</h3>
-      <p>Teologiske begreper forklart grundig — fra aseitet og perikoreser til kenose og apofatisk teologi.</p>
-      <a href="#" class="tool-link">Søk i leksikonet →</a>
+      <h3>Artikkelsamling</h3>
+      <p>Teologiske artikler ordnet etter tema, med rolig typografi og god leseflyt.</p>
+      <a href="theologia-preview.html" class="tool-link">Åpne artikkel</a>
     </div>
     <div class="tool-card">
-      <div class="tool-icon">📖</div>
-      <h3>Leseplaner</h3>
-      <p>Strukturerte studieløp for nybegynnere og viderekomne. Fra introduksjon til kristen tro til avansert dogmatikk.</p>
-      <a href="#" class="tool-link">Se leseplaner →</a>
+      <h3>Kommentarer</h3>
+      <p>Artiklene kan kobles til GitHub Discussions via Giscus for spørsmål og respons.</p>
+      <a href="theologia-preview.html#kommentarer" class="tool-link">Se kommentarer</a>
     </div>
     <div class="tool-card">
-      <div class="tool-icon">🎧</div>
-      <h3>Forelesninger</h3>
-      <p>Innspilte forelesninger og podcaster med teologer og akademikere. Lytt til faglig fordypning på farten.</p>
-      <a href="#" class="tool-link">Lytt nå →</a>
+      <h3>Videre arbeid</h3>
+      <p>Flere emner kan legges inn etter samme rolige format uten at forsiden blir rotete.</p>
+      <a href="#emner" class="tool-link">Se emner</a>
     </div>
   </div>
 </section>
@@ -692,21 +594,21 @@
   <div class="om-left">
     <div class="section-label">Om</div>
     <h2>Eirik Storesletten</h2>
-    <p>Eirik Storesletten er født i 1969 og har en dyp lidenskap for kristen teologi og åndelighet. Gjennom Theologia ønsker han å gjøre teologiske ressurser tilgjengelige for alle som søker å forstå troen dypere.</p>
-    <p>Siden er et personlig prosjekt der tro møter tenkning — et sted for seriøs refleksjon over Guds ord og kirkens lære gjennom historien.</p>
+    <p>THEOLOGIA er et personlig ressurssted for bibelstudier og kristen teologi.</p>
+    <p>Forsiden er bygget for å kjennes mer som et stille teologisk bibliotek enn en vanlig nettsideliste.</p>
   </div>
   <div class="om-right">
     <div class="om-detail">
-      <div class="om-detail-label">Navn</div>
-      <div class="om-detail-value">Eirik Storesletten</div>
+      <div class="om-detail-label">Prosjekt</div>
+      <div class="om-detail-value">THEOLOGIA</div>
     </div>
     <div class="om-detail">
-      <div class="om-detail-label">Født</div>
-      <div class="om-detail-value">1969</div>
+      <div class="om-detail-label">Fokus</div>
+      <div class="om-detail-value">Bibelstudier og teologi</div>
     </div>
     <div class="om-detail">
-      <div class="om-detail-label">Telefon</div>
-      <div class="om-detail-value"><a href="tel:+4791878606">918 78 606</a></div>
+      <div class="om-detail-label">Format</div>
+      <div class="om-detail-value">Artikler og PDF</div>
     </div>
   </div>
 </div>
@@ -719,9 +621,7 @@
 <script>
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-      }
+      if (e.isIntersecting) e.target.classList.add('visible');
     });
   }, { threshold: 0.08 });
 
