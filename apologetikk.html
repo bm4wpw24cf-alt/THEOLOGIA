@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apologetikk — Theologia</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e2e2e2;
+    --bg: #f9f8f6;
+    --white: #ffffff;
+    --gold: #b08d57;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.6; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(249,248,246,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.4rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-back { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.2s; }
+  .nav-back:hover { color: var(--ink); }
+
+  .hero {
+    padding: 9rem 4rem 5rem;
+    max-width: 800px; margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+  .hero .subtitle { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; }
+  .hero-meta { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+
+  .innhold { max-width: 800px; margin: 0 auto; padding: 0 4rem; }
+
+  /* KATEGORI-SEKSJON */
+  .kategori { margin: 4rem 0; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .kategori-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 1.5rem; }
+  .kategori-num { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .kategori h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; }
+  .kategori-desc { font-size: 0.92rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.75rem; }
+
+  /* ARTIKLER UNDER KATEGORI */
+  .artikler-liste { display: flex; flex-direction: column; }
+  .artikkel-rad {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: baseline;
+    gap: 2rem;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+  }
+  .artikkel-rad:first-child { border-top: 1px solid var(--line); }
+  .artikkel-rad:hover { opacity: 0.6; }
+  .artikkel-tag { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.3rem; }
+  .artikkel-rad h3 { font-family: 'EB Garamond', serif; font-size: 1.15rem; font-weight: 400; }
+  .artikkel-meta { font-size: 0.78rem; color: var(--muted); white-space: nowrap; }
+
+  /* KOMMER SNART RAD */
+  .artikkel-rad.kommende { opacity: 0.4; pointer-events: none; }
+  .kommende-tag { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+
+  .kommentar-seksjon {
+    max-width: 800px; margin: 0 auto;
+    padding: 4rem 4rem 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 3rem 4rem; max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.8rem; }
+  .footer-logo { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--ink); }
+  .footer-logo span { color: var(--gold); }
+
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .innhold { padding: 0 1.5rem; }
+    .kommentar-seksjon { padding: 3rem 1.5rem 2rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+    .artikkel-rad { grid-template-columns: 1fr; gap: 0.25rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Theo<span>logia</span></a>
+  <a href="index.html" class="nav-back">Tilbake</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Emne 02</p>
+  <h1>Apologetikk</h1>
+  <p class="subtitle">Forsvar for den kristne tro og svar på vanskelige spørsmål om Gud, Bibelen og troen</p>
+  <p class="hero-meta">Av Eirik Storesletten</p>
+</div>
+
+<div class="innhold">
+
+  <!-- ISLAM -->
+  <div class="kategori fade-in" id="islam">
+    <div class="kategori-num">Kategori 01</div>
+    <h2>Islam</h2>
+    <p class="kategori-desc">En kristen teologisk gjennomgang av islamsk lære, Koranen og forholdet mellom kristendom og islam.</p>
+    <div class="artikler-liste">
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Islam</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Islam</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ATEISME -->
+  <div class="kategori fade-in" id="ateisme">
+    <div class="kategori-num">Kategori 02</div>
+    <h2>Ateisme</h2>
+    <p class="kategori-desc">Svar på ateistiske innvendinger mot Guds eksistens, religion og kristen tro.</p>
+    <div class="artikler-liste">
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Ateisme</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Ateisme</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVOLUSJON -->
+  <div class="kategori fade-in" id="evolusjon">
+    <div class="kategori-num">Kategori 03</div>
+    <h2>Evolusjon</h2>
+    <p class="kategori-desc">Forholdet mellom kristen skapelsesteologi og evolusjonsteori — bibelske og vitenskapelige perspektiver.</p>
+    <div class="artikler-liste">
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Evolusjon</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Evolusjon</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIDELSE OG ONDSKAP -->
+  <div class="kategori fade-in" id="lidelse">
+    <div class="kategori-num">Kategori 04</div>
+    <h2>Lidelse og ondskap</h2>
+    <p class="kategori-desc">Det teodicéiske spørsmålet: Hvorfor tillater en god Gud lidelse og ondskap i verden?</p>
+    <div class="artikler-liste">
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Lidelse</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Lidelse</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIBELKRITIKK -->
+  <div class="kategori fade-in" id="bibelkritikk">
+    <div class="kategori-num">Kategori 05</div>
+    <h2>Bibelkritikk</h2>
+    <p class="kategori-desc">Svar på historiske, tekstkritiske og filosofiske innvendinger mot Bibelens troverdighet og autoritet.</p>
+    <div class="artikler-liste">
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Bibelkritikk</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Bibelkritikk</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ANDRE RELIGIONER -->
+  <div class="kategori fade-in" id="religioner">
+    <div class="kategori-num">Kategori 06</div>
+    <h2>Andre religioner</h2>
+    <p class="kategori-desc">Sammenligning av kristendommen med hinduisme, buddhisme, nyreligiøsitet og andre verdensreligioner.</p>
+    <div class="artikler-liste">
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Religioner</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+      <div class="artikkel-rad kommende">
+        <div>
+          <p class="artikkel-tag">Religioner</p>
+          <h3>Artikkel kommer snart</h3>
+        </div>
+        <span class="artikkel-meta kommende-tag">Kommer snart</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- KOMMENTARER -->
+<div class="kommentar-seksjon fade-in" id="kommentarer">
+  <div class="section-label">Kommentarer</div>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1.5rem;">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+  <script src="https://giscus.app/client.js"
+      data-repo="bm4wpw24cf-alt/THEOLOGIA"
+      data-repo-id="R_kgDOTCkYrA"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOTCkYrM4C_y2I"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="en"
+      crossorigin="anonymous"
+      async>
+  </script>
+</div>
+
+<footer>
+  <span class="footer-logo">Theo<span>logia</span></span>
+  <span>© 2026 — Eirik Storesletten</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>

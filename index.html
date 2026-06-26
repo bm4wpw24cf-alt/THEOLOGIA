@@ -219,26 +219,6 @@
   .emne-card:hover { border-color: var(--gold); }
   .emne-card.active { border-color: var(--gold); background: #fdfaf5; }
 
-  .emne-card--expandable {
-    cursor: pointer;
-  }
-
-  .emne-card--expandable.is-open {
-    border-color: var(--gold);
-    background: #fdfaf5;
-  }
-
-  .emne-toggle-hint {
-    font-size: 0.72rem;
-    color: var(--muted);
-    letter-spacing: 0.04em;
-    margin-top: 0.25rem;
-  }
-
-  .emne-card--expandable.is-open .emne-toggle-hint {
-    display: none;
-  }
-
   .emne-num {
     font-family: 'EB Garamond', serif;
     font-size: 2rem;
@@ -267,29 +247,6 @@
     color: var(--gold);
     margin-top: 0.5rem;
   }
-
-  .emne-artikler {
-    display: none;
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--line);
-    flex-direction: column;
-    gap: 0.4rem;
-  }
-
-  .emne-card--expandable.is-open .emne-artikler {
-    display: flex;
-  }
-
-  .emne-artikkel-link {
-    font-family: 'EB Garamond', serif;
-    font-size: 0.88rem;
-    color: var(--ink);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .emne-artikkel-link:hover { color: var(--gold); }
 
   .articles-list { display: flex; flex-direction: column; gap: 0; }
 
@@ -534,45 +491,24 @@
       <p>Død, helvete, evighet og de siste tider. Bibelske studier om menneskets ultimate skjebne.</p>
       <span class="emne-count">1 artikkel</span>
     </a>
-    <div class="emne-card emne-card--expandable active" role="button" tabindex="0" aria-expanded="false" aria-label="Apologetikk — vis artikler">
+    <a href="apologetikk.html" class="emne-card active">
       <div class="emne-num">02</div>
       <h3>Apologetikk</h3>
       <p>Forsvar for den kristne tro og svar på vanskelige spørsmål om Gud, Bibelen og troen.</p>
-      <span class="emne-count">13 artikler</span>
-      <span class="emne-toggle-hint">Klikk for å velge artikkel</span>
-      <div class="emne-artikler">
-        <a href="apologetikk/a-deeper-look-at-muslim-objections.html" class="emne-artikkel-link">A deeper look at the main Muslim objections</a>
-        <a href="apologetikk/forskjellen-mellom-kristen-tro-og-islam.html" class="emne-artikkel-link">Forskjellen mellom kristen tro og Islam</a>
-        <a href="apologetikk/hva-er-en-mushaf.html" class="emne-artikkel-link">Hva er en mushaf</a>
-        <a href="apologetikk/ibn-hisham-index.html" class="emne-artikkel-link">Ibn Hisham index</a>
-        <a href="apologetikk/is-there-love-in-islam.html" class="emne-artikkel-link">Is there love in Islam</a>
-        <a href="apologetikk/islam-fatalisme.html" class="emne-artikkel-link">Islam fatalisme</a>
-        <a href="apologetikk/islams-five-main-objections-to-christianity.html" class="emne-artikkel-link">Islam's five main objections to Christianity</a>
-        <a href="apologetikk/jesus-er-gud-svar-til-muslimer.html" class="emne-artikkel-link">Jesus er Gud — svar til muslimer</a>
-        <a href="apologetikk/jesus-i-koranen-mer-enn-et-vanlig-menneske.html" class="emne-artikkel-link">Jesus i Koranen — mer enn et vanlig menneske</a>
-        <a href="apologetikk/kristen-tro-overgar-muslimsk-tro.html" class="emne-artikkel-link">Kristen tro overgår muslimsk tro</a>
-        <a href="apologetikk/muslimer-bruker-logn-som-vapen.html" class="emne-artikkel-link">Muslimer bruker løgn som våpen</a>
-        <a href="apologetikk/pamphlet.html" class="emne-artikkel-link">Pamphlet</a>
-        <a href="apologetikk/sporsmal-om-islam.html" class="emne-artikkel-link">Spørsmål om islam</a>
-      </div>
-    </div>
+      <span class="emne-count">6 kategorier</span>
+    </a>
     <div class="emne-card">
       <div class="emne-num">03</div>
       <h3>Bibelens bøker</h3>
       <p>Gjennomganger av enkeltbøker i Bibelen, fra Første Mosebok til Åpenbaringen.</p>
       <span class="emne-count">Kommer snart</span>
     </div>
-    <div class="emne-card emne-card--expandable active" role="button" tabindex="0" aria-expanded="false" aria-label="Forsoning — vis artikler">
+    <a href="forsoningens-natur.html" class="emne-card active">
       <div class="emne-num">04</div>
       <h3>Forsoning</h3>
       <p>Kristi soningsverk og dets betydning for frelse, nåde og menneskets gjenopprettelse.</p>
       <span class="emne-count">2 artikler</span>
-      <span class="emne-toggle-hint">Klikk for å velge artikkel</span>
-      <div class="emne-artikler">
-        <a href="forsoningens-natur.html" class="emne-artikkel-link">Forsoningens natur</a>
-        <a href="problemer-med-psa.html" class="emne-artikkel-link">Problemer med PSA</a>
-      </div>
-    </div>
+    </a>
     <div class="emne-card">
       <div class="emne-num">05</div>
       <h3>Guds rike</h3>
@@ -626,35 +562,14 @@
         <p class="article-tag">Forsoning</p>
         <h3>Problemer med PSA — Hvorfor straffesubstitusjons­forsoning ikke holder</h3>
       </div>
-      <span class="article-meta">Artikkel + PDF</span>
+      <span class="article-meta">4 artikler</span>
     </a>
-    <a href="apologetikk/sporsmal-om-islam.html" class="article-item">
+    <a href="problemer-med-psa.pdf" class="article-item">
       <div>
-        <p class="article-tag">Apologetikk</p>
-        <h3>Spørsmål om islam</h3>
+        <p class="article-tag">PDF</p>
+        <h3>Problemer med PSA — komplett dokument</h3>
       </div>
-      <span class="article-meta">Artikkel + PDF</span>
-    </a>
-    <a href="apologetikk/jesus-er-gud-svar-til-muslimer.html" class="article-item">
-      <div>
-        <p class="article-tag">Apologetikk</p>
-        <h3>Jesus er Gud — svar til muslimer</h3>
-      </div>
-      <span class="article-meta">Artikkel + PDF</span>
-    </a>
-    <a href="apologetikk/forskjellen-mellom-kristen-tro-og-islam.html" class="article-item">
-      <div>
-        <p class="article-tag">Apologetikk</p>
-        <h3>Forskjellen mellom kristen tro og Islam</h3>
-      </div>
-      <span class="article-meta">Artikkel + PDF</span>
-    </a>
-    <a href="#emner" class="article-item">
-      <div>
-        <p class="article-tag">Apologetikk</p>
-        <h3>Se Apologetikk-kortet for alle 13 artikler om islam</h3>
-      </div>
-      <span class="article-meta">13 artikler</span>
+      <span class="article-meta">15 sider</span>
     </a>
   </div>
 </section>
@@ -730,35 +645,6 @@
   }, { threshold: 0.08 });
 
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  function toggleEmneCard(card) {
-    const willOpen = !card.classList.contains('is-open');
-
-    document.querySelectorAll('.emne-card--expandable.is-open').forEach(other => {
-      if (other !== card) {
-        other.classList.remove('is-open');
-        other.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    card.classList.toggle('is-open', willOpen);
-    card.setAttribute('aria-expanded', willOpen ? 'true' : 'false');
-  }
-
-  document.querySelectorAll('.emne-card--expandable').forEach(card => {
-    card.addEventListener('click', (e) => {
-      if (e.target.closest('.emne-artikkel-link')) return;
-      toggleEmneCard(card);
-    });
-
-    card.addEventListener('keydown', (e) => {
-      if (e.target.closest('.emne-artikkel-link')) return;
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleEmneCard(card);
-      }
-    });
-  });
 </script>
 
 </body>
