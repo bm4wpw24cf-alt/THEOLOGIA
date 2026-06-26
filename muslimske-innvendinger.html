@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>De viktigste muslimske innvendingene — Theologia</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e2e2e2;
+    --bg: #f9f8f6;
+    --white: #ffffff;
+    --gold: #b08d57;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.6; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(249,248,246,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.4rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-back { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.2s; }
+  .nav-back:hover { color: var(--ink); }
+
+  .hero {
+    padding: 9rem 4rem 5rem;
+    max-width: 800px; margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+  .hero .subtitle { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; }
+  .hero-meta { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+  .pdf-actions { margin-top: 2rem; }
+  .pdf-button {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--ink);
+    background: var(--white);
+    text-decoration: none;
+    padding: 0.8rem 1.1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pdf-button:hover { background: var(--gold); color: var(--white); }
+
+  .innhold { max-width: 800px; margin: 0 auto; padding: 0 4rem; }
+
+  .toc { margin: 3rem 0; border: 1px solid var(--line); padding: 2rem; background: var(--white); }
+  .toc-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 0.35rem 0; border-bottom: 1px solid var(--line); }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { text-decoration: none; color: var(--ink); font-size: 0.9rem; display: flex; align-items: baseline; gap: 0.75rem; transition: color 0.2s; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: counter(toc, decimal-leading-zero); font-size: 0.7rem; color: var(--gold); min-width: 22px; }
+
+  .kapittel { margin: 4rem 0; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .kapittel-num { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .kapittel h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; margin-bottom: 1.5rem; }
+  .kapittel h3 { font-family: 'EB Garamond', serif; font-size: 1.25rem; font-weight: 400; margin: 2rem 0 0.75rem; }
+  .kapittel p { color: #333; line-height: 1.85; margin-bottom: 1rem; font-size: 0.97rem; }
+
+  .vers {
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1.25rem;
+    margin: 1.25rem 0;
+    background: var(--white);
+  }
+  .vers p { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--ink); margin: 0 0 0.25rem; }
+  .vers cite { font-size: 0.75rem; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+
+  .punktliste { list-style: none; margin: 0.5rem 0 1.25rem; }
+  .punktliste li { font-size: 0.97rem; color: #333; line-height: 1.85; padding: 0.3rem 0 0.3rem 1.4rem; border-bottom: 1px solid var(--line); position: relative; }
+  .punktliste li:last-child { border-bottom: none; }
+  .punktliste li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  .sitat-seksjon { background: var(--ink); color: var(--white); padding: 4rem; margin: 4rem -4rem; }
+  .sitat-seksjon blockquote { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 2.5vw, 2rem); line-height: 1.5; max-width: 600px; margin-bottom: 1rem; }
+  .sitat-seksjon cite { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+
+  .konklusjon-box { background: var(--white); border: 1px solid var(--line); padding: 2rem; margin: 2rem 0; }
+  .konklusjon-box .konklusjon-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .konklusjon-box p { font-size: 0.92rem; color: var(--muted); margin: 0 0 0.5rem; line-height: 1.8; }
+  .konklusjon-box p:last-child { margin-bottom: 0; }
+
+  .kommentar-seksjon {
+    max-width: 800px; margin: 0 auto;
+    padding: 4rem 4rem 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 3rem 4rem; max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.8rem; }
+  .footer-logo { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--ink); }
+  .footer-logo span { color: var(--gold); }
+
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .innhold { padding: 0 1.5rem; }
+    .sitat-seksjon { padding: 3rem 1.5rem; margin: 3rem -1.5rem; }
+    .kommentar-seksjon { padding: 3rem 1.5rem 2rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Theo<span>logia</span></a>
+  <a href="apologetikk.html" class="nav-back">← Apologetikk</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Apologetikk · Islam</p>
+  <h1>Et dypere blikk på de viktigste muslimske innvendingene</h1>
+  <p class="subtitle">Koranens syn på Bibelen, tahrif-anklagen og hvordan vi kan svare</p>
+  <p class="hero-meta">Av Eirik Storesletten &nbsp;·&nbsp; PDF-ressurs</p>
+  <div class="pdf-actions">
+    <a class="pdf-button" href="muslimske-innvendinger.pdf" download>Last ned PDF</a>
+  </div>
+</div>
+
+<div class="innhold">
+
+  <div class="toc fade-in">
+    <div class="toc-title">Innholdsfortegnelse</div>
+    <ol>
+      <li><a href="#kap1">Koranens syn på tidligere skrifter</a></li>
+      <li><a href="#kap2">Tahrif — anklagen om forfalskning</a></li>
+      <li><a href="#kap3">Hva versene faktisk sier</a></li>
+      <li><a href="#kap4">Anklagen om å skjule skriftene</a></li>
+      <li><a href="#kap5">Svar på innvendingene</a></li>
+    </ol>
+  </div>
+
+  <!-- KAP 1 -->
+  <div class="kapittel fade-in" id="kap1">
+    <div class="kapittel-num">Kapittel 1</div>
+    <h2>Koranens syn på tidligere skrifter</h2>
+    <p>Koranen omtaler tre hellige skrifter som ble åpenbart før Koranen selv:</p>
+    <ul class="punktliste">
+      <li><em>Tawrat</em> (Tora) — åpenbart for Moses (f.eks. 3:93)</li>
+      <li><em>Zabur</em> (Salmene) — åpenbart for David (f.eks. 4:163; 17:55; 21:105)</li>
+      <li><em>Injil</em> (evangeliet) — åpenbart for Jesus (f.eks. 5:46)</li>
+    </ul>
+    <p>Jøder og kristne kalles «bokens folk» eller «skriftens folk» (f.eks. 2:105; 3:64), og muslimer får beskjed om at de må tro de tidligere skriftene i tillegg til Koranen:</p>
+
+    <div class="vers">
+      <p>«O dere som tror! Tro på Allah og Hans budbringer og Skriften som Han har åpenbart for sin budbringer, og Skriften som Han åpenbarte tidligere. Den som fornekter Allah og Hans engler og Hans skrifter og Hans budbringere og den siste dag, han har i sannhet vandret langt bort.»</p>
+      <cite>Koranen 4:136</cite>
+    </div>
+
+    <p>Muslimer er altså ifølge Koranen forpliktet til å tro på de tidligere skriftene — inkludert Bibelen. Koranen bekrefter sannheten om dem:</p>
+
+    <div class="vers">
+      <p>«Når det gjelder det Vi inspirerer deg av Skriften, er det Sannheten som bekrefter det som var åpenbart før det.»</p>
+      <cite>Koranen 35:31</cite>
+    </div>
+  </div>
+
+  <!-- KAP 2 -->
+  <div class="kapittel fade-in" id="kap2">
+    <div class="kapittel-num">Kapittel 2</div>
+    <h2>Tahrif — anklagen om forfalskning</h2>
+    <p>Det er imidlertid fire vers i Koranen som omtaler «korrupsjon» eller «forfalskning» (<em>tahrif</em>) av disse tidligere skriftene, og bruker ordet «endre». Disse versene er grunnlaget for den muslimske påstanden om at Bibelen har blitt korrumpert.</p>
+
+    <div class="vers">
+      <p>«... en gruppe av dem pleide å lytte til Allahs ord, deretter pleide de å endre det, etter at de hadde forstått det, med vitende.»</p>
+      <cite>Koranen 2:75</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Noen av dem som er jøder endrer ordene fra deres kontekst, forvrenger med tungene sine og baktaler religion.»</p>
+      <cite>Koranen 4:46</cite>
+    </div>
+
+    <div class="vers">
+      <p>«De endrer ord fra deres kontekst og glemmer en del av det de ble påminnet om.»</p>
+      <cite>Koranen 5:13</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Jødene: lyttere for løgnens skyld, lyttere på vegne av andre folk som ikke kommer til deg, endrer ord fra deres kontekst...»</p>
+      <cite>Koranen 5:41</cite>
+    </div>
+  </div>
+
+  <div class="sitat-seksjon fade-in">
+    <blockquote>«Ingen av disse versene antyder at teksten i Bibelen har blitt korrumpert.»</blockquote>
+    <cite>Et dypere blikk på de muslimske innvendingene</cite>
+  </div>
+
+  <!-- KAP 3 -->
+  <div class="kapittel fade-in" id="kap3">
+    <div class="kapittel-num">Kapittel 3</div>
+    <h2>Hva versene faktisk sier</h2>
+    <p>En nøye lesning av disse fire versene avslører at de ikke hevder at den skriftlige teksten i Bibelen har blitt endret. Det er viktig å skille mellom de ulike anklagene:</p>
+
+    <h3>Feiluttale av ord</h3>
+    <p>En av anklagene synes å være at visse jøder bevisst feiluttalte ord uttalt av Muhammed, sannsynligvis ved å spille på likheten mellom visse arabiske og hebraiske ord (se 3:78). Dette gjelder muntlig kommunikasjon i samspill med profeten — ikke den skriftlige teksten i Bibelen.</p>
+
+    <h3>Å ta ord ut av kontekst</h3>
+    <p>De er også anklaget for å ta ord i sine egne skrifter ut av kontekst og endre betydningen av ord. Dette er en anklage om feiltolkning og misbruk av teksten — ikke om at selve teksten er endret.</p>
+
+    <p>Det er altså en avgjørende forskjell mellom å hevde at folk <em>misbruker</em> eller <em>mistolker</em> en tekst, og å hevde at selve teksten er blitt fysisk forandret. Koranen gjør det første, ikke det siste.</p>
+  </div>
+
+  <!-- KAP 4 -->
+  <div class="kapittel fade-in" id="kap4">
+    <div class="kapittel-num">Kapittel 4</div>
+    <h2>Anklagen om å skjule skriftene</h2>
+    <p>I andre vers blir jødene anklaget for å «skjule» eller «hemmeligholde» deler av sine skrifter — igjen en anklage om atferd, ikke om tekstlig korrupsjon:</p>
+
+    <div class="vers">
+      <p>«En gruppe av dem hemmeligholder bevisst sannheten.»</p>
+      <cite>Koranen 2:146</cite>
+    </div>
+
+    <div class="vers">
+      <p>«O dere skriftens folk! Nå er Vår budbringer kommet til dere, og forklarer dere mye av det dere pleide å skjule i Skriften.»</p>
+      <cite>Koranen 5:15</cite>
+    </div>
+
+    <p>Legg merke til at versene forutsetter at skriften <em>finnes</em> og kan skjules — de sier ikke at den er blitt ødelagt eller omskrevet. Å skjule noe er vesensforskjellig fra å ødelegge eller forfalske det.</p>
+  </div>
+
+  <!-- KAP 5 -->
+  <div class="kapittel fade-in" id="kap5">
+    <div class="kapittel-num">Kapittel 5</div>
+    <h2>Svar på innvendingene</h2>
+
+    <h3>Koranen bekrefter Bibelen</h3>
+    <p>Det er et fundamentalt problem i den muslimske tahrif-læren: Hvis Koranen bekrefter sannheten i de tidligere skriftene (35:31; 2:97), og samtidig pålegger muslimer å tro på dem (4:136), kan ikke de samme skriftene være korrumperte. Koranen ville da bekrefte korrupte skrifter — noe som er inkonsistent.</p>
+
+    <h3>Tekstkritisk evidens</h3>
+    <p>De eldste manuskriptene til Det gamle testamente (Dødehavsrullene, ca. 150 f.Kr.) og Det nye testamente (papyri fra 100-tallet e.Kr.) stemmer i all vesentlighet overens med de bibelske tekstene vi har i dag. Det finnes ingen historisk evidens for en systematisk korrumpering av Bibelens tekst.</p>
+
+    <h3>Når skulle forfalskningen ha skjedd?</h3>
+    <p>For at Bibelen skal ha blitt korrumpert, må man forklare: Når skjedde det? Hvem gjorde det? Og hvordan ble tusenvis av manuskripter spredt over hele verden alle endret på samme måte — uten at noen la merke til det? Disse spørsmålene forblir ubesvarte i den muslimske tradisjonen.</p>
+
+    <div class="konklusjon-box">
+      <div class="konklusjon-label">Konklusjon</div>
+      <p>Koranens egne vers om tahrif hevder ikke at Bibelens tekst er blitt fysisk forandret. De beskriver muntlig feiltolkning, misbruk av kontekst og bevisst skjuling — ikke tekstlig korrupsjon. Koranen bekrefter tvert imot sannheten i de tidligere skriftene og pålegger muslimer å tro på dem.</p>
+      <p>For full gjennomgang, last ned PDF-dokumentet.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- KOMMENTARER -->
+<div class="kommentar-seksjon fade-in" id="kommentarer">
+  <div class="section-label">Kommentarer</div>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1.5rem;">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+  <script src="https://giscus.app/client.js"
+      data-repo="bm4wpw24cf-alt/THEOLOGIA"
+      data-repo-id="R_kgDOTCkYrA"
+      data-category="Announcements"
+      data-category-id="DIC_kwDOTCkYrM4C_y2I"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="en"
+      crossorigin="anonymous"
+      async>
+  </script>
+</div>
+
+<footer>
+  <span class="footer-logo">Theo<span>logia</span></span>
+  <span>© 2026 — Eirik Storesletten</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
