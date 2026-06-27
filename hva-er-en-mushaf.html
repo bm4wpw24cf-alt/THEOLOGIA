@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hva er en mushaf — Theologia</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e2e2e2;
+    --bg: #f9f8f6;
+    --white: #ffffff;
+    --gold: #b08d57;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.6; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(249,248,246,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.4rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-back { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.2s; }
+  .nav-back:hover { color: var(--ink); }
+
+  .hero {
+    padding: 9rem 4rem 5rem;
+    max-width: 800px; margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+  .hero .subtitle { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; }
+  .hero-meta { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+  .pdf-actions { margin-top: 2rem; }
+  .pdf-button {
+    display: inline-block;
+    border: 1px solid var(--gold);
+    color: var(--ink);
+    background: var(--white);
+    text-decoration: none;
+    padding: 0.8rem 1.1rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s;
+  }
+  .pdf-button:hover { background: var(--gold); color: var(--white); }
+
+  .innhold { max-width: 800px; margin: 0 auto; padding: 0 4rem; }
+
+  .toc { margin: 3rem 0; border: 1px solid var(--line); padding: 2rem; background: var(--white); }
+  .toc-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 0.35rem 0; border-bottom: 1px solid var(--line); }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { text-decoration: none; color: var(--ink); font-size: 0.9rem; display: flex; align-items: baseline; gap: 0.75rem; transition: color 0.2s; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: counter(toc, decimal-leading-zero); font-size: 0.7rem; color: var(--gold); min-width: 22px; }
+
+  .kapittel { margin: 4rem 0; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .kapittel-num { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .kapittel h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; margin-bottom: 1.5rem; }
+  .kapittel h3 { font-family: 'EB Garamond', serif; font-size: 1.25rem; font-weight: 400; margin: 2rem 0 0.75rem; }
+  .kapittel p { color: #333; line-height: 1.85; margin-bottom: 1rem; font-size: 0.97rem; }
+
+  .vers {
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1.25rem;
+    margin: 1.25rem 0;
+    background: var(--white);
+  }
+  .vers p { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--ink); margin: 0 0 0.25rem; }
+  .vers cite { font-size: 0.75rem; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+
+  .punktliste { list-style: none; margin: 0.5rem 0 1.25rem; }
+  .punktliste li { font-size: 0.97rem; color: #333; line-height: 1.85; padding: 0.3rem 0 0.3rem 1.4rem; border-bottom: 1px solid var(--line); position: relative; }
+  .punktliste li:last-child { border-bottom: none; }
+  .punktliste li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  .sitat-seksjon { background: var(--ink); color: var(--white); padding: 4rem; margin: 4rem -4rem; }
+  .sitat-seksjon blockquote { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 2.5vw, 2rem); line-height: 1.5; max-width: 600px; margin-bottom: 1rem; }
+  .sitat-seksjon cite { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+
+  .konklusjon-box { background: var(--white); border: 1px solid var(--line); padding: 2rem; margin: 2rem 0; }
+  .konklusjon-box .konklusjon-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .konklusjon-box p { font-size: 0.92rem; color: var(--muted); margin: 0 0 0.5rem; line-height: 1.8; }
+  .konklusjon-box p:last-child { margin-bottom: 0; }
+
+  .kommentar-seksjon {
+    max-width: 800px; margin: 0 auto;
+    padding: 4rem 4rem 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 3rem 4rem; max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.8rem; }
+  .footer-logo { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--ink); }
+  .footer-logo span { color: var(--gold); }
+
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .innhold { padding: 0 1.5rem; }
+    .sitat-seksjon { padding: 3rem 1.5rem; margin: 3rem -1.5rem; }
+    .kommentar-seksjon { padding: 3rem 1.5rem 2rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Theo<span>logia</span></a>
+  <a href="apologetikk.html" class="nav-back">← Apologetikk</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Apologetikk · Islam</p>
+  <h1>Hva er en mushaf?</h1>
+  <p class="subtitle">Koranens samling, historie og betydning</p>
+  <p class="hero-meta">Av Eirik Storesletten &nbsp;·&nbsp; PDF-ressurs</p>
+  <div class="pdf-actions">
+    <a class="pdf-button" href="hva-er-en-mushaf.pdf" target="_blank">Les PDF</a>
+  </div>
+</div>
+
+<div class="innhold">
+
+  <div class="toc fade-in">
+    <div class="toc-title">Innholdsfortegnelse</div>
+    <ol>
+      <li><a href="#kap1">Språklig betydning av ordet mushaf</a></li>
+      <li><a href="#kap2">Forskjellen mellom Qur'an og mushaf</a></li>
+      <li><a href="#kap3">Koranen i profetens levetid</a></li>
+      <li><a href="#kap4">Behovet for en samlet mushaf etter profetens død</a></li>
+      <li><a href="#kap5">Zayd ibn Thābit og den første samlingen</a></li>
+      <li><a href="#kap6">Standardiseringen under kalif ʿUthmān</a></li>
+      <li><a href="#kap7">Teologisk betydning av mushaf'en</a></li>
+    </ol>
+  </div>
+
+  <!-- INNLEDNING -->
+  <div class="kapittel fade-in">
+    <p>Det arabiske ordet <em>mushaf</em> (مُصْحَف) spiller en sentral rolle i islams forståelse av Koranens bevaring. Begrepet brukes ikke først og fremst om åpenbaringen i seg selv, men om den skrevne, samlede og innbundne teksten som inneholder Koranens ord. For å forstå hva en mushaf er, og hvorfor den fikk så stor betydning, må vi se både språklig, historisk og teologisk på hvordan Koranen ble overlevert, bevart og samlet.</p>
+  </div>
+
+  <!-- KAP 1 -->
+  <div class="kapittel fade-in" id="kap1">
+    <div class="kapittel-num">Kapittel 1</div>
+    <h2>Språklig betydning av ordet mushaf</h2>
+    <p>Ordet <em>mushaf</em> kommer fra den arabiske roten <em>ṣ-ḥ-f</em> (ص ح ف), som betyr «blad», «side» eller «skrevet ark». En mushaf betyr derfor bokstavelig:</p>
+
+    <div class="vers">
+      <p>«En samling av blader samlet mellom to permer.»</p>
+      <cite>Klassisk arabisk definisjon</cite>
+    </div>
+
+    <p>I klassisk arabisk kunne ordet brukes om enhver bok eller samling av tekster. Etter hvert fikk det imidlertid en spesialisert religiøs betydning og ble brukt nesten utelukkende om den fysiske, skrevne Koranen.</p>
+  </div>
+
+  <!-- KAP 2 -->
+  <div class="kapittel fade-in" id="kap2">
+    <div class="kapittel-num">Kapittel 2</div>
+    <h2>Forskjellen mellom Qur'an og mushaf</h2>
+    <p>I islamsk teologi skilles det tydelig mellom to begreper:</p>
+    <ul class="punktliste">
+      <li><em>Qur'an</em> (القرآن) — betyr «resitasjonen» og refererer til Guds åpenbarte ord slik de ble meddelt profeten Muhammad gjennom engelen Gabriel</li>
+      <li><em>Mushaf</em> (المصحف) — betegner den skrevne og samlede teksten, den materielle formen</li>
+    </ul>
+    <p>Man kan derfor si: Qur'an er åpenbaringen i sitt innhold og budskap, mens mushaf er åpenbaringen i sin skrevne form.</p>
+  </div>
+
+  <div class="sitat-seksjon fade-in">
+    <blockquote>«Qur'an er åpenbaringen i sitt innhold og budskap, mens mushaf er åpenbaringen i sin skrevne form.»</blockquote>
+    <cite>Islamsk teologisk distinksjon</cite>
+  </div>
+
+  <!-- KAP 3 -->
+  <div class="kapittel fade-in" id="kap3">
+    <div class="kapittel-num">Kapittel 3</div>
+    <h2>Koranen i profetens levetid</h2>
+    <p>Koranen ble åpenbart over en periode på omtrent 23 år (610–632 e.Kr.). Under profeten Muhammads levetid var Koranen primært muntlig bevart gjennom resitasjon, lært utenat av mange følgesvenner (<em>ḥuffāẓ</em>), og delvis skrevet ned på ulike materialer:</p>
+    <ul class="punktliste">
+      <li>Palmeribber</li>
+      <li>Skinn og lær</li>
+      <li>Beinfragmenter</li>
+      <li>Flate steiner</li>
+    </ul>
+    <p>Profeten hadde egne skrivere, kjent som <em>kuttāb al-waḥy</em> (åpenbaringsskriverne). Blant de mest kjente var Zayd ibn Thābit, Ubayy ibn Kaʿb og ʿAlī ibn Abī Ṭālib.</p>
+    <p>Det fantes imidlertid ingen fullstendig samlet bok i profetens levetid — åpenbaringen pågikk fortsatt, og enkelte vers fikk sin endelige plassering senere.</p>
+  </div>
+
+  <!-- KAP 4 -->
+  <div class="kapittel fade-in" id="kap4">
+    <div class="kapittel-num">Kapittel 4</div>
+    <h2>Behovet for en samlet mushaf etter profetens død</h2>
+    <p>Etter profetens død i 632 e.Kr. oppsto en ny og alvorlig situasjon. Under Slaget ved Yamāma ble mange av de fremste Koran-memorisererne drept. Dette vekkte stor bekymring hos kalifen Abū Bakr as-Siddīq og hans rådgivere, særlig ʿUmar ibn al-Khaṭṭāb.</p>
+    <p>Frykten var at dersom de som bar Koranen i minnet døde, kunne deler av teksten gå tapt. Løsningen ble å samle hele Koranen i én autoritativ skriftlig samling, og forene muntlig og skriftlig tradisjon i én tekst. Dette markerer begynnelsen på det som kalles den første mushaf.</p>
+  </div>
+
+  <!-- KAP 5 -->
+  <div class="kapittel fade-in" id="kap5">
+    <div class="kapittel-num">Kapittel 5</div>
+    <h2>Zayd ibn Thābit og den første samlingen</h2>
+    <p>Oppgaven med å samle Koranen ble gitt til Zayd ibn Thābit, som både var profetens skriver og kjent for sin nøyaktighet og integritet. Arbeidet ble utført med ekstrem grundighet:</p>
+    <ul class="punktliste">
+      <li>Ingen vers ble inkludert uten at det fantes skriftlig dokumentasjon</li>
+      <li>Versene måtte også være bekreftet av personer som hadde lært dem utenat</li>
+      <li>Alt ble sammenlignet med profetens kjente resitasjon</li>
+    </ul>
+    <p>Resultatet ble en fullstendig samling av Koranen i én bok. Denne mushaf ble oppbevart hos Abū Bakr, deretter hos ʿUmar, og senere hos Ḥafṣa — profetens kone.</p>
+  </div>
+
+  <!-- KAP 6 -->
+  <div class="kapittel fade-in" id="kap6">
+    <div class="kapittel-num">Kapittel 6</div>
+    <h2>Standardiseringen under kalif ʿUthmān</h2>
+    <p>Etter hvert som islam spredte seg til nye områder, oppsto utfordringer knyttet til dialektforskjeller og varierende resitasjonsmåter. For å bevare enhet besluttet den tredje kalifen, ʿUthmān ibn ʿAffān, å standardisere teksten:</p>
+    <ul class="punktliste">
+      <li>Å bruke mushaf'en hos Ḥafṣa som grunntekst</li>
+      <li>Å fastsette teksten etter Quraysh-dialekten</li>
+      <li>Å lage flere offisielle kopier</li>
+      <li>Å sende disse til de viktigste islamske sentrene</li>
+    </ul>
+    <p>Alle avvikende private kopier som kunne skape forvirring, ble fjernet. Denne teksten er kjent som <em>Mushaf ʿUthmānī</em>, og den danner grunnlaget for alle Koran-utgaver i dag.</p>
+  </div>
+
+  <!-- KAP 7 -->
+  <div class="kapittel fade-in" id="kap7">
+    <div class="kapittel-num">Kapittel 7</div>
+    <h2>Teologisk betydning av mushaf'en</h2>
+    <p>I islamsk tro er mushaf'en ikke bare en historisk tekst, men et tegn på Guds vern av sitt ord, Koranens uforanderlighet og fellesskapets ansvar for å bevare åpenbaringen. Det understrekes at det som er skrevet i mushaf'en i dag, er identisk med det som ble åpenbart til profeten Muhammad.</p>
+
+    <div class="konklusjon-box">
+      <div class="konklusjon-label">Avslutning</div>
+      <p>Begrepet mushaf uttrykker mer enn bare «en bok». Det representerer overgangen fra muntlig åpenbaring til skriftlig bevaring, og vitner om en bevisst, kollektiv innsats for å sikre at Koranens tekst forble intakt.</p>
+      <p>Gjennom arbeidet til profetens følgesvenner — og særlig gjennom samlingen og standardiseringen av mushaf'en — ble grunnlaget lagt for Koranens tekstlige stabilitet slik den foreligger i dag.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- KOMMENTARER -->
+<div class="kommentar-seksjon fade-in" id="kommentarer">
+  <div class="section-label">Kommentarer</div>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1.5rem;">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+  <script src="https://giscus.app/client.js"
+      data-repo="bm4wpw24cf-alt/THEOLOGIA"
+      data-repo-id="R_kgDOTCkYrA"
+      data-category="General"
+      data-category-id="DIC_kwDOTCkYrM4C_y2J"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="no"
+      crossorigin="anonymous"
+      async>
+  </script>
+</div>
+
+<footer>
+  <span class="footer-logo">Theo<span>logia</span></span>
+  <span>© 2026 — Eirik Storesletten</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
