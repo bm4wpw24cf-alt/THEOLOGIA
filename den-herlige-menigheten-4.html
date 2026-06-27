@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Den herlige menigheten — del 4 — Theologia</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e2e2e2;
+    --bg: #f9f8f6;
+    --white: #ffffff;
+    --gold: #b08d57;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.6; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(249,248,246,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.4rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-back { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.2s; }
+  .nav-back:hover { color: var(--ink); }
+
+  .hero {
+    padding: 9rem 4rem 5rem;
+    max-width: 900px; margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+  .hero .subtitle { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-bottom: 0.5rem; }
+  .hero-meta { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+
+  /* LYSBILDER */
+  .lysbilder {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 4rem 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .lysbilde {
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--white);
+    padding: 0.5rem;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .lysbilde.visible { opacity: 1; transform: none; }
+
+  .lysbilde img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .lysbilde-caption {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0.6rem 0 0.2rem;
+  }
+
+  /* KOMMENTARER */
+  .kommentar-seksjon {
+    max-width: 900px; margin: 0 auto;
+    padding: 4rem 4rem 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 3rem 4rem; max-width: 900px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.8rem; }
+  .footer-logo { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--ink); }
+  .footer-logo span { color: var(--gold); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .lysbilder { padding: 2rem 1.5rem 4rem; gap: 1.5rem; }
+    .kommentar-seksjon { padding: 3rem 1.5rem 2rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Theo<span>logia</span></a>
+  <a href="den-herlige-menigheten.html" class="nav-back">← Den herlige menigheten</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Den herlige menigheten · Del 4</p>
+  <h1>Den herlige menigheten</h1>
+  <p class="subtitle">Overvinnernes fundament og holdning</p>
+  <p class="hero-meta">Av Eirik Storesletten &nbsp;·&nbsp; Kapittel 4 · Side 87–101</p>
+</div>
+
+<div class="lysbilder">
+
+  <div class="lysbilde">
+    <img src="bilder/dhm4-01-tittel.png" alt="Den herlige menigheten — Overvinnernes fundament og holdning — Kapittel 4, side 87–101">
+    <p class="lysbilde-caption">Side 87 — Tittel</p>
+  </div>
+
+  <div class="lysbilde">
+    <img src="bilder/dhm4-02-apenbaringen-12-11.png" alt="Åpenbaringsboken 12:11 — De har seiret over ham ved Lammets blod">
+    <p class="lysbilde-caption">Side 88 — Åpenbaringen 12:11</p>
+  </div>
+
+  <div class="lysbilde">
+    <img src="bilder/dhm4-03-seierens-fundament.png" alt="Seierens fundament og holdning">
+    <p class="lysbilde-caption">Side 89 — Seierens fundament og holdning</p>
+  </div>
+
+  <div class="lysbilde">
+    <img src="bilder/dhm4-04-lammets-blod.png" alt="De seiret over ham i kraft av Lammets blod">
+    <p class="lysbilde-caption">Side 90 — I kraft av Lammets blod</p>
+  </div>
+
+  <div class="lysbilde">
+    <img src="bilder/dhm4-05-virkningene.png" alt="Virkningene av Jesu blod">
+    <p class="lysbilde-caption">Side 91 — Virkningene av Jesu blod</p>
+  </div>
+
+  <div class="lysbilde">
+    <img src="bilder/dhm4-06-satans-anklager.png" alt="Satans største virksomhet mot kristne er å anklage dem">
+    <p class="lysbilde-caption">Side 92 — Satans anklager</p>
+  </div>
+
+  <div class="lysbilde">
+    <img src="bilder/dhm4-07-aksepterer-vi.png" alt="Aksepterer vi Satans anklager er vi maktesløse — men der er seier!">
+    <p class="lysbilde-caption">Side 93 — Aksepterer vi Satans anklager</p>
+  </div>
+
+  <div class="lysbilde">
+    <img src="bilder/dhm4-08-men-det-er-seier.png" alt="Aksepterer vi Satans anklager er vi maktesløse — men det er seier!">
+    <p class="lysbilde-caption">Side 94 — Men det er seier!</p>
+  </div>
+
+</div>
+
+<div class="kommentar-seksjon" id="kommentarer">
+  <div class="section-label">Kommentarer</div>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1.5rem;">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+  <script src="https://giscus.app/client.js"
+      data-repo="bm4wpw24cf-alt/THEOLOGIA"
+      data-repo-id="R_kgDOTCkYrA"
+      data-category="General"
+      data-category-id="DIC_kwDOTCkYrM4C_y2J"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="no"
+      crossorigin="anonymous"
+      async>
+  </script>
+</div>
+
+<footer>
+  <span class="footer-logo">Theo<span>logia</span></span>
+  <span>© 2026 — Eirik Storesletten</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.04 });
+  document.querySelectorAll('.lysbilde').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
