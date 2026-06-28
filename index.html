@@ -420,6 +420,76 @@
 
   .footer-logo span { color: var(--gold); }
 
+  .emne-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 0;
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+  .emne-toggle:hover { opacity: 0.7; }
+
+  .emne-dropdown {
+    margin-top: 0.75rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .emne-kat { border-bottom: 1px solid var(--line); }
+  .emne-kat:last-child { border-bottom: none; }
+
+  .emne-kat-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    padding: 0.55rem 0;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    display: flex;
+    justify-content: space-between;
+  }
+  .emne-kat-btn:hover { color: var(--gold); }
+
+  .emne-kat-liste {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 0.5rem;
+  }
+
+  .emne-kat-liste a {
+    font-family: 'EB Garamond', serif;
+    font-size: 0.92rem;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 0.3rem 0 0.3rem 0.75rem;
+    border-left: 2px solid var(--gold);
+    margin: 0.2rem 0;
+    transition: color 0.2s;
+    line-height: 1.4;
+  }
+  .emne-kat-liste a:hover { color: var(--ink); }
+
+  .emne-kat-tom {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    color: var(--muted);
+    padding: 0.3rem 0 0.3rem 0.75rem;
+    font-style: italic;
+  }
+
   .tool-toggle {
     background: none;
     border: none;
@@ -548,12 +618,67 @@
       <p>Død, helvete, evighet og de siste tider. Bibelske studier om menneskets ultimate skjebne.</p>
       <span class="emne-count">1 artikkel</span>
     </a>
-    <a href="apologetikk.html" class="emne-card active">
+    <div class="emne-card active" id="apol-card">
       <div class="emne-num">02</div>
       <h3>Apologetikk</h3>
       <p>Forsvar for den kristne tro og svar på vanskelige spørsmål om Gud, Bibelen og troen.</p>
-      <span class="emne-count">6 kategorier</span>
-    </a>
+      <button class="emne-count emne-toggle" onclick="toggleEmne('apol-dropdown', this)">6 kategorier ▾</button>
+      <div id="apol-dropdown" class="emne-dropdown" style="display:none;">
+
+        <!-- ISLAM -->
+        <div class="emne-kat">
+          <button class="emne-kat-btn" onclick="toggleEmne('kat-islam', this)">Islam ▾</button>
+          <div id="kat-islam" class="emne-kat-liste" style="display:none;">
+            <a href="muslimske-innvendinger.html">Et dypere blikk på de viktigste muslimske innvendingene</a>
+            <a href="slaveri-og-rase-i-islam.html">Slaveri og rase i islamsk tradisjon</a>
+            <a href="hva-er-en-mushaf.html">Hva er en mushaf?</a>
+            <a href="jesus-i-koranen.html">Jesus i Koranen — mer enn et vanlig menneske</a>
+            <a href="BIBELEN OG KORANEN I RETTENS LYS.html">Bibelen eller Koranen? — Et domstolsperspektiv</a>
+          </div>
+        </div>
+
+        <!-- ATEISME -->
+        <div class="emne-kat">
+          <button class="emne-kat-btn" onclick="toggleEmne('kat-ateisme', this)">Ateisme ▾</button>
+          <div id="kat-ateisme" class="emne-kat-liste" style="display:none;">
+            <span class="emne-kat-tom">Kommer snart</span>
+          </div>
+        </div>
+
+        <!-- EVOLUSJON -->
+        <div class="emne-kat">
+          <button class="emne-kat-btn" onclick="toggleEmne('kat-evolusjon', this)">Evolusjon ▾</button>
+          <div id="kat-evolusjon" class="emne-kat-liste" style="display:none;">
+            <span class="emne-kat-tom">Kommer snart</span>
+          </div>
+        </div>
+
+        <!-- LIDELSE OG ONDSKAP -->
+        <div class="emne-kat">
+          <button class="emne-kat-btn" onclick="toggleEmne('kat-lidelse', this)">Lidelse og ondskap ▾</button>
+          <div id="kat-lidelse" class="emne-kat-liste" style="display:none;">
+            <span class="emne-kat-tom">Kommer snart</span>
+          </div>
+        </div>
+
+        <!-- BIBELKRITIKK -->
+        <div class="emne-kat">
+          <button class="emne-kat-btn" onclick="toggleEmne('kat-bibelkritikk', this)">Bibelkritikk ▾</button>
+          <div id="kat-bibelkritikk" class="emne-kat-liste" style="display:none;">
+            <span class="emne-kat-tom">Kommer snart</span>
+          </div>
+        </div>
+
+        <!-- ANDRE RELIGIONER -->
+        <div class="emne-kat">
+          <button class="emne-kat-btn" onclick="toggleEmne('kat-religioner', this)">Andre religioner ▾</button>
+          <div id="kat-religioner" class="emne-kat-liste" style="display:none;">
+            <span class="emne-kat-tom">Kommer snart</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
     <div class="emne-card">
       <div class="emne-num">03</div>
       <h3>Bibelens bøker</h3>
@@ -794,6 +919,15 @@
 </footer>
 
 <script>
+  function toggleEmne(id, btn) {
+    const el = document.getElementById(id);
+    const isOpen = el.style.display !== 'none';
+    el.style.display = isOpen ? 'none' : 'flex';
+    if (btn) {
+      btn.textContent = btn.textContent.replace(isOpen ? '▲' : '▾', isOpen ? '▾' : '▲');
+    }
+  }
+
   function toggleDropdown(id) {
     const el = document.getElementById(id);
     el.style.display = el.style.display === 'none' ? 'flex' : 'none';
