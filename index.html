@@ -420,6 +420,63 @@
 
   .footer-logo span { color: var(--gold); }
 
+  .tool-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    margin-top: 0.5rem;
+    padding: 0;
+    text-align: left;
+  }
+  .tool-toggle:hover { opacity: 0.7; }
+
+  .tool-dropdown {
+    margin-top: 0.75rem;
+    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--ink);
+    font-family: 'EB Garamond', serif;
+    font-size: 0.98rem;
+    transition: opacity 0.2s;
+    flex-wrap: wrap;
+  }
+  .dropdown-item:last-child { border-bottom: none; }
+  .dropdown-item:hover { opacity: 0.6; }
+
+  .dropdown-tag {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+
+  .dropdown-meta {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-left: auto;
+    white-space: nowrap;
+  }
+
   .fade-in {
     opacity: 0;
     transform: translateY(18px);
@@ -576,16 +633,85 @@
 <section id="ressurser" class="fade-in">
   <div class="section-label">Ressurser og verktøy</div>
   <div class="tools-grid">
+
+    <!-- PDF-BIBLIOTEK -->
     <div class="tool-card">
       <h3>PDF-bibliotek</h3>
       <p>Komplette dokumenter for lesing, utskrift og deling.</p>
-      <a href="problemer-med-psa.pdf" class="tool-link">Last ned ny PDF</a>
+      <button class="tool-link tool-toggle" onclick="toggleDropdown('pdf-dropdown')">Velg PDF ▾</button>
+      <div id="pdf-dropdown" class="tool-dropdown" style="display:none;">
+        <a href="dod-helvete-og-evighet-komplett.pdf" target="_blank" class="dropdown-item">
+          <span class="dropdown-tag">Endetid</span>
+          Død, helvete og evighet — komplett dokument
+          <span class="dropdown-meta">28 sider</span>
+        </a>
+        <a href="forsoningens-natur.pdf" target="_blank" class="dropdown-item">
+          <span class="dropdown-tag">Forsoning</span>
+          Forsoningens natur
+          <span class="dropdown-meta">PDF</span>
+        </a>
+        <a href="problemer-med-psa.pdf" target="_blank" class="dropdown-item">
+          <span class="dropdown-tag">Forsoning</span>
+          Problemer med PSA
+          <span class="dropdown-meta">15 sider</span>
+        </a>
+        <a href="muslimske-innvendinger.pdf" target="_blank" class="dropdown-item">
+          <span class="dropdown-tag">Islam</span>
+          De viktigste muslimske innvendingene
+          <span class="dropdown-meta">3 sider</span>
+        </a>
+        <a href="hva-er-en-mushaf.pdf" target="_blank" class="dropdown-item">
+          <span class="dropdown-tag">Islam</span>
+          Hva er en mushaf?
+          <span class="dropdown-meta">3 sider</span>
+        </a>
+      </div>
     </div>
+
+    <!-- ARTIKKELSAMLING -->
     <div class="tool-card">
       <h3>Artikkelsamling</h3>
       <p>Teologiske artikler ordnet etter tema, med rolig typografi og god leseflyt.</p>
-      <a href="theologia-preview.html" class="tool-link">Åpne artikkel</a>
+      <button class="tool-link tool-toggle" onclick="toggleDropdown('artikkel-dropdown')">Velg artikkel ▾</button>
+      <div id="artikkel-dropdown" class="tool-dropdown" style="display:none;">
+        <a href="theologia-preview.html" class="dropdown-item">
+          <span class="dropdown-tag">Endetid</span>
+          Død, Helvete og Evighet
+          <span class="dropdown-meta">7 kapitler</span>
+        </a>
+        <a href="forsoningens-natur.html" class="dropdown-item">
+          <span class="dropdown-tag">Forsoning</span>
+          Forsoningens natur
+          <span class="dropdown-meta">Artikkel</span>
+        </a>
+        <a href="problemer-med-psa.html" class="dropdown-item">
+          <span class="dropdown-tag">Forsoning</span>
+          Problemer med PSA
+          <span class="dropdown-meta">4 artikler</span>
+        </a>
+        <a href="muslimske-innvendinger.html" class="dropdown-item">
+          <span class="dropdown-tag">Islam</span>
+          De viktigste muslimske innvendingene
+          <span class="dropdown-meta">Artikkel</span>
+        </a>
+        <a href="slaveri-og-rase-i-islam.html" class="dropdown-item">
+          <span class="dropdown-tag">Islam</span>
+          Slaveri og rase i islamsk tradisjon
+          <span class="dropdown-meta">Artikkel</span>
+        </a>
+        <a href="hva-er-en-mushaf.html" class="dropdown-item">
+          <span class="dropdown-tag">Islam</span>
+          Hva er en mushaf?
+          <span class="dropdown-meta">Artikkel</span>
+        </a>
+        <a href="den-herlige-menigheten-4.html" class="dropdown-item">
+          <span class="dropdown-tag">Menigheten</span>
+          Den herlige menigheten — del 4
+          <span class="dropdown-meta">Lysbilder</span>
+        </a>
+      </div>
     </div>
+
     <div class="tool-card">
       <h3>Kommentarer</h3>
       <p>Artiklene kan kobles til GitHub Discussions via Giscus for spørsmål og respons.</p>
@@ -630,6 +756,11 @@
 </footer>
 
 <script>
+  function toggleDropdown(id) {
+    const el = document.getElementById(id);
+    el.style.display = el.style.display === 'none' ? 'flex' : 'none';
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) e.target.classList.add('visible');
