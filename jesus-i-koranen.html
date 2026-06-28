@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jesus i Koranen — mer enn et vanlig menneske — Theologia</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e2e2e2;
+    --bg: #f9f8f6;
+    --white: #ffffff;
+    --gold: #b08d57;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.6; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(249,248,246,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.4rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-back { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.2s; }
+  .nav-back:hover { color: var(--ink); }
+
+  .hero {
+    padding: 9rem 4rem 5rem;
+    max-width: 800px; margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+  .hero .subtitle { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; }
+  .hero-meta { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+
+  .innhold { max-width: 800px; margin: 0 auto; padding: 0 4rem; }
+
+  .toc { margin: 3rem 0; border: 1px solid var(--line); padding: 2rem; background: var(--white); }
+  .toc-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 0.35rem 0; border-bottom: 1px solid var(--line); }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { text-decoration: none; color: var(--ink); font-size: 0.9rem; display: flex; align-items: baseline; gap: 0.75rem; transition: color 0.2s; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: counter(toc, decimal-leading-zero); font-size: 0.7rem; color: var(--gold); min-width: 22px; }
+
+  .intro { margin: 3rem 0; }
+  .intro p { font-family: 'EB Garamond', serif; font-size: 1.1rem; line-height: 1.85; color: #333; margin-bottom: 1rem; }
+
+  .kapittel { margin: 4rem 0; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .kapittel-num { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .kapittel h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; margin-bottom: 1.5rem; }
+  .kapittel p { color: #333; line-height: 1.85; margin-bottom: 1rem; font-size: 0.97rem; }
+
+  .vers {
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1.25rem;
+    margin: 1.25rem 0;
+    background: var(--white);
+  }
+  .vers p { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--ink); margin: 0 0 0.25rem; }
+  .vers cite { font-size: 0.75rem; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+
+  .sporsmal {
+    background: #fdfaf5;
+    border: 1px solid var(--gold);
+    padding: 0.85rem 1.25rem;
+    margin: 1.5rem 0;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink);
+  }
+  .sporsmal::before {
+    content: '→ ';
+    color: var(--gold);
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  .sitat-seksjon { background: var(--ink); color: var(--white); padding: 4rem; margin: 4rem -4rem; }
+  .sitat-seksjon blockquote { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 2.5vw, 2rem); line-height: 1.5; max-width: 600px; margin-bottom: 1rem; }
+  .sitat-seksjon cite { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+
+  .oppsummering {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+  .oppsummering-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .oppsummering ul { list-style: none; display: flex; flex-direction: column; gap: 0.35rem; }
+  .oppsummering li { font-size: 0.95rem; color: #333; padding-left: 1.2rem; position: relative; border-bottom: 1px solid var(--line); padding-bottom: 0.35rem; }
+  .oppsummering li:last-child { border-bottom: none; }
+  .oppsummering li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  .konklusjon-box { background: var(--white); border: 1px solid var(--line); padding: 2rem; margin: 2rem 0; }
+  .konklusjon-box .konklusjon-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .konklusjon-box p { font-size: 0.97rem; color: #333; margin: 0 0 0.75rem; line-height: 1.85; }
+  .konklusjon-box p:last-child { margin-bottom: 0; }
+
+  .kommentar-seksjon {
+    max-width: 800px; margin: 0 auto;
+    padding: 4rem 4rem 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 3rem 4rem; max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.8rem; }
+  .footer-logo { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--ink); }
+  .footer-logo span { color: var(--gold); }
+
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .innhold { padding: 0 1.5rem; }
+    .sitat-seksjon { padding: 3rem 1.5rem; margin: 3rem -1.5rem; }
+    .kommentar-seksjon { padding: 3rem 1.5rem 2rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Theo<span>logia</span></a>
+  <a href="apologetikk.html" class="nav-back">← Apologetikk</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Apologetikk · Islam</p>
+  <h1>Jesus i Koranen</h1>
+  <p class="subtitle">Mer enn et vanlig menneske</p>
+  <p class="hero-meta">Av Eirik Storesletten</p>
+</div>
+
+<div class="innhold">
+
+  <div class="toc fade-in">
+    <div class="toc-title">Innholdsfortegnelse</div>
+    <ol>
+      <li><a href="#kap1">Jesus ble født av en jomfru</a></li>
+      <li><a href="#kap2">Jesus omtales som ren</a></li>
+      <li><a href="#kap3">Jesus helbreder syke og vekker døde</a></li>
+      <li><a href="#kap4">Jesus er et tegn for menneskeheten</a></li>
+      <li><a href="#kap5">Jesus er en barmhjertighet fra Gud</a></li>
+      <li><a href="#kap6">Jesus er vitne over sitt folk</a></li>
+      <li><a href="#kap7">Jesus skaper en levende fugl</a></li>
+      <li><a href="#kap8">Jesus er Messias</a></li>
+      <li><a href="#kap9">Jesus er Guds Ord</a></li>
+      <li><a href="#kap10">Jesus er en Ånd fra Gud</a></li>
+      <li><a href="#kap11">Jesus ble tatt opp til Gud</a></li>
+      <li><a href="#kap12">Jesus skal vende tilbake</a></li>
+    </ol>
+  </div>
+
+  <div class="intro fade-in">
+    <p>Mange antar at Koranen fremstiller Jesus (<em>ʿĪsā</em>) som bare en av mange profeter. En nærlesning av Koranens egne beskrivelser viser imidlertid at Jesus skiller seg ut på en rekke bemerkelsesverdige måter. Ingen annen person i Koranen omtales med den samme kombinasjonen av titler, egenskaper og oppgaver.</p>
+    <p>Denne gjennomgangen forsøker ikke å bevise den kristne læren om Jesus ut fra Koranen alene. Målet er å undersøke hva Koranen faktisk sier om Jesus, og la teksten tale for seg selv. Spørsmålet er om beskrivelsen av Jesus harmonerer med forestillingen om at han bare var en vanlig profet.</p>
+  </div>
+
+  <!-- KAP 1 -->
+  <div class="kapittel fade-in" id="kap1">
+    <div class="kapittel-num">Punkt 1</div>
+    <h2>Jesus ble født av en jomfru</h2>
+    <p>Jesus er den eneste personen i Koranen som blir født av en jomfru. Da engelen kunngjør fødselen, svarer Maria:</p>
+    <div class="vers">
+      <p>«Hvordan kan jeg få en sønn når ingen mann har rørt meg?»</p>
+      <cite>Koranen 19:20</cite>
+    </div>
+    <p>Koranen beskriver Jesu fødsel som et unikt guddommelig mirakel. Ingen annen profet — heller ikke Muhammad — får en slik opprinnelse.</p>
+    <div class="sporsmal">Hvorfor får Jesus en fødsel som skiller ham fra alle andre mennesker og profeter?</div>
+  </div>
+
+  <!-- KAP 2 -->
+  <div class="kapittel fade-in" id="kap2">
+    <div class="kapittel-num">Punkt 2</div>
+    <h2>Jesus omtales som ren</h2>
+    <p>Engelen beskriver Jesus som en «ren sønn» (<em>ghulāman zakiyyā</em>). Koranen 19:19.</p>
+    <p>Samtidig finner vi at Muhammad flere steder blir oppfordret til å be Gud om tilgivelse (bl.a. 47:19; 48:2). Koranen bruker dermed et språk om Jesus som er bemerkelsesverdig og uten direkte parallell blant profetene.</p>
+    <div class="sporsmal">Hvorfor omtales Jesus på denne måten dersom han bare er én profet blant mange?</div>
+  </div>
+
+  <!-- KAP 3 -->
+  <div class="kapittel fade-in" id="kap3">
+    <div class="kapittel-num">Punkt 3</div>
+    <h2>Jesus helbreder syke og vekker døde</h2>
+    <p>Koranen forteller at Jesus helbreder blinde og spedalske og vekker døde. Samtidig understrekes det at dette skjer «med Allahs tillatelse». Koranen 3:49; 5:110.</p>
+    <p>Miraklene er likevel ekstraordinære. Ingen annen profet i Koranen beskrives med en tilsvarende kombinasjon av helbredelse, oppvekkelse av døde og skapende handlinger.</p>
+    <div class="sporsmal">Hvorfor tillegger Koranen Jesus slike enestående mirakler?</div>
+  </div>
+
+  <div class="sitat-seksjon fade-in">
+    <blockquote>«Ingen annen person i Koranen omtales med den samme kombinasjonen av titler, egenskaper og oppgaver.»</blockquote>
+    <cite>Jesus i Koranen — mer enn et vanlig menneske</cite>
+  </div>
+
+  <!-- KAP 4 -->
+  <div class="kapittel fade-in" id="kap4">
+    <div class="kapittel-num">Punkt 4</div>
+    <h2>Jesus er et tegn for menneskeheten</h2>
+    <p>Jesus omtales som et <em>āyah</em> — et tegn fra Gud. Hele hans liv, fra den mirakuløse unnfangelsen til hans tjeneste, fremstilles som et guddommelig tegn for mennesker. Koranen 19:21; 21:91.</p>
+    <div class="sporsmal">Hvorfor har Jesus denne universelle betydningen dersom han bare er en vanlig profet?</div>
+  </div>
+
+  <!-- KAP 5 -->
+  <div class="kapittel fade-in" id="kap5">
+    <div class="kapittel-num">Punkt 5</div>
+    <h2>Jesus er en barmhjertighet fra Gud</h2>
+    <p>Jesus beskrives som en <em>rahma</em> — en barmhjertighet fra Gud. Koranen 19:21. Dette viser at Jesu komme ikke bare var en profetisk sending, men en særlig manifestasjon av Guds nåde mot menneskene.</p>
+    <div class="sporsmal">Hvorfor omtales Jesus selv som en barmhjertighet, og ikke bare som en budbringer av barmhjertighet?</div>
+  </div>
+
+  <!-- KAP 6 -->
+  <div class="kapittel fade-in" id="kap6">
+    <div class="kapittel-num">Punkt 6</div>
+    <h2>Jesus er vitne over sitt folk</h2>
+    <p>Jesus sier at han var vitne over sitt folk så lenge han var blant dem, og at Gud siden overvåket dem. Koranen 5:117.</p>
+    <div class="sporsmal">Hvorfor fremheves Jesu vitnerolle på en så særskilt måte?</div>
+  </div>
+
+  <!-- KAP 7 -->
+  <div class="kapittel fade-in" id="kap7">
+    <div class="kapittel-num">Punkt 7</div>
+    <h2>Jesus skaper en levende fugl</h2>
+    <p>Jesus former en fugl av leire og blåser liv i den «med Allahs tillatelse». Koranen 3:49.</p>
+    <div class="sporsmal">Hvorfor får Jesus utføre en handling som minner om Guds skapende virksomhet?</div>
+  </div>
+
+  <!-- KAP 8 -->
+  <div class="kapittel fade-in" id="kap8">
+    <div class="kapittel-num">Punkt 8</div>
+    <h2>Jesus er Messias</h2>
+    <p>Jesus omtales gjentatte ganger som <em>al-Masīḥ</em> — Messias. Muhammad får aldri denne tittelen. Koranen 4:171.</p>
+    <div class="sporsmal">Hvorfor er Jesus den eneste som kalles Messias?</div>
+  </div>
+
+  <!-- KAP 9 -->
+  <div class="kapittel fade-in" id="kap9">
+    <div class="kapittel-num">Punkt 9</div>
+    <h2>Jesus er Guds Ord</h2>
+    <p>Jesus omtales som «Hans Ord» (<em>kalimatuhu</em>), som Gud lot komme til Maria. Koranen 4:171.</p>
+    <div class="sporsmal">Hvorfor omtales ingen annen profet som Guds Ord?</div>
+  </div>
+
+  <!-- KAP 10 -->
+  <div class="kapittel fade-in" id="kap10">
+    <div class="kapittel-num">Punkt 10</div>
+    <h2>Jesus er en Ånd fra Gud</h2>
+    <p>Jesus omtales som «en Ånd fra Ham» (<em>rūḥun minhu</em>). Koranen 4:171.</p>
+    <div class="sporsmal">Hvorfor beskrives Jesus med en tittel som ingen annen profet får?</div>
+  </div>
+
+  <!-- KAP 11 -->
+  <div class="kapittel fade-in" id="kap11">
+    <div class="kapittel-num">Punkt 11</div>
+    <h2>Jesus ble tatt opp til Gud</h2>
+    <p>Koranen sier at Gud opphøyde Jesus til seg. Koranen 4:157–158.</p>
+    <div class="sporsmal">Hvorfor blir Jesus opphøyd til Gud på denne måten?</div>
+  </div>
+
+  <!-- KAP 12 -->
+  <div class="kapittel fade-in" id="kap12">
+    <div class="kapittel-num">Punkt 12</div>
+    <h2>Jesus skal vende tilbake</h2>
+    <p>Jesu rolle knyttes til historiens avslutning på en måte som ikke tilskrives Muhammad i Koranen. Koranen 43:61.</p>
+    <div class="sporsmal">Hvorfor er det Jesus — og ikke Muhammad — som forbindes med endetidens hendelser?</div>
+  </div>
+
+  <!-- OPPSUMMERING -->
+  <div class="kapittel fade-in">
+    <div class="kapittel-num">Samlet vurdering</div>
+    <h2>Jesus i Koranen — en unik profil</h2>
+    <p>Ingen annen person i Koranen omtales med denne kombinasjonen av titler, egenskaper og oppgaver:</p>
+
+    <div class="oppsummering">
+      <div class="oppsummering-label">Jesu unike titler og egenskaper i Koranen</div>
+      <ul>
+        <li>Født av en jomfru</li>
+        <li>Omtalt som ren</li>
+        <li>Messias (<em>al-Masīḥ</em>)</li>
+        <li>Guds Ord (<em>kalimatuhu</em>)</li>
+        <li>En Ånd fra Gud (<em>rūḥun minhu</em>)</li>
+        <li>Et tegn for menneskeheten (<em>āyah</em>)</li>
+        <li>En barmhjertighet fra Gud (<em>rahma</em>)</li>
+        <li>Helbreder syke og vekker døde med Allahs tillatelse</li>
+        <li>Former en levende skapning</li>
+        <li>Opphøyd til Gud</li>
+        <li>Knyttet til endetidens hendelser</li>
+      </ul>
+    </div>
+
+    <div class="konklusjon-box">
+      <div class="konklusjon-label">Konklusjon</div>
+      <p>Jesus fremstår i Koranen som langt mer enn en vanlig profet. Dette betyr ikke at Koranen uttrykkelig lærer den kristne læren om Jesu guddom. Det betyr derimot at Koranens egen beskrivelse av Jesus reiser en viktig teologisk utfordring:</p>
+      <p>Hvordan kan en person som omtales med så mange unike titler og funksjoner samtidig forstås som bare et vanlig menneske? Det er et spørsmål enhver leser av Koranen må ta stilling til.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="kommentar-seksjon fade-in" id="kommentarer">
+  <div class="section-label">Kommentarer</div>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1.5rem;">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+  <script src="https://giscus.app/client.js"
+      data-repo="bm4wpw24cf-alt/THEOLOGIA"
+      data-repo-id="R_kgDOTCkYrA"
+      data-category="General"
+      data-category-id="DIC_kwDOTCkYrM4C_y2J"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="no"
+      crossorigin="anonymous"
+      async>
+  </script>
+</div>
+
+<footer>
+  <span class="footer-logo">Theo<span>logia</span></span>
+  <span>© 2026 — Eirik Storesletten</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
