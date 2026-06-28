@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Koranens teksthistorie — Theologia</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e2e2e2;
+    --bg: #f9f8f6;
+    --white: #ffffff;
+    --gold: #b08d57;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.6; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(249,248,246,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.4rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-back { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.2s; }
+  .nav-back:hover { color: var(--ink); }
+
+  .hero {
+    padding: 9rem 4rem 5rem;
+    max-width: 800px; margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+  .hero .subtitle { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; }
+  .hero-meta { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+
+  .innhold { max-width: 800px; margin: 0 auto; padding: 0 4rem; }
+
+  .toc { margin: 3rem 0; border: 1px solid var(--line); padding: 2rem; background: var(--white); }
+  .toc-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 0.35rem 0; border-bottom: 1px solid var(--line); }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { text-decoration: none; color: var(--ink); font-size: 0.9rem; display: flex; align-items: baseline; gap: 0.75rem; transition: color 0.2s; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: counter(toc, decimal-leading-zero); font-size: 0.7rem; color: var(--gold); min-width: 22px; }
+
+  .kapittel { margin: 4rem 0; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .kapittel-num { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .kapittel h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; margin-bottom: 1.5rem; }
+  .kapittel h3 { font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 400; margin: 2rem 0 0.75rem; }
+  .kapittel p { color: #333; line-height: 1.85; margin-bottom: 1rem; font-size: 0.97rem; }
+
+  .vers {
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1.25rem;
+    margin: 1.25rem 0;
+    background: var(--white);
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  .punktliste { list-style: none; margin: 0.5rem 0 1.25rem; }
+  .punktliste li { font-size: 0.97rem; color: #333; line-height: 1.85; padding: 0.3rem 0 0.3rem 1.4rem; border-bottom: 1px solid var(--line); position: relative; }
+  .punktliste li:last-child { border-bottom: none; }
+  .punktliste li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  /* BUTIKK-GRID */
+  .butikk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    margin: 1.5rem 0;
+  }
+  @media (max-width: 580px) { .butikk-grid { grid-template-columns: 1fr; } }
+  .butikk-card {
+    background: var(--white);
+    padding: 1.25rem;
+  }
+  .butikk-card h4 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+  }
+  .butikk-card ul { list-style: none; margin: 0; }
+  .butikk-card ul li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    padding: 0.2rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .butikk-card ul li:last-child { border-bottom: none; }
+
+  /* TRE SYNSPUNKTER */
+  .tre-syn {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1px;
+    background: var(--line);
+    margin: 1.5rem 0;
+  }
+  .syn-rad {
+    background: var(--white);
+    padding: 1.25rem;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+  .syn-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    white-space: nowrap;
+    padding-top: 0.2rem;
+  }
+  .syn-rad h4 {
+    font-family: 'EB Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0.35rem;
+  }
+  .syn-rad p { font-size: 0.88rem; color: var(--muted); margin: 0; line-height: 1.65; }
+
+  /* ARABISK EKSEMPEL */
+  .arabisk-boks {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+  .arabisk-tegn {
+    font-size: 2.5rem;
+    direction: rtl;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.75rem;
+    color: var(--ink);
+    font-family: serif;
+  }
+  .arabisk-lesninger {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    font-size: 0.88rem;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+  }
+  .arabisk-lesninger span { font-style: italic; }
+
+  .sitat-seksjon { background: var(--ink); color: var(--white); padding: 4rem; margin: 4rem -4rem; }
+  .sitat-seksjon blockquote { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 2.5vw, 2rem); line-height: 1.5; max-width: 600px; margin-bottom: 1rem; }
+  .sitat-seksjon cite { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+
+  .konklusjon-box { background: var(--white); border: 1px solid var(--line); padding: 2rem; margin: 2rem 0; }
+  .konklusjon-box .konklusjon-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .konklusjon-box p { font-size: 0.97rem; color: #333; margin: 0 0 0.75rem; line-height: 1.85; }
+  .konklusjon-box p:last-child { margin-bottom: 0; }
+
+  .kommentar-seksjon {
+    max-width: 800px; margin: 0 auto;
+    padding: 4rem 4rem 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 3rem 4rem; max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.8rem; }
+  .footer-logo { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--ink); }
+  .footer-logo span { color: var(--gold); }
+
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .innhold { padding: 0 1.5rem; }
+    .sitat-seksjon { padding: 3rem 1.5rem; margin: 3rem -1.5rem; }
+    .kommentar-seksjon { padding: 3rem 1.5rem 2rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Theo<span>logia</span></a>
+  <a href="apologetikk.html" class="nav-back">← Apologetikk</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Apologetikk · Islam</p>
+  <h1>Koranens teksthistorie</h1>
+  <p class="subtitle">Arabisk skrift, qirāʾāt og spørsmålet om bevaring — en balansert vurdering</p>
+  <p class="hero-meta">Av Eirik Storesletten</p>
+</div>
+
+<div class="innhold">
+
+  <div class="toc fade-in">
+    <div class="toc-title">Innholdsfortegnelse</div>
+    <ol>
+      <li><a href="#kap1">Det finnes mange arabiske koraner</a></li>
+      <li><a href="#kap2">Nettbutikker som selger forskjellige mushaf</a></li>
+      <li><a href="#kap3">Det arabiske skriftsystemet</a></li>
+      <li><a href="#kap4">Diakritiske tegn</a></li>
+      <li><a href="#kap5">Arabisk og det latinske alfabetet</a></li>
+      <li><a href="#kap6">De tidligste koranmanuskriptene</a></li>
+      <li><a href="#kap7">Den muntlige tradisjonens betydning</a></li>
+      <li><a href="#kap8">Qirāʾāt og riwāyāt</a></li>
+      <li><a href="#kap9">Påvirker mangelen på tegn Koranens bevaring?</a></li>
+      <li><a href="#kap10">Konklusjon</a></li>
+    </ol>
+  </div>
+
+  <!-- KAP 1 -->
+  <div class="kapittel fade-in" id="kap1">
+    <div class="kapittel-num">Del 1</div>
+    <h2>Det finnes mange forskjellige arabiske koraner</h2>
+    <p>Det hevdes ofte at «det finnes bare én arabisk Koran». Dette stemmer bare dersom man mener én dominerende utgave (Ḥafṣ ʿan ʿĀṣim). I praksis finnes det en rekke trykte arabiske mushaf som representerer forskjellige <em>qirāʾāt</em> (kanoniske lesetradisjoner) og <em>riwāyāt</em> (overleveringer).</p>
+    <p>Det interessante er at disse ikke bare omtales i akademiske bøker — de selges fritt i nettbutikker verden over.</p>
+
+    <h3>Eksempler på forskjellige arabiske mushaf som kan kjøpes</h3>
+    <ul class="punktliste">
+      <li>Ḥafṣ ʿan ʿĀṣim (den vanligste utgaven i dag)</li>
+      <li>Warsh ʿan Nāfiʿ (vanlig i Nord-Afrika)</li>
+      <li>Qālūn ʿan Nāfiʿ</li>
+      <li>Shuʿbah ʿan ʿĀṣim</li>
+      <li>Ibn Kathīr</li>
+      <li>Abū ʿAmr al-Baṣrī</li>
+      <li>Ibn ʿĀmir</li>
+      <li>Ḥamzah al-Kūfī</li>
+      <li>al-Kisāʾī</li>
+      <li>Khalaf al-ʿĀshir</li>
+      <li>Mushaf med alle ti qirāʾāt</li>
+      <li>Mushaf etter Ṭayyibat an-Nashr</li>
+      <li>Shādh-qirāʾāt (ikke-kanoniske lesetradisjoner)</li>
+    </ul>
+
+    <p>Poenget er ikke å argumentere for eller imot islam, men å påpeke et enkelt faktum: Dersom det bare eksisterte én arabisk Koran, ville det ikke eksistert et internasjonalt marked for en rekke forskjellige arabiske mushaf basert på ulike kanoniske lesetradisjoner.</p>
+  </div>
+
+  <!-- KAP 2 -->
+  <div class="kapittel fade-in" id="kap2">
+    <div class="kapittel-num">Del 2</div>
+    <h2>Nettbutikker som selger forskjellige mushaf</h2>
+    <p>Følgende spesialiserte nettbutikker tilbyr i dag et bredt utvalg av arabiske mushaf basert på ulike qirāʾāt:</p>
+
+    <div class="butikk-grid">
+      <div class="butikk-card">
+        <h4>Qira'at Books</h4>
+        <ul>
+          <li>Over 30 forskjellige mushaf</li>
+          <li>Alle ti kanoniske qirāʾāt</li>
+          <li>Shādh-lesetradisjoner</li>
+          <li>Faglitteratur om qirāʾāt</li>
+        </ul>
+      </div>
+      <div class="butikk-card">
+        <h4>Sifatu Safwa</h4>
+        <ul>
+          <li>Mushaf med de ti qirāʾāt</li>
+          <li>Litteratur om qirāʾāt</li>
+          <li>Klassiske verk om koranlesning</li>
+        </ul>
+      </div>
+      <div class="butikk-card">
+        <h4>Al Badr UK</h4>
+        <ul>
+          <li>Ibn Kathīr – Qunbul</li>
+          <li>al-Kisāʾī</li>
+          <li>Andre mindre vanlige riwāyāt</li>
+        </ul>
+      </div>
+      <div class="butikk-card">
+        <h4>Islamic Bookstore / Darussalam</h4>
+        <ul>
+          <li>Mushaf med alle ti qirāʾāt</li>
+          <li>Tajwīd-utgaver</li>
+          <li>Store studieutgaver</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>Den arabiske korantradisjonen i trykt form er dermed mer mangfoldig enn mange er klar over. Det betyr ikke nødvendigvis at innholdet er fullstendig forskjellig, men det viser at det eksisterer reelle variasjoner som er verdt å kjenne til.</p>
+  </div>
+
+  <div class="sitat-seksjon fade-in">
+    <blockquote>«Dersom det bare eksisterte én arabisk Koran, ville det ikke eksistert et internasjonalt marked for en rekke forskjellige arabiske mushaf.»</blockquote>
+    <cite>Koranens teksthistorie — en balansert vurdering</cite>
+  </div>
+
+  <!-- KAP 3 -->
+  <div class="kapittel fade-in" id="kap3">
+    <div class="kapittel-num">Del 3</div>
+    <h2>Det arabiske skriftsystemet</h2>
+    <p>Arabisk er et semittisk språk med et skriftsystem som skiller seg betydelig fra det latinske alfabetet. Det består av 28 grunnbokstaver og skrives fra høyre mot venstre. Det beskrives ofte som en <em>abjad</em>, fordi de fleste konsonanter skrives, mens korte vokaler normalt utelates i vanlig tekst.</p>
+
+    <div class="arabisk-boks">
+      <div class="arabisk-tegn">كتب</div>
+      <p style="font-size:0.82rem; color:var(--muted); margin-bottom:0.75rem;">Samme konsonantskjelett — fire mulige lesninger:</p>
+      <div class="arabisk-lesninger">
+        <span>kataba (han skrev)</span>
+        <span>kutiba (det ble skrevet)</span>
+        <span>kutub (bøker)</span>
+        <span>kātib (skriver)</span>
+      </div>
+    </div>
+
+    <p>Leseren må kjenne språket eller få hjelp av konteksten for å vite hvilken lesning som er riktig. Dette er et grunnleggende trekk ved arabisk skrift som har direkte betydning for Koranens teksthistorie.</p>
+  </div>
+
+  <!-- KAP 4 -->
+  <div class="kapittel fade-in" id="kap4">
+    <div class="kapittel-num">Del 4</div>
+    <h2>Diakritiske tegn</h2>
+    <p>Arabisk har diakritiske tegn (<em>ḥarakāt</em>) som markerer korte vokaler:</p>
+    <ul class="punktliste">
+      <li>Fatha (َ) = a-lyd</li>
+      <li>Kasra (ِ) = i-lyd</li>
+      <li>Damma (ُ) = u-lyd</li>
+      <li>Sukun (ْ) = ingen vokal</li>
+      <li>Shadda (ّ) = dobbel konsonant</li>
+    </ul>
+    <p>I moderne bøker brukes disse hovedsakelig i Koranen, i lærebøker og barnebøker, samt når presis uttale er nødvendig. Vanlige aviser og bøker skrives som regel uten dem.</p>
+  </div>
+
+  <!-- KAP 5 -->
+  <div class="kapittel fade-in" id="kap5">
+    <div class="kapittel-num">Del 5</div>
+    <h2>Arabisk og det latinske alfabetet</h2>
+    <p>Arabisk og norsk/engelsk har ulike lydsystemer. Noen arabiske lyder finnes ikke på norsk — for eksempel ع (ʿayn), غ (ghayn), ح (ḥāʾ) og ق (qāf). Standardarabisk mangler på sin side egne bokstaver for p og v.</p>
+    <p>Det finnes heller ingen universell måte å skrive arabiske ord med latinske bokstaver. Eksempel: محمد kan skrives Muhammad, Mohammed, Mohamed eller Muhammed — alle representerer samme arabiske navn. Forskjellen skyldes ulike translitterasjonssystemer og ulike språk.</p>
+  </div>
+
+  <!-- KAP 6 -->
+  <div class="kapittel fade-in" id="kap6">
+    <div class="kapittel-num">Del 6</div>
+    <h2>De tidligste koranmanuskriptene</h2>
+    <p>Et historisk faktum er at de eldste bevarte koranmanuskriptene ikke hadde dagens fullstendige system med vokaltegn og diakritiske prikker. Den tidlige arabiske skriften var enklere, og flere bokstaver kunne se identiske ut.</p>
+    <p>Dette er godt dokumentert gjennom manuskripter fra:</p>
+    <ul class="punktliste">
+      <li>Ṣanʿāʾ (Jemen) — blant de eldste kjente koranfragmentene</li>
+      <li>Topkapı-palasset (Istanbul)</li>
+      <li>Samarkand-manuskriptet</li>
+      <li>Parisino-petropolitanus-manuskriptet</li>
+    </ul>
+    <p>Senere ble prikker og vokaltegn gradvis innført for å gjøre teksten lettere å lese. Dette er bredt akseptert blant både muslimske og ikke-muslimske forskere.</p>
+  </div>
+
+  <!-- KAP 7 -->
+  <div class="kapittel fade-in" id="kap7">
+    <div class="kapittel-num">Del 7</div>
+    <h2>Den muntlige tradisjonens betydning</h2>
+    <p>Selv om de tidligste manuskriptene manglet mange diakritiske tegn, betyr ikke dette nødvendigvis at teksten var ukjent. Den islamske tradisjonen legger stor vekt på muntlig overlevering. Koranen ble resitert og memorert av mange mennesker lenge før dagens skriftsystem var fullt utviklet.</p>
+    <p>Historikere anerkjenner generelt at muntlig overlevering spilte en viktig rolle, selv om de vurderer omfanget og betydningen ulikt.</p>
+  </div>
+
+  <!-- KAP 8 -->
+  <div class="kapittel fade-in" id="kap8">
+    <div class="kapittel-num">Del 8</div>
+    <h2>Qirāʾāt og riwāyāt</h2>
+    <p>Et viktig aspekt ved Koranens teksthistorie er de kanoniske lesetradisjonene (<em>qirāʾāt</em>). Tradisjonelt anerkjennes ti qirāʾāt og tjue riwāyāt. Disse representerer forskjellige autoriserte måter å lese den samme konsonantteksten på.</p>
+    <p>Forskjellene gjelder blant annet uttale, vokalisering, grammatikk og enkelte ordformer. De fleste forskjellene påvirker ikke hovedinnholdet, men noen påvirker nyanser i betydning. Dette er et viktig forskningsområde innen koranstudier.</p>
+  </div>
+
+  <!-- KAP 9 -->
+  <div class="kapittel fade-in" id="kap9">
+    <div class="kapittel-num">Del 9</div>
+    <h2>Påvirker mangelen på diakritiske tegn Koranens bevaring?</h2>
+    <p>Dette er et av de mest omdiskuterte spørsmålene innen koranforskning. Det finnes tre hovedsyn:</p>
+
+    <div class="tre-syn">
+      <div class="syn-rad">
+        <span class="syn-num">Syn 1</span>
+        <div>
+          <h4>Tradisjonelt islamsk syn</h4>
+          <p>Koranen ble bevart gjennom både skrift og en sterk muntlig tradisjon. De senere diakritiske tegnene gjorde bare teksten lettere å lese — de tilførte ingen ny informasjon.</p>
+        </div>
+      </div>
+      <div class="syn-rad">
+        <span class="syn-num">Syn 2</span>
+        <div>
+          <h4>Mange moderne historikere</h4>
+          <p>Den muntlige tradisjonen var avgjørende, men utviklingen av skriften viser også at teksten gjennomgikk en standardiseringsprosess over tid.</p>
+        </div>
+      </div>
+      <div class="syn-rad">
+        <span class="syn-num">Syn 3</span>
+        <div>
+          <h4>Enkelte kritiske forskere</h4>
+          <p>Fraværet av tidlige vokaltegn og diakritiske prikker kan ha åpnet for flere mulige lesninger før teksten ble standardisert — noe som reiser spørsmål om bevaringsprosessen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KAP 10 -->
+  <div class="kapittel fade-in" id="kap10">
+    <div class="kapittel-num">Del 10</div>
+    <h2>Konklusjon</h2>
+    <p>Det er bred enighet om flere grunnleggende historiske forhold:</p>
+    <ul class="punktliste">
+      <li>Arabisk er en abjad med 28 bokstaver der korte vokaler normalt ikke skrives</li>
+      <li>De eldste koranmanuskriptene manglet mange av dagens diakritiske tegn</li>
+      <li>Dagens korantekst bruker et langt mer utviklet vokaliseringssystem enn de tidligste manuskriptene</li>
+      <li>Koranen eksisterer i flere kanoniske lesetradisjoner (qirāʾāt) og overleveringer (riwāyāt)</li>
+    </ul>
+
+    <div class="konklusjon-box">
+      <div class="konklusjon-label">Avsluttende vurdering</div>
+      <p>Der uenigheten oppstår er ikke i de historiske observasjonene, men i hvordan de skal tolkes. Noen ser utviklingen av skriften som en naturlig språklig standardisering som ikke utfordrer Koranens bevaring. Andre mener den reiser spørsmål om hvordan den tidlige teksten ble lest og overført.</p>
+      <p>En balansert tilnærming er å skille mellom det som kan dokumenteres historisk og de ulike tolkningene av hva disse historiske fakta innebærer. Dette gir et mer presist og rettferdig grunnlag for både akademisk forskning og teologisk samtale.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="kommentar-seksjon fade-in" id="kommentarer">
+  <div class="section-label">Kommentarer</div>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1.5rem;">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+  <script src="https://giscus.app/client.js"
+      data-repo="bm4wpw24cf-alt/THEOLOGIA"
+      data-repo-id="R_kgDOTCkYrA"
+      data-category="General"
+      data-category-id="DIC_kwDOTCkYrM4C_y2J"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="no"
+      crossorigin="anonymous"
+      async>
+  </script>
+</div>
+
+<footer>
+  <span class="footer-logo">Theo<span>logia</span></span>
+  <span>© 2026 — Eirik Storesletten</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
