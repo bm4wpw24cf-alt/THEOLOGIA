@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kom til Kristus — Theologia</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --line: #e2e2e2;
+    --bg: #f9f8f6;
+    --white: #ffffff;
+    --gold: #b08d57;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--ink); font-size: 16px; line-height: 1.6; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(249,248,246,0.92); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo { font-family: 'EB Garamond', serif; font-size: 1.4rem; letter-spacing: 0.04em; color: var(--ink); text-decoration: none; }
+  .nav-logo span { color: var(--gold); }
+  .nav-back { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; color: var(--muted); transition: color 0.2s; }
+  .nav-back:hover { color: var(--ink); }
+
+  .hero {
+    padding: 9rem 4rem 5rem;
+    max-width: 800px; margin: 0 auto;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .hero h1 { font-family: 'EB Garamond', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 400; line-height: 1.15; margin-bottom: 1rem; }
+  .hero .subtitle { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.2rem; color: var(--muted); margin-bottom: 2rem; }
+  .hero-meta { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.05em; }
+
+  .innhold { max-width: 800px; margin: 0 auto; padding: 0 4rem; }
+
+  .toc { margin: 3rem 0; border: 1px solid var(--line); padding: 2rem; background: var(--white); }
+  .toc-title { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .toc ol { list-style: none; counter-reset: toc; }
+  .toc li { counter-increment: toc; padding: 0.35rem 0; border-bottom: 1px solid var(--line); }
+  .toc li:last-child { border-bottom: none; }
+  .toc a { text-decoration: none; color: var(--ink); font-size: 0.9rem; display: flex; align-items: baseline; gap: 0.75rem; transition: color 0.2s; }
+  .toc a:hover { color: var(--gold); }
+  .toc a::before { content: counter(toc, decimal-leading-zero); font-size: 0.7rem; color: var(--gold); min-width: 22px; }
+
+  .kapittel { margin: 4rem 0; padding-top: 2rem; border-top: 1px solid var(--line); }
+  .kapittel-num { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .kapittel h2 { font-family: 'EB Garamond', serif; font-size: clamp(1.5rem, 3vw, 2.2rem); font-weight: 400; margin-bottom: 1.5rem; }
+  .kapittel h3 { font-family: 'EB Garamond', serif; font-size: 1.2rem; font-weight: 400; margin: 2rem 0 0.75rem; }
+  .kapittel p { color: #333; line-height: 1.85; margin-bottom: 1rem; font-size: 0.97rem; }
+
+  .vers {
+    border-left: 3px solid var(--gold);
+    padding: 0.75rem 1.25rem;
+    margin: 1.25rem 0;
+    background: var(--white);
+  }
+  .vers p { font-family: 'EB Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--ink); margin: 0 0 0.25rem; }
+  .vers cite { font-size: 0.75rem; font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+
+  .punktliste { list-style: none; margin: 0.5rem 0 1.25rem; }
+  .punktliste li { font-size: 0.97rem; color: #333; line-height: 1.85; padding: 0.3rem 0 0.3rem 1.4rem; border-bottom: 1px solid var(--line); position: relative; }
+  .punktliste li:last-child { border-bottom: none; }
+  .punktliste li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+
+  .sitat-seksjon { background: var(--ink); color: var(--white); padding: 4rem; margin: 4rem -4rem; }
+  .sitat-seksjon blockquote { font-family: 'EB Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 2.5vw, 2rem); line-height: 1.5; max-width: 600px; margin-bottom: 1rem; }
+  .sitat-seksjon cite { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); font-style: normal; }
+
+  .konklusjon-box { background: var(--white); border: 1px solid var(--line); padding: 2rem; margin: 2rem 0; }
+  .konklusjon-box .konklusjon-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+  .konklusjon-box p { font-size: 0.97rem; color: #333; margin: 0 0 0.75rem; line-height: 1.85; }
+  .konklusjon-box p:last-child { margin-bottom: 0; }
+
+  .kommentar-seksjon {
+    max-width: 800px; margin: 0 auto;
+    padding: 4rem 4rem 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .section-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; }
+
+  footer { border-top: 1px solid var(--line); padding: 3rem 4rem; max-width: 800px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 0.8rem; }
+  .footer-logo { font-family: 'EB Garamond', serif; font-size: 1.1rem; color: var(--ink); }
+  .footer-logo span { color: var(--gold); }
+
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .hero { padding: 7rem 1.5rem 3rem; }
+    .innhold { padding: 0 1.5rem; }
+    .sitat-seksjon { padding: 3rem 1.5rem; margin: 3rem -1.5rem; }
+    .kommentar-seksjon { padding: 3rem 1.5rem 2rem; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Theo<span>logia</span></a>
+  <a href="index.html" class="nav-back">Tilbake</a>
+</nav>
+
+<div class="hero">
+  <p class="hero-eyebrow">Kom til Kristus</p>
+  <h1>Veien til Gud</h1>
+  <p class="subtitle">Guds karakter, menneskets situasjon og Kristi kors</p>
+  <p class="hero-meta">Av Eirik Storesletten</p>
+</div>
+
+<div class="innhold">
+
+  <div class="toc fade-in">
+    <div class="toc-title">Innholdsfortegnelse</div>
+    <ol>
+      <li><a href="#kap1">Guds hellighet</a></li>
+      <li><a href="#kap2">Guds rettferdighet</a></li>
+      <li><a href="#kap3">Mennesket er under fordømmelse</a></li>
+      <li><a href="#kap4">Det store dilemmaet</a></li>
+      <li><a href="#kap5">Guds handling — motivert av kjærlighet</a></li>
+      <li><a href="#kap6">Kristi kors</a></li>
+      <li><a href="#kap7">Kristi blod</a></li>
+      <li><a href="#kap8">Vårt svar — omvendelse</a></li>
+      <li><a href="#kap9">Tro — definert og begrunnet</a></li>
+    </ol>
+  </div>
+
+  <!-- KAP 1 -->
+  <div class="kapittel fade-in" id="kap1">
+    <div class="kapittel-num">Kapittel 1</div>
+    <h2>Guds hellighet</h2>
+    <p>For å forstå hva Kristus har gjort, må vi først forstå hvem Gud er. Bibelen åpenbarer en Gud som er fullstendig hellig — ren fra all synd og urettferdighet.</p>
+
+    <div class="vers">
+      <p>«Øynene er for rene til å se det onde, ulykke orker du ikke å se på. Så hvordan kan du se på de troløse og tie når den urettferdige sluker den som er mer rettferdig enn han selv?»</p>
+      <cite>Habakkuk 1:13</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Nei, det er skylden som skiller dere fra deres Gud. Syndene deres skjuler ansiktet hans så han ikke hører dere.»</p>
+      <cite>Jesaja 59:2</cite>
+    </div>
+
+    <p>Guds hellighet er ikke en kald juridisk egenskap — den er kjernen i hans vesen. Han kan ikke ignorere synd uten å opphøre å være den han er.</p>
+  </div>
+
+  <!-- KAP 2 -->
+  <div class="kapittel fade-in" id="kap2">
+    <div class="kapittel-num">Kapittel 2</div>
+    <h2>Guds rettferdighet</h2>
+    <p>Gud er ikke bare hellig — han er også rettferdig. Han handler rett, dømmer rettferdig og krever at rett skjer.</p>
+
+    <div class="vers">
+      <p>«Rettferdig er Herren, han elsker rettferdige gjerninger. De oppriktige får se hans ansikt.»</p>
+      <cite>Salme 11:7</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Men Herren over hærskarene er opphøyd i dommen, den hellige Gud helliges ved rettferd.»</p>
+      <cite>Jesaja 5:16</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Gud er en rettferdig dommer, en Gud som alltid kan bli harm. Om noen ikke vender om, vil han slipe sverdet, spenne buen og sikte, gjøre sine dødelige våpen klare og sette fyr på sine piler.»</p>
+      <cite>Salme 7:11–12</cite>
+    </div>
+  </div>
+
+  <div class="sitat-seksjon fade-in">
+    <blockquote>«For så høyt har Gud elsket verden at han ga sin Sønn, den enbårne, for at hver den som tror på ham, ikke skal gå fortapt, men ha evig liv.»</blockquote>
+    <cite>Johannes 3:16</cite>
+  </div>
+
+  <!-- KAP 3 -->
+  <div class="kapittel fade-in" id="kap3">
+    <div class="kapittel-num">Kapittel 3</div>
+    <h2>Mennesket er under fordømmelse</h2>
+    <p>Bibelen er klar: ingen mennesker lever opp til Guds standard. Alle har syndet og er skyldige for Gud.</p>
+
+    <div class="vers">
+      <p>«For alle har syndet og mangler Guds herlighet.»</p>
+      <cite>Romerne 3:23</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Alle ble vi som urene, all vår rettferd som urent tøy. Vi visnet alle som løv, vår skyld tar oss bort som en vind.»</p>
+      <cite>Jesaja 64:5</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Men de som holder seg til lovgjerninger, er under forbannelse. For det står skrevet: Forbannet er hver den som ikke holder fast ved alt som står i lovboken, og gjør det den sier.»</p>
+      <cite>Galaterne 3:10</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Syndens lønn er døden, men Guds nådegave er evig liv i Kristus Jesus, vår Herre.»</p>
+      <cite>Romerne 6:23</cite>
+    </div>
+  </div>
+
+  <!-- KAP 4 -->
+  <div class="kapittel fade-in" id="kap4">
+    <div class="kapittel-num">Kapittel 4</div>
+    <h2>Det store dilemmaet</h2>
+    <p>Her oppstår et tilsynelatende uløselig problem: Gud er hellig og rettferdig og kan ikke la synden gå ustraffet. Samtidig er han kjærlig og ønsker å frelse. Hvordan kan begge deler være sant?</p>
+
+    <div class="vers">
+      <p>«Å frikjenne en skyldig eller å dømme en som har rett — Herren avskyr begge deler.»</p>
+      <cite>Ordspråkene 17:15</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Det ligner ikke deg å gjøre noe slikt, å la rettferdige dø sammen med urettferdige! Skal det gå den rettferdige på samme måte som den urettferdige? Det ligner ikke deg! Må ikke hele jordens dommer gjøre det som rett er?»</p>
+      <cite>1. Mosebok 18:25</cite>
+    </div>
+
+    <p>Dilemmaet er reelt: Gud kan ikke bare se bort fra synden uten å krenke sin rettferdighet. Men han kan heller ikke bare dømme uten å krenke sin kjærlighet. Svaret finnes i Kristus.</p>
+  </div>
+
+  <!-- KAP 5 -->
+  <div class="kapittel fade-in" id="kap5">
+    <div class="kapittel-num">Kapittel 5</div>
+    <h2>Guds handling — motivert av kjærlighet</h2>
+    <p>Mens Gud opprettholder sin hellighet og rettferdighet, bekrefter Bibelen at Gud er kjærlighet, og at han i kjærlighet har svart på menneskets situasjon.</p>
+
+    <div class="vers">
+      <p>«Den som ikke elsker, har aldri kjent Gud, for Gud er kjærlighet. Og ved dette ble Guds kjærlighet åpenbart blant oss, at Gud sendte sin enbårne Sønn til verden for at vi skulle leve ved ham. Ja, dette er kjærligheten, ikke at vi har elsket Gud, men at han har elsket oss og sendt sin Sønn til soning for våre synder.»</p>
+      <cite>1. Johannes 4:8–10</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Men Gud viser sin kjærlighet til oss ved at Kristus døde for oss mens vi ennå var syndere.»</p>
+      <cite>Romerne 5:8</cite>
+    </div>
+  </div>
+
+  <!-- KAP 6 -->
+  <div class="kapittel fade-in" id="kap6">
+    <div class="kapittel-num">Kapittel 6</div>
+    <h2>Kristi kors</h2>
+    <p>På korset møtes Guds hellighet og Guds kjærlighet. Jesus bærer syndens straff, slik at syndere kan bli frikjent — ikke fordi straffen overses, men fordi den er sonet.</p>
+
+    <div class="vers">
+      <p>«For alle har syndet og mangler Guds herlighet. Men ufortjent og av hans nåde blir de kjent rettferdige, frikjøpt i Kristus Jesus. Ham har God stilt synlig fram for at han ved sitt blod skulle være soningsstedet for dem som tror. Slik viste Gud sin rettferdighet... både at han selv er rettferdig, og at han kjenner den rettferdig som tror på Jesus.»</p>
+      <cite>Romerne 3:23–26</cite>
+    </div>
+
+    <p>Korset er ikke en omgåelse av Guds rettferdighet — det er rettferdighetens høyeste uttrykk. Og det er samtidig kjærlighetens høyeste uttrykk.</p>
+  </div>
+
+  <!-- KAP 7 -->
+  <div class="kapittel fade-in" id="kap7">
+    <div class="kapittel-num">Kapittel 7</div>
+    <h2>Kristi blod</h2>
+    <p>Gjennom hele Bibelen er blodet knyttet til liv, soning og tilgivelse. Jesu blod er oppfyllelsen av alt ofringssystemet i Det gamle testamente pekte frem mot.</p>
+
+    <div class="vers">
+      <p>«Etter loven blir jo nesten alt renset med blod, og uten at blod blir utøst, er det ingen som får tilgivelse.»</p>
+      <cite>Hebreerne 9:22</cite>
+    </div>
+
+    <div class="vers">
+      <p>«For en skapnings liv er i blodet, og jeg har gitt dere blodet på alteret til soning for livet deres. Blodet soner fordi livet er i det.»</p>
+      <cite>3. Mosebok 17:11</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Ikke med blod av bukker og kalver, men med sitt eget blod gikk han inn i helligdommen én gang for alle og kjøpte oss fri for evig.»</p>
+      <cite>Hebreerne 9:12</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Dere vet at det ikke var med forgjengelige ting som sølv eller gull dere ble kjøpt fri fra det tomme livet dere overtok fra fedrene, det var med Kristi dyrebare blod, blodet av et lam uten feil og lyte.»</p>
+      <cite>1. Peter 1:18–19</cite>
+    </div>
+  </div>
+
+  <!-- KAP 8 -->
+  <div class="kapittel fade-in" id="kap8">
+    <div class="kapittel-num">Kapittel 8</div>
+    <h2>Vårt svar — omvendelse</h2>
+    <p>Omvendelse begynner med en erkjennelse og tilståelse av at det Gud sier om oss er sant — at vi har syndet.</p>
+
+    <div class="vers">
+      <p>«For mine lovbrudd kjenner jeg, min synd står alltid for meg. Mot deg alene har jeg syndet, det som er ondt i dine øyne, har jeg gjort.»</p>
+      <cite>Salme 51:5–6</cite>
+    </div>
+
+    <p>En ekte erkjennelse av vår syndighet og skyld vil også føre til ekte sorg og avsky for det vi har gjort:</p>
+
+    <div class="vers">
+      <p>«For jeg forstår ikke hva jeg selv gjør. Det jeg vil, gjør jeg ikke, og det jeg avskyr, det gjør jeg.»</p>
+      <cite>Romerne 7:15</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Jeg ulykkelige menneske! Hvem skal fri meg fra denne dødens kropp?»</p>
+      <cite>Romerne 7:24</cite>
+    </div>
+
+    <p>Tilsynelatende oppriktighet av tilståelse alene er aldri et klart bevis på ekte omvendelse. Det må ledsages av at en vender seg bort fra synden:</p>
+
+    <div class="vers">
+      <p>«Vask dere, gjør dere rene! Få de onde gjerningene bort fra mine øyne, hold opp med å gjøre ondt.»</p>
+      <cite>Jesaja 1:16</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Øksen ligger allerede ved roten av trærne; hvert tre som ikke bærer god frukt, blir hugget ned og kastet på ilden.»</p>
+      <cite>Matteus 3:10</cite>
+    </div>
+  </div>
+
+  <!-- KAP 9 -->
+  <div class="kapittel fade-in" id="kap9">
+    <div class="kapittel-num">Kapittel 9</div>
+    <h2>Tro — definert og begrunnet</h2>
+    <h3>Hva er tro?</h3>
+
+    <div class="vers">
+      <p>«Troen er et pant på det vi håper, et bevis for det vi ikke ser.»</p>
+      <cite>Hebreerne 11:1</cite>
+    </div>
+
+    <div class="vers">
+      <p>«For han var overbevist om at det Gud hadde lovet, hadde han også makt til å gjøre.»</p>
+      <cite>Romerne 4:21</cite>
+    </div>
+
+    <h3>Troen er basert på Guds løfter</h3>
+
+    <div class="vers">
+      <p>«For så høyt har Gud elsket verden at han ga sin Sønn, den enbårne, for at hver den som tror på ham, ikke skal gå fortapt, men ha evig liv.»</p>
+      <cite>Johannes 3:16</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Sannelig, sannelig, jeg sier dere: Den som tror, har evig liv.»</p>
+      <cite>Johannes 6:47</cite>
+    </div>
+
+    <div class="vers">
+      <p>«Jesus sier til henne: Jeg er oppstandelsen og livet. Den som tror på meg, skal leve om han enn dør.»</p>
+      <cite>Johannes 11:25</cite>
+    </div>
+
+    <div class="vers">
+      <p>«De svarte: Tro på Herren Jesus, så skal du og alle i ditt hus bli frelst.»</p>
+      <cite>Apostlenes gjerninger 16:31</cite>
+    </div>
+
+    <div class="vers">
+      <p>«For hvis du med din munn bekjenner at Jesus er Herre, og i ditt hjerte tror at Gud har oppreist ham fra de døde, da skal du bli frelst.»</p>
+      <cite>Romerne 10:9</cite>
+    </div>
+
+    <div class="konklusjon-box">
+      <div class="konklusjon-label">Oppsummering</div>
+      <p>Gud er hellig og rettferdig — synden kan ikke ignoreres. Mennesket er syndige og skyldige for Gud. Men Gud er også kjærlighet, og han sendte sin Sønn for å sone synden på korset.</p>
+      <p>Svaret er omvendelse og tro: vend deg bort fra synden, og stol på Jesus Kristus alene for frelse. Hans blod renser, hans rettferdighet er din gave, og hans oppstandelse er ditt håp.</p>
+      <p>«Den som kommer til meg, vil jeg slett ikke støte bort.» — Johannes 6:37</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="kommentar-seksjon fade-in" id="kommentarer">
+  <div class="section-label">Kommentarer</div>
+  <p style="font-size:0.88rem; color:var(--muted); margin-bottom:1.5rem;">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+  <script src="https://giscus.app/client.js"
+      data-repo="bm4wpw24cf-alt/THEOLOGIA"
+      data-repo-id="R_kgDOTCkYrA"
+      data-category="General"
+      data-category-id="DIC_kwDOTCkYrM4C_y2J"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="preferred_color_scheme"
+      data-lang="no"
+      crossorigin="anonymous"
+      async>
+  </script>
+</div>
+
+<footer>
+  <span class="footer-logo">Theo<span>logia</span></span>
+  <span>© 2026 — Eirik Storesletten</span>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
