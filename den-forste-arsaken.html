@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Den første årsaken — Theologia</title>
+<style>
+  :root {
+    --bg: #f9f8f6;
+    --gold: #b08d57;
+    --ink: #1a1a18;
+    --ink-mid: #3a3530;
+    --ink-light: #6b655c;
+    --border: #e4ddd0;
+    --quote-bg: #f3efe6;
+    --dark-box: #1f1d19;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    line-height: 1.75;
+    font-size: 19px;
+  }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(249,248,246,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  nav.topnav .brand {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    font-size: 15px;
+  }
+  nav.topnav .back {
+    font-size: 14px;
+    color: var(--ink-mid);
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 100px;
+  }
+
+  .kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h1.title {
+    font-family: 'EB Garamond', serif;
+    font-size: 40px;
+    line-height: 1.18;
+    font-weight: 600;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+
+  p.subtitle {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 21px;
+    margin: 0 0 18px;
+  }
+
+  .byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-bottom: 36px;
+  }
+
+  .lede {
+    font-size: 21px;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    margin-bottom: 40px;
+  }
+
+  nav.toc {
+    background: var(--quote-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    font-family: 'Inter', sans-serif;
+  }
+  nav.toc h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin: 0 0 14px;
+  }
+  nav.toc ol {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 15px;
+    color: var(--ink-mid);
+  }
+  nav.toc li { margin-bottom: 8px; }
+  nav.toc a { color: var(--ink-mid); }
+  nav.toc a:hover { color: var(--gold); }
+
+  h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 44px 0 18px;
+    scroll-margin-top: 80px;
+  }
+
+  .property {
+    margin-bottom: 34px;
+    padding-bottom: 6px;
+  }
+  .property .num {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    background: var(--quote-bg);
+    border-radius: 20px;
+    padding: 3px 12px;
+    margin-bottom: 10px;
+  }
+  .property h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 10px;
+  }
+  .property h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin: 14px 0 4px;
+  }
+  .property p { margin: 0 0 10px; font-size: 18px; }
+
+  p { margin: 0 0 20px; }
+
+  ul {
+    margin: 0 0 22px;
+    padding-left: 26px;
+  }
+  ul li { margin-bottom: 8px; }
+
+  blockquote {
+    border-left: 3px solid var(--gold);
+    background: var(--quote-bg);
+    margin: 24px 0;
+    padding: 16px 24px;
+    font-style: italic;
+    color: var(--ink-mid);
+    border-radius: 0 6px 6px 0;
+  }
+
+  .summary-list {
+    background: var(--quote-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 32px;
+    margin: 32px 0;
+  }
+  .summary-list h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin: 0 0 16px;
+  }
+  .summary-list ul {
+    margin: 0;
+    padding-left: 22px;
+    columns: 2;
+    column-gap: 32px;
+  }
+  .summary-list li {
+    font-size: 17px;
+    margin-bottom: 10px;
+    break-inside: avoid;
+  }
+
+  .conclusion-box {
+    background: var(--dark-box);
+    color: #f3efe6;
+    border-radius: 10px;
+    padding: 32px 32px;
+    margin: 40px 0;
+  }
+  .conclusion-box p { color: #ece6d8; margin-bottom: 14px; }
+  .conclusion-box p:last-child { margin-bottom: 0; }
+  .conclusion-box strong { color: #d9c9a3; }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  .closing-quote {
+    text-align: center;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-mid);
+    margin: 56px 0;
+    padding: 0 20px;
+  }
+  .closing-quote .src {
+    display: block;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-top: 12px;
+  }
+
+  footer.site-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 64px;
+    padding-top: 28px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-light);
+  }
+
+  #kommentarer { margin-top: 56px; }
+  #kommentarer h2 { font-size: 24px; margin-top: 0; }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 600px) {
+    h1.title { font-size: 30px; }
+    body { font-size: 17px; }
+    .lede { font-size: 18px; }
+    .wrap { padding: 32px 18px 80px; }
+    .summary-list ul { columns: 1; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <span class="brand"><a href="https://bm4wpw24cf-alt.github.io/THEOLOGIA/index.html" style="color:inherit;">Theologia</a></span>
+  <span class="back"><a href="https://bm4wpw24cf-alt.github.io/THEOLOGIA/apologetikk.html">&larr; Apologetikk</a></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="kicker">Apologetikk &middot; Ateisme</div>
+  <h1 class="title fade-in">Den første årsaken</h1>
+  <p class="subtitle fade-in">Egenskaper, personlighet og kreativitet — en kosmologisk argumentasjon</p>
+  <div class="byline fade-in">Av Eirik Storesletten</div>
+
+  <p class="lede fade-in">
+    Det kosmologiske argumentet for Guds eksistens tar utgangspunkt i et grunnleggende filosofisk
+    spørsmål: Hvorfor finnes det noe i det hele tatt, fremfor ingenting? Når universet har hatt en
+    begynnelse, slik både klassisk filosofi og moderne kosmologi peker i retning av, blir det
+    nødvendig å spørre etter årsaken til denne begynnelsen.
+  </p>
+
+  <p class="fade-in">
+    Frank Turek og andre klassiske apologeter understreker at det ikke er tilstrekkelig å konkludere
+    med at det finnes en første årsak. Dersom årsaken faktisk forklarer universets eksistens, kan vi
+    også si noe meningsfullt om hva slags årsak dette må være. Egenskapene til den første årsaken er
+    derfor ikke vilkårlige, men logisk utledet av selve virkningens natur — universet.
+  </p>
+
+  <nav class="toc fade-in">
+    <h2>Ni egenskaper ved den første årsaken</h2>
+    <ol>
+      <li><a href="#p1">Tid- og romuavhengig</a></li>
+      <li><a href="#p2">Uforanderlig</a></li>
+      <li><a href="#p3">Kraftfull (allmektig)</a></li>
+      <li><a href="#p4">Nødvendig eksistens</a></li>
+      <li><a href="#p5">Ikke-materiell (åndelig)</a></li>
+      <li><a href="#p6">Personlig</a></li>
+      <li><a href="#p7">Godhet</a></li>
+      <li><a href="#p8">Intelligent</a></li>
+      <li><a href="#p9">Kreativitet</a></li>
+    </ol>
+  </nav>
+
+  <div class="property fade-in" id="p1">
+    <span class="num">01</span>
+    <h3>Tid- og romuavhengig</h3>
+    <h4>Begrunnelse</h4>
+    <p>Tid og rom oppsto ved universets begynnelse, ofte knyttet til Big Bang. Dersom universet hadde en begynnelse, kan ikke årsaken selv være en del av tid og rom, for da ville den allerede forutsette det den skal forklare.</p>
+    <h4>Implikasjon</h4>
+    <p>Den første årsaken eksisterer ikke innenfor tidsforløp, men i en evig «nå»-tilstand, uten begynnelse eller slutt. Dette peker på en transcendent virkelighet — noe fundamentalt annerledes enn den fysiske verden.</p>
+  </div>
+
+  <div class="property fade-in" id="p2">
+    <span class="num">02</span>
+    <h3>Uforanderlig</h3>
+    <h4>Begrunnelse</h4>
+    <p>Forandring forutsetter tid. Alt som endrer seg, gjør det fra én tilstand til en annen over tid. En tidløs årsak kan derfor ikke være underlagt endring.</p>
+    <h4>Implikasjon</h4>
+    <p>Den første årsaken er stabil og uforanderlig. Dette antyder ikke statisk livløshet, men fullkommenhet — en eksistens som ikke mangler noe og derfor ikke trenger utvikling eller forbedring.</p>
+  </div>
+
+  <div class="property fade-in" id="p3">
+    <span class="num">03</span>
+    <h3>Kraftfull (allmektig)</h3>
+    <h4>Begrunnelse</h4>
+    <p>Å bringe hele universet til eksistens fra ingenting — uten forhåndseksisterende materie, energi eller lover — krever en form for kausal kraft som langt overgår alt vi kjenner fra naturen.</p>
+    <h4>Implikasjon</h4>
+    <p>Denne kraften er ikke begrenset av fysiske prosesser eller energimengder. Den første årsaken må derfor være allmektig i betydningen tilstrekkelig mektig til å skape alt som eksisterer.</p>
+  </div>
+
+  <div class="property fade-in" id="p4">
+    <span class="num">04</span>
+    <h3>Nødvendig eksistens</h3>
+    <h4>Begrunnelse</h4>
+    <p>Alt som begynner å eksistere, trenger en årsak. Men dersom den første årsaken selv var avhengig av noe annet, ville vi få en uendelig regress av årsaker, uten noen endelig forklaring.</p>
+    <h4>Implikasjon</h4>
+    <p>Den første årsaken må være nødvendig — en selv-eksisterende virkelighet som ikke kan ikke eksistere. Universet er derimot kontingent: det kunne ha vært annerledes, eller ikke eksistert i det hele tatt.</p>
+  </div>
+
+  <div class="property fade-in" id="p5">
+    <span class="num">05</span>
+    <h3>Ikke-materiell (åndelig)</h3>
+    <h4>Begrunnelse</h4>
+    <p>Materie oppsto sammen med universet. Årsaken til universet kan derfor ikke selv være materiell.</p>
+    <h4>Implikasjon</h4>
+    <p>Den første årsaken er immateriell og ikke bundet av fysiske begrensninger. Dette peker mot en åndelig eller ikke-fysisk form for eksistens.</p>
+  </div>
+
+  <div class="property fade-in" id="p6">
+    <span class="num">06</span>
+    <h3>Personlig</h3>
+    <h4>Begrunnelse</h4>
+    <p>En avgjørende innsikt i kosmologisk argumentasjon er spørsmålet om timing: Hvorfor begynte universet å eksistere på et bestemt tidspunkt? En upersonlig, mekanisk årsak virker automatisk så lenge betingelsene er til stede. Dersom universets årsak var upersonlig, ville universet derfor ha eksistert evig.</p>
+    <h4>Implikasjon</h4>
+    <p>At universet faktisk begynte å eksistere, peker mot en personlig årsak — en årsak med vilje, intensjon og evne til å velge å skape. Dette er et sentralt poeng hos Frank Turek: bare en personlig årsak kan forklare en temporal begynnelse.</p>
+  </div>
+
+  <div class="property fade-in" id="p7">
+    <span class="num">07</span>
+    <h3>Godhet</h3>
+    <h4>Begrunnelse</h4>
+    <p>Universet viser ikke bare eksistens, men orden, rasjonalitet, skjønnhet og moral. Objektive moralske verdier — slik mange mennesker intuitivt erkjenner dem — krever en moralsk forankring.</p>
+    <h4>Implikasjon</h4>
+    <p>Dersom den første årsaken er opphavet til både eksistens og moral, må den være god. Ondskap kan ikke være den ultimate kilden til alt som er, men forstås snarere som fravær eller forvrengning av det gode.</p>
+  </div>
+
+  <div class="property fade-in" id="p8">
+    <span class="num">08</span>
+    <h3>Intelligent</h3>
+    <h4>Begrunnelse</h4>
+    <p>Universet er finjustert på en måte som gjør liv mulig. Naturlover og kosmologiske konstanter viser en presisjon og orden som vanskelig kan forklares ved tilfeldighet eller blind nødvendighet alene.</p>
+    <h4>Implikasjon</h4>
+    <p>Den første årsaken må være intelligent — i stand til å forstå, planlegge og virkeliggjøre et univers med høy grad av struktur og sammenheng.</p>
+  </div>
+
+  <hr class="divider">
+
+  <h2 id="p9" class="fade-in">Kreativitet — en nødvendig, men ofte oversett egenskap</h2>
+  <p class="fade-in">
+    Når vi samler disse egenskapene, fremtrer kreativitet som en naturlig og nødvendig konsekvens. Å
+    skape universet <em>ex nihilo</em> er den mest radikale form for kreativ handling. Universet er
+    ikke bare funksjonelt, men mangfoldig, rikt og estetisk. Skjønnhet, symmetri og variasjon er ikke
+    strengt nødvendige for eksistens, men de er gjennomgående til stede.
+  </p>
+  <p class="fade-in">Kreativitet forutsetter:</p>
+  <ul class="fade-in">
+    <li>Intelligens — evne til å forestille seg</li>
+    <li>Fri vilje — evne til å velge</li>
+    <li>Personlig handling — evne til intensjon</li>
+  </ul>
+  <p class="fade-in">
+    Alle disse egenskapene er allerede implisert i kosmologisk argumentasjon. Kreativitet er derfor
+    ikke et tilleggstrekk, men en integrert del av forklaringen på hvorfor universet er slik det er —
+    og ikke bare at det eksisterer. Menneskets egen kreativitet kan i denne sammenheng forstås som en
+    refleks av den første årsakens natur, snarere enn et tilfeldig biprodukt av materie.
+  </p>
+
+  <hr class="divider">
+
+  <h2 class="fade-in">Samlet bilde og konklusjon</h2>
+  <p class="fade-in">Når kosmologisk argumentasjon følges konsekvent, peker den mot en første årsak som er:</p>
+
+  <div class="summary-list fade-in">
+    <h3>De ni egenskapene</h3>
+    <ul>
+      <li>Tidløs og romuavhengig</li>
+      <li>Uforanderlig</li>
+      <li>Allmektig</li>
+      <li>Nødvendig og selv-eksisterende</li>
+      <li>Immateriell</li>
+      <li>Personlig</li>
+      <li>God</li>
+      <li>Intelligent</li>
+      <li>Kreativ</li>
+    </ul>
+  </div>
+
+  <p class="fade-in">
+    Frank Turek og andre apologeter konkluderer derfor med at den første årsaken ikke er en abstrakt
+    kraft eller upersonlig lov, men samsvarer med det klassiske teistiske gudsbegrepet — særlig slik
+    Gud forstås i kristen teologi.
+  </p>
+
+  <div class="conclusion-box fade-in">
+    <p><strong>Konklusjonen:</strong> Den første årsaken er ikke bare universets utløsende faktor, men en skapende, meningsgivende og personlig Gud — Skaper i full betydning av ordet.</p>
+  </div>
+
+  <p class="closing-quote fade-in">
+    «I begynnelsen skapte Gud himmelen og jorden.»
+    <span class="src">1 Mosebok 1:1</span>
+  </p>
+
+  <section id="kommentarer">
+    <h2>Kommentarer</h2>
+    <p style="color:var(--ink-light); font-size:16px;">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+    <script src="https://giscus.app/client.js"
+      data-repo="bm4wpw24cf-alt/THEOLOGIA"
+      data-repo-id="R_kgDOTCkYrA"
+      data-category="General"
+      data-category-id="DIC_kwDOTCkYrM4C_y2J"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="light"
+      data-lang="no"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+
+  <footer class="site-footer">
+    Theologia © 2026 — Eirik Storesletten
+  </footer>
+
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
