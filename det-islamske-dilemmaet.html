@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Det islamske dilemmaet — Theologia</title>
+<style>
+  :root {
+    --bg: #f9f8f6;
+    --gold: #b08d57;
+    --ink: #1a1a18;
+    --ink-mid: #3a3530;
+    --ink-light: #6b655c;
+    --border: #e4ddd0;
+    --quote-bg: #f3efe6;
+    --dark-box: #1f1d19;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'EB Garamond', Georgia, 'Times New Roman', serif;
+    line-height: 1.75;
+    font-size: 19px;
+  }
+  a { color: var(--gold); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  nav.topnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(249,248,246,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+  nav.topnav .brand {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    font-size: 15px;
+  }
+  nav.topnav .back {
+    font-size: 14px;
+    color: var(--ink-mid);
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 100px;
+  }
+
+  .kicker {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 14px;
+  }
+
+  h1.title {
+    font-family: 'EB Garamond', serif;
+    font-size: 42px;
+    line-height: 1.15;
+    font-weight: 600;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+
+  p.subtitle {
+    font-style: italic;
+    color: var(--ink-mid);
+    font-size: 21px;
+    margin: 0 0 18px;
+  }
+
+  .byline {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-bottom: 36px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .pdf-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    padding: 5px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .pdf-link:hover { background: var(--gold); color: #fff; text-decoration: none; }
+
+  .lede {
+    font-size: 21px;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    margin-bottom: 40px;
+  }
+
+  nav.toc {
+    background: var(--quote-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px 28px;
+    margin-bottom: 48px;
+    font-family: 'Inter', sans-serif;
+  }
+  nav.toc h2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    margin: 0 0 14px;
+  }
+  nav.toc ol {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 15px;
+    color: var(--ink-mid);
+  }
+  nav.toc li { margin-bottom: 8px; }
+  nav.toc a { color: var(--ink-mid); }
+  nav.toc a:hover { color: var(--gold); }
+
+  .part-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 56px 0 8px;
+  }
+
+  h2 {
+    font-family: 'EB Garamond', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 22px;
+    scroll-margin-top: 80px;
+  }
+
+  h3 {
+    font-family: 'EB Garamond', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--ink-mid);
+    margin: 30px 0 12px;
+  }
+
+  p { margin: 0 0 20px; }
+
+  ul, ol.plain {
+    margin: 0 0 22px;
+    padding-left: 26px;
+  }
+  ul li, ol.plain li {
+    margin-bottom: 10px;
+  }
+
+  blockquote {
+    border-left: 3px solid var(--gold);
+    background: var(--quote-bg);
+    margin: 24px 0;
+    padding: 16px 24px;
+    font-style: italic;
+    color: var(--ink-mid);
+    border-radius: 0 6px 6px 0;
+  }
+  blockquote .ref {
+    display: block;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    color: var(--gold);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+  }
+
+  .conflict {
+    margin-bottom: 22px;
+  }
+  .conflict h4 {
+    font-family: 'EB Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 6px;
+  }
+
+  table.contrast {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0 32px;
+    font-size: 16px;
+  }
+  table.contrast th {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    text-align: left;
+    color: var(--ink-light);
+    border-bottom: 2px solid var(--gold);
+    padding: 8px 12px;
+  }
+  table.contrast td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .conclusion-box {
+    background: var(--dark-box);
+    color: #f3efe6;
+    border-radius: 10px;
+    padding: 32px 32px;
+    margin: 36px 0;
+  }
+  .conclusion-box p { color: #ece6d8; margin-bottom: 14px; }
+  .conclusion-box p:last-child { margin-bottom: 0; }
+  .conclusion-box strong { color: #d9c9a3; }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 48px 0;
+  }
+
+  .closing-quote {
+    text-align: center;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink-mid);
+    margin: 56px 0;
+    padding: 0 20px;
+  }
+  .closing-quote .src {
+    display: block;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-light);
+    margin-top: 12px;
+  }
+
+  footer.site-footer {
+    border-top: 1px solid var(--border);
+    margin-top: 64px;
+    padding-top: 28px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-light);
+  }
+
+  #kommentarer {
+    margin-top: 56px;
+  }
+  #kommentarer h2 {
+    font-size: 24px;
+  }
+
+  .fade-in {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (max-width: 600px) {
+    h1.title { font-size: 32px; }
+    body { font-size: 17px; }
+    .lede { font-size: 18px; }
+    .wrap { padding: 32px 18px 80px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <span class="brand"><a href="https://bm4wpw24cf-alt.github.io/THEOLOGIA/index.html" style="color:inherit;">Theologia</a></span>
+  <span class="back"><a href="https://bm4wpw24cf-alt.github.io/THEOLOGIA/apologetikk.html">&larr; Apologetikk</a></span>
+</nav>
+
+<div class="wrap">
+
+  <div class="kicker">Apologetikk &middot; Islam</div>
+  <h1 class="title fade-in">Det islamske dilemmaet</h1>
+  <p class="subtitle fade-in">Bekrefter Koranen Bibelen — eller motsier den den?</p>
+  <div class="byline fade-in">
+    <span>Av Eirik Storesletten</span>
+    <a class="pdf-link" href="det-islamske-dilemmaet.pdf" target="_blank">Last ned PDF &middot; 6 sider</a>
+  </div>
+
+  <p class="lede fade-in">
+    Det islamske dilemmaet er et argument som tar utgangspunkt i Koranens egne påstander om tidligere
+    guddommelige åpenbaringer. Koranen bekrefter på den ene siden Toraen og evangeliet som ekte
+    åpenbaringer fra Gud — samtidig som den synes å motsi sentrale læresetninger disse skriftene
+    inneholder. Dette reiser et grunnleggende spørsmål: Hvordan kan de samme guddommelige kildene
+    både bekreftes og motsies?
+  </p>
+
+  <nav class="toc fade-in">
+    <h2>Innholdsfortegnelse</h2>
+    <ol>
+      <li><a href="#del1">Grunnlaget og metode</a></li>
+      <li><a href="#del2">Koranens egne påstander om Toraen og evangeliet</a></li>
+      <li><a href="#del3">Historisk undersøkelse: hvilke skrifter fantes på 600-tallet?</a></li>
+      <li><a href="#del4">Tawrat, Zabur og Injil — hva betyr begrepene?</a></li>
+      <li><a href="#del5">De konkrete konfliktene: Jesus, korsfestelse og frelse</a></li>
+      <li><a href="#del6">Muhammed i Bibelen?</a></li>
+      <li><a href="#del7">Kan Bibelen fungere som målestokk for Koranen?</a></li>
+      <li><a href="#del8">Vanlige muslimske innvendinger</a></li>
+      <li><a href="#del9">Oppsummering og konklusjon</a></li>
+      <li><a href="#tillegg">Tillegg — Kritiserer Koranen Skriften eller menneskene?</a></li>
+    </ol>
+  </nav>
+
+  <div class="part-label fade-in">Del I</div>
+  <h2 id="del1" class="fade-in">Grunnlaget og metode</h2>
+  <p class="fade-in">
+    Argumentet presenterer et logisk problem som islam selv må forholde seg til. Dersom de tidligere
+    skriftene var bevart og pålitelige på Muhammeds tid, oppstår spørsmålet om hvordan Koranen kan
+    avvise deler av deres budskap. Dersom de derimot var forfalsket, må man forklare hvorfor Koranen
+    omtaler dem med autoritet og oppfordrer mennesker til å vende seg til dem.
+  </p>
+  <p class="fade-in">
+    Boken bygger på en intern analyse av Koranens tekst. Målet er ikke å starte med Bibelen for å
+    kritisere islam, men å undersøke hva Koranen selv sier om tidligere åpenbaringer — og la Koranen
+    tale på egne premisser før man trekker historiske og teologiske konklusjoner. Spørsmålene
+    undersøkes deretter historisk, gjennom manuskripter, kirkefedre og den jødiske og kristne
+    kanonhistorien.
+  </p>
+
+  <hr class="divider">
+
+  <div class="part-label fade-in">Del II</div>
+  <h2 id="del2" class="fade-in">Koranens egne påstander om Toraen og evangeliet</h2>
+  <p class="fade-in">
+    Koranen fremstiller ikke islam som en ny religion uten historisk forankring. Den presenterer Guds
+    åpenbaring som en sammenhengende historie som begynner med Adam og kulminerer med Muhammed.
+    Toraen og evangeliet beskrives gjennomgående som guddommelige gaver:
+  </p>
+
+  <blockquote class="fade-in"><span class="ref">Sura 3:3</span>«Han har sendt ned Skriften til deg med sannheten og stadfester det som var før den. Han sendte ned Toraen og evangeliet.»</blockquote>
+  <blockquote class="fade-in"><span class="ref">Sura 5:46</span>«Vi gav ham evangeliet, hvor det er veiledning og lys.»</blockquote>
+  <blockquote class="fade-in"><span class="ref">Sura 5:68</span>«Dere har intet grunnlag før dere holder fast ved Toraen og evangeliet og det som er sendt ned til dere fra deres Herre.»</blockquote>
+  <blockquote class="fade-in"><span class="ref">Sura 10:94</span>«Hvis du er i tvil om det Vi har åpenbart for deg, så spør dem som har lest Skriften før deg.»</blockquote>
+
+  <p class="fade-in">
+    Et sentralt uttrykk er «det som er hos dere» (2:41, 2:89). Den naturlige forståelsen er at Koranen
+    viser til skriftene jøder og kristne faktisk hadde i sin besittelse på Muhammeds tid — ikke til
+    ukjente eller tapte bøker. Når Koranen omtaler «Bokens folk» (Ahl al-Kitab), beskrives de som
+    mennesker som faktisk besitter hellige skrifter, ikke som et folk som en gang hadde dem.
+  </p>
+
+  <hr class="divider">
+
+  <div class="part-label fade-in">Del III</div>
+  <h2 id="del3" class="fade-in">Historisk undersøkelse: hvilke skrifter fantes på 600-tallet?</h2>
+  <p class="fade-in">
+    Det islamske dilemmaet hviler på et avgjørende historisk spørsmål: når Koranen omtaler Toraen og
+    evangeliet, hvilke skrifter sikter den til? Vi kjenner godt til hvilke jødiske og kristne skrifter
+    som var i omløp på 600-tallet:
+  </p>
+  <ul class="fade-in">
+    <li>Hebraiske manuskripter av Det gamle testamentet, flere hundre år eldre enn Muhammed.</li>
+    <li>Den greske Septuaginta, utbredt blant gresktalende jøder og tidlige kristne.</li>
+    <li>De store bibelkodeksene og et stort antall nytestamentlige manuskripter.</li>
+    <li>Kirkefedre fra 100-tallet av — Ignatius, Polykarp, Justin Martyr, Ireneus, Tertullian, Origenes — som siterer store deler av Det nye testamentet.</li>
+    <li>Arabia var ikke isolert: handelsrutene knyttet Hijaz til Syria, Palestina, Egypt og Etiopia, hvor jødiske og kristne samfunn fantes.</li>
+  </ul>
+  <p class="fade-in">
+    Den historiske dokumentasjonen peker entydig mot at vi vet hvilke skrifter dette var. Det finnes
+    ingen historiske bevis for en ukjent Tawrat eller et Injil som var forskjellig fra de skriftene
+    jøder og kristne faktisk hadde i omløp.
+  </p>
+
+  <hr class="divider">
+
+  <div class="part-label fade-in">Del IV</div>
+  <h2 id="del4" class="fade-in">Tawrat, Zabur og Injil — hva betyr begrepene?</h2>
+  <p class="fade-in"><strong>Tawrat</strong> tilsvarer det hebraiske <em>Torah</em> — Mosebøkene. Historisk fantes det ingen annen Tawrat blant jødene på Muhammeds tid enn den hebraiske teksten bevart gjennom manuskripttradisjonen.</p>
+  <p class="fade-in"><strong>Zabur</strong> forbindes med David og tilsvarer det hebraiske <em>mizmor</em> / greske <em>psalmoi</em>. Identifiseres tradisjonelt med Salmenes bok, som var etablert jødisk skrift lenge før islam oppstod.</p>
+  <p class="fade-in"><strong>Injil</strong> kommer trolig fra det greske <em>euangelion</em> (gode nyheter). Historien kjenner ikke til en enkelt bok åpenbart direkte til Jesus som senere gikk tapt. De kristne samfunnene rundt Arabia på 600-tallet brukte Matteus, Markus, Lukas og Johannes — fire evangelieberetninger om ett evangelisk budskap, slik allerede Ireneus understreket på 100-tallet.</p>
+
+  <hr class="divider">
+
+  <div class="part-label fade-in">Del V</div>
+  <h2 id="del5" class="fade-in">De konkrete konfliktene: Jesus, korsfestelse og frelse</h2>
+  <p class="fade-in">
+    Etter å ha undersøkt hvilke skrifter Koranen bekrefter, kommer vi til kjernen av dilemmaet — der
+    det oppstår grunnleggende motsetninger mellom Koranens og Bibelens fremstillinger.
+  </p>
+
+  <div class="conflict fade-in">
+    <h4>Jesu korsfestelse</h4>
+    <p>Alle fire evangeliene beskriver Jesu lidelse, korsfestelse og død som frelseshistoriens sentrale hendelse. Sura 4:157 hevder derimot: «De drepte ham ikke og korsfestet ham ikke, men det fortonte seg slik for dem.»</p>
+  </div>
+  <div class="conflict fade-in">
+    <h4>Oppstandelsen</h4>
+    <p>I Bibelen er oppstandelsen uløselig knyttet til korsfestelsen. Paulus skriver at dersom Kristus ikke er oppstanden, er den kristne tro forgjeves. Koranen beskriver ikke oppstandelsen slik Det nye testamentet gjør.</p>
+  </div>
+  <div class="conflict fade-in">
+    <h4>Jesu identitet</h4>
+    <p>Bibelen fremstiller Jesus som Guds Sønn og Ordet som ble kjød; han mottar tilbedelse og tilgir synder. Koranen anerkjenner jomfrufødselen og miraklene, men avviser at han er Guds Sønn eller delaktig i Guds vesen.</p>
+  </div>
+  <div class="conflict fade-in">
+    <h4>Synd og frelse</h4>
+    <p>Bibelen lærer at alle mennesker er syndere som trenger frelse ved nåde gjennom Kristi soningsverk. Koranen legger vekt på personlig ansvar og Guds barmhjertighet, uten en stedfortredende soning.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="part-label fade-in">Del VI</div>
+  <h2 id="del6" class="fade-in">Muhammed i Bibelen?</h2>
+  <p class="fade-in">
+    Koranen hevder at Muhammeds komme var forutsagt i de tidligere åpenbaringene (sura 7:157, 61:6,
+    2:146). Problemet er at ingen kjent jødisk eller kristen bibeltekst inneholder en eksplisitt
+    profeti om en arabisk profet ved navn Muhammed. Gjennom islams historie har flere bibeltekster
+    likevel blitt foreslått:
+  </p>
+
+  <table class="contrast fade-in">
+    <tr><th>Tekst</th><th>Vanlig muslimsk tolkning</th><th>Innvending</th></tr>
+    <tr><td>5 Mos 18</td><td>«En profet lik Moses» er Muhammed</td><td>Forstås tradisjonelt som en profetisk institusjon i Israel, eller i kristen tolkning oppfylt i Jesus</td></tr>
+    <tr><td>Joh 14–16</td><td>«Talsmannen» er Muhammed/Ahmad</td><td>Gresk <em>paraklētos</em> betyr hjelper/talsmann; Jesus identifiserer ham med Den Hellige Ånd</td></tr>
+    <tr><td>Høys 5:16</td><td>Hebraisk <em>maḥămaddîm</em> ligner Muhammed</td><td>Vanlig adjektiv som betyr «herlig/yndig» — ikke et egennavn</td></tr>
+    <tr><td>Jes 42</td><td>Herrens tjener er Muhammed</td><td>Tradisjonelt forstått som Israels tjener eller Messias; ingen arabisk profet nevnes</td></tr>
+  </table>
+
+  <hr class="divider">
+
+  <div class="part-label fade-in">Del VII</div>
+  <h2 id="del7" class="fade-in">Kan Bibelen fungere som målestokk for Koranen?</h2>
+  <p class="fade-in">
+    Koranen fremstiller ikke Toraen og evangeliet som irrelevante bøker. Sura 10:94 oppfordrer til å
+    søke bekreftelse hos dem som har lest de tidligere skriftene. Dersom skriftene var korrupte,
+    kunne de ikke fungere som en autoritativ kontrollinstans.
+  </p>
+  <p class="fade-in">
+    Konsekvensen er at Koranen ikke bare bekreftes av Bibelen — den gjør samtidig Bibelen til en
+    målestokk som kan brukes til å undersøke Koranens egne påstander. Hvis de tidligere skriftene
+    støtter Koranen, styrkes dens budskap. Hvis de motsier den, oppstår spørsmålet om hvordan begge
+    kan komme fra den samme Gud.
+  </p>
+
+  <hr class="divider">
+
+  <div class="part-label fade-in">Del VIII</div>
+  <h2 id="del8" class="fade-in">Vanlige muslimske innvendinger</h2>
+
+  <h3 class="fade-in">«Bare deler av Bibelen bekreftes»</h3>
+  <p class="fade-in">Koranen spesifiserer normalt ikke hvilke deler den bekrefter, men omtaler Toraen og evangeliet som helheter. Hvis den bare mente bestemte deler, sier den aldri hvilke.</p>
+
+  <h3 class="fade-in">«Det fantes et annet evangelium»</h3>
+  <p class="fade-in">Det finnes ingen historiske spor av et universelt «annet evangelium» som de kristne samfunnene rundt Arabia faktisk brukte på 600-tallet. Historien peker entydig mot Matteus, Markus, Lukas og Johannes.</p>
+
+  <h3 class="fade-in">«Bibelen ble forfalsket»</h3>
+  <p class="fade-in">Hvis Bibelen var forfalsket før Muhammed, hvorfor omtaler Koranen den positivt, ber Bokens folk dømme etter sine skrifter, og oppfordrer Muhammed til å søke bekreftelse hos dem? Vi har bibelmanuskripter fra flere hundre år før Muhammed som viser at hovedinnholdet er bevart.</p>
+
+  <h3 class="fade-in">«Muhammed tvilte aldri» (om 10:94)</h3>
+  <p class="fade-in">Selv om Muhammed ikke tvilte personlig, står prinsippet fast: de tidligere skriftene fungerer som bekreftelse. Argumentet handler om hvilken autoritet skriftene har, ikke om Muhammeds sinnstilstand.</p>
+
+  <h3 class="fade-in">«Tawrat og Injil er ikke Bibelen»</h3>
+  <p class="fade-in">Disse begrepene må forstås i den historiske sammenhengen de ble brukt. På Muhammeds tid brukte jødiske og kristne samfunn kjente og dokumenterte skrifter. Ingen alternativ tekst kan påvises historisk.</p>
+
+  <hr class="divider">
+
+  <div class="part-label fade-in">Del IX</div>
+  <h2 id="del9" class="fade-in">Oppsummering og konklusjon</h2>
+  <p class="fade-in">Det islamske dilemmaet kan uttrykkes slik:</p>
+  <ol class="plain fade-in">
+    <li>Koranen bekrefter Toraen og evangeliet som guddommelige, autoritative og tilgjengelige for Bokens folk.</li>
+    <li>Historisk vet vi hvilke skrifter dette var — de er veldokumenterte gjennom manuskripter og kirkehistorie.</li>
+    <li>Koranen motsier sentrale deler av disse skriftene, særlig Jesu korsfestelse, oppstandelse og guddommelighet.</li>
+  </ol>
+
+  <div class="conclusion-box fade-in">
+    <p><strong>Konklusjonen:</strong> Dersom Toraen og evangeliet er pålitelige, står Koranens motsigelser overfor et alvorlig problem. Dersom de ikke er pålitelige, blir Koranens gjentatte bekreftelse og henvisning til dem vanskelig å forklare.</p>
+    <p>Det islamske dilemmaet er ikke et angrep på muslimer, men en invitasjon til ærlig undersøkelse av kildene. Sannheten trenger verken frykte spørsmål eller historisk gransking.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="part-label fade-in" id="tillegg">Tillegg</div>
+  <h2 class="fade-in">Kritiserer Koranen Skriften eller menneskene?</h2>
+  <p class="fade-in">
+    En utbredt oppfatning er at Koranen lærer at Toraen og evangeliet har blitt fullstendig
+    forfalsket. Når man leser Koranen nøye, ser man et mer nyansert bilde: kritikken retter seg
+    primært mot mennesker som misbruker Skriften — ikke mot Skriften selv.
+  </p>
+
+  <h3 class="fade-in">Koranens kritikk av menneskelig oppførsel</h3>
+  <blockquote class="fade-in"><span class="ref">Sura 2:42</span>«Bland ikke sannhet med løgn og skjul ikke sannheten når dere vet.» Kritikken gjelder mennesker som kjenner sannheten, men skjuler den — ikke at teksten er endret.</blockquote>
+  <blockquote class="fade-in"><span class="ref">Sura 3:78</span>«Blant dem er det noen som vrir sine tunger når de leser Skriften.» Dette beskriver en muntlig handling, ikke nødvendigvis en endring av selve teksten.</blockquote>
+  <blockquote class="fade-in"><span class="ref">Sura 2:79</span>«Ve dem som skriver boken med sine egne hender og så sier: Dette er fra Allah.» Verset beskriver mennesker som lager falske religiøse tekster — det sier ikke at hele Toraen er forfalsket.</blockquote>
+  <blockquote class="fade-in"><span class="ref">Sura 5:13</span>«De forvrenger ordene fra deres rette steder.» Det arabiske uttrykket (taḥrīf) kan forstås som feiltolkning, feil anvendelse eller tekstlig endring — verset spesifiserer ikke hvilken type.</blockquote>
+
+  <p class="fade-in">
+    Den klassiske islamske læren om fullstendig tekstlig forfalskning (<em>taḥrīf al-naṣṣ</em>)
+    utviklet seg særlig i senere islamsk teologi. Koranens egne utsagn isolert sett inneholder ingen
+    enkelttekst som klart sier: «Hele Toraen og hele evangeliet er blitt omskrevet.»
+  </p>
+
+  <table class="contrast fade-in">
+    <tr><th>Koranen kritiserer</th><th>Koranen bekrefter</th></tr>
+    <tr><td>Enkelte skjuler sannheten</td><td>Toraen er fra Gud</td></tr>
+    <tr><td>Enkelte vrir ordene</td><td>Evangeliet er fra Gud</td></tr>
+    <tr><td>Enkelte skriver falske tekster</td><td>De er veiledning og lys</td></tr>
+    <tr><td>Enkelte forvrenger budskapet</td><td>Bokens folk oppfordres til å følge dem</td></tr>
+    <tr><td>Enkelte misbruker åpenbaringen</td><td>Gud står bak de tidligere skriftene</td></tr>
+  </table>
+
+  <p class="fade-in">
+    En helhetlig lesning av Koranen viser at den ofte omtaler Toraen og evangeliet med respekt og
+    autoritet. Kritikken er i hovedsak rettet mot enkelte mennesker blant Bokens folk og deres
+    handlinger, ikke nødvendigvis mot selve Skriften som guddommelig åpenbaring. Spørsmålet om
+    Koranens syn på tekstlig forfalskning er derfor mer komplisert enn det ofte fremstilles som.
+  </p>
+
+  <p class="closing-quote fade-in">
+    «Vårt hjerte er urolig inntil det finner hvile i deg.»
+    <span class="src">Augustin av Hippo — Bekjennelser, bok I</span>
+  </p>
+
+  <section id="kommentarer">
+    <h2>Kommentarer</h2>
+    <p style="color:var(--ink-light); font-size:16px;">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+    <script src="https://giscus.app/client.js"
+      data-repo="bm4wpw24cf-alt/THEOLOGIA"
+      data-repo-id="R_kgDOTCkYrA"
+      data-category="General"
+      data-category-id="DIC_kwDOTCkYrM4C_y2J"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="bottom"
+      data-theme="light"
+      data-lang="no"
+      crossorigin="anonymous"
+      async>
+    </script>
+  </section>
+
+  <footer class="site-footer">
+    Theologia © 2026 — Eirik Storesletten
+  </footer>
+
+</div>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
