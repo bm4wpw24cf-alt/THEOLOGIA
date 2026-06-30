@@ -612,12 +612,18 @@
 <section id="emner" class="fade-in">
   <div class="section-label">Emner og kategorier</div>
   <div class="emner-grid">
-    <a href="kom-til-kristus.html" class="emne-card active">
+    <div class="emne-card active" id="ktk-card">
       <div class="emne-num">01</div>
       <h3>Kom til Kristus</h3>
       <p>Guds hellighet, menneskets synd og Kristi kors — veien til Gud forklart fra Bibelen.</p>
-      <span class="emne-count">2 artikler</span>
-    </a>
+      <button class="emne-count emne-toggle" onclick="toggleEmne('ktk-dropdown', this)">2 artikler ▾</button>
+      <div id="ktk-dropdown" class="emne-dropdown" style="display:none;">
+        <div class="emne-kat-liste" style="border-left:none; padding-bottom:0;">
+          <a href="kom-til-kristus.html">Veien til Gud — Guds karakter, menneskets synd og Kristi kors</a>
+          <a href="rett-forhold-til-gud.html">Hvordan oppnå rett forhold til Gud?</a>
+        </div>
+      </div>
+    </div>
     <div class="emne-card active" id="apol-card">
       <div class="emne-num">02</div>
       <h3>Apologetikk</h3>
