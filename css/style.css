@@ -1,0 +1,322 @@
+/* =========================================================
+   THEOLOGIA
+   Hovedstilark
+   ========================================================= */
+
+
+/* =========================================================
+   1. RESET
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   2. FARGER
+   ========================================================= */
+
+:root {
+
+    --white: #ffffff;
+    --black: #111111;
+
+    --text: #333333;
+    --text-light: #666666;
+
+    --gold: #b8872b;
+
+    --background: #f8f8f8;
+
+    --border: #e8e8e8;
+
+    --shadow: 0 2px 12px rgba(0,0,0,.08);
+
+}
+
+
+/* =========================================================
+   3. GRUNNLEGGENDE
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background: var(--background);
+
+    color: var(--text);
+
+    font-family:
+        "Georgia",
+        "Times New Roman",
+        serif;
+
+    line-height: 1.7;
+
+    font-size: 16px;
+
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================================================
+   4. CONTAINER
+   ========================================================= */
+
+.container {
+
+    width: min(1320px, 92%);
+    margin-inline: auto;
+
+}
+
+
+/* =========================================================
+   5. TYPOGRAFI
+   ========================================================= */
+
+h1,
+h2,
+h3,
+h4 {
+
+    color: var(--black);
+
+    font-weight: 500;
+
+    line-height: 1.2;
+
+}
+
+p {
+
+    color: var(--text-light);
+
+}
+
+
+/* =========================================================
+   6. HEADER
+   ========================================================= */
+
+.site-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background: var(--white);
+
+    box-shadow: var(--shadow);
+
+}
+
+.header-inner {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    height: 92px;
+
+}
+
+.logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+}
+
+.logo img {
+
+    width: 48px;
+
+    height: 48px;
+
+}
+
+.logo-text h1 {
+
+    font-size: 2.2rem;
+
+    margin-bottom: 4px;
+
+}
+
+.logo-text p {
+
+    color: var(--gold);
+
+    font-size: .72rem;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   7. NAVIGASJON
+   ========================================================= */
+
+.main-nav ul {
+
+    display: flex;
+
+    gap: 42px;
+
+    align-items: center;
+
+}
+
+.main-nav a {
+
+    position: relative;
+
+    font-size: 1rem;
+
+    font-weight: 500;
+
+    color: var(--black);
+
+    transition: .25s;
+
+}
+
+.main-nav a:hover {
+
+    color: var(--gold);
+
+}
+
+.main-nav a.active::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -14px;
+
+    width: 100%;
+
+    height: 3px;
+
+    background: var(--gold);
+
+    border-radius: 99px;
+
+}
+
+
+/* =========================================================
+   8. SØKEKNAPP
+   ========================================================= */
+
+.search-button {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: var(--black);
+
+    transition: .25s;
+
+}
+
+.search-button:hover {
+
+    color: var(--gold);
+
+}
+
+
+/* =========================================================
+   9. HERO
+   ========================================================= */
+
+/* Kommer senere */
+
+
+/* =========================================================
+   10. KORT
+   ========================================================= */
+
+/* Kommer senere */
+
+
+/* =========================================================
+   11. KNAPPER
+   ========================================================= */
+
+/* Kommer senere */
+
+
+/* =========================================================
+   12. FOOTER
+   ========================================================= */
+
+/* Kommer senere */
+
+
+/* =========================================================
+   13. RESPONSIV
+   ========================================================= */
+
+@media (max-width: 992px) {
+
+    .main-nav {
+
+        display: none;
+
+    }
+
+}
