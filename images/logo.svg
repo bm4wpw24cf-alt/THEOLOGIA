@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" fill="none">
+
+<defs>
+  <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#E8C45A"/>
+    <stop offset="45%" stop-color="#C99725"/>
+    <stop offset="100%" stop-color="#9B6A0A"/>
+  </linearGradient>
+</defs>
+
+<g stroke="url(#gold)"
+   stroke-width="4"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   fill="none">
+
+  <!-- Venstre bokside -->
+  <path d="
+  M80 42
+  C62 20 34 18 12 28
+  V92
+  C35 82 60 88 80 108"/>
+
+  <!-- Høyre bokside -->
+  <path d="
+  M80 42
+  C98 20 126 18 148 28
+  V92
+  C125 82 100 88 80 108"/>
+
+
+  <!-- Bokrygg -->
+  <path d="M80 42 V108"/>
+
+
+  <!-- Innvendige sider -->
+  <path d="
+  M18 86
+  C40 78 62 84 80 102"/>
+
+  <path d="
+  M142 86
+  C120 78 98 84 80 102"/>
+
+
+  <!-- Nederste boklag -->
+  <path d="
+  M12 102
+  C38 92 62 98 80 116"/>
+
+  <path d="
+  M148 102
+  C122 92 98 98 80 116"/>
+
+
+  <!-- Ekstra sidekant -->
+  <path d="
+  M22 34 V82"/>
+
+  <path d="
+  M138 34 V82"/>
+
+</g>
+
+</svg>
