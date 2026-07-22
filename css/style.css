@@ -983,3 +983,151 @@ p {
     }
 
 }
+/* =========================================================
+   16. ARTIKKELSIDE
+   ========================================================= */
+
+.article-page {
+    background: var(--parchment);
+    padding: 90px 20px;
+}
+
+
+.article-container {
+    width: min(900px, 100%);
+    margin-inline: auto;
+    background: var(--white);
+    padding: 70px 80px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+
+/* Kategori */
+
+.article-category {
+    display: inline-block;
+    color: var(--gold);
+    font-family: "Inter", sans-serif;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+}
+
+
+/* Overskrift */
+
+.article-header h1 {
+    font-family: "EB Garamond", "Georgia", serif;
+    font-size: clamp(2.6rem, 5vw, 3.6rem);
+    font-weight: 600;
+    color: var(--black);
+    line-height: 1.1;
+    margin-bottom: 18px;
+}
+
+
+.article-subtitle {
+    font-family: "EB Garamond", serif;
+    font-size: 1.45rem;
+    color: var(--text-light);
+    margin-bottom: 55px;
+}
+
+
+/* Artikkeltekst */
+
+.article-content {
+    font-family: "Inter", sans-serif;
+}
+
+
+.article-content h2 {
+    font-family: "EB Garamond", serif;
+    font-size: 2rem;
+    color: var(--black);
+    margin-top: 55px;
+    margin-bottom: 18px;
+}
+
+
+.article-content h3 {
+    font-size: 1.35rem;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+
+.article-content p {
+    color: var(--text);
+    font-size: 1.05rem;
+    line-height: 1.95;
+    margin-bottom: 25px;
+}
+
+
+/* Bibelvers */
+
+.bible-box {
+    background: var(--parchment-dark);
+    border-left: 4px solid var(--gold);
+    padding: 30px 35px;
+    margin: 40px 0;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+
+.bible-box em {
+    display: block;
+    font-family: "EB Garamond", serif;
+    font-size: 1.25rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+
+.bible-box strong {
+    display: block;
+    margin-top: 18px;
+    font-family: "Inter", sans-serif;
+    font-size: .9rem;
+    color: var(--gold-dark);
+}
+
+
+/* Lenker i artikler */
+
+.article-content a {
+    color: var(--gold-dark);
+    font-weight: 600;
+}
+
+
+.article-content a:hover {
+    color: var(--gold);
+}
+
+
+/* Mobil */
+
+@media (max-width: 640px) {
+
+    .article-page {
+        padding: 50px 15px;
+    }
+
+    .article-container {
+        padding: 35px 25px;
+    }
+
+    .article-header h1 {
+        font-size: 2.4rem;
+    }
+
+    .article-subtitle {
+        font-size: 1.2rem;
+    }
+
+}
