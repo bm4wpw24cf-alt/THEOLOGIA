@@ -325,6 +325,12 @@ p {
     align-items: center;
 }
 
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .main-nav a {
     position: relative;
     font-size: .96rem;
@@ -1060,7 +1066,7 @@ p {
 }
 
 
-.article-content p {
+.article-container section p {
     color: var(--text);
     font-size: 1.05rem;
     line-height: 1.95;
@@ -1090,7 +1096,7 @@ p {
 
 .bible-box strong {
     display: block;
-    margin-top: 18px;
+    margin-top: 5px;
     font-family: "Inter", sans-serif;
     font-size: .9rem;
     color: var(--gold-dark);
@@ -1129,5 +1135,3 @@ p {
     .article-subtitle {
         font-size: 1.2rem;
     }
-
-}
