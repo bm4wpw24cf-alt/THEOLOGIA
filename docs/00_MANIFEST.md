@@ -1,5 +1,31 @@
 # THEOLOGIA Manifest
-Version 1.0
+
+Versjon 1.0
+**Sist oppdatert:** 23. juli 2026
+**Status:** Aktiv standard
+
+---
+
+# Dokumentoversikt
+
+| Nr | Dokument | Beskrivelse |
+|----|----------|-------------|
+| 00 | MANIFEST | Prosjektets grunnlov og visjon |
+| 01 | CONTENT_STRUCTURE | Informasjonsarkitektur |
+| 02 | EDITORIAL_STANDARD | Redaksjonelle regler |
+| 03 | DESIGN_STANDARD | Designsystem |
+| 04 | COMPONENT_LIBRARY | Komponenter |
+| 05 | STYLE_GUIDE | Visuell stil |
+| 06 | IMAGE_GUIDE | Bilder og illustrasjoner |
+| 07 | SEO_STANDARD | Søkemotoroptimalisering |
+| 08 | ACCESSIBILITY | Universell utforming |
+| 09 | ROADMAP | Utviklingsplan |
+| 10 | THEOLOGIA_HANDBOOK | Operativ håndbok |
+| 11 | DEVELOPMENT_GUIDE | Utviklingsregler |
+| 12 | CONTENT_WORKFLOW | Arbeidsflyt for innhold |
+| 13 | RELEASE_PROCESS | Publisering og versjonering |
+| 14 | AI_CONTEXT | Regler for AI-assistenter |
+| 15 | CHANGELOG | Endringshistorikk |
 
 > **Forstå Skriften. Styrk troen.**
 >
@@ -221,7 +247,9 @@ Alle større endringer skal bygge videre på prosjektets etablerte identitet.
 
 Manifestet beskriver prosjektets identitet og retning.
 
-De øvrige dokumentene beskriver hvordan prosjektet skal implementeres.
+De øvrige dokumentene beskriver hvordan prosjektet skal utvikles, vedlikeholdes og publiseres.
+
+Prosjektets komplette dokumentasjon består av:
 
 - 01_CONTENT_STRUCTURE.md
 - 02_EDITORIAL_STANDARD.md
@@ -233,6 +261,11 @@ De øvrige dokumentene beskriver hvordan prosjektet skal implementeres.
 - 08_ACCESSIBILITY.md
 - 09_ROADMAP.md
 - 10_THEOLOGIA_HANDBOOK.md
+- 11_DEVELOPMENT_GUIDE.md
+- 12_CONTENT_WORKFLOW.md
+- 13_RELEASE_PROCESS.md
+- 14_AI_CONTEXT.md
+- 15_CHANGELOG.md
 
 ---
 
