@@ -1,21 +1,21 @@
-# THEOLOGIA DESIGN STANDARD
+# THEOLOGIA Design Standard
 Version 1.0
 
 Dette dokumentet beskriver den offisielle designstandarden for THEOLOGIA.
 
 Alle fremtidige endringer skal følge denne standarden.
 
+Ved tvil skal eksisterende design prioriteres.
+
 ---
 
-# Viktig
+# Formål
 
-Den eksisterende designmalen er fasit.
+Designet skal hjelpe leseren til å forstå innholdet.
 
-Claude Code skal implementere denne designen.
+Det skal aldri konkurrere med innholdet.
 
-Claude Code skal IKKE redesigne nettstedet.
-
-Ved usikkerhet skal eksisterende design alltid prioriteres.
+THEOLOGIA er et digitalt bibliotek – ikke et markedsføringsnettsted.
 
 ---
 
@@ -23,205 +23,333 @@ Ved usikkerhet skal eksisterende design alltid prioriteres.
 
 THEOLOGIA skal oppleves som:
 
-- et bibelsk-teologisk bibliotek
-- et redaksjonelt kunnskapssenter
-- tidløst
 - rolig
-- seriøst
-- klassisk
-- moderne uten å være minimalistisk
+- tidløs
+- profesjonell
+- moderne
+- innholdsfokusert
+- lett å lese
 
-Ikke blogg.
-
-Ikke magasin.
-
-Ikke markedsføringsside.
+Brukeren skal oppleve nettstedet som et sted for læring og fordypning.
 
 ---
 
-# Farger
+# Designprinsipper
 
-Primær:
+Alt design skal være:
 
-mørk marine
+- enkelt
+- konsekvent
+- forutsigbart
+- tilgjengelig
+- funksjonelt
 
-Gull
+Unngå visuell støy.
 
-Hvit
+Hvert element skal ha en tydelig hensikt.
 
-Lys krem
+---
 
-Ingen sterke kontrastfarger.
+# Innhold først
+
+Innholdet er viktigere enn designet.
+
+Designet skal:
+
+- fremheve innholdet
+- organisere innholdet
+- gjøre innholdet lettere å lese
+
+Designet skal aldri bli hovedfokuset.
+
+---
+
+# Visuell identitet
+
+THEOLOGIA skal ha én tydelig identitet.
+
+Ikke bland ulike designstiler.
+
+Unngå stadige redesign.
+
+Videreutvikle eksisterende uttrykk.
+
+---
+
+# Layout
+
+Layouten skal være:
+
+- luftig
+- balansert
+- konsekvent
+
+Bruk faste avstander mellom seksjoner.
+
+Elementer skal linjejusteres konsekvent.
+
+---
+
+# Grid
+
+Bruk et konsekvent grid gjennom hele nettstedet.
+
+Kort, seksjoner og innhold skal følge samme rytme.
+
+Ingen tilfeldige bredder eller plasseringer.
 
 ---
 
 # Typografi
 
-Store serif-overskrifter.
+Typografi skal prioritere lesbarhet.
 
-Enkel sans-serif i brødtekst.
+Overskrifter skal være tydelige.
 
-God luft.
+Brødtekst skal være behagelig å lese over lange artikler.
 
-Ingen kompakte seksjoner.
+Unngå mange ulike skrifttyper.
 
 ---
 
-# Forsiden
+# Farger
 
-Forsiden skal alltid bestå av:
+Fargepaletten skal være begrenset.
 
-1. Header
+Bruk farger med hensikt.
 
-2. Hero
+Farger skal:
 
-3. Åtte temakort
+- skape ro
+- skape hierarki
+- fremheve viktige elementer
 
-4. Ressurser
+Ikke bruk sterke kontrastfarger uten grunn.
 
-5. Relaterte artikler
+---
 
-6. Nyeste artikler
+# Ikoner
 
-7. Footer
+Ikoner skal:
 
-Ingen ekstra seksjoner uten godkjenning.
+- være enkle
+- ha samme stil
+- brukes konsekvent
+
+Ikoner skal støtte forståelsen.
+
+---
+
+# Bilder
+
+Bilder skal:
+
+- være relevante
+- ha høy kvalitet
+- støtte innholdet
+
+Unngå generiske stockbilder.
 
 ---
 
 # Hero
 
-Heroen er nettstedets viktigste element.
+Hero-seksjonen skal:
 
-Den skal inneholde:
+- forklare nettstedets formål
+- være ryddig
+- ha tydelig handlingsknapp
+- introdusere brukeren til biblioteket
 
-- hovedoverskrift
-
-- ingress
-
-- Bibelillustrasjonen
-
-- Veien til Jesus-kortet
-
-Dette skal ikke flyttes.
+Hero skal ikke være overdesignet.
 
 ---
 
-# Temaer
+# Kort
 
-Det skal være nøyaktig åtte temakort.
+Kort brukes til:
 
-Rekkefølgen skal være:
+- temaer
+- artikler
+- ressurser
 
-Bibelen
+Alle kort skal følge samme design.
 
-Bibelkommentar
-
-Evangeliet
-
-Kristenliv
-
-Apologetikk
-
-Teologi
-
-Ressurser
-
-Endetid
-
-Ikke legg til flere kort.
-
-Ikke fjern kort.
+Ikke lag ulike kortdesign uten god grunn.
 
 ---
 
-# Ressurser
+# Knapper
 
-Skal ligge under temakortene.
+Knapper skal være:
 
-Ingen redesign.
+- tydelige
+- enkle
+- konsekvente
 
----
-
-# Relaterte artikler
-
-Skal ligge ved siden av Ressurser.
+Primærknapper skal alltid være lett gjenkjennelige.
 
 ---
 
-# Nyeste artikler
+# Navigasjon
 
-Skal være en redaksjonell liste.
+Navigasjonen skal være:
 
-Ikke kort.
+- enkel
+- logisk
+- konsekvent
 
-Ikke blogg-layout.
-
----
-
-# Footer
-
-Mørk footer.
-
-Tre kolonner.
-
-Bibelvers.
-
-Sosiale medier.
+Brukeren skal alltid vite hvor han befinner seg.
 
 ---
 
-# Kode
+# Seksjoner
 
-Claude Code skal:
+Alle sider skal følge en tydelig struktur.
 
-- lese eksisterende kode
-- gjenbruke komponenter
-- følge eksisterende CSS
-- unngå duplisering
-- ikke skrive om fungerende kode
+Store hopp i design eller layout skal unngås.
 
 ---
 
-# Arbeidsregler
+# Luft
 
-Claude Code skal aldri:
+God luft mellom elementer er viktig.
 
-- redesigne nettstedet
-- finne på nye seksjoner
-- endre layout uten beskjed
-- skrive om tekster
-- endre typografi
-- endre farger
-- endre spacing
-- endre navigasjon
+Ikke pakk informasjon tett sammen.
 
-uten eksplisitt beskjed.
+Whitespace er en aktiv del av designet.
 
 ---
 
-# Arbeidsflyt
+# Responsivt design
 
-1. Les prosjektet.
+Alle sider skal fungere godt på:
 
-2. Analyser.
+- mobil
+- nettbrett
+- bærbar PC
+- store skjermer
 
-3. Presenter plan.
-
-4. Vent på godkjenning.
-
-5. Implementer én oppgave om gangen.
+Mobil er en fullverdig opplevelse – ikke en nedskalert versjon.
 
 ---
 
-# Prinsipp
+# Tilgjengelighet
 
-Implementer.
+Design skal støtte universell utforming.
 
-Ikke redesign.
+Prioriter:
 
-Forbedre.
+- høy kontrast
+- lesbare skrifter
+- tydelige knapper
+- god tastaturnavigasjon
+- fokusmarkering
 
-Ikke oppfinn.
+---
 
-Følg designmalen.
+# Konsistens
+
+Samme komponent skal alltid se lik ut.
+
+Samme handling skal alltid fungere likt.
+
+Samme side skal alltid følge samme struktur.
+
+---
+
+# Animasjoner
+
+Animasjoner skal være:
+
+- korte
+- rolige
+- funksjonelle
+
+De skal aldri distrahere.
+
+---
+
+# Skygger
+
+Bruk skygger med måte.
+
+Skygger skal skape dybde, ikke oppmerksomhet.
+
+---
+
+# Avrundede hjørner
+
+Border-radius skal være konsekvent gjennom hele nettstedet.
+
+Ikke bland mange ulike former.
+
+---
+
+# Designendringer
+
+Ikke redesign eksisterende sider uten en tydelig begrunnelse.
+
+Forbedre heller enn å erstatte.
+
+Store visuelle endringer skal være planlagte og konsekvente.
+
+---
+
+# Komponenter
+
+Komponenter skal:
+
+- kunne gjenbrukes
+- være enkle
+- være konsekvente
+
+Unngå spesialløsninger.
+
+---
+
+# Designgjeld
+
+Hvis en ny løsning bryter med designstandarden skal den forbedres før publisering.
+
+Kortsiktige løsninger skal ikke bli permanente.
+
+---
+
+# Kvalitetssikring
+
+Før publisering skal følgende kontrolleres:
+
+- riktig spacing
+- riktig typografi
+- riktig grid
+- responsivt design
+- tilgjengelighet
+- konsekvent design
+- ingen visuelle feil
+
+---
+
+# Sammenheng med øvrige dokumenter
+
+Denne standarden bygger på:
+
+- 00_MANIFEST.md
+- 01_CONTENT_STRUCTURE.md
+- 02_EDITORIAL_STANDARD.md
+
+Relaterte dokumenter:
+
+- 04_COMPONENT_LIBRARY.md
+- 05_STYLE_GUIDE.md
+- 06_IMAGE_GUIDE.md
+- 07_SEO_STANDARD.md
+- 08_ACCESSIBILITY.md
+
+---
+
+# Grunnregel
+
+Godt design blir nesten usynlig.
+
+Når brukeren glemmer designet og konsentrerer seg om Bibelen, har THEOLOGIA lykkes.

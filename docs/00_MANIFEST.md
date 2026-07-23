@@ -1,4 +1,5 @@
 # THEOLOGIA Manifest
+Version 1.0
 
 > **Forstå Skriften. Styrk troen.**
 >
@@ -6,13 +7,27 @@
 
 ---
 
+# Om dette dokumentet
+
+Dette manifestet er THEOLOGIAs overordnede grunnlagsdokument.
+
+Det beskriver prosjektets identitet, visjon, verdier og grunnprinsipper.
+
+Alle øvrige standarder, retningslinjer og tekniske dokumenter bygger på prinsippene som er beskrevet her.
+
+Ved tvil skal dette dokumentet ha høyeste prioritet.
+
+---
+
 # Om THEOLOGIA
 
 THEOLOGIA er et digitalt bibliotek for bibelsk forståelse.
 
-Vi ønsker å hjelpe mennesker til å lese, forstå og studere Bibelen gjennom bibelsk forankrede ressurser, pedagogiske artikler og saklig teologisk dialog.
+Prosjektet er bygget for å hjelpe mennesker til å lese, forstå og studere Bibelen gjennom bibelsk forankrede ressurser, pedagogiske artikler og saklig teologisk dialog.
 
-THEOLOGIA er ikke først og fremst en blogg eller en nyhetsside. Vårt mål er å bygge et varig kunnskapsbibliotek som hjelper mennesker til å vokse i forståelsen av Guds ord.
+THEOLOGIA er ikke først og fremst en blogg eller en nyhetsside.
+
+Målet er å bygge et varig kunnskapsbibliotek som kan brukes av både nye og erfarne bibellesere gjennom mange år.
 
 ---
 
@@ -28,7 +43,7 @@ Vi ønsker å:
 
 - gjøre Bibelen lettere å forstå
 - forklare kristen tro på en tydelig og pedagogisk måte
-- samle kunnskap i et oversiktlig digitalt bibliotek
+- samle bibelsk kunnskap i et oversiktlig digitalt bibliotek
 - oppmuntre til bibelstudium og videre læring
 - fremme saklig og respektfull teologisk dialog
 - hjelpe mennesker til å lese Skriften i sin sammenheng
@@ -39,11 +54,12 @@ Vi ønsker å:
 
 THEOLOGIA er:
 
-- 📚 Et digitalt bibliotek
-- 🎓 Et studieverk
-- 🧭 En kunnskapsbase
-- 🌱 Et læringssenter
-- 💬 En arena for bibelsk refleksjon, saklig dialog og teologisk fordypning
+- et digitalt bibliotek
+- et studieverk
+- en kunnskapsbase
+- et læringssenter
+- en samling gjennomarbeidede ressurser
+- et sted for bibelsk refleksjon og teologisk fordypning
 
 ---
 
@@ -53,10 +69,12 @@ THEOLOGIA er ikke:
 
 - et sosialt medium
 - en nyhetsside
-- et kommentarfelt uten retning
+- et diskusjonsforum
+- et kommentarfelt
 - en samling tilfeldige blogginnlegg
+- en plattform som jager klikk eller trender
 
-Målet er å bygge et tidløst bibliotek med ressurser som kan brukes over mange år.
+Målet er å bygge et tidløst bibliotek som kan brukes i mange år.
 
 ---
 
@@ -74,23 +92,23 @@ Alt innhold skal undersøkes og vurderes i lys av Skriften.
 
 Jesus Kristus står i sentrum for Bibelens budskap.
 
-Vi ønsker at hele nettstedet skal peke mot ham.
+Hele nettstedet skal peke mot ham.
 
 ---
 
 ## Sannhet
 
-Vi tror at sannheten ikke har noe å frykte fra ærlige spørsmål.
+Sannheten har ingenting å frykte fra ærlige spørsmål.
 
-Derfor ønsker vi å undersøke teologiske spørsmål grundig og redelig.
+Vi ønsker å undersøke teologiske spørsmål grundig, redelig og bibelsk.
 
 ---
 
 ## Respekt
 
-Vi ønsker å møte mennesker med respekt også når vi er uenige.
+Vi møter mennesker med respekt, også når vi er uenige.
 
-Argumenter skal vurderes etter innhold, ikke etter hvem som fremfører dem.
+Argumenter vurderes etter innhold, ikke etter personen som fremfører dem.
 
 ---
 
@@ -106,20 +124,20 @@ God teologi skal være tilgjengelig.
 
 Vi prioriterer kvalitet fremfor kvantitet.
 
-Én gjennomarbeidet artikkel er mer verdifull enn mange overflatiske.
+Én grundig artikkel er mer verdifull enn mange overflatiske.
 
 ---
 
-# Vår tilnærming
+# Vår arbeidsmetode
 
-Når vi behandler et tema ønsker vi å:
+Når vi arbeider med et tema ønsker vi å:
 
-1. starte med Bibelteksten
-2. undersøke sammenhengen
-3. presentere relevante tolkninger
+1. begynne med Bibelteksten
+2. undersøke den historiske og litterære sammenhengen
+3. presentere relevante tolkninger rettferdig
 4. vurdere argumentene
 5. trekke en bibelsk begrunnet konklusjon
-6. oppmuntre leseren til videre studium
+6. oppmuntre til videre studium
 
 ---
 
@@ -127,7 +145,7 @@ Når vi behandler et tema ønsker vi å:
 
 Vi tror at bibelsk læring skjer gjennom både studium og samtale.
 
-Derfor ønsker vi å fremme en kultur preget av:
+Derfor ønsker vi en kultur preget av:
 
 - respekt
 - ydmykhet
@@ -141,7 +159,7 @@ Målet er ikke å vinne diskusjoner, men å forstå Skriften bedre.
 
 # Hvordan vi behandler ulike syn
 
-Når flere bibeltro tolkninger finnes, ønsker vi å:
+Når flere bibeltro tolkninger finnes ønsker vi å:
 
 - beskrive synene så rettferdig som mulig
 - forklare argumentene bak dem
@@ -162,14 +180,15 @@ Alt innhold skal være:
 - redelig
 - tydelig strukturert
 - skrevet med respekt
+- grundig kildearbeidet når historiske spørsmål behandles
 
 ---
 
 # Designfilosofi
 
-Designet skal støtte læring.
+Designet skal alltid støtte læring.
 
-Ikke konkurrere med den.
+Det skal aldri konkurrere med innholdet.
 
 Vi ønsker:
 
@@ -179,20 +198,41 @@ Vi ønsker:
 - enkel navigasjon
 - innhold i sentrum
 
+THEOLOGIA skal oppleves som et digitalt bibliotek – ikke som en blogg eller en markedsføringsside.
+
 ---
 
-# Vårt mål
+# Prosjektfilosofi
 
-Vi ønsker å bygge et bibliotek som mennesker kan bruke gjennom hele livet.
+Prosjektet skal utvikles gradvis.
 
-Et sted hvor de kan:
+Vi prioriterer:
 
-- lære
-- utforske
-- fordype seg
-- stille spørsmål
-- vokse i bibelsk forståelse
-- utruste andre
+- kvalitet fremfor hastighet
+- helhet fremfor enkeltsider
+- langsiktighet fremfor kortsiktige løsninger
+- konsistens fremfor stadige redesign
+
+Alle større endringer skal bygge videre på prosjektets etablerte identitet.
+
+---
+
+# Dokumentasjon
+
+Manifestet beskriver prosjektets identitet og retning.
+
+De øvrige dokumentene beskriver hvordan prosjektet skal implementeres.
+
+- 01_CONTENT_STRUCTURE.md
+- 02_EDITORIAL_STANDARD.md
+- 03_DESIGN_STANDARD.md
+- 04_COMPONENT_LIBRARY.md
+- 05_STYLE_GUIDE.md
+- 06_IMAGE_GUIDE.md
+- 07_SEO_STANDARD.md
+- 08_ACCESSIBILITY.md
+- 09_ROADMAP.md
+- 10_THEOLOGIA_HANDBOOK.md
 
 ---
 
@@ -204,7 +244,7 @@ Alle nye idéer skal prøves mot ett spørsmål:
 
 Hvis svaret er ja, passer det inn i THEOLOGIA.
 
-Hvis svaret er nei, bør det forbedres eller utelates.
+Hvis svaret er nei, bør idéen forbedres eller forkastes.
 
 ---
 
@@ -218,6 +258,6 @@ Hvis svaret er nei, bør det forbedres eller utelates.
 
 ---
 
-*"Gjør ditt beste for å stå din prøve for Gud som en arbeider som ikke har noe å skamme seg over, en som legger sannhetens ord rett fram."*
+> *"Gjør ditt beste for å stå din prøve for Gud som en arbeider som ikke har noe å skamme seg over, en som legger sannhetens ord rett fram."*
 
 **– 2. Timoteus 2:15**
