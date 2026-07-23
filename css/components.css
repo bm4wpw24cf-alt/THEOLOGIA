@@ -1,0 +1,35 @@
+/* ==========================================================
+   BREADCRUMB
+========================================================== */
+
+.breadcrumb {
+    padding: 1.5rem 0;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.breadcrumb-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: .95rem;
+}
+
+.breadcrumb-list a {
+    color: #475569;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.breadcrumb-list a:hover {
+    color: #b38b2d;
+}
+
+.breadcrumb-current {
+    color: #0f172a;
+    font-weight: 600;
+}
