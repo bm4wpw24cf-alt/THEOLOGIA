@@ -1,0 +1,47 @@
+/* =========================================================
+   7. HEADER
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,.94);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 0 rgba(17,17,17,.06);
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 96px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo img {
+    width: 70px;
+    height: auto;
+    transform: translateY(5px);
+}
+
+.logo-text h1 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 3px;
+    letter-spacing: .4px;
+}
+
+.logo-text p {
+    font-family: "Inter", sans-serif;
+    color: var(--gold);
+    font-size: .68rem;
+    font-weight: 600;
+    letter-spacing: 2.6px;
+    text-transform: uppercase;
+}

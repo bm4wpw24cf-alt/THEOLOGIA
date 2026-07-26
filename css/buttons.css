@@ -1,0 +1,80 @@
+
+/* =========================================================
+   9. SØKEKNAPP
+   ========================================================= */
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+    color: var(--black);
+    font-size: 1.1rem;
+    transition: all .2s var(--ease);
+}
+
+.search-button:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+    background: var(--parchment);
+}
+
+
+/* =========================================================
+   11. KNAPPER
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 32px;
+    border-radius: 999px;
+    font-family: "Inter", sans-serif;
+    font-size: .88rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all .25s var(--ease);
+    border: 1.5px solid transparent;
+    white-space: nowrap;
+}
+
+.btn .icon {
+    font-size: 1rem;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: var(--white);
+    box-shadow: 0 10px 24px -6px rgba(184,135,43,.55);
+}
+
+.btn-gold:hover {
+    background: var(--gold-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -8px rgba(184,135,43,.65);
+}
+
+.btn-outline {
+    border-color: rgba(255,255,255,.4);
+    color: var(--white);
+    background: rgba(255,255,255,.04);
+}
+
+.btn-outline:hover {
+    border-color: var(--gold-light);
+    color: var(--gold-light);
+    background: rgba(255,255,255,.08);
+    transform: translateY(-2px);
+}
+
+.btn-small {
+    padding: 12px 24px;
+    font-size: .78rem;
+}

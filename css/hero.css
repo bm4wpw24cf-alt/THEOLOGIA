@@ -1,0 +1,176 @@
+
+/* =========================================================
+   10. HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 620px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+
+    background-image: url("../images/hero/hero-bible.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Simulert fotografisk bakgrunn (solnedgang over fjell/vann) bygget
+   med gradientlag siden ingen bildefil finnes i prosjektet.
+   Bytt ut med background-image: url("images/hero.jpg") på .hero
+   og fjern .hero::before ved behov. */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(100deg, rgba(6,13,23,.92) 0%, rgba(6,13,23,.66) 32%, rgba(6,13,23,.15) 62%, rgba(6,13,23,0) 78%);
+}
+
+.hero-grid {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 640px;
+}
+
+.hero-card {
+    align-self: center;
+    justify-self: start;
+
+    width: 100%;
+    max-width: 340px;
+}
+
+.hero-eyebrow {
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.hero-eyebrow {
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.hero-card {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    width: 100%;
+    max-width: 340px;
+
+    padding: 32px;
+
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.25);
+
+    color: var(--black);
+
+    align-self: center;
+    justify-self: start;
+}
+
+.hero-card-content {
+    flex: 1;
+}
+
+.hero-card-icon {
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(184,135,43,.12);
+
+    color: var(--gold);
+}
+
+.hero-card-arrow {
+    color: var(--gold);
+    font-size: 1.5rem;
+}
+
+.hero-card h2 {
+    margin: 0 0 10px;
+    font-size: 2rem;
+}
+
+.hero-card p {
+    margin: 0;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: .5rem;
+    padding: .9rem 1.4rem;
+
+    background: var(--gold);
+    color: var(--white);
+
+    border-radius: 999px;
+    font-weight: 600;
+
+    transition: background .25s var(--ease);
+}
+
+.hero-button:hover {
+    background: var(--gold-dark);
+}
+
+.hero-content .hero-tag {
+    color: var(--gold-light);
+}
+
+.hero-title {
+    color: var(--white);
+    font-size: 3.6rem;
+    font-weight: 600;
+    line-height: 1.12;
+    margin-bottom: 26px;
+    text-shadow: 0 4px 24px rgba(0,0,0,.35);
+}
+
+.hero-divider {
+    width: 68px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 99px;
+    margin-bottom: 28px;
+}
+
+.hero-description {
+    font-family: "Inter", sans-serif;
+    color: rgba(255,255,255,.86);
+    font-size: 1.1rem;
+    font-weight: 400;
+    max-width: 540px;
+    margin-bottom: 44px;
+}
