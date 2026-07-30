@@ -1060,3 +1060,85 @@ img.resource-cover-featured {
     }
 
 }
+
+/* ===============================
+   KLIKKBART KAPITTEL
+================================ */
+
+.study-chapters .chapter-live::before{
+
+    color:var(--gold);
+
+}
+
+.study-chapters .chapter-live a{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    color:inherit;
+
+    transition:.25s ease;
+
+    cursor:pointer;
+
+    padding:2px 0;
+
+}
+
+.chapter-arrow{
+
+    color:var(--gold);
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    transition:.25s ease;
+
+}
+
+.study-chapters .chapter-live:hover{
+
+    background:#fcfaf6;
+
+}
+
+.study-chapters .chapter-live:hover a{
+
+    color:var(--gold);
+
+}
+
+.study-chapters .chapter-live:hover .chapter-arrow{
+
+    transform:translateX(6px);
+
+}
+
+.study-chapters .chapter-live a:focus-visible{
+
+    outline:2px solid var(--gold);
+
+    outline-offset:4px;
+
+    border-radius:4px;
+
+}
+
+.study-coming{
+
+    margin-top:16px;
+
+    font-size:.72rem;
+
+    color:#8c8c8c;
+
+    font-style:italic;
+
+}

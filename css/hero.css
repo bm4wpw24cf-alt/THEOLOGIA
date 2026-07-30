@@ -174,3 +174,30 @@
     max-width: 540px;
     margin-bottom: 44px;
 }
+
+/* =========================================================
+   STUDY HERO
+   ========================================================= */
+
+.study-hero {
+    background: var(--parchment);
+    padding: 4rem 0;
+}
+
+.study-hero-grid {
+    display: grid;
+    grid-template-columns: 280px 1fr 320px;
+    gap: 3rem;
+    align-items: start;
+}
+
+.hero-book img {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.15);
+}
+
+.hero-sidebar {
+    width: 100%;
+}
