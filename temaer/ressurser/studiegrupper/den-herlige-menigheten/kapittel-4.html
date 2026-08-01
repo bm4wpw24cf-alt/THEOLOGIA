@@ -46,6 +46,12 @@
     <link rel="stylesheet"
           href="../../../../css/icons.css">
 
+    <link rel="stylesheet"
+          href="../../../../css/animations.css">
+
+    <link rel="stylesheet"
+          href="../../../../css/hero.css">
+
     <!-- Lokal CSS -->
 
     <link rel="stylesheet"
@@ -121,14 +127,6 @@
 
             <span>/</span>
 
-            <a href="index.html">
-
-                Den herlige menigheten
-
-            </a>
-
-            <span>/</span>
-
             <strong>
 
                 Kapittel 4
@@ -151,10 +149,10 @@
 
                 <!-- Bokomslag -->
 
-                <aside class="hero-book">
+                <aside class="hero-book hero-book-smaller">
 
-                    <img src="images/book-cover.webp"
-                         alt="Den herlige menigheten">
+                    <img src="../../../../images/resources/den-herlige-menigheten-3d.png"
+     alt="Bokomslag: Den herlige menigheten">
 
                 </aside>
 
@@ -203,13 +201,13 @@
                     <div class="hero-features">
 
                         <div class="feature">
-    <span class="icon icon-video"></span>
+    <span class="icon icon-video" aria-hidden="true"></span>
     <span>Zoom-gruppe</span>
 </div>
 
                         <div class="feature">
 
-                            🖥️
+                            <span class="icon icon-document" aria-hidden="true"></span>
 
                             <span>
 
@@ -221,7 +219,7 @@
 
                         <div class="feature">
 
-                            💬
+                            <span class="icon icon-comment" aria-hidden="true"></span>
 
                             <span>
 
@@ -233,7 +231,7 @@
 
                         <div class="feature">
 
-                            📖
+                            <span class="icon icon-book" aria-hidden="true"></span>
 
                             <span>
 
@@ -251,6 +249,15 @@
                            class="btn btn-gold">
 
                             ÅPNE STUDIET
+
+                        </a>
+
+                        <!-- Peker til "#" inntil PDF-filen er lastet opp, samme
+                             mønster som øvrige uferdige lenker i denne filen -->
+                        <a href="#"
+                           class="btn btn-outline-dark">
+
+                            ↓ LAST NED (PDF)
 
                         </a>
 
@@ -274,13 +281,9 @@
 
                             <a href="#presentation">
 
-                                <span class="summary-number">
+                                <span class="icon icon-document" aria-hidden="true"></span>
 
-                                    01
-
-                                </span>
-
-                                <span>
+                                <span class="summary-label">
 
                                     Presentasjon
 
@@ -290,31 +293,37 @@
 
                             <a href="#scripture">
 
-                                <span class="summary-number">
+                                <span class="icon icon-book" aria-hidden="true"></span>
 
-                                    02
-
-                                </span>
-
-                                <span>
+                                <span class="summary-label">
 
                                     Bibeltekster
 
                                 </span>
 
-                            </a>
+                                <span class="accordion-count">
 
-                            <a href="#infographics">
-
-                                <span class="summary-number">
-
-                                    03
+                                    4
 
                                 </span>
 
-                                <span>
+                            </a>
+
+                            <!-- icon-column gjenbrukt midlertidig for Infografikk, se merknad ved
+                                 hovedaccordion lenger ned -->
+                            <a href="#infographics">
+
+                                <span class="icon icon-column" aria-hidden="true"></span>
+
+                                <span class="summary-label">
 
                                     Infografikk
+
+                                </span>
+
+                                <span class="accordion-count">
+
+                                    3
 
                                 </span>
 
@@ -322,15 +331,17 @@
 
                             <a href="#commentary">
 
-                                <span class="summary-number">
+                                <span class="icon icon-comment" aria-hidden="true"></span>
 
-                                    04
+                                <span class="summary-label">
+
+                                    Kommentarer
 
                                 </span>
 
-                                <span>
+                                <span class="accordion-count">
 
-                                    Kommentarer
+                                    8
 
                                 </span>
 
@@ -338,15 +349,21 @@
 
                             <a href="#questions">
 
-                                <span class="summary-number">
+                                <span class="summary-icon-text" aria-hidden="true">
 
-                                    05
+                                    ?
 
                                 </span>
 
-                                <span>
+                                <span class="summary-label">
 
                                     Studiespørsmål
+
+                                </span>
+
+                                <span class="accordion-count">
+
+                                    6
 
                                 </span>
 
@@ -388,13 +405,14 @@
 
                         <button class="accordion-header"
                                 type="button"
-                                aria-expanded="true">
+                                aria-expanded="true"
+                                aria-controls="presentation-panel">
 
                             <div class="accordion-left">
 
                                 <span class="accordion-icon">
 
-                                    📘
+                                    <span class="icon icon-document" aria-hidden="true"></span>
 
                                 </span>
 
@@ -416,15 +434,19 @@
 
                             </div>
 
-                            <span class="accordion-arrow">
+                            <div class="accordion-right">
 
-                                ▼
+                                <span class="accordion-arrow" aria-hidden="true">
 
-                            </span>
+                                    ▼
+
+                                </span>
+
+                            </div>
 
                         </button>
 
-                        <div class="accordion-content">
+                        <div class="accordion-content" id="presentation-panel">
 
                             <!-- Presentasjon legges inn her -->
 
@@ -441,13 +463,14 @@
 
                         <button class="accordion-header"
                                 type="button"
-                                aria-expanded="false">
+                                aria-expanded="false"
+                                aria-controls="scripture-panel">
 
                             <div class="accordion-left">
 
                                 <span class="accordion-icon">
 
-                                    📖
+                                    <span class="icon icon-book" aria-hidden="true"></span>
 
                                 </span>
 
@@ -477,7 +500,7 @@
 
                                 </span>
 
-                                <span class="accordion-arrow">
+                                <span class="accordion-arrow" aria-hidden="true">
 
                                     ▼
 
@@ -487,17 +510,16 @@
 
                         </button>
 
-                        <div class="accordion-content">
+                        <div class="accordion-content" id="scripture-panel">
 
-                                                        <!-- ================================= -->
                             <!-- Åpenbaringen 12 -->
-                            <!-- ================================= -->
 
                             <section class="sub-accordion">
 
                                 <button class="sub-header"
                                         type="button"
-                                        aria-expanded="false">
+                                        aria-expanded="false"
+                                        aria-controls="scripture-sub-1">
 
                                     <div>
 
@@ -515,7 +537,7 @@
 
                                     </div>
 
-                                    <span class="sub-arrow">
+                                    <span class="sub-arrow" aria-hidden="true">
 
                                         ▼
 
@@ -523,7 +545,7 @@
 
                                 </button>
 
-                                <div class="sub-content">
+                                <div class="sub-content" id="scripture-sub-1">
 
                                     <!-- Bibeltekst legges inn her -->
 
@@ -531,15 +553,14 @@
 
                             </section>
 
-                            <!-- ================================= -->
                             <!-- 1 Mosebok 37 -->
-                            <!-- ================================= -->
 
                             <section class="sub-accordion">
 
                                 <button class="sub-header"
                                         type="button"
-                                        aria-expanded="false">
+                                        aria-expanded="false"
+                                        aria-controls="scripture-sub-2">
 
                                     <div>
 
@@ -557,7 +578,7 @@
 
                                     </div>
 
-                                    <span class="sub-arrow">
+                                    <span class="sub-arrow" aria-hidden="true">
 
                                         ▼
 
@@ -565,7 +586,7 @@
 
                                 </button>
 
-                                <div class="sub-content">
+                                <div class="sub-content" id="scripture-sub-2">
 
                                     <!-- Bibeltekst legges inn her -->
 
@@ -573,15 +594,14 @@
 
                             </section>
 
-                            <!-- ================================= -->
                             <!-- Jesaja 66 -->
-                            <!-- ================================= -->
 
                             <section class="sub-accordion">
 
                                 <button class="sub-header"
                                         type="button"
-                                        aria-expanded="false">
+                                        aria-expanded="false"
+                                        aria-controls="scripture-sub-3">
 
                                     <div>
 
@@ -599,7 +619,7 @@
 
                                     </div>
 
-                                    <span class="sub-arrow">
+                                    <span class="sub-arrow" aria-hidden="true">
 
                                         ▼
 
@@ -607,7 +627,7 @@
 
                                 </button>
 
-                                <div class="sub-content">
+                                <div class="sub-content" id="scripture-sub-3">
 
                                     <!-- Bibeltekst legges inn her -->
 
@@ -615,15 +635,14 @@
 
                             </section>
 
-                            <!-- ================================= -->
                             <!-- Salme 2 -->
-                            <!-- ================================= -->
 
                             <section class="sub-accordion">
 
                                 <button class="sub-header"
                                         type="button"
-                                        aria-expanded="false">
+                                        aria-expanded="false"
+                                        aria-controls="scripture-sub-4">
 
                                     <div>
 
@@ -641,7 +660,7 @@
 
                                     </div>
 
-                                    <span class="sub-arrow">
+                                    <span class="sub-arrow" aria-hidden="true">
 
                                         ▼
 
@@ -649,7 +668,7 @@
 
                                 </button>
 
-                                <div class="sub-content">
+                                <div class="sub-content" id="scripture-sub-4">
 
                                     <!-- Bibeltekst legges inn her -->
 
@@ -670,13 +689,16 @@
 
                         <button class="accordion-header"
                                 type="button"
-                                aria-expanded="false">
+                                aria-expanded="false"
+                                aria-controls="infographics-panel">
 
                             <div class="accordion-left">
 
-                                <span class="accordion-icon">
+                                <!-- icon-column gjenbrukt midlertidig for Infografikk; bytt ut med et
+                                 dedikert diagram-ikon i icons.css hvis ønskelig -->
+                            <span class="accordion-icon">
 
-                                    📊
+                                    <span class="icon icon-column" aria-hidden="true"></span>
 
                                 </span>
 
@@ -706,7 +728,7 @@
 
                                 </span>
 
-                                <span class="accordion-arrow">
+                                <span class="accordion-arrow" aria-hidden="true">
 
                                     ▼
 
@@ -716,15 +738,16 @@
 
                         </button>
 
-                        <div class="accordion-content">
+                        <div class="accordion-content" id="infographics-panel">
 
-                                                        <!-- Infografikk 1 -->
+                            <!-- Infografikk 1 -->
 
                             <section class="sub-accordion">
 
                                 <button class="sub-header"
                                         type="button"
-                                        aria-expanded="false">
+                                        aria-expanded="false"
+                                        aria-controls="infographics-sub-1">
 
                                     <div>
 
@@ -742,7 +765,7 @@
 
                                     </div>
 
-                                    <span class="sub-arrow">
+                                    <span class="sub-arrow" aria-hidden="true">
 
                                         ▼
 
@@ -750,7 +773,7 @@
 
                                 </button>
 
-                                <div class="sub-content">
+                                <div class="sub-content" id="infographics-sub-1">
 
                                     <!-- Infografikk -->
 
@@ -764,7 +787,8 @@
 
                                 <button class="sub-header"
                                         type="button"
-                                        aria-expanded="false">
+                                        aria-expanded="false"
+                                        aria-controls="infographics-sub-2">
 
                                     <div>
 
@@ -782,7 +806,7 @@
 
                                     </div>
 
-                                    <span class="sub-arrow">
+                                    <span class="sub-arrow" aria-hidden="true">
 
                                         ▼
 
@@ -790,7 +814,7 @@
 
                                 </button>
 
-                                <div class="sub-content">
+                                <div class="sub-content" id="infographics-sub-2">
 
                                     <!-- Infografikk -->
 
@@ -804,7 +828,8 @@
 
                                 <button class="sub-header"
                                         type="button"
-                                        aria-expanded="false">
+                                        aria-expanded="false"
+                                        aria-controls="infographics-sub-3">
 
                                     <div>
 
@@ -822,7 +847,7 @@
 
                                     </div>
 
-                                    <span class="sub-arrow">
+                                    <span class="sub-arrow" aria-hidden="true">
 
                                         ▼
 
@@ -830,7 +855,7 @@
 
                                 </button>
 
-                                <div class="sub-content">
+                                <div class="sub-content" id="infographics-sub-3">
 
                                     <!-- Infografikk -->
 
@@ -851,7 +876,8 @@
 
                         <button class="accordion-header"
                                 type="button"
-                                aria-expanded="false">
+                                aria-expanded="false"
+                                aria-controls="commentary-panel">
 
                             <div class="accordion-left">
 
@@ -887,7 +913,7 @@
 
                                 </span>
 
-                                <span class="accordion-arrow">
+                                <span class="accordion-arrow" aria-hidden="true">
 
                                     ▼
 
@@ -897,22 +923,28 @@
 
                         </button>
 
-                        <div class="accordion-content">
+                        <div class="accordion-content" id="commentary-panel">
 
                             <!-- Kommentar 1 -->
 
                             <section class="sub-accordion">
 
                                 <button class="sub-header"
-                                        type="button">
+                                        type="button"
+                                        aria-expanded="false"
+                                        aria-controls="commentary-sub-1">
 
-                                    <span>
+                                    <div>
 
-                                        Kommentar 1
+                                        <h3>
 
-                                    </span>
+                                            Kommentar 1
 
-                                    <span class="sub-arrow">
+                                        </h3>
+
+                                    </div>
+
+                                    <span class="sub-arrow" aria-hidden="true">
 
                                         ▼
 
@@ -920,7 +952,7 @@
 
                                 </button>
 
-                                <div class="sub-content">
+                                <div class="sub-content" id="commentary-sub-1">
 
                                     <!-- Kommentar -->
 
@@ -943,13 +975,15 @@
 
                         <button class="accordion-header"
                                 type="button"
-                                aria-expanded="false">
+                                aria-expanded="false"
+                                aria-controls="questions-panel">
 
                             <div class="accordion-left">
 
-                                <span class="accordion-icon">
+                                <span class="accordion-icon"
+                                      aria-hidden="true">
 
-                                    <!-- SVG-ikon -->
+                                    ?
 
                                 </span>
 
@@ -979,7 +1013,7 @@
 
                                 </span>
 
-                                <span class="accordion-arrow">
+                                <span class="accordion-arrow" aria-hidden="true">
 
                                     ▼
 
@@ -989,7 +1023,7 @@
 
                         </button>
 
-                        <div class="accordion-content">
+                        <div class="accordion-content" id="questions-panel">
 
                             <!-- Studiespørsmål legges inn her -->
 
@@ -999,7 +1033,7 @@
 
                 </section>
 
-                                <!-- ================================= -->
+                <!-- ================================= -->
                 <!-- Sidebar -->
                 <!-- ================================= -->
 
@@ -1055,36 +1089,61 @@
 
                         </h3>
 
+                        <!-- Kapittel 1, 2, 3 og 5 finnes ikke som egne sider ennå
+                             (status "Kommer" i index.html). De beholdes som <a>
+                             med reell fremtidig href, men deaktiveres med
+                             aria-disabled + tabindex="-1" (pointer-events:none i
+                             study.css). Når siden publiseres fjernes kun
+                             class="disabled" aria-disabled="true" tabindex="-1" –
+                             ingen strukturendring nødvendig. -->
                         <nav class="chapter-list">
 
-                            <a href="kapittel-1.html">
+                            <a href="kapittel-1.html"
+                               class="disabled"
+                               aria-disabled="true"
+                               tabindex="-1">
 
-                                Kapittel 1
-
-                            </a>
-
-                            <a href="kapittel-2.html">
-
-                                Kapittel 2
+                                <strong>Kapittel 1</strong>
+                                <em>Guds plan og Guds hvile</em>
 
                             </a>
 
-                            <a href="kapittel-3.html">
+                            <a href="kapittel-2.html"
+                               class="disabled"
+                               aria-disabled="true"
+                               tabindex="-1">
 
-                                Kapittel 3
-
-                            </a>
-
-                            <a class="active"
-                               href="kapittel-4.html">
-
-                                Kapittel 4
+                                <strong>Kapittel 2</strong>
+                                <em>Eva – et forbilde på menigheten</em>
 
                             </a>
 
-                            <a href="kapittel-5.html">
+                            <a href="kapittel-3.html"
+                               class="disabled"
+                               aria-disabled="true"
+                               tabindex="-1">
 
-                                Kapittel 5
+                                <strong>Kapittel 3</strong>
+                                <em>Kristi kropp og Kristi brud</em>
+
+                            </a>
+
+                            <a href="kapittel-4.html"
+                               class="active"
+                               aria-current="page">
+
+                                <strong>Kapittel 4</strong>
+                                <em>«Og hun fødte … et guttebarn»</em>
+
+                            </a>
+
+                            <a href="kapittel-5.html"
+                               class="disabled"
+                               aria-disabled="true"
+                               tabindex="-1">
+
+                                <strong>Kapittel 5</strong>
+                                <em>Den hellige stad – Det nye Jerusalem</em>
 
                             </a>
 
@@ -1124,23 +1183,46 @@
 
             </header>
 
+            <!-- Ressurskort-komponenten er dokumentert i 04_COMPONENT_LIBRARY.md
+                 ("Ressurskort brukes for: PDF, e-bøker, videoer, studiemateriell"),
+                 men ingen konkrete kort med tittel/beskrivelse finnes andre steder
+                 i prosjektet å gjenbruke. Strukturen står derfor klar under, med
+                 innhold markert som ikke satt i stedet for oppdiktet tekst. -->
             <div class="related-grid">
 
                 <article class="resource-card">
 
-                    <!-- Ressurskort -->
+                    <span class="resource-icon">
+                        <span class="icon icon-books" aria-hidden="true"></span>
+                    </span>
+
+                    <h3><!-- Tittel ikke satt --></h3>
+
+                    <p><!-- Beskrivelse ikke satt --></p>
 
                 </article>
 
                 <article class="resource-card">
 
-                    <!-- Ressurskort -->
+                    <span class="resource-icon">
+                        <span class="icon icon-video" aria-hidden="true"></span>
+                    </span>
+
+                    <h3><!-- Tittel ikke satt --></h3>
+
+                    <p><!-- Beskrivelse ikke satt --></p>
 
                 </article>
 
                 <article class="resource-card">
 
-                    <!-- Ressurskort -->
+                    <span class="resource-icon">
+                        <span class="icon icon-file" aria-hidden="true"></span>
+                    </span>
+
+                    <h3><!-- Tittel ikke satt --></h3>
+
+                    <p><!-- Beskrivelse ikke satt --></p>
 
                 </article>
 
@@ -1158,10 +1240,16 @@
 
         <div class="container">
 
+            <!-- kapittel-3.html og kapittel-5.html finnes ikke ennå. Samme
+                 mønster som sidebarens kapittelliste: <a> beholdes med reell
+                 href, deaktivert via aria-disabled/tabindex/pointer-events
+                 slik at ingen strukturendring trengs når sidene publiseres. -->
             <nav class="pagination-grid">
 
-                <a class="pagination-card previous"
-                   href="kapittel-3.html">
+                <a href="kapittel-3.html"
+                   class="pagination-card previous disabled"
+                   aria-disabled="true"
+                   tabindex="-1">
 
                     <span>
 
@@ -1177,25 +1265,10 @@
 
                 </a>
 
-                <a class="pagination-card overview"
-                   href="index.html">
-
-                    <span>
-
-                        Studieoversikt
-
-                    </span>
-
-                    <strong>
-
-                        Den herlige menigheten
-
-                    </strong>
-
-                </a>
-
-                <a class="pagination-card next"
-                   href="kapittel-5.html">
+                <a href="kapittel-5.html"
+                   class="pagination-card next disabled"
+                   aria-disabled="true"
+                   tabindex="-1">
 
                     <span>
 
@@ -1227,15 +1300,15 @@
 
     <div class="container">
 
-        <div class="footer-grid">
+        <div class="footer-inner">
 
-            <section class="footer-column">
+            <section class="footer-col">
 
-                <h3>
+                <h4>
 
                     THEOLOGIA
 
-                </h3>
+                </h4>
 
                 <p>
 
@@ -1246,17 +1319,17 @@
 
             </section>
 
-            <section class="footer-column">
+            <section class="footer-col">
 
-                <h3>
+                <h4>
 
                     Studier
 
-                </h3>
+                </h4>
 
                 <nav>
 
-                    <a href="index.html">
+                    <a href="kapittel-4.html">
 
                         Den herlige menigheten
 
@@ -1266,13 +1339,13 @@
 
             </section>
 
-            <section class="footer-column">
+            <section class="footer-col">
 
-                <h3>
+                <h4>
 
                     Ressurser
 
-                </h3>
+                </h4>
 
                 <nav>
 

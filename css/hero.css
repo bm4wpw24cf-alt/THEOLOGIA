@@ -186,7 +186,7 @@
 
 .study-hero-grid {
     display: grid;
-    grid-template-columns: 280px 1fr 320px;
+    grid-template-columns: 120px 1fr 320px;
     gap: 3rem;
     align-items: start;
 }
