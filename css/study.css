@@ -13,27 +13,35 @@
    INNHOLD
    1. Studie-hero
    2. Nøkkeltall
-   3. Handlingsknapper
-   4. Innholdsoversikt
-   5. Studielayout
-   6. Accordion
-   7. Sub-accordion
-   8. Studie-sidebar
-   9. Relaterte ressurser
-   10. Kapittelnavigasjon
-   11. Fokustilstand
-   12. Responsivt
+   3. Studielayout
+   4. Accordion
+   5. Sub-accordion
+   6. Studie-sidebar
+   7. Relaterte ressurser
+   8. Kapittelnavigasjon
+   9. Fokustilstand
+   10. Responsivt
    ========================================================= */
 
 
 /* =========================================================
    1. STUDIE-HERO
-   .study-hero / .study-hero-grid / .hero-book / .hero-sidebar
-   er allerede definert i hero.css. Reglene her skoper de
-   generiske klassene .hero-content/.hero-description til
-   denne konteksten, slik at de ikke arver den mørke
-   forsidevarianten (hvit tekst på bilde) fra hero.css.
+   .study-hero / .study-hero-grid / .hero-book er allerede
+   definert i hero.css. Reglene her skoper de generiske
+   klassene .hero-content/.hero-description til denne
+   konteksten, slik at de ikke arver den mørke forsidevarianten
+   (hvit tekst på bilde) fra hero.css, og overstyrer grid-
+   kolonnene til et 2-kolonners oppsett (innhold / bokomslag)
+   siden .hero-sidebar ikke lenger brukes på denne siden.
    ========================================================= */
+
+/* Bokomslaget er flyttet til høyre og forstørret (mockup):
+   1fr til innhold, ~240px fast bredde til bokomslaget
+   (innenfor 220–260px-målet). .hero-book img sin eksisterende
+   width:100% fra hero.css fyller kolonnen automatisk. */
+.study-hero .study-hero-grid {
+    grid-template-columns: 1fr 240px;
+}
 
 .study-hero .hero-content {
     max-width: none;
@@ -146,105 +154,7 @@
 
 
 /* =========================================================
-   3. HANDLINGSKNAPPER
-   .btn / .btn-gold gjenbrukes uendret fra buttons.css.
-   Kun én ny modifikator er lagt til: .btn-outline-dark,
-   for sekundærknapp på lys bakgrunn (buttons.css sin
-   .btn-outline er laget for mørk bakgrunn/hvit tekst og
-   passer ikke her).
-   ========================================================= */
-
-.hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-.btn-outline-dark {
-    border-color: var(--border);
-    background: var(--white);
-    color: var(--black);
-}
-
-.btn-outline-dark:hover {
-    border-color: var(--gold);
-    color: var(--gold-dark);
-    background: var(--parchment);
-    transform: translateY(-2px);
-}
-
-
-/* =========================================================
-   4. INNHOLDSOVERSIKT
-   Ikonene gjenbruker samme sett som hovedaccordion (seksjon 6)
-   for konsekvens. Tellerbadgen til høyre gjenbruker
-   .accordion-count (seksjon 6) i stedet for en ny klasse.
-   ========================================================= */
-
-.study-summary-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: 30px;
-}
-
-.study-summary-card h2 {
-    font-size: 1.15rem;
-    margin-bottom: 20px;
-}
-
-.summary-list {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.summary-list a {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 12px 4px;
-    font-family: "Inter", sans-serif;
-    font-size: .94rem;
-    font-weight: 500;
-    color: var(--text);
-    border-bottom: 1px solid var(--border);
-    transition: color .2s var(--ease), padding-left .2s var(--ease);
-}
-
-.summary-list a:last-child {
-    border-bottom: none;
-}
-
-.summary-list a:hover {
-    color: var(--gold-dark);
-    padding-left: 8px;
-}
-
-.summary-list .icon {
-    width: 18px;
-    height: 18px;
-    color: var(--navy-light);
-    flex-shrink: 0;
-}
-
-/* Tekstbasert erstatning for spørsmålstegn-ikon (se seksjon 6) */
-.summary-icon-text {
-    width: 18px;
-    flex-shrink: 0;
-    text-align: center;
-    font-weight: 700;
-    color: var(--navy-light);
-}
-
-.summary-label {
-    flex: 1 1 auto;
-}
-
-
-/* =========================================================
-   5. STUDIELAYOUT
+   3. STUDIELAYOUT
    ========================================================= */
 
 .study-content {
@@ -266,7 +176,7 @@
 
 
 /* =========================================================
-   6. ACCORDION
+   4. ACCORDION
    Hovedseksjoner: Presentasjon, Bibeltekster, Infografikk,
    Kommentarer, Studiespørsmål.
 
@@ -402,7 +312,7 @@
 
 
 /* =========================================================
-   7. SUB-ACCORDION
+   5. SUB-ACCORDION
    Nøstede lister under Bibeltekster, Infografikk og
    Kommentarer.
    ========================================================= */
@@ -469,7 +379,7 @@
 
 
 /* =========================================================
-   8. STUDIE-SIDEBAR
+   6. STUDIE-SIDEBAR
    Ressurser og kapittelliste.
    ========================================================= */
 
@@ -632,7 +542,7 @@
 
 
 /* =========================================================
-   9. RELATERTE RESSURSER
+   7. RELATERTE RESSURSER
    Ikonene her (icon-books, icon-video, icon-file, icon-globe)
    er alle eksisterende ikoner fra icons.css.
    ========================================================= */
@@ -733,7 +643,7 @@
 
 
 /* =========================================================
-   10. KAPITTELNAVIGASJON
+   8. KAPITTELNAVIGASJON
    ========================================================= */
 
 .chapter-pagination {
@@ -830,7 +740,7 @@
 
 
 /* =========================================================
-   11. FOKUSTILSTAND
+   9. FOKUSTILSTAND
    Tastaturnavigasjon. Verken base.css eller andre delte filer
    definerer en :focus-visible-stil i prosjektet, så nettleserens
    standard fokusring gjelder i utgangspunktet. Her legges én
@@ -841,7 +751,6 @@
 
 .accordion-header:focus-visible,
 .sub-header:focus-visible,
-.summary-list a:focus-visible,
 .sidebar-links a:focus-visible,
 .chapter-list a:focus-visible,
 .resource-card a:focus-visible,
@@ -852,18 +761,14 @@
 
 
 /* =========================================================
-   12. RESPONSIVT
+   10. RESPONSIVT
    Spesifikt for studiesider.
    ========================================================= */
 
 @media (max-width: 1100px) {
 
     .study-hero-grid {
-        grid-template-columns: 200px 1fr;
-    }
-
-    .hero-sidebar {
-        grid-column: 1 / -1;
+        grid-template-columns: 1fr 200px;
     }
 
     .study-layout {
