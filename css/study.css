@@ -393,9 +393,7 @@
    i HTML, slik at de kan lastes ved behov og følger nettstedets
    vanlige visuelle ramme. */
 .infographic-slides {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+    display: block;
 }
 
 .infographic-slide {
@@ -404,6 +402,12 @@
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: var(--radius-sm);
+    cursor: zoom-in;
+}
+
+.infographic-slide:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
 }
 
 .infographic-slide img {
@@ -420,6 +424,159 @@
     font-size: .78rem;
     letter-spacing: .04em;
     text-align: center;
+}
+
+.infographic-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+.infographic-control {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 38px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: var(--white);
+    color: var(--navy);
+    cursor: pointer;
+    font-family: "EB Garamond", serif;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.infographic-control:hover:not(:disabled) {
+    border-color: var(--gold);
+    color: var(--gold-dark);
+}
+
+.infographic-control:disabled {
+    cursor: not-allowed;
+    opacity: .45;
+}
+
+.infographic-counter {
+    margin: 0;
+    color: var(--text-light);
+    font-family: "Inter", sans-serif;
+    font-size: .78rem;
+    letter-spacing: .04em;
+}
+
+.infographic-modal {
+    width: min(96vw, 1440px);
+    max-width: none;
+    max-height: 94vh;
+    padding: 0;
+    border: 0;
+    background: transparent;
+}
+
+.infographic-modal::backdrop {
+    background: rgba(11, 23, 38, .92);
+}
+
+.infographic-modal-figure img:fullscreen {
+    width: 100vw;
+    height: 100vh;
+    max-height: none;
+    object-fit: contain;
+    background: var(--navy);
+}
+
+.infographic-modal-inner {
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 16px;
+}
+
+.infographic-modal-figure {
+    margin: 0;
+    overflow: hidden;
+    border-radius: var(--radius-sm);
+    background: var(--black);
+}
+
+.infographic-modal-figure img {
+    display: block;
+    width: 100%;
+    max-height: calc(94vh - 72px);
+    object-fit: contain;
+}
+
+.infographic-modal-figure figcaption {
+    padding: 10px 16px;
+    color: var(--white);
+    font-family: "Inter", sans-serif;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.infographic-modal-close,
+.infographic-modal-prev,
+.infographic-modal-next {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 255, 255, .55);
+    border-radius: 50%;
+    background: rgba(11, 23, 38, .9);
+    color: var(--white);
+    cursor: pointer;
+}
+
+.infographic-modal-close {
+    position: absolute;
+    z-index: 1;
+    top: -12px;
+    right: -12px;
+    width: 38px;
+    height: 38px;
+    font-size: 1.7rem;
+    line-height: 1;
+}
+
+.infographic-modal-prev,
+.infographic-modal-next {
+    width: 46px;
+    height: 46px;
+    font-family: "EB Garamond", serif;
+    font-size: 2rem;
+}
+
+.infographic-modal-prev:disabled,
+.infographic-modal-next:disabled {
+    cursor: not-allowed;
+    opacity: .35;
+}
+
+@media (max-width: 600px) {
+    .infographic-modal {
+        width: 100vw;
+    }
+
+    .infographic-modal-inner {
+        grid-template-columns: 36px minmax(0, 1fr) 36px;
+        gap: 8px;
+    }
+
+    .infographic-modal-prev,
+    .infographic-modal-next {
+        width: 36px;
+        height: 36px;
+    }
+
+    .infographic-modal-close {
+        top: -8px;
+        right: 4px;
+    }
 }
 
 
