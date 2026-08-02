@@ -35,6 +35,15 @@
    siden .hero-sidebar ikke lenger brukes på denne siden.
    ========================================================= */
 
+/* Reduserer luften mellom hero og accordion. hero.css sin
+   .study-hero { padding: 4rem 0 } er delt med andre sider og
+   røres ikke – kun bunn-paddingen overstyres her, skopet til
+   denne konteksten. Se også .study-content lenger ned, som
+   reduserer sin egen topp-padding tilsvarende. */
+.study-hero {
+    padding-bottom: 1.5rem;
+}
+
 /* Bokomslaget er flyttet til høyre og forstørret (mockup):
    1fr til innhold, ~240px fast bredde til bokomslaget
    (innenfor 220–260px-målet). .hero-book img sin eksisterende
@@ -155,10 +164,13 @@
 
 /* =========================================================
    3. STUDIELAYOUT
+   Topp-padding redusert (var 70px) for å få accordion-
+   seksjonen til å starte høyere, jf. .study-hero sin reduserte
+   bunn-padding i seksjon 1. Bunn-padding uendret.
    ========================================================= */
 
 .study-content {
-    padding-block: 70px;
+    padding-block: 24px 70px;
 }
 
 .study-layout {
@@ -377,6 +389,39 @@
     animation: fadeIn .3s var(--ease);
 }
 
+/* Infografikkene er beholdt som egne bilder i stedet for data-URI-er
+   i HTML, slik at de kan lastes ved behov og følger nettstedets
+   vanlige visuelle ramme. */
+.infographic-slides {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.infographic-slide {
+    margin: 0;
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+}
+
+.infographic-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.infographic-slide figcaption {
+    padding: 12px 16px;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+    font-family: "Inter", sans-serif;
+    font-size: .78rem;
+    letter-spacing: .04em;
+    text-align: center;
+}
+
 
 /* =========================================================
    6. STUDIE-SIDEBAR
@@ -399,6 +444,68 @@
     padding: 28px;
 }
 
+/* Ikon + tittel-rad for Zoom-gruppe/Kommentarer-kortene. Egen
+   regel fordi disse to kortene har en annen visuell behandling
+   enn Ressurser/Kapitler sin diskré, store bokstaver-stil
+   (.sidebar-card h3 rett under) – plassert etter den i filen
+   slik at den vinner uten ekstra spesifisitet eller !important. */
+.card-heading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.card-heading .icon {
+    width: 22px;
+    height: 22px;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.card-heading h3 {
+    font-size: 1.05rem;
+    font-family: "EB Garamond", serif;
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--black);
+    margin-bottom: 0;
+}
+
+.sidebar-card p {
+    font-family: "Inter", sans-serif;
+    font-size: .92rem;
+    line-height: 1.6;
+    color: var(--text);
+    margin-bottom: 18px;
+}
+
+.sidebar-card p:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-card .btn {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+/* .btn-outline i buttons.css er laget for mørk bakgrunn (hvit
+   tekst på gjennomsiktig bunn) og passer ikke på et hvitt kort –
+   samme problem som ble løst for hero-knappene tidligere. */
+.sidebar-card .btn-outline {
+    border-color: var(--gold);
+    color: var(--gold-dark);
+    background: transparent;
+}
+
+.sidebar-card .btn-outline:hover {
+    background: var(--parchment);
+    color: var(--gold-dark);
+    transform: translateY(-2px);
+}
+
 .sidebar-card h3 {
     font-size: 1rem;
     text-transform: uppercase;
@@ -409,135 +516,249 @@
     margin-bottom: 18px;
 }
 
-.sidebar-links {
+/* =========================================================
+   BOKSTATUS
+   Erstatter det gamle "Kapitler"-sidebar-kortet med et
+   kompakt, full-bredde kort rett under hero. Gjenbruker
+   .sidebar-card som skall (samme bakgrunn/border/radius/
+   skygge, og arver .sidebar-card .btn-outline sin lys-
+   bakgrunn-fiks fra STUDIE-SIDEBAR-seksjonen gratis).
+   ========================================================= */
+
+.book-status {
+    padding-bottom: 24px;
+}
+
+.book-status-card {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: 20px;
 }
 
-.sidebar-links a {
-    padding: 11px 0;
+.book-status-top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.book-status-book {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex: 1 1 220px;
+}
+
+.book-status-book .icon {
+    width: 30px;
+    height: 30px;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.book-status-book h2 {
+    font-size: 1.1rem;
+    margin-bottom: 2px;
+}
+
+.book-status-book p {
     font-family: "Inter", sans-serif;
-    font-size: .94rem;
-    font-weight: 500;
+    font-size: .86rem;
+    color: var(--text-light);
+}
+
+.book-status-progress {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1 1 220px;
+}
+
+.book-status-progress-label {
+    font-family: "Inter", sans-serif;
+    font-weight: 600;
+    font-size: .9rem;
+    color: var(--black);
+}
+
+/* Fast bredde uansett antall kapitler – kun bredden på
+   .book-status-bar-fill (satt inline i HTML som prosent av
+   nåværende ÷ totalt) endrer seg. Komponenten ser dermed
+   identisk ut for en bok med 5 eller 50 kapitler. */
+.book-status-bar {
+    position: relative;
+    height: 8px;
+    border-radius: 999px;
+    background: var(--parchment-dark);
+    overflow: hidden;
+}
+
+.book-status-bar-fill {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: var(--gold);
+}
+
+/* Knappen gjenbruker .btn/.btn-outline/.btn-small fra
+   buttons.css uendret. Pilen roterer på samme måte som
+   .accordion-arrow gjør andre steder i filen. */
+.book-status-toggle {
+    flex-shrink: 0;
+}
+
+.book-status-toggle .chevron {
+    display: inline-flex;
+    transition: transform .25s var(--ease);
+}
+
+.book-status-toggle[aria-expanded="true"] .chevron {
+    transform: rotate(180deg);
+}
+
+/* Utvidelses-animasjon: grid-rows fra 0fr til 1fr, ~250ms,
+   innenfor det ønskede 200–300ms-vinduet. Krever ingen
+   høydeberegning i JavaScript. */
+.book-status-list {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .25s var(--ease);
+}
+
+.book-status-list.is-open {
+    grid-template-rows: 1fr;
+}
+
+.book-status-list-inner {
+    overflow: hidden;
+}
+
+/* Kun listen scroller ved mange kapitler – ikke hele siden.
+   Radene er egne, avrundede kort (border + radius + skygge)
+   med luft mellom seg, ikke en flat liste med skillelinjer –
+   for å kjennes som en naturlig forlengelse av .sidebar-card
+   fremfor en tradisjonell menyliste. */
+.book-toc {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding: 20px 4px 4px;
+    margin-top: 4px;
+    border-top: 1px solid var(--border);
+}
+
+.book-toc a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
     color: var(--text);
-    border-bottom: 1px solid var(--border);
-    transition: color .2s var(--ease);
+    transition: border-color .2s var(--ease), background .2s var(--ease),
+                box-shadow .2s var(--ease);
 }
 
-.sidebar-links a:last-child {
-    border-bottom: none;
+.book-toc a:hover {
+    border-color: var(--gold);
+    background: var(--parchment);
+    box-shadow: var(--shadow-sm);
 }
 
-.sidebar-links a:hover {
+.book-toc .toc-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    color: var(--text-light);
+    font-size: .8rem;
+    font-weight: 700;
+}
+
+.book-toc .toc-text {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+/* Samme etikett-/undertittel-mønster som .hero-chapter: gull
+   Inter-etikett for kapittelnummeret, fet EB Garamond-tittel
+   under. */
+.book-toc strong {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .4px;
+    text-transform: uppercase;
     color: var(--gold-dark);
 }
 
-/* Kapittelliste som vertikal tidslinje. Alle fem er ekte <a>-elementer
-   (også upubliserte kapitler) for DOM-konsistens med resten av
-   THEOLOGIA og for å unngå strukturendringer når flere kapitler
-   publiseres – kun aria-disabled/tabindex/.disabled fjernes da. */
-.chapter-list {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-}
-
-.chapter-list a {
-    position: relative;
-    display: block;
-    padding: 12px 0 12px 30px;
-    font-family: "Inter", sans-serif;
-    color: var(--text);
-    transition: color .2s var(--ease);
-}
-
-.chapter-list a::before {
-    content: "";
-    position: absolute;
-    left: 5px;
-    top: 19px;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--white);
-    border: 2px solid var(--border);
-    z-index: 1;
-}
-
-.chapter-list a::after {
-    content: "";
-    position: absolute;
-    left: 9px;
-    top: 30px;
-    width: 2px;
-    height: calc(100% - 8px);
-    background: var(--border);
-}
-
-.chapter-list a:last-child::after {
-    display: none;
-}
-
-.chapter-list strong {
-    display: block;
-    font-size: .94rem;
-    font-weight: 600;
-}
-
-.chapter-list em {
+.book-toc em {
     display: block;
     font-style: normal;
-    font-size: .82rem;
-    color: var(--text-light);
-    margin-top: 2px;
+    font-family: "EB Garamond", serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--black);
+    margin-top: 4px;
 }
 
-.chapter-list a:hover {
-    color: var(--gold-dark);
+.book-toc .toc-arrow {
+    flex-shrink: 0;
+    color: var(--gold);
+    font-size: 1.1rem;
 }
 
-.chapter-list a:hover::before {
+/* Hakemerket viser leseposisjon (før gjeldende kapittel),
+   ikke publiseringsstatus – se HTML-kommentar ved elementet. */
+.book-toc a.done .toc-status {
+    background: var(--gold);
     border-color: var(--gold);
+    color: var(--white);
+}
+
+.book-toc a.active-chapter {
+    background: var(--navy);
+    border-color: var(--navy);
+}
+
+.book-toc a.active-chapter:hover {
+    border-color: var(--gold);
+}
+
+.book-toc a.active-chapter strong {
+    color: var(--gold-light);
+}
+
+.book-toc a.active-chapter em {
+    color: var(--white);
+}
+
+.book-toc a.active-chapter .toc-arrow {
+    color: var(--white);
+}
+
+.book-toc a.active-chapter .toc-status {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--navy);
 }
 
 /* aria-disabled alene hindrer ikke klikk/fokus i alle nettlesere,
    derfor suppleres med pointer-events og tabindex="-1" i HTML */
-.chapter-list .disabled {
-    color: var(--text-light);
-    cursor: default;
+.book-toc a.disabled {
     pointer-events: none;
 }
 
-.chapter-list .disabled em {
+.book-toc a.disabled:not(.done) .toc-status {
     color: var(--text-light);
-    opacity: .7;
-}
-
-.chapter-list .active {
-    background: var(--navy);
-    color: var(--white);
-    border-radius: var(--radius-sm);
-    padding-left: 34px;
-    margin-left: -4px;
-    width: calc(100% + 4px);
-}
-
-.chapter-list .active em {
-    color: rgba(255,255,255,.7);
-}
-
-.chapter-list .active::before {
-    left: 9px;
-    width: 12px;
-    height: 12px;
-    background: var(--gold);
-    border-color: var(--gold);
-    box-shadow: 0 0 0 4px rgba(184,135,43,.25);
-}
-
-.chapter-list .active::after {
-    display: none;
 }
 
 
@@ -751,8 +972,8 @@
 
 .accordion-header:focus-visible,
 .sub-header:focus-visible,
-.sidebar-links a:focus-visible,
-.chapter-list a:focus-visible,
+.sidebar-card .btn:focus-visible,
+.book-toc a:focus-visible,
 .resource-card a:focus-visible,
 .pagination-card:focus-visible {
     outline: 2px solid var(--gold);

@@ -252,6 +252,170 @@
     </section>
 
     <!-- ===================================== -->
+    <!-- Bokstatus -->
+    <!-- ===================================== -->
+
+    <section class="book-status">
+
+        <div class="container">
+
+            <div class="sidebar-card book-status-card">
+
+                <div class="book-status-top">
+
+                    <div class="book-status-book">
+
+                        <span class="icon icon-book" aria-hidden="true"></span>
+
+                        <div>
+
+                            <h2>
+
+                                Den herlige menigheten
+
+                            </h2>
+
+                            <p>
+
+                                5 kapitler
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="book-status-progress">
+
+                        <span class="book-status-progress-label">
+
+                            Kapittel 4 av 5
+
+                        </span>
+
+                        <div class="book-status-bar"
+                             role="progressbar"
+                             aria-valuenow="4"
+                             aria-valuemin="1"
+                             aria-valuemax="5"
+                             aria-label="Leseposisjon: kapittel 4 av 5">
+
+                            <!-- Fylt bredde = nåværende kapittel ÷ totalt antall
+                                 (4 ÷ 5 = 80%). Baren har fast bredde uansett
+                                 antall kapitler i boken. -->
+                            <span class="book-status-bar-fill" style="width: 80%;"></span>
+
+                        </div>
+
+                    </div>
+
+                    <button type="button"
+                            class="btn btn-outline btn-small book-status-toggle"
+                            aria-expanded="false"
+                            aria-controls="book-status-list">
+
+                        Alle kapitler
+
+                        <span class="chevron" aria-hidden="true">▼</span>
+
+                    </button>
+
+                </div>
+
+                <div class="book-status-list" id="book-status-list">
+
+                    <div class="book-status-list-inner">
+
+                        <!-- Kapittel 1, 2, 3 og 5 finnes ikke som egne sider ennå
+                             (status "Kommer" i index.html). De beholdes som <a>
+                             med reell fremtidig href, men deaktiveres med
+                             aria-disabled + tabindex="-1" (pointer-events:none i
+                             study.css). Hakemerket viser leseposisjon (før
+                             gjeldende kapittel), ikke publiseringsstatus. -->
+                        <nav class="book-toc">
+
+                            <a href="kapittel-1.html"
+                               class="disabled done"
+                               aria-disabled="true"
+                               tabindex="-1">
+
+                                <span class="toc-status" aria-hidden="true">✓</span>
+                                <span class="toc-text">
+                                    <strong>Kapittel 1</strong>
+                                    <em>Guds plan og Guds hvile</em>
+                                </span>
+
+                                <span class="toc-arrow" aria-hidden="true">›</span>
+                            </a>
+
+                            <a href="kapittel-2.html"
+                               class="disabled done"
+                               aria-disabled="true"
+                               tabindex="-1">
+
+                                <span class="toc-status" aria-hidden="true">✓</span>
+                                <span class="toc-text">
+                                    <strong>Kapittel 2</strong>
+                                    <em>Eva – et forbilde på menigheten</em>
+                                </span>
+
+                                <span class="toc-arrow" aria-hidden="true">›</span>
+                            </a>
+
+                            <a href="kapittel-3.html"
+                               class="disabled done"
+                               aria-disabled="true"
+                               tabindex="-1">
+
+                                <span class="toc-status" aria-hidden="true">✓</span>
+                                <span class="toc-text">
+                                    <strong>Kapittel 3</strong>
+                                    <em>Kristi kropp og Kristi brud</em>
+                                </span>
+
+                                <span class="toc-arrow" aria-hidden="true">›</span>
+                            </a>
+
+                            <a href="kapittel-4.html"
+                               class="active-chapter"
+                               aria-current="page">
+
+                                <span class="toc-status" aria-hidden="true">▶</span>
+                                <span class="toc-text">
+                                    <strong>Kapittel 4</strong>
+                                    <em>«Og hun fødte … et guttebarn»</em>
+                                </span>
+
+                                <span class="toc-arrow" aria-hidden="true">›</span>
+                            </a>
+
+                            <a href="kapittel-5.html"
+                               class="disabled"
+                               aria-disabled="true"
+                               tabindex="-1">
+
+                                <span class="toc-status" aria-hidden="true">○</span>
+                                <span class="toc-text">
+                                    <strong>Kapittel 5</strong>
+                                    <em>Den hellige stad – Det nye Jerusalem</em>
+                                </span>
+
+                                <span class="toc-arrow" aria-hidden="true">›</span>
+                            </a>
+
+                        </nav>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
     <!-- Studieinnhold -->
     <!-- ===================================== -->
 
@@ -623,13 +787,13 @@
 
                                         <h3>
 
-                                            Presentasjon
+                                            I kraft av Lammets blod
 
                                         </h3>
 
                                         <p>
 
-                                            Introduksjon og oversikt
+                                            23 lysbilder
 
                                         </p>
 
@@ -645,7 +809,31 @@
 
                                 <div class="sub-content" id="infographics-sub-1">
 
-                                    <!-- Infografikk -->
+                                    <div class="infographic-slides">
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-01.jpg" alt="Tittel" loading="lazy"><figcaption>Tittel</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-02.jpg" alt="Åpenbaringen 12:11" loading="lazy"><figcaption>Åpenbaringen 12:11</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-03.jpg" alt="Seierens fundament og holdning" loading="lazy"><figcaption>Seierens fundament og holdning</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-04.jpg" alt="I kraft av Lammets blod" loading="lazy"><figcaption>I kraft av Lammets blod</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-05.jpg" alt="Virkningene av Jesu blod" loading="lazy"><figcaption>Virkningene av Jesu blod</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-06.jpg" alt="Satans største virksomhet" loading="lazy"><figcaption>Satans største virksomhet</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-07.jpg" alt="Aksepterer vi Satans anklager" loading="lazy"><figcaption>Aksepterer vi Satans anklager</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-08.jpg" alt="Men det er seier!" loading="lazy"><figcaption>Men det er seier!</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-09.jpg" alt="Konstant skyld" loading="lazy"><figcaption>Konstant skyld</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-10.jpg" alt="Våre ord har verdi for Gud" loading="lazy"><figcaption>Våre ord har verdi for Gud</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-11.jpg" alt="Vi står fast i sannheten og seirer" loading="lazy"><figcaption>Vi står fast i sannheten og seirer</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-12.jpg" alt="Vi tilhører Kristus — for alltid" loading="lazy"><figcaption>Vi tilhører Kristus — for alltid</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-13.jpg" alt="Vi har seier og lever i seieren" loading="lazy"><figcaption>Vi har seier og lever i seieren</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-14.jpg" alt="Satan er dømt — vi er seierrike i Kristus" loading="lazy"><figcaption>Satan er dømt — vi er seierrike i Kristus</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-15.jpg" alt="Se på Herren Jesus" loading="lazy"><figcaption>Se på Herren Jesus</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-16.jpg" alt="I kraft av Lammets blod — side 94" loading="lazy"><figcaption>I kraft av Lammets blod — side 94</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-17.jpg" alt="Overvinnernes fundament — Åpenbaringen 12:11" loading="lazy"><figcaption>Overvinnernes fundament — Åpenbaringen 12:11</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-18.jpg" alt="Sakarias 3:1–5" loading="lazy"><figcaption>Sakarias 3:1–5</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-19.jpg" alt="1 av 5 — Satan, anklageren" loading="lazy"><figcaption>1 av 5 — Satan, anklageren</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-20.jpg" alt="2 av 5 — Guds svar til anklageren" loading="lazy"><figcaption>2 av 5 — Guds svar til anklageren</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-21.jpg" alt="3 av 5 — De skitne klærne" loading="lazy"><figcaption>3 av 5 — De skitne klærne</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-22.jpg" alt="4 av 5 — Gud tar bort skylden" loading="lazy"><figcaption>4 av 5 — Gud tar bort skylden</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/lammets-blod-23.jpg" alt="5 av 5 — Evangeliet i Sakarias 3" loading="lazy"><figcaption>5 av 5 — Evangeliet i Sakarias 3</figcaption></figure>
+                                    </div>
 
                                 </div>
 
@@ -664,13 +852,13 @@
 
                                         <h3>
 
-                                            Oversikt
+                                            Deres vitnesbyrds ord
 
                                         </h3>
 
                                         <p>
 
-                                            Symboler og sammenhenger
+                                            13 lysbilder
 
                                         </p>
 
@@ -686,7 +874,21 @@
 
                                 <div class="sub-content" id="infographics-sub-2">
 
-                                    <!-- Infografikk -->
+                                    <div class="infographic-slides">
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-01.jpg" alt="Deres vitnesbyrds ord" loading="lazy"><figcaption>Deres vitnesbyrds ord</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-02.jpg" alt="I kraft av vitnesbyrdets ord" loading="lazy"><figcaption>I kraft av vitnesbyrdets ord</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-03.jpg" alt="1 av 12 — Innledning" loading="lazy"><figcaption>1 av 12 — Innledning</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-04.jpg" alt="2 av 12 — Blodet gir frimodighet" loading="lazy"><figcaption>2 av 12 — Blodet gir frimodighet</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-05.jpg" alt="3 av 12 — Hva er et vitnesbyrd?" loading="lazy"><figcaption>3 av 12 — Hva er et vitnesbyrd?</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-06.jpg" alt="4 av 12 — Hva proklamerer vi?" loading="lazy"><figcaption>4 av 12 — Hva proklamerer vi?</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-07.jpg" alt="5–6 av 12 — Jesus som forbilde og apostlenes praksis" loading="lazy"><figcaption>5–6 av 12 — Jesus som forbilde og apostlenes praksis</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-08.jpg" alt="7 av 12 — Frimodig vitne i hverdagen" loading="lazy"><figcaption>7 av 12 — Frimodig vitne i hverdagen</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-09.jpg" alt="8 av 12 — Lev som seiersvitner" loading="lazy"><figcaption>8 av 12 — Lev som seiersvitner</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-10.jpg" alt="9 av 12 — Be sammen i tro" loading="lazy"><figcaption>9 av 12 — Be sammen i tro</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-11.jpg" alt="10 av 12 — Guds rike i kraft" loading="lazy"><figcaption>10 av 12 — Guds rike i kraft</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-12.jpg" alt="11 av 12 — Hvordan praktiserer vi dette?" loading="lazy"><figcaption>11 av 12 — Hvordan praktiserer vi dette?</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/vitnesbyrdets-ord-13.jpg" alt="12 av 12 — Hva kan vi ta med oss?" loading="lazy"><figcaption>12 av 12 — Hva kan vi ta med oss?</figcaption></figure>
+                                    </div>
 
                                 </div>
 
@@ -705,13 +907,13 @@
 
                                         <h3>
 
-                                            Illustrasjon
+                                            Det å ikke elske sjelelivet vårt
 
                                         </h3>
 
                                         <p>
 
-                                            Diagram eller figur
+                                            2 lysbilder
 
                                         </p>
 
@@ -727,7 +929,10 @@
 
                                 <div class="sub-content" id="infographics-sub-3">
 
-                                    <!-- Infografikk -->
+                                    <div class="infographic-slides">
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/sjelelivet-01.jpg" alt="Det å ikke elske sjelelivet vårt" loading="lazy"><figcaption>Det å ikke elske sjelelivet vårt</figcaption></figure>
+                                        <figure class="infographic-slide"><img src="../../../../images/resources/den-herlige-menigheten/sjelelivet-02.jpg" alt="Det å ikke elske sjelelivet vårt — utdypning" loading="lazy"><figcaption>Det å ikke elske sjelelivet vårt — utdypning</figcaption></figure>
+                                    </div>
 
                                 </div>
 
@@ -909,115 +1114,77 @@
 
                 <aside class="study-sidebar">
 
-                    <!-- Ressurser -->
+                    <!-- Zoom-gruppe -->
 
                     <section class="sidebar-card">
 
-                        <h3>
+                        <div class="card-heading">
 
-                            Ressurser
+                            <span class="icon icon-video" aria-hidden="true"></span>
 
-                        </h3>
+                            <h3>
 
-                        <nav class="sidebar-links">
+                                Bli med i vår Zoom-gruppe
 
-                            <a href="#">
+                            </h3>
 
-                                PDF
+                        </div>
 
-                            </a>
+                        <p>
 
-                            <a href="#">
+                            Bli med i vår Zoom-gruppe for samtale
+                            og fellesskap om dette kapitlet.
 
-                                Arbeidsark
+                        </p>
 
-                            </a>
+                        <!-- Peker til "#" inntil møtelenken er klar, samme
+                             mønster som øvrige uferdige lenker i denne filen -->
+                        <a href="#" class="btn btn-gold btn-small">
 
-                            <a href="#">
+                            <span class="icon icon-video" aria-hidden="true"></span>
 
-                                Presentasjon
+                            Bli med i Zoom-gruppen
 
-                            </a>
+                        </a>
 
-                            <a href="#">
+                        <p>
 
-                                Eksterne lenker
+                            Alle er velkomne – vi ser frem til å
+                            ha deg med!
 
-                            </a>
-
-                        </nav>
+                        </p>
 
                     </section>
 
-                    <!-- Kapitler -->
+                    <!-- Kommentarer -->
 
                     <section class="sidebar-card">
 
-                        <h3>
+                        <div class="card-heading">
 
-                            Kapitler
+                            <span class="icon icon-comment" aria-hidden="true"></span>
 
-                        </h3>
+                            <h3>
 
-                        <!-- Kapittel 1, 2, 3 og 5 finnes ikke som egne sider ennå
-                             (status "Kommer" i index.html). De beholdes som <a>
-                             med reell fremtidig href, men deaktiveres med
-                             aria-disabled + tabindex="-1" (pointer-events:none i
-                             study.css). Når siden publiseres fjernes kun
-                             class="disabled" aria-disabled="true" tabindex="-1" –
-                             ingen strukturendring nødvendig. -->
-                        <nav class="chapter-list">
+                                Kommentarer
 
-                            <a href="kapittel-1.html"
-                               class="disabled"
-                               aria-disabled="true"
-                               tabindex="-1">
+                            </h3>
 
-                                <strong>Kapittel 1</strong>
-                                <em>Guds plan og Guds hvile</em>
+                        </div>
 
-                            </a>
+                        <p>
 
-                            <a href="kapittel-2.html"
-                               class="disabled"
-                               aria-disabled="true"
-                               tabindex="-1">
+                            Del dine tanker om dette kapitlet
+                            med andre.
 
-                                <strong>Kapittel 2</strong>
-                                <em>Eva – et forbilde på menigheten</em>
+                        </p>
 
-                            </a>
+                        <!-- Peker til "#" inntil kommentarfeltet er koblet opp -->
+                        <a href="#commentary" class="btn btn-outline btn-small">
 
-                            <a href="kapittel-3.html"
-                               class="disabled"
-                               aria-disabled="true"
-                               tabindex="-1">
+                            Åpne kommentarfeltet
 
-                                <strong>Kapittel 3</strong>
-                                <em>Kristi kropp og Kristi brud</em>
-
-                            </a>
-
-                            <a href="kapittel-4.html"
-                               class="active"
-                               aria-current="page">
-
-                                <strong>Kapittel 4</strong>
-                                <em>«Og hun fødte … et guttebarn»</em>
-
-                            </a>
-
-                            <a href="kapittel-5.html"
-                               class="disabled"
-                               aria-disabled="true"
-                               tabindex="-1">
-
-                                <strong>Kapittel 5</strong>
-                                <em>Den hellige stad – Det nye Jerusalem</em>
-
-                            </a>
-
-                        </nav>
+                        </a>
 
                     </section>
 
