@@ -1,4 +1,3 @@
-
 /* =========================================================
    12. TEMA-KORT
    ========================================================= */
@@ -62,6 +61,15 @@
 .topic-card a::after {
     content: "→";
     margin-left: 6px;
+}
+
+/* Gjør hele kortet klikkbart, ikke bare selve lenketeksten.
+   .topic-card har allerede position:relative over. */
+.topic-card a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
 }
 
 .topic-card a:hover {
@@ -282,4 +290,3 @@
     letter-spacing: .3px;
     text-transform: uppercase;
 }
-

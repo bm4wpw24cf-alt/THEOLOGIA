@@ -1,0 +1,229 @@
+/* =========================================================
+   KRISTENLIV.CSS
+   Sideegen stil for temaer/kristenliv/index.html.
+
+   Følger samme arkitektur som temaer/ressurser/css/ressurser.css
+   og css/study.css: delte komponenter (variables.css, base.css,
+   typography.css, buttons.css, cards.css, icons.css) gjenbrukes
+   uendret, kun sideegne tillegg og skopede overstyringer ligger
+   her.
+
+   INNHOLD
+   1. Hero
+   2. Emnenett (overstyrer cards.css sin .topics-grid/.topic-card)
+   3. Sitatpanel
+   4. Responsivt
+   ========================================================= */
+
+
+/* =========================================================
+   1. HERO
+   Ingen eksisterende hero passer uendret: hero.css sin .hero
+   er en full-bredde bakgrunnsbilde-variant, ikke en to-kolonners
+   tekst/bilde-layout. Bygget som ny, sideegen seksjon. Knappen
+   gjenbruker .btn/.btn-gold fra buttons.css uendret.
+   ========================================================= */
+
+.kristenliv-hero {
+    padding-block: 64px;
+    background: var(--parchment);
+}
+
+.kristenliv-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.kristenliv-hero-content {
+    max-width: 520px;
+}
+
+.kristenliv-hero-content h1 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    margin-bottom: 14px;
+}
+
+.kristenliv-hero-subtitle {
+    font-family: "EB Garamond", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    margin-bottom: 18px;
+}
+
+.kristenliv-hero-content p:not(.kristenliv-hero-subtitle) {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 30px;
+}
+
+.kristenliv-hero-image {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.kristenliv-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   2. EMNENETT
+   Gjenbruker .topics/.topics-grid/.topic-card fra cards.css
+   uendret (bakgrunn, kort-skall, skygge, hover-heving er
+   identisk). To skopede overstyringer for denne siden: fem
+   kolonner i stedet for fire, og venstrejustert innhold i
+   stedet for sentrert – selve cards.css er ikke rørt, så
+   andre sider som bruker .topic-card (forsiden) er upåvirket.
+   ========================================================= */
+
+.kristenliv-topics .topics-grid {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+.kristenliv-topics .topic-card {
+    text-align: left;
+}
+
+.kristenliv-topics .topic-card > .icon {
+    margin: 0 0 22px;
+}
+
+.kristenliv-topics .topic-card h3 {
+    font-size: 1.15rem;
+}
+
+.kristenliv-topics .section-header .icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin: 0 auto 20px;
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   3. SITATPANEL
+   Ingen delt sitatkomponent finnes sitewide. Speiler samme
+   border/skygge-språk som .resources-verse (ressurser.css),
+   som egen regel her siden det er en annen fil/kontekst.
+   ========================================================= */
+
+.kristenliv-verse {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin-top: 60px;
+    padding: 40px 44px;
+    background: var(--parchment-dark);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.kristenliv-verse-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+}
+
+.kristenliv-verse-icon .icon {
+    width: 24px;
+    height: 24px;
+    color: var(--gold);
+}
+
+.kristenliv-verse blockquote {
+    font-family: "EB Garamond", serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    color: var(--black);
+    line-height: 1.6;
+    max-width: 640px;
+}
+
+.kristenliv-verse cite {
+    display: block;
+    margin-top: 10px;
+    font-family: "Inter", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: .8rem;
+    letter-spacing: .6px;
+    color: var(--gold-dark);
+}
+
+/* Bakgrunnsbildet (hvetefelt i mockupen) mangler som fil i
+   temaer/kristenliv/bilder/ ennå. Bygget klar for det, uten å
+   late som det finnes – panelet fungerer fullt ut uten det. */
+.kristenliv-verse-photo {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .18;
+}
+
+.kristenliv-verse-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   4. RESPONSIVT
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .kristenliv-topics .topics-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+
+    .kristenliv-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .kristenliv-hero-content {
+        max-width: none;
+    }
+
+    .kristenliv-verse {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .kristenliv-topics .topics-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .kristenliv-topics .topics-grid {
+        grid-template-columns: 1fr;
+    }
+}
