@@ -25,7 +25,7 @@
    ========================================================= */
 
 .kristenliv-hero {
-    padding-block: 64px;
+    padding-block: 64px 32px;
     background: var(--parchment);
 }
 
@@ -79,11 +79,18 @@
    2. EMNENETT
    Gjenbruker .topics/.topics-grid/.topic-card fra cards.css
    uendret (bakgrunn, kort-skall, skygge, hover-heving er
-   identisk). To skopede overstyringer for denne siden: fem
-   kolonner i stedet for fire, og venstrejustert innhold i
-   stedet for sentrert – selve cards.css er ikke rørt, så
-   andre sider som bruker .topic-card (forsiden) er upåvirket.
+   identisk). Tre skopede overstyringer for denne siden: redusert
+   topp-padding (cards.css sin .topics { padding-block:120px }
+   ga for stor avstand ned mot hero – kun toppverdien overstyres
+   her, bunn-paddingen er urørt), fem kolonner i stedet for fire,
+   og venstrejustert innhold i stedet for sentrert – selve
+   cards.css er ikke rørt, så andre sider som bruker .topic-card
+   (forsiden) er upåvirket.
    ========================================================= */
+
+.kristenliv-topics {
+    padding-top: 48px;
+}
 
 .kristenliv-topics .topics-grid {
     grid-template-columns: repeat(5, 1fr);

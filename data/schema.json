@@ -1,0 +1,100 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "THEOLOGIA Article",
+  "type": "object",
+  "required": ["id", "title", "subtitle", "category", "author", "date", "heroImage", "introduction", "sections"],
+  "properties": {
+    "id": { "type": "string", "description": "Unik, stabil id. Endres aldri etter publisering." },
+    "slug": { "type": "string", "description": "URL-vennlig filnavn. Utledes fra title hvis utelatt." },
+    "url": { "type": "string", "description": "Full sti artikkelen publiseres på, f.eks. /bibelen/bibelens-kanon/" },
+    "title": { "type": "string" },
+    "subtitle": { "type": "string" },
+    "category": { "type": "string", "description": "Én av THEOLOGIA sine hovedkategorier, f.eks. Bibelen, Evangeliet, Apologetikk." },
+    "categoryUrl": { "type": "string" },
+    "subcategory": { "type": "string", "description": "Valgfritt undertema innenfor category, f.eks. 'Kanon' innenfor Bibelen. Brukes av related-articles.js som mellomsteg mellom kategori- og tag-matching." },
+    "tags": { "type": "array", "items": { "type": "string" }, "description": "Brukes av related-articles.js til finmatching innenfor kategori/undertema." },
+    "author": { "type": "string" },
+    "authorPhoto": { "type": "string" },
+    "authorBio": { "type": "string" },
+    "date": { "type": "string", "format": "date", "description": "Publiseringsdato, f.eks. 2026-08-03" },
+    "updated": { "type": "string", "format": "date" },
+    "readingTime": { "type": "string", "description": "Valgfri – estimeres automatisk hvis utelatt." },
+    "heroImage": { "type": "string" },
+    "metaDescription": { "type": "string", "description": "Valgfri – utledes fra introduction hvis utelatt." },
+    "asideTitle": { "type": "string" },
+    "asideContent": { "type": "string" },
+    "introduction": { "type": "string", "description": "Ingress vist øverst i artikkelen (.article-lede)." },
+    "sections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["heading", "content"],
+        "properties": {
+          "id": { "type": "string", "description": "Valgfri anker-id. Utledes fra heading hvis utelatt." },
+          "heading": { "type": "string" },
+          "content": { "type": "string" },
+          "subsections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["heading", "content"],
+              "properties": {
+                "heading": { "type": "string" },
+                "content": { "type": "string" }
+              }
+            }
+          },
+          "scriptures": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["reference", "text"],
+              "properties": {
+                "reference": { "type": "string" },
+                "text": { "type": "string" },
+                "translation": { "type": "string" }
+              }
+            }
+          },
+          "quotes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["quote"],
+              "properties": {
+                "quote": { "type": "string" },
+                "author": { "type": "string" },
+                "source": { "type": "string" }
+              }
+            }
+          },
+          "infoBoxes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type", "title", "text"],
+              "properties": {
+                "type": { "type": "string", "enum": ["info", "important", "warning", "cross-reference"] },
+                "title": { "type": "string" },
+                "text": { "type": "string" }
+              }
+            }
+          },
+          "images": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["image", "alt"],
+              "properties": {
+                "image": { "type": "string" },
+                "alt": { "type": "string" },
+                "caption": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,3 @@
-
 /* =========================================================
    10. HERO
    ========================================================= */
@@ -124,12 +123,19 @@
     line-height: 1.6;
 }
 
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: .5rem;
+}
+
 .hero-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    margin-top: .5rem;
     padding: .9rem 1.4rem;
 
     background: var(--gold);
@@ -143,6 +149,26 @@
 
 .hero-button:hover {
     background: var(--gold-dark);
+}
+
+/* Sekundærknapp: samme høyde/padding/radius som .hero-button
+   (arvet direkte siden begge deler klassen), kun farger byttet
+   ut – transparent/mørk bunn, lys kantlinje, hvit tekst. Samme
+   fargeverdier som .btn-outline i buttons.css bruker for knapper
+   på mørk bakgrunn, holdt som egen regel siden .hero-button sin
+   padding (.9rem 1.4rem) avviker fra .btn sin (16px 32px) – å
+   blande de to systemene ville gitt to knapper med ulik størrelse
+   ved siden av hverandre. */
+.hero-button-secondary {
+    background: rgba(255,255,255,.04);
+    color: var(--white);
+    border: 1.5px solid rgba(255,255,255,.4);
+}
+
+.hero-button-secondary:hover {
+    background: rgba(255,255,255,.08);
+    border-color: var(--gold-light);
+    color: var(--gold-light);
 }
 
 .hero-content .hero-tag {

@@ -1,0 +1,252 @@
+/* =========================================================
+   MODAL.CSS
+   Generisk, gjenbrukbar informasjonsmodal for hele THEOLOGIA.
+   Ikke sideegen – flere sider/kort kan bruke samme oppmerking:
+
+     <button data-modal-open="modal-x">Åpne</button>
+
+     <div class="modal-overlay" id="modal-x" hidden>
+       <div class="modal" role="dialog" aria-modal="true"
+            aria-labelledby="modal-x-title">
+         <button class="modal-close" data-modal-close aria-label="Lukk"></button>
+         <h2 id="modal-x-title" class="modal-title">…</h2>
+         <div class="modal-body">…</div>
+         <div class="modal-actions">
+           <button class="btn btn-gold btn-small" data-modal-close>…</button>
+           <button class="btn btn-outline btn-small" data-modal-close>Lukk</button>
+         </div>
+       </div>
+     </div>
+
+   Selve av/på-logikken (js/modal.js) legger til/fjerner klassen
+   .is-open og [hidden]-attributtet – all styling her reagerer på det.
+
+   Gjenbruker eksisterende design-tokens fra variables.css
+   (farger, radius, skygge, easing) og .btn/.btn-gold/.btn-outline
+   fra buttons.css uendret. Ingen nye farger eller skygger.
+
+   INNHOLD
+   1. Overlay og fade-inn/ut
+   2. Modal-boks og scale-animasjon
+   3. Lukkeknapp
+   4. Tittel og brødtekst
+   5. Informasjonsboks
+   6. Handlingsknapper
+   7. Responsivt
+   ========================================================= */
+
+
+/* =========================================================
+   1. OVERLAY OG FADE-INN/UT
+   ========================================================= */
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+
+    background: rgba(6,13,23,.6);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s var(--ease), visibility 0s linear .25s;
+}
+
+.modal-overlay[hidden] {
+    display: flex; /* overstyrer nettleserens display:none for [hidden],
+                       slik at fade-ut-animasjonen rekker å spille før
+                       elementet faktisk fjernes fra layout av js/modal.js */
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .25s var(--ease);
+}
+
+
+/* =========================================================
+   2. MODAL-BOKS OG SCALE-ANIMASJON
+   ========================================================= */
+
+.modal {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    max-height: calc(100vh - 48px);
+    overflow-y: auto;
+
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+
+    padding: 40px;
+
+    transform: scale(.95) translateY(8px);
+    transition: transform .25s var(--ease);
+}
+
+.modal-overlay.is-open .modal {
+    transform: scale(1) translateY(0);
+}
+
+
+/* =========================================================
+   3. LUKKEKNAPP
+   ========================================================= */
+
+.modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1;
+
+    transition: background .2s var(--ease), color .2s var(--ease);
+}
+
+.modal-close:hover {
+    background: var(--parchment-dark);
+    color: var(--gold-dark);
+}
+
+
+/* =========================================================
+   4. TITTEL OG BRØDTEKST
+   ========================================================= */
+
+.modal-title {
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    padding-right: 32px; /* plass til lukkeknappen */
+}
+
+.modal-body {
+    font-family: "Inter", sans-serif;
+    font-size: .96rem;
+    line-height: 1.75;
+    color: var(--text);
+}
+
+.modal-body p {
+    margin-bottom: 16px;
+}
+
+.modal-body ul {
+    list-style: none;
+    margin: 0 0 20px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.modal-body li {
+    position: relative;
+    padding-left: 22px;
+}
+
+.modal-body li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+}
+
+
+/* =========================================================
+   5. INFORMASJONSBOKS
+   ========================================================= */
+
+.modal-info-box {
+    background: var(--parchment);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 18px 20px;
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modal-info-box p {
+    margin: 0;
+    font-size: .92rem;
+}
+
+.modal-info-box strong {
+    color: var(--black);
+}
+
+
+/* =========================================================
+   6. HANDLINGSKNAPPER
+   ========================================================= */
+
+.modal-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.modal-actions .btn {
+    flex: 1 1 auto;
+    justify-content: center;
+}
+
+/* .btn-outline i buttons.css er laget for mørk bakgrunn (hvit
+   tekst på gjennomsiktig bunn) og passer ikke på en hvit modal –
+   samme mønster som er løst tilsvarende steder i prosjektet. */
+.modal-actions .btn-outline {
+    border-color: var(--border);
+    background: var(--white);
+    color: var(--black);
+}
+
+.modal-actions .btn-outline:hover {
+    border-color: var(--gold);
+    color: var(--gold-dark);
+    background: var(--parchment);
+}
+
+
+/* =========================================================
+   7. RESPONSIVT
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .modal-overlay {
+        padding: 16px;
+        align-items: flex-end;
+    }
+
+    .modal {
+        padding: 28px 24px;
+        max-height: calc(100vh - 32px);
+    }
+
+    .modal-actions {
+        flex-direction: column;
+    }
+}
