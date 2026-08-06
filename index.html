@@ -25,7 +25,7 @@
 </head>
 <body>
 
-<header class="site-header">
+<header class="site-header" id="site-header-home">
   <div class="container header-inner">
 
     <a href="index.html" class="logo">
@@ -40,7 +40,7 @@
 </a>
 
     <nav class="main-nav">
-  <ul>
+  <ul id="main-nav-list">
     <li><a href="index.html" class="active">Hjem</a></li>
     <li><a href="temaer/">Utforsk temaer</a></li>
     <li><a href="temaer/ressurser/">Ressurser</a></li>
@@ -50,9 +50,19 @@
   </ul>
 </nav>
 
-    <button class="search-button" aria-label="Søk">
-      <span class="icon icon-search" aria-hidden="true"></span>
-    </button>
+    <div class="header-actions">
+
+      <button class="nav-toggle" type="button" aria-label="Åpne meny" aria-expanded="false" aria-controls="main-nav-list">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+
+      <button class="search-button" aria-label="Søk">
+        <span class="icon icon-search" aria-hidden="true"></span>
+      </button>
+
+    </div>
 
   </div>
 </header>
