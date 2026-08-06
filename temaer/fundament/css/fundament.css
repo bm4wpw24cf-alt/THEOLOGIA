@@ -1,0 +1,111 @@
+/* =========================================================
+   FUNDAMENT.CSS
+   Sideegen stil for temaer/fundament/index.html.
+
+   Følger samme arkitektur som temaer/kristenliv/css/kristenliv.css:
+   delte komponenter (variables.css, base.css, typography.css,
+   buttons.css, cards.css, icons.css) gjenbrukes uendret, kun
+   sideegne tillegg og skopede overstyringer ligger her.
+
+   INNHOLD
+   1. Hero
+   2. Emnenett (kun skopet toppavstand, .topics-grid/.topic-card
+      fra cards.css er ellers urørt – 7 kort trenger ikke egen
+      kolonneoverstyring)
+   3. Responsivt
+   ========================================================= */
+
+
+/* =========================================================
+   1. HERO
+   ========================================================= */
+
+.fundament-hero {
+    padding-block: 64px 32px;
+    background: var(--parchment);
+}
+
+.fundament-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items: center;
+}
+
+.fundament-hero-content {
+    max-width: 520px;
+}
+
+.fundament-hero-content h1 {
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    margin-bottom: 14px;
+}
+
+.fundament-hero-subtitle {
+    font-family: "EB Garamond", serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gold-dark);
+    margin-bottom: 18px;
+}
+
+.fundament-hero-content p:not(.fundament-hero-subtitle):not(.fundament-hero-reference) {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 20px;
+}
+
+.fundament-hero-reference {
+    font-family: "Inter", sans-serif;
+    font-size: .85rem;
+    font-weight: 600;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0;
+}
+
+.fundament-hero-image {
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.fundament-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   2. EMNENETT
+   Gjenbruker .topics/.topics-grid/.topic-card fra cards.css
+   uendret. Kun toppavstanden reduseres her (cards.css sin
+   .topics { padding-block:120px } ga for stor avstand ned mot
+   hero – kun toppverdien overstyres, bunn-paddingen er urørt).
+   ========================================================= */
+
+.fundament-topics {
+    padding-top: 48px;
+}
+
+
+/* =========================================================
+   3. RESPONSIVT
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .fundament-hero-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .fundament-hero-content {
+        max-width: none;
+    }
+}
