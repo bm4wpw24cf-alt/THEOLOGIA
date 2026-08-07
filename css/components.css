@@ -4,8 +4,8 @@
 
 .breadcrumb {
     padding: 1.5rem 0;
-    background: #ffffff;
-    border-bottom: 1px solid #e5e7eb;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
 }
 
 .breadcrumb-list {
@@ -16,20 +16,22 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    font-size: .95rem;
+    font-family: "Inter", sans-serif;
+    font-size: .85rem;
+    color: var(--text-light);
 }
 
 .breadcrumb-list a {
-    color: #475569;
+    color: var(--text-light);
     text-decoration: none;
-    transition: color .2s ease;
+    transition: color .2s var(--ease);
 }
 
 .breadcrumb-list a:hover {
-    color: #b38b2d;
+    color: var(--gold);
 }
 
 .breadcrumb-current {
-    color: #0f172a;
+    color: var(--black);
     font-weight: 600;
 }

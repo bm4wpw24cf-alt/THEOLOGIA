@@ -47,6 +47,15 @@
         gap: 1rem;
     }
 
+    /* header.css setter .header-inner { height: 96px } (fast høyde).
+       Uten dette blir wrappet nav-innhold på mobil/nettbrett skjult
+       eller overlappet av innholdet under den sticky headeren. */
+    .header-inner {
+        height: auto;
+        min-height: 96px;
+        padding-block: 14px;
+    }
+
     .main-nav ul {
         flex-wrap: wrap;
         justify-content: center;
