@@ -132,6 +132,21 @@
         height: auto;
     }
 
+    .timeline-item {
+        padding-left: 26px;
+        padding-bottom: 36px;
+    }
+
+    .timeline-marker {
+        left: -4px;
+        width: 9px;
+        height: 9px;
+    }
+
+    .timeline-title {
+        font-size: 1.15rem;
+    }
+
     .site-footer {
         text-align: center;
     }
