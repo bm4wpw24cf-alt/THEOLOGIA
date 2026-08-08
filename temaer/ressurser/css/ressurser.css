@@ -764,6 +764,7 @@ img.resource-cover-featured {
 .resource-items { display: grid; align-items: center; min-width: 0; }
 .resource-book-items { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .resource-item { min-width: 0; color: var(--text); font-size: .66rem; line-height: 1.25; }
+.resource-item.disabled { pointer-events: none; opacity: .55; cursor: default; }
 .resource-item strong, .resource-item small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .resource-item strong { margin-top: 6px; color: var(--black); font-size: .64rem; }
 .resource-item small { color: var(--text-light); font-size: .61rem; }

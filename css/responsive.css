@@ -11,8 +11,7 @@
         padding: 4rem 0;
     }
 
-    .hero-inner,
-    .featured-grid {
+    .hero-inner {
         grid-template-columns: 1fr;
         gap: 2rem;
     }

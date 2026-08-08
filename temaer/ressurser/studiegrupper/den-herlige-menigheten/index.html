@@ -10,12 +10,12 @@
 
     <title>
 
-        Kapittel 4 – «Og hun fødte … et guttebarn» | THEOLOGIA
+        Den herlige menigheten – Studieoversikt | THEOLOGIA
 
     </title>
 
     <meta name="description"
-          content="Kapittel 4 i studiet Den herlige menigheten.">
+          content="Studieoversikt for «Den herlige menigheten» av Watchman Nee. Se alle kapitler og fortsett der du slapp.">
 
     <!-- Global CSS -->
 
@@ -56,10 +56,6 @@
 
     <link rel="stylesheet"
           href="../../../../css/study.css">
-
-    <!-- Generisk modal-komponent (gjenbrukbar, ikke sideegen) -->
-    <link rel="stylesheet"
-          href="../../../../css/modal.css">
 
 </head>
 
@@ -133,7 +129,7 @@
 
             <strong>
 
-                Kapittel 4
+                Den herlige menigheten
 
             </strong>
 
@@ -175,66 +171,15 @@
 
                     </p>
 
-                    <p class="hero-chapter">
+                    <div class="hero-buttons">
 
-                        Kapittel 4
+                        <a href="kapittel-4.html" class="btn btn-gold" data-continue-link>
 
-                        <strong>
+                            Fortsett studiet
 
-                            «Og hun fødte … et guttebarn»
+                            <span aria-hidden="true">→</span>
 
-                        </strong>
-
-                    </p>
-
-                    <p class="hero-description">
-
-                        <!-- Kort introduksjon legges inn senere -->
-
-                    </p>
-
-                    <div class="hero-features">
-
-                        <div class="feature">
-    <span class="icon icon-video" aria-hidden="true"></span>
-    <span>Zoom-gruppe</span>
-</div>
-
-                        <div class="feature">
-
-                            <span class="icon icon-document" aria-hidden="true"></span>
-
-                            <span>
-
-                                Presentasjoner
-
-                            </span>
-
-                        </div>
-
-                        <div class="feature">
-
-                            <span class="icon icon-comment" aria-hidden="true"></span>
-
-                            <span>
-
-                                Kommentarer
-
-                            </span>
-
-                        </div>
-
-                        <div class="feature">
-
-                            <span class="icon icon-book" aria-hidden="true"></span>
-
-                            <span>
-
-                                Bibelhenvisninger
-
-                            </span>
-
-                        </div>
+                        </a>
 
                     </div>
 
@@ -279,7 +224,7 @@
 
                             </h2>
 
-                            <p>
+                            <p data-chapter-count>
 
                                 5 kapitler
 
@@ -289,9 +234,31 @@
 
                     </div>
 
+                    <div class="book-status-book">
+
+                        <span class="icon icon-path" aria-hidden="true"></span>
+
+                        <div>
+
+                            <h2>
+
+                                Pågår
+
+                            </h2>
+
+                            <p>
+
+                                Fortsett der du slapp
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
                     <div class="book-status-progress">
 
-                        <span class="book-status-progress-label">
+                        <span class="book-status-progress-label" data-chapter-position>
 
                             Kapittel 4 av 5
 
@@ -302,115 +269,19 @@
                              aria-valuenow="4"
                              aria-valuemin="1"
                              aria-valuemax="5"
-                             aria-label="Leseposisjon: kapittel 4 av 5">
+                             aria-label="Fremdrift i studiet">
 
-                            <!-- Fylt bredde = nåværende kapittel ÷ totalt antall
-                                 (4 ÷ 5 = 80%). Baren har fast bredde uansett
-                                 antall kapitler i boken. -->
+                            <!-- Statisk fasit for visning uten JavaScript (4 ÷ 5 = 80%).
+                                 js/study-overview.js regner ut og overskriver denne
+                                 verdien på nytt ut fra hvilket kapittel som har klassen
+                                 "active-chapter" i kapittellisten under, slik at den ikke
+                                 kan komme i utakt hvis noen flytter det aktive kapittelet. -->
                             <span class="book-status-bar-fill" style="width: 80%;"></span>
 
                         </div>
 
                     </div>
 
-                    <button type="button"
-                            class="btn btn-outline btn-small book-status-toggle"
-                            aria-expanded="false"
-                            aria-controls="book-status-list">
-
-                        Alle kapitler
-
-                        <span class="chevron" aria-hidden="true">▼</span>
-
-                    </button>
-
-                </div>
-
-                <div class="book-status-list" id="book-status-list">
-
-                    <div class="book-status-list-inner">
-
-                        <!-- Kapittel 1, 2, 3 og 5 finnes ikke som egne sider ennå
-                             (status "Kommer" i index.html). De beholdes som <a>
-                             med reell fremtidig href, men deaktiveres med
-                             aria-disabled + tabindex="-1" (pointer-events:none i
-                             study.css). Hakemerket viser leseposisjon (før
-                             gjeldende kapittel), ikke publiseringsstatus. -->
-                        <nav class="book-toc">
-
-                            <a href="kapittel-1.html"
-                               class="disabled done"
-                               aria-disabled="true"
-                               tabindex="-1">
-
-                                <span class="toc-status" aria-hidden="true">✓</span>
-                                <span class="toc-text">
-                                    <strong>Kapittel 1</strong>
-                                    <em>Guds plan og Guds hvile</em>
-                                </span>
-
-                                <span class="toc-arrow" aria-hidden="true">›</span>
-                            </a>
-
-                            <a href="kapittel-2.html"
-                               class="disabled done"
-                               aria-disabled="true"
-                               tabindex="-1">
-
-                                <span class="toc-status" aria-hidden="true">✓</span>
-                                <span class="toc-text">
-                                    <strong>Kapittel 2</strong>
-                                    <em>Eva – et forbilde på menigheten</em>
-                                </span>
-
-                                <span class="toc-arrow" aria-hidden="true">›</span>
-                            </a>
-
-                            <a href="kapittel-3.html"
-                               class="disabled done"
-                               aria-disabled="true"
-                               tabindex="-1">
-
-                                <span class="toc-status" aria-hidden="true">✓</span>
-                                <span class="toc-text">
-                                    <strong>Kapittel 3</strong>
-                                    <em>Kristi kropp og Kristi brud</em>
-                                </span>
-
-                                <span class="toc-arrow" aria-hidden="true">›</span>
-                            </a>
-
-                            <a href="kapittel-4.html"
-                               class="active-chapter"
-                               aria-current="page">
-
-                                <span class="toc-status" aria-hidden="true">▶</span>
-                                <span class="toc-text">
-                                    <strong>Kapittel 4</strong>
-                                    <em>«Og hun fødte … et guttebarn»</em>
-                                </span>
-
-                                <span class="toc-arrow" aria-hidden="true">›</span>
-                            </a>
-
-                            <a href="kapittel-5.html"
-                               class="disabled"
-                               aria-disabled="true"
-                               tabindex="-1">
-
-                                <span class="toc-status" aria-hidden="true">○</span>
-                                <span class="toc-text">
-                                    <strong>Kapittel 5</strong>
-                                    <em>Den hellige stad – Det nye Jerusalem</em>
-                                </span>
-
-                                <span class="toc-arrow" aria-hidden="true">›</span>
-                            </a>
-
-                        </nav>
-
-                    </div>
-
                 </div>
 
             </div>
@@ -420,831 +291,10 @@
     </section>
 
     <!-- ===================================== -->
-    <!-- Studieinnhold -->
+    <!-- Kapitteloversikt -->
     <!-- ===================================== -->
 
-    <section id="study-content"
-             class="study-content">
-
-        <div class="container">
-
-            <div class="study-layout">
-
-                <!-- Venstre kolonne -->
-
-                <section class="study-main">
-
-                    <!-- ================================= -->
-                    <!-- Presentasjon -->
-                    <!-- ================================= -->
-
-                    <section id="presentation"
-                             class="accordion-item">
-
-                        <button class="accordion-header"
-                                type="button"
-                                aria-expanded="true"
-                                aria-controls="presentation-panel">
-
-                            <div class="accordion-left">
-
-                                <span class="accordion-icon">
-
-                                    <span class="icon icon-document" aria-hidden="true"></span>
-
-                                </span>
-
-                                <div>
-
-                                    <h2>
-
-                                        Presentasjon
-
-                                    </h2>
-
-                                    <p>
-
-                                        Introduksjon til kapittel 4
-
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                            <div class="accordion-right">
-
-                                <span class="accordion-arrow" aria-hidden="true">
-
-                                    ▼
-
-                                </span>
-
-                            </div>
-
-                        </button>
-
-                        <div class="accordion-content" id="presentation-panel">
-
-                            <!-- Presentasjon legges inn her -->
-
-                        </div>
-
-                    </section>
-
-                    <!-- ================================= -->
-                    <!-- Bibeltekster -->
-                    <!-- ================================= -->
-
-                    <section id="scripture"
-                             class="accordion-item">
-
-                        <button class="accordion-header"
-                                type="button"
-                                aria-expanded="false"
-                                aria-controls="scripture-panel">
-
-                            <div class="accordion-left">
-
-                                <span class="accordion-icon">
-
-                                    <span class="icon icon-book" aria-hidden="true"></span>
-
-                                </span>
-
-                                <div>
-
-                                    <h2>
-
-                                        Bibeltekster
-
-                                    </h2>
-
-                                    <p>
-
-                                        Bibeltekster med kontekst og forklaringer
-
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                            <div class="accordion-right">
-
-                                <span class="accordion-count">
-
-                                    4
-
-                                </span>
-
-                                <span class="accordion-arrow" aria-hidden="true">
-
-                                    ▼
-
-                                </span>
-
-                            </div>
-
-                        </button>
-
-                        <div class="accordion-content" id="scripture-panel">
-
-                            <!-- Åpenbaringen 12 -->
-
-                            <section class="sub-accordion">
-
-                                <button class="sub-header"
-                                        type="button"
-                                        aria-expanded="false"
-                                        aria-controls="scripture-sub-1">
-
-                                    <div>
-
-                                        <h3>
-
-                                            Åpenbaringen 12
-
-                                        </h3>
-
-                                        <p>
-
-                                            Kvinnen, guttebarnet og dragen
-
-                                        </p>
-
-                                    </div>
-
-                                    <span class="sub-arrow" aria-hidden="true">
-
-                                        ▼
-
-                                    </span>
-
-                                </button>
-
-                                <div class="sub-content" id="scripture-sub-1">
-
-                                    <!-- Bibeltekst legges inn her -->
-
-                                </div>
-
-                            </section>
-
-                            <!-- 1 Mosebok 37 -->
-
-                            <section class="sub-accordion">
-
-                                <button class="sub-header"
-                                        type="button"
-                                        aria-expanded="false"
-                                        aria-controls="scripture-sub-2">
-
-                                    <div>
-
-                                        <h3>
-
-                                            1. Mosebok 37
-
-                                        </h3>
-
-                                        <p>
-
-                                            Josefs drøm
-
-                                        </p>
-
-                                    </div>
-
-                                    <span class="sub-arrow" aria-hidden="true">
-
-                                        ▼
-
-                                    </span>
-
-                                </button>
-
-                                <div class="sub-content" id="scripture-sub-2">
-
-                                    <!-- Bibeltekst legges inn her -->
-
-                                </div>
-
-                            </section>
-
-                            <!-- Jesaja 66 -->
-
-                            <section class="sub-accordion">
-
-                                <button class="sub-header"
-                                        type="button"
-                                        aria-expanded="false"
-                                        aria-controls="scripture-sub-3">
-
-                                    <div>
-
-                                        <h3>
-
-                                            Jesaja 66
-
-                                        </h3>
-
-                                        <p>
-
-                                            Sion føder et barn
-
-                                        </p>
-
-                                    </div>
-
-                                    <span class="sub-arrow" aria-hidden="true">
-
-                                        ▼
-
-                                    </span>
-
-                                </button>
-
-                                <div class="sub-content" id="scripture-sub-3">
-
-                                    <!-- Bibeltekst legges inn her -->
-
-                                </div>
-
-                            </section>
-
-                            <!-- Salme 2 -->
-
-                            <section class="sub-accordion">
-
-                                <button class="sub-header"
-                                        type="button"
-                                        aria-expanded="false"
-                                        aria-controls="scripture-sub-4">
-
-                                    <div>
-
-                                        <h3>
-
-                                            Salme 2
-
-                                        </h3>
-
-                                        <p>
-
-                                            Han skal styre med jernstav
-
-                                        </p>
-
-                                    </div>
-
-                                    <span class="sub-arrow" aria-hidden="true">
-
-                                        ▼
-
-                                    </span>
-
-                                </button>
-
-                                <div class="sub-content" id="scripture-sub-4">
-
-                                    <!-- Bibeltekst legges inn her -->
-
-                                </div>
-
-                            </section>
-
-                        </div>
-
-                    </section>
-
-                    <!-- ================================= -->
-                    <!-- Infografikk -->
-                    <!-- ================================= -->
-
-                    <section id="infographics"
-                             class="accordion-item">
-
-                        <button class="accordion-header"
-                                type="button"
-                                aria-expanded="false"
-                                aria-controls="infographics-panel">
-
-                            <div class="accordion-left">
-
-                                <!-- icon-column gjenbrukt midlertidig for Infografikk; bytt ut med et
-                                 dedikert diagram-ikon i icons.css hvis ønskelig -->
-                            <span class="accordion-icon">
-
-                                    <span class="icon icon-column" aria-hidden="true"></span>
-
-                                </span>
-
-                                <div>
-
-                                    <h2>
-
-                                        Infografikk
-
-                                    </h2>
-
-                                    <p>
-
-                                        Visuelle oversikter og illustrasjoner
-
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                            <div class="accordion-right">
-
-                                <span class="accordion-count">
-
-                                    3
-
-                                </span>
-
-                                <span class="accordion-arrow" aria-hidden="true">
-
-                                    ▼
-
-                                </span>
-
-                            </div>
-
-                        </button>
-
-                        <div class="accordion-content" id="infographics-panel">
-
-                            <!-- Infografikk 1 -->
-
-                            <section class="sub-accordion">
-
-                                <button class="sub-header"
-                                        type="button"
-                                        aria-expanded="false"
-                                        aria-controls="infographics-sub-1">
-
-                                    <div>
-
-                                        <h3>
-
-                                            Presentasjon
-
-                                        </h3>
-
-                                        <p>
-
-                                            Introduksjon og oversikt
-
-                                        </p>
-
-                                    </div>
-
-                                    <span class="sub-arrow" aria-hidden="true">
-
-                                        ▼
-
-                                    </span>
-
-                                </button>
-
-                                <div class="sub-content" id="infographics-sub-1">
-
-                                    <!-- Infografikk -->
-
-                                </div>
-
-                            </section>
-
-                            <!-- Infografikk 2 -->
-
-                            <section class="sub-accordion">
-
-                                <button class="sub-header"
-                                        type="button"
-                                        aria-expanded="false"
-                                        aria-controls="infographics-sub-2">
-
-                                    <div>
-
-                                        <h3>
-
-                                            Oversikt
-
-                                        </h3>
-
-                                        <p>
-
-                                            Symboler og sammenhenger
-
-                                        </p>
-
-                                    </div>
-
-                                    <span class="sub-arrow" aria-hidden="true">
-
-                                        ▼
-
-                                    </span>
-
-                                </button>
-
-                                <div class="sub-content" id="infographics-sub-2">
-
-                                    <!-- Infografikk -->
-
-                                </div>
-
-                            </section>
-
-                            <!-- Infografikk 3 -->
-
-                            <section class="sub-accordion">
-
-                                <button class="sub-header"
-                                        type="button"
-                                        aria-expanded="false"
-                                        aria-controls="infographics-sub-3">
-
-                                    <div>
-
-                                        <h3>
-
-                                            Illustrasjon
-
-                                        </h3>
-
-                                        <p>
-
-                                            Diagram eller figur
-
-                                        </p>
-
-                                    </div>
-
-                                    <span class="sub-arrow" aria-hidden="true">
-
-                                        ▼
-
-                                    </span>
-
-                                </button>
-
-                                <div class="sub-content" id="infographics-sub-3">
-
-                                    <!-- Infografikk -->
-
-                                </div>
-
-                            </section>
-
-                        </div>
-
-                    </section>
-
-                    <!-- ================================= -->
-                    <!-- Kommentarer -->
-                    <!-- ================================= -->
-
-                    <section id="commentary"
-                             class="accordion-item">
-
-                        <button class="accordion-header"
-                                type="button"
-                                aria-expanded="false"
-                                aria-controls="commentary-panel">
-
-                            <div class="accordion-left">
-
-                                <span class="accordion-icon">
-
-                                    <!-- SVG-ikon -->
-
-                                </span>
-
-                                <div>
-
-                                    <h2>
-
-                                        Kommentarer
-
-                                    </h2>
-
-                                    <p>
-
-                                        Utfyllende kommentarer
-
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                            <div class="accordion-right">
-
-                                <span class="accordion-count">
-
-                                    8
-
-                                </span>
-
-                                <span class="accordion-arrow" aria-hidden="true">
-
-                                    ▼
-
-                                </span>
-
-                            </div>
-
-                        </button>
-
-                        <div class="accordion-content" id="commentary-panel">
-
-                            <!-- Kommentar 1 -->
-
-                            <section class="sub-accordion">
-
-                                <button class="sub-header"
-                                        type="button"
-                                        aria-expanded="false"
-                                        aria-controls="commentary-sub-1">
-
-                                    <div>
-
-                                        <h3>
-
-                                            Kommentar 1
-
-                                        </h3>
-
-                                    </div>
-
-                                    <span class="sub-arrow" aria-hidden="true">
-
-                                        ▼
-
-                                    </span>
-
-                                </button>
-
-                                <div class="sub-content" id="commentary-sub-1">
-
-                                    <!-- Kommentar -->
-
-                                </div>
-
-                            </section>
-
-                            <!-- Flere kommentarer opprettes på samme måte -->
-
-                        </div>
-
-                    </section>
-
-                    <!-- ================================= -->
-                    <!-- Studiespørsmål -->
-                    <!-- ================================= -->
-
-                    <section id="questions"
-                             class="accordion-item">
-
-                        <button class="accordion-header"
-                                type="button"
-                                aria-expanded="false"
-                                aria-controls="questions-panel">
-
-                            <div class="accordion-left">
-
-                                <span class="accordion-icon"
-                                      aria-hidden="true">
-
-                                    ?
-
-                                </span>
-
-                                <div>
-
-                                    <h2>
-
-                                        Studiespørsmål
-
-                                    </h2>
-
-                                    <p>
-
-                                        Refleksjon og gruppesamtale
-
-                                    </p>
-
-                                </div>
-
-                            </div>
-
-                            <div class="accordion-right">
-
-                                <span class="accordion-count">
-
-                                    6
-
-                                </span>
-
-                                <span class="accordion-arrow" aria-hidden="true">
-
-                                    ▼
-
-                                </span>
-
-                            </div>
-
-                        </button>
-
-                        <div class="accordion-content" id="questions-panel">
-
-                            <!-- Studiespørsmål legges inn her -->
-
-                        </div>
-
-                    </section>
-
-                </section>
-
-                <!-- ================================= -->
-                <!-- Sidebar -->
-                <!-- ================================= -->
-
-                <aside class="study-sidebar">
-
-                    <!-- Zoom-gruppe -->
-
-                    <!-- Kortet og knappen åpner nå en informasjonsmodal i
-                         stedet for å sende brukeren videre direkte. Se
-                         css/modal.css og js/modal.js (delt, gjenbrukbar
-                         komponent) for selve modal-mekanikken – denne
-                         siden inneholder kun innholdet i #modal-zoom.
-                         tabindex="-1" gjør at fokus kan flyttes tilbake
-                         til kortet programmatisk (js/modal.js) selv om
-                         det ikke ligger i vanlig tab-rekkefølge. -->
-                    <section class="sidebar-card"
-                             data-modal-open="modal-zoom"
-                             tabindex="-1">
-
-                        <div class="card-heading">
-
-                            <span class="icon icon-video" aria-hidden="true"></span>
-
-                            <h3>
-
-                                Bli med i vår Zoom-gruppe
-
-                            </h3>
-
-                        </div>
-
-                        <p>
-
-                            Bli med i vår Zoom-gruppe for samtale
-                            og fellesskap om dette kapitlet.
-
-                        </p>
-
-                        <a href="#" class="btn btn-gold btn-small" data-modal-open="modal-zoom">
-
-                            <span class="icon icon-video" aria-hidden="true"></span>
-
-                            Bli med i Zoom-gruppen
-
-                        </a>
-
-                        <p>
-
-                            Alle er velkomne – vi ser frem til å
-                            ha deg med!
-
-                        </p>
-
-                    </section>
-
-                    <!-- Informasjonsmodal for Zoom-gruppen. Skjult som
-                         standard ([hidden]); js/modal.js styrer av/på. -->
-                    <div class="modal-overlay" id="modal-zoom" hidden>
-
-                        <div class="modal"
-                             role="dialog"
-                             aria-modal="true"
-                             aria-labelledby="modal-zoom-title">
-
-                            <button type="button"
-                                    class="modal-close"
-                                    data-modal-close
-                                    aria-label="Lukk">
-
-                                &times;
-
-                            </button>
-
-                            <h2 id="modal-zoom-title" class="modal-title">
-
-                                Bli med i vår Zoom-gruppe
-
-                            </h2>
-
-                            <div class="modal-body">
-
-                                <p>
-
-                                    Vi møtes jevnlig for bibelstudium, samtale, bønn og
-                                    fellesskap rundt «Den herlige menigheten». Samlingene
-                                    er åpne for alle, enten du ønsker å delta aktivt eller
-                                    bare lytte.
-
-                                </p>
-
-                                <p>Du får mulighet til å:</p>
-
-                                <ul>
-                                    <li>stille spørsmål</li>
-                                    <li>dele refleksjoner</li>
-                                    <li>be sammen med andre</li>
-                                    <li>bli bedre kjent med Bibelen</li>
-                                    <li>møte kristne fra ulike steder</li>
-                                </ul>
-
-                                <div class="modal-info-box">
-
-                                    <p><strong>📅 Tidspunkt:</strong> Publiseres fortløpende.</p>
-
-                                    <p><strong>🔗 Zoom-lenke:</strong> Sendes til påmeldte.</p>
-
-                                </div>
-
-                            </div>
-
-                            <div class="modal-actions">
-
-                                <!-- Ingen påmeldingsfunksjon implementert ennå –
-                                     lukker kun modalen inntil videre, per oppgave. -->
-                                <button type="button" class="btn btn-gold btn-small" data-modal-close>
-                                    Meld meg på
-                                </button>
-
-                                <button type="button" class="btn btn-outline btn-small" data-modal-close>
-                                    Lukk
-                                </button>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                    <!-- Kommentarer -->
-
-                    <section class="sidebar-card">
-
-                        <div class="card-heading">
-
-                            <span class="icon icon-comment" aria-hidden="true"></span>
-
-                            <h3>
-
-                                Kommentarer
-
-                            </h3>
-
-                        </div>
-
-                        <p>
-
-                            Del dine tanker om dette kapitlet
-                            med andre.
-
-                        </p>
-
-                        <!-- Peker til "#" inntil kommentarfeltet er koblet opp -->
-                        <a href="#commentary" class="btn btn-outline btn-small">
-
-                            Åpne kommentarfeltet
-
-                        </a>
-
-                    </section>
-
-                </aside>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================================== -->
-    <!-- Relaterte ressurser -->
-    <!-- ===================================== -->
-
-    <section class="related-section">
+    <section class="chapters-section">
 
         <div class="container">
 
@@ -1252,62 +302,97 @@
 
                 <span class="section-label">
 
-                    VIDERE STUDIUM
+                    STUDIET
 
                 </span>
 
                 <h2>
 
-                    Relaterte ressurser
+                    Kapitler
 
                 </h2>
 
             </header>
 
-            <!-- Ressurskort-komponenten er dokumentert i 04_COMPONENT_LIBRARY.md
-                 ("Ressurskort brukes for: PDF, e-bøker, videoer, studiemateriell"),
-                 men ingen konkrete kort med tittel/beskrivelse finnes andre steder
-                 i prosjektet å gjenbruke. Strukturen står derfor klar under, med
-                 innhold markert som ikke satt i stedet for oppdiktet tekst. -->
-            <div class="related-grid">
+            <!-- Kapittel 1, 2, 3 og 5 finnes ikke som egne sider ennå.
+                 De beholdes som <a> med reell fremtidig href, men
+                 deaktiveres med aria-disabled + tabindex="-1"
+                 (pointer-events:none i study.css). Hakemerket viser
+                 leseposisjon (før gjeldende kapittel), ikke
+                 publiseringsstatus. -->
+            <nav class="book-toc" aria-label="Kapitteloversikt">
 
-                <article class="resource-card">
+                <a href="kapittel-1.html"
+                   class="disabled done"
+                   aria-disabled="true"
+                   tabindex="-1">
 
-                    <span class="resource-icon">
-                        <span class="icon icon-books" aria-hidden="true"></span>
+                    <span class="toc-status" aria-hidden="true">✓</span>
+                    <span class="toc-text">
+                        <strong>Kapittel 1</strong>
+                        <em>Guds plan og Guds hvile</em>
                     </span>
 
-                    <h3><!-- Tittel ikke satt --></h3>
+                    <span class="toc-arrow" aria-hidden="true">›</span>
+                </a>
 
-                    <p><!-- Beskrivelse ikke satt --></p>
+                <a href="kapittel-2.html"
+                   class="disabled done"
+                   aria-disabled="true"
+                   tabindex="-1">
 
-                </article>
-
-                <article class="resource-card">
-
-                    <span class="resource-icon">
-                        <span class="icon icon-video" aria-hidden="true"></span>
+                    <span class="toc-status" aria-hidden="true">✓</span>
+                    <span class="toc-text">
+                        <strong>Kapittel 2</strong>
+                        <em>Eva – et forbilde på menigheten</em>
                     </span>
 
-                    <h3><!-- Tittel ikke satt --></h3>
+                    <span class="toc-arrow" aria-hidden="true">›</span>
+                </a>
 
-                    <p><!-- Beskrivelse ikke satt --></p>
+                <a href="kapittel-3.html"
+                   class="disabled done"
+                   aria-disabled="true"
+                   tabindex="-1">
 
-                </article>
-
-                <article class="resource-card">
-
-                    <span class="resource-icon">
-                        <span class="icon icon-file" aria-hidden="true"></span>
+                    <span class="toc-status" aria-hidden="true">✓</span>
+                    <span class="toc-text">
+                        <strong>Kapittel 3</strong>
+                        <em>Kristi kropp og Kristi brud</em>
                     </span>
 
-                    <h3><!-- Tittel ikke satt --></h3>
+                    <span class="toc-arrow" aria-hidden="true">›</span>
+                </a>
 
-                    <p><!-- Beskrivelse ikke satt --></p>
+                <a href="kapittel-4.html"
+                   class="active-chapter"
+                   aria-current="page">
 
-                </article>
+                    <span class="toc-status" aria-hidden="true">▶</span>
+                    <span class="toc-text">
+                        <span class="toc-badge">Aktivt</span>
+                        <strong>Kapittel 4</strong>
+                        <em>«Og hun fødte … et guttebarn»</em>
+                        <span class="toc-description">Du leser dette kapittelet nå.</span>
+                        <span class="toc-active-cta">Fortsett å lese <span aria-hidden="true">→</span></span>
+                    </span>
+                </a>
 
-            </div>
+                <a href="kapittel-5.html"
+                   class="disabled"
+                   aria-disabled="true"
+                   tabindex="-1">
+
+                    <span class="toc-status" aria-hidden="true">○</span>
+                    <span class="toc-text">
+                        <strong>Kapittel 5</strong>
+                        <em>Den hellige stad – Det nye Jerusalem</em>
+                    </span>
+
+                    <span class="toc-arrow" aria-hidden="true">›</span>
+                </a>
+
+            </nav>
 
         </div>
 
@@ -1321,14 +406,15 @@
 
         <div class="container">
 
-            <!-- kapittel-3.html og kapittel-5.html finnes ikke ennå. Samme
-                 mønster som sidebarens kapittelliste: <a> beholdes med reell
-                 href, deaktivert via aria-disabled/tabindex/pointer-events
-                 slik at ingen strukturendring trengs når sidene publiseres. -->
-            <nav class="pagination-grid">
+            <!-- Statisk fasit (samsvarer med "active-chapter" over) for visning
+                 uten JavaScript. js/study-overview.js regner ut og overskriver
+                 innhold/href/disabled-tilstand på nytt ut fra kapittellisten,
+                 slik at denne navigasjonen fungerer uansett antall kapitler. -->
+            <nav class="pagination-grid" aria-label="Kapittelnavigasjon">
 
                 <a href="kapittel-3.html"
                    class="pagination-card previous disabled"
+                   data-pagination="previous"
                    aria-disabled="true"
                    tabindex="-1">
 
@@ -1346,8 +432,27 @@
 
                 </a>
 
+                <a href="kapittel-4.html"
+                   class="pagination-card overview"
+                   data-pagination="current">
+
+                    <span>
+
+                        Nåværende kapittel
+
+                    </span>
+
+                    <strong>
+
+                        Kapittel 4
+
+                    </strong>
+
+                </a>
+
                 <a href="kapittel-5.html"
                    class="pagination-card next disabled"
+                   data-pagination="next"
                    aria-disabled="true"
                    tabindex="-1">
 
@@ -1410,7 +515,7 @@
 
                 <nav>
 
-                    <a href="kapittel-4.html">
+                    <a href="./">
 
                         Den herlige menigheten
 
@@ -1436,7 +541,7 @@
 
                     </a>
 
-                    <a href="../../../../bibel/index.html">
+                    <a href="../../../../temaer/bibelen/index.html">
 
                         Bibelstudier
 
@@ -1467,12 +572,7 @@
 <!-- JavaScript -->
 <!-- ===================================== -->
 
-<script src="../../../../js/navigation.js"></script>
-
-<script src="../../../../js/study.js"></script>
-
-<!-- Generisk modal-komponent (gjenbrukbar, ikke sideegen) -->
-<script src="../../../../js/modal.js"></script>
+<script src="../../../../js/study-overview.js"></script>
 
 </body>
 

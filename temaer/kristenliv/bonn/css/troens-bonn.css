@@ -1,0 +1,73 @@
+/* =========================================================
+   TROENS-BONN.CSS
+   Sideegen stil for temaer/kristenliv/bonn/troens-bonn.html.
+
+   Følger samme arkitektur som ../../css/kristenliv.css,
+   temaer/ressurser/css/ressurser.css og css/study.css: delte
+   komponenter (variables.css, base.css, typography.css,
+   article.css, components.css osv.) gjenbrukes uendret via
+   den kanoniske lenkelisten i <head> – kun det som mangler et
+   kanonisk motstykke legges til her.
+
+   .important-box og .cross-reference-box (brukt i artikkelens
+   brødtekst for henholdsvis en fremhevet påstand og en
+   "se også"-boks) har ingen tilsvarende komponent i
+   css/article.css i dag (som kun definerer .bible-box for
+   bibelsitater) – derfor egen, minimal fil i stedet for en
+   ny delt komponent eller en <style>-blokk i selve siden.
+   ========================================================= */
+
+.important-box,
+.cross-reference-box {
+    display: flex;
+    gap: 16px;
+    border-radius: var(--radius-sm);
+    padding: 20px 24px;
+    margin: 2em 0;
+    font-size: .96rem;
+    line-height: 1.7;
+}
+
+.important-box .box-icon,
+.cross-reference-box .box-icon {
+    flex-shrink: 0;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: .78rem;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.important-box .box-title,
+.cross-reference-box .box-title {
+    display: block;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.important-box {
+    background: var(--parchment-dark);
+    border: 1px solid var(--border);
+    color: var(--navy-mid);
+}
+
+.important-box .box-icon {
+    background: var(--gold);
+    color: var(--white);
+}
+
+.cross-reference-box {
+    background: var(--white);
+    border: 1px dashed var(--border);
+    color: var(--text);
+}
+
+.cross-reference-box .box-icon {
+    background: var(--navy);
+    color: var(--white);
+}

@@ -87,10 +87,13 @@
 }
 
 .featured-grid {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr 1fr;
-    gap: 24px;
-    align-items: stretch;
+    display: flex;
+    justify-content: center;
+}
+
+.featured-grid .featured-panel {
+    width: 100%;
+    max-width: 480px;
 }
 
 .featured-image {
@@ -166,13 +169,24 @@
     margin-bottom: 28px;
 }
 
-.resource-list li {
+.resource-list a {
     display: flex;
     align-items: center;
     gap: 10px;
     font-family: "Inter", sans-serif;
     font-size: .92rem;
     color: var(--text);
+    transition: color .2s var(--ease);
+}
+
+.resource-list a:hover {
+    color: var(--gold);
+}
+
+.resource-list a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
 .resource-list .icon {

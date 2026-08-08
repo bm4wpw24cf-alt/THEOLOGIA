@@ -1,1104 +1,66 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Troens bønn | THEOLOGIA</title>
-<meta name="description" content="En bibelsk studie av hva troens bønn er, hvordan tro vokser frem, og hvordan den troende kan be med frimodighet etter Guds vilje.">
-<meta name="author" content="THEOLOGIA">
 
-<!-- Open Graph / SEO -->
-<meta property="og:type" content="article">
-<meta property="og:title" content="Troens bønn">
-<meta property="og:description" content="En bibelsk studie av hva troens bønn er, hvordan tro vokser frem, og hvordan den troende kan be med frimodighet etter Guds vilje.">
-<!-- TODO: Oppdater canonical- og Open Graph-URL-er når produksjonsdomenet er klart. -->
-<meta property="og:image" content="/images/artikler/troens-bonn-hero.jpg">
-<meta property="article:author" content="THEOLOGIA">
-<meta property="article:published_time" content="2026-08-04">
-<meta property="article:modified_time" content="2026-08-04">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Troens bønn | THEOLOGIA</title>
+
+    <meta name="description" content="En bibelsk studie av hva troens bønn er, hvordan tro vokser frem, og hvordan den troende kan be med frimodighet etter Guds vilje.">
+    <meta name="author" content="THEOLOGIA">
+
+    <link rel="stylesheet" href="../../../css/variables.css">
+    <link rel="stylesheet" href="../../../css/base.css">
+    <link rel="stylesheet" href="../../../css/typography.css">
+    <link rel="stylesheet" href="../../../css/header.css">
+    <link rel="stylesheet" href="../../../css/navigation.css">
+    <link rel="stylesheet" href="../../../css/buttons.css">
+    <link rel="stylesheet" href="../../../css/cards.css">
+    <link rel="stylesheet" href="../../../css/footer.css">
+    <link rel="stylesheet" href="../../../css/utilities.css">
+    <link rel="stylesheet" href="../../../css/animations.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="stylesheet" href="../../../css/icons.css">
+    <link rel="stylesheet" href="../../../css/hero.css">
+    <link rel="stylesheet" href="../../../css/article.css">
+    <link rel="stylesheet" href="../../../css/components.css">
+
+    <!-- Sideegen stil: se css/troens-bonn.css for hvorfor -->
+    <link rel="stylesheet" href="css/troens-bonn.css">
+
+    <!-- TODO: Oppdater canonical- og Open Graph-URL-er når produksjonsdomenet er klart. -->
+    <link rel="canonical" href="/temaer/kristenliv/bonn/troens-bonn/">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Troens bønn">
+    <meta property="og:description" content="En bibelsk studie av hva troens bønn er, hvordan tro vokser frem, og hvordan den troende kan be med frimodighet etter Guds vilje.">
+    <meta property="og:url" content="/temaer/kristenliv/bonn/troens-bonn/">
+    <meta property="og:site_name" content="THEOLOGIA">
+    <meta property="article:author" content="THEOLOGIA">
+    <meta property="article:published_time" content="2026-08-04">
+    <meta property="article:modified_time" content="2026-08-04">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Troens bønn">
+    <meta name="twitter:description" content="En bibelsk studie av troens bønn med utgangspunkt i Jakob 5,15 og sentrale skriftsteder om tro, bønn og Guds vilje.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-/* =========================================================
-   ARTIKKEL-MAL.HTML — THEOLOGIA MASTER TEMPLATE
-   Selvstendig fil med innebygget CSS. Ingen avhengighet av
-   eksterne stilark eller JavaScript. Alt innhold merket med
-   {{PLASSHOLDERE}} skal erstattes per artikkel.
-
-   INNHOLD
-   1. Grunnverdier (design-tokens)
-   2. Reset / basis
-   3. Header og navigasjon
-   4. Hero-seksjon
-   5. Breadcrumb
-   6. Hovedlayout (3 kolonner)
-   7. Innholdsfortegnelse
-   8. Artikkelinnhold og typografi
-   9. Bibelvers-komponent
-   10. Sitat-komponent
-   11. Informasjonsbokser
-   12. Tabeller
-   13. Bilder og figurer
-   14. Relaterte artikler
-   15. Forfatterseksjon
-   16. Footer
-   17. Responsivt
-   ========================================================= */
-
-
-/* =========================================================
-   1. GRUNNVERDIER
-   ========================================================= */
-
-:root {
-    --navy: #0c1726;
-    --navy-deep: #060d17;
-    --navy-mid: #16273e;
-    --navy-light: #24405f;
-
-    --gold: #b8872b;
-    --gold-light: #e0ac52;
-    --gold-dark: #96701f;
-
-    --parchment: #faf6ee;
-    --parchment-dark: #f1ead9;
-    --white: #ffffff;
-    --black: #111111;
-
-    --text: #4a4a4a;
-    --text-light: #7a7a7a;
-    --border: #ece5d6;
-
-    --radius: 16px;
-    --radius-sm: 10px;
-
-    --shadow-sm: 0 2px 8px rgba(17,17,17,.05);
-    --shadow: 0 10px 30px rgba(17,17,17,.08);
-    --shadow-lg: 0 24px 60px -12px rgba(17,17,17,.22);
-
-    --ease: cubic-bezier(.22,1,.36,1);
-
-    --font-serif: "EB Garamond", Georgia, serif;
-    --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-
-    --content-width: 800px;
-}
-
-
-/* =========================================================
-   2. RESET / BASIS
-   ========================================================= */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    background: var(--parchment);
-    color: var(--text);
-    font-family: var(--font-sans);
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-}
-
-img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-h1, h2, h3, h4 {
-    font-family: var(--font-serif);
-    color: var(--navy);
-    font-weight: 600;
-    line-height: 1.25;
-    margin: 0 0 .6em;
-}
-
-p {
-    margin: 0 0 1.2em;
-}
-
-.container {
-    width: min(1280px, 92%);
-    margin-inline: auto;
-}
-
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    white-space: nowrap;
-}
-
-
-/* =========================================================
-   3. HEADER OG NAVIGASJON
-   Mobilmeny løses uten JavaScript via en skjult checkbox
-   (checkbox-hack) og en <label> som knapp.
-   ========================================================= */
-
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(255,255,255,.96);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
-}
-
-.header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-block: 18px;
-}
-
-.logo {
-    display: flex;
-    flex-direction: column;
-    line-height: 1;
-}
-
-.logo-title {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--navy);
-    letter-spacing: .02em;
-}
-
-.logo-subtitle {
-    font-family: var(--font-sans);
-    font-size: .65rem;
-    font-weight: 600;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    margin-top: 4px;
-}
-
-.main-nav ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.main-nav a {
-    display: block;
-    padding: 8px 12px;
-    border-radius: var(--radius-sm);
-    font-size: .88rem;
-    font-weight: 500;
-    color: var(--navy-mid);
-    transition: background .2s var(--ease), color .2s var(--ease);
-}
-
-.main-nav a:hover,
-.main-nav a[aria-current="page"] {
-    background: var(--parchment-dark);
-    color: var(--gold-dark);
-}
-
-.nav-toggle {
-    display: none;
-}
-
-.nav-toggle-label {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    width: 26px;
-    cursor: pointer;
-}
-
-.nav-toggle-label span {
-    display: block;
-    height: 2px;
-    background: var(--navy);
-    border-radius: 2px;
-    transition: transform .25s var(--ease), opacity .25s var(--ease);
-}
-
-
-/* =========================================================
-   4. HERO-SEKSJON
-   ========================================================= */
-
-.article-hero {
-    background: var(--navy);
-    background-image: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
-    padding-block: 64px;
-}
-
-.article-hero-grid {
-    display: grid;
-    grid-template-columns: 1.1fr 1fr;
-    gap: 48px;
-    align-items: center;
-}
-
-.hero-category {
-    display: inline-block;
-    font-family: var(--font-sans);
-    font-size: .76rem;
-    font-weight: 700;
-    letter-spacing: .14em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-    margin-bottom: 18px;
-}
-
-.article-hero h1 {
-    color: var(--white);
-    font-size: clamp(2rem, 4vw, 2.9rem);
-    margin-bottom: 14px;
-}
-
-.hero-subtitle {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 1.2rem;
-    color: rgba(255,255,255,.78);
-    margin-bottom: 26px;
-    max-width: 56ch;
-}
-
-.hero-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 22px;
-    padding-top: 22px;
-    border-top: 1px solid rgba(255,255,255,.14);
-}
-
-.hero-meta-item {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.hero-meta-label {
-    font-size: .68rem;
-    font-weight: 600;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,.5);
-}
-
-.hero-meta-value {
-    font-size: .88rem;
-    font-weight: 600;
-    color: var(--white);
-}
-
-.hero-image-wrap {
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    aspect-ratio: 4 / 3;
-}
-
-.hero-image-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-/* =========================================================
-   5. BREADCRUMB
-   ========================================================= */
-
-.breadcrumb {
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-}
-
-.breadcrumb ol {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 8px;
-    list-style: none;
-    margin: 0;
-    padding: 14px 0;
-    font-size: .84rem;
-    color: var(--text-light);
-}
-
-.breadcrumb a {
-    color: var(--text-light);
-    transition: color .2s var(--ease);
-}
-
-.breadcrumb a:hover {
-    color: var(--gold-dark);
-}
-
-.breadcrumb li[aria-current="page"] {
-    color: var(--navy);
-    font-weight: 600;
-}
-
-.breadcrumb li:not(:last-child)::after {
-    content: "›";
-    margin-left: 8px;
-    color: var(--border);
-}
-
-
-/* =========================================================
-   6. HOVEDLAYOUT
-   Tre kolonner på desktop: innholdsfortegnelse / artikkel /
-   tilleggsinformasjon. Én kolonne på mobil (seksjon 17).
-   ========================================================= */
-
-.article-layout {
-    display: grid;
-    grid-template-columns: 220px minmax(0, var(--content-width)) 280px;
-    gap: 48px;
-    align-items: start;
-    padding-block: 56px;
-}
-
-.toc-column,
-.aside-column {
-    position: sticky;
-    top: 96px;
-}
-
-
-/* =========================================================
-   7. INNHOLDSFORTEGNELSE
-   ========================================================= */
-
-.toc-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: 24px;
-}
-
-.toc-card h2 {
-    font-family: var(--font-sans);
-    font-size: .74rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--text-light);
-    margin-bottom: 16px;
-}
-
-.toc-card ol {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
-.toc-card a {
-    display: block;
-    padding: 8px 0;
-    font-size: .88rem;
-    color: var(--text);
-    border-left: 2px solid var(--border);
-    padding-left: 14px;
-    transition: color .2s var(--ease), border-color .2s var(--ease);
-}
-
-.toc-card a:hover {
-    color: var(--gold-dark);
-    border-color: var(--gold);
-}
-
-
-/* =========================================================
-   8. ARTIKKELINNHOLD OG TYPOGRAFI
-   Maks lesebredde satt via --content-width (750-850px) på
-   .article-layout sin midtre kolonne. Sjenerøs linjeavstand
-   for lange teologiske tekster.
-   ========================================================= */
-
-.article-content h2 {
-    font-size: 1.6rem;
-    margin-top: 2em;
-    padding-top: .2em;
-    scroll-margin-top: 100px;
-}
-
-.article-content h3 {
-    font-size: 1.25rem;
-    margin-top: 1.6em;
-    scroll-margin-top: 100px;
-}
-
-.article-content p {
-    font-size: 1.06rem;
-    line-height: 1.85;
-    color: var(--text);
-}
-
-.article-content ul,
-.article-content ol {
-    font-size: 1.06rem;
-    line-height: 1.85;
-    color: var(--text);
-    padding-left: 1.4em;
-    margin: 0 0 1.2em;
-}
-
-.article-content li {
-    margin-bottom: .5em;
-}
-
-.article-content strong {
-    color: var(--black);
-    font-weight: 600;
-}
-
-.article-lede {
-    font-family: var(--font-serif);
-    font-size: 1.25rem;
-    line-height: 1.7;
-    color: var(--navy-mid);
-}
-
-hr.section-divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 3em 0;
-}
-
-
-/* =========================================================
-   9. BIBELVERS-KOMPONENT
-   ========================================================= */
-
-.scripture-box {
-    background: var(--parchment-dark);
-    border-left: 4px solid var(--gold);
-    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-    padding: 28px 32px;
-    margin: 2em 0;
-}
-
-.scripture-box .bible-text {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 1.2rem;
-    line-height: 1.7;
-    color: var(--navy);
-    margin-bottom: 12px;
-}
-
-.scripture-box .bible-reference {
-    font-family: var(--font-sans);
-    font-size: .82rem;
-    font-weight: 700;
-    letter-spacing: .04em;
-    color: var(--gold-dark);
-    text-transform: uppercase;
-}
-
-
-/* =========================================================
-   10. SITAT-KOMPONENT
-   For teologiske sitater, kirkefedre og historiske kilder.
-   ========================================================= */
-
-.quote-box {
-    position: relative;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: 32px 36px;
-    margin: 2em 0;
-}
-
-.quote-box::before {
-    content: "\201C";
-    position: absolute;
-    top: 8px;
-    left: 20px;
-    font-family: var(--font-serif);
-    font-size: 3.5rem;
-    color: var(--gold-light);
-    line-height: 1;
-}
-
-.quote-box blockquote {
-    margin: 0 0 10px;
-    padding-left: 28px;
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--navy);
-}
-
-.quote-box cite {
-    display: block;
-    padding-left: 28px;
-    font-family: var(--font-sans);
-    font-style: normal;
-    font-size: .84rem;
-    font-weight: 600;
-    color: var(--text-light);
-}
-
-
-/* =========================================================
-   11. INFORMASJONSBOKSER
-   .info-box / .important-box / .warning-box / .cross-reference-box
-   ========================================================= */
-
-.info-box,
-.important-box,
-.warning-box,
-.cross-reference-box {
-    display: flex;
-    gap: 16px;
-    border-radius: var(--radius-sm);
-    padding: 20px 24px;
-    margin: 2em 0;
-    font-size: .96rem;
-    line-height: 1.7;
-}
-
-.info-box .box-icon,
-.important-box .box-icon,
-.warning-box .box-icon,
-.cross-reference-box .box-icon {
-    flex-shrink: 0;
-    font-family: var(--font-sans);
-    font-weight: 700;
-    font-size: .78rem;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.info-box .box-title,
-.important-box .box-title,
-.warning-box .box-title,
-.cross-reference-box .box-title {
-    display: block;
-    font-family: var(--font-sans);
-    font-weight: 700;
-    margin-bottom: 4px;
-}
-
-.info-box {
-    background: #eef4fa;
-    border: 1px solid #cfe2f0;
-    color: #1f4f6e;
-}
-
-.info-box .box-icon {
-    background: #3f7ea6;
-    color: var(--white);
-}
-
-.important-box {
-    background: var(--parchment-dark);
-    border: 1px solid var(--border);
-    color: var(--navy-mid);
-}
-
-.important-box .box-icon {
-    background: var(--gold);
-    color: var(--white);
-}
-
-.warning-box {
-    background: #fbeeee;
-    border: 1px solid #f0d3d3;
-    color: #7a2d2d;
-}
-
-.warning-box .box-icon {
-    background: #b8493f;
-    color: var(--white);
-}
-
-.cross-reference-box {
-    background: var(--white);
-    border: 1px dashed var(--border);
-    color: var(--text);
-}
-
-.cross-reference-box .box-icon {
-    background: var(--navy);
-    color: var(--white);
-}
-
-
-/* =========================================================
-   12. TABELLER
-   Horisontal scroll på mobil via wrapper (seksjon 17).
-   ========================================================= */
-
-.table-wrap {
-    overflow-x: auto;
-    margin: 2em 0;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-}
-
-.article-content table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: .94rem;
-    min-width: 480px;
-}
-
-.article-content caption {
-    text-align: left;
-    font-size: .82rem;
-    color: var(--text-light);
-    padding: 10px 16px;
-}
-
-.article-content th,
-.article-content td {
-    padding: 12px 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-}
-
-.article-content thead th {
-    background: var(--parchment-dark);
-    font-family: var(--font-sans);
-    font-weight: 700;
-    color: var(--navy);
-    font-size: .78rem;
-    text-transform: uppercase;
-    letter-spacing: .04em;
-}
-
-.article-content tbody tr:last-child td {
-    border-bottom: none;
-}
-
-
-/* =========================================================
-   13. BILDER OG FIGURER
-   ========================================================= */
-
-.article-figure {
-    margin: 2.2em 0;
-}
-
-.article-figure img {
-    border-radius: var(--radius-sm);
-    box-shadow: var(--shadow-sm);
-}
-
-.article-figure figcaption {
-    margin-top: 10px;
-    font-size: .86rem;
-    color: var(--text-light);
-    text-align: center;
-}
-
-.article-figure.figure-wide {
-    margin-inline: calc(50% - 50vw + 1px);
-    max-width: 1100px;
-    padding-inline: 24px;
-}
-
-
-/* =========================================================
-   14. RELATERTE ARTIKLER
-   ========================================================= */
-
-.related-articles {
-    background: var(--parchment-dark);
-    padding-block: 64px;
-    margin-top: 40px;
-}
-
-.related-articles h2 {
-    font-size: 1.5rem;
-    margin-bottom: 28px;
-}
-
-.related-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.related-card {
-    display: block;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
-}
-
-.related-card:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-lg);
-}
-
-.related-card img {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-}
-
-.related-card-body {
-    padding: 20px 22px;
-}
-
-.related-card h3 {
-    font-size: 1.05rem;
-    margin-bottom: 8px;
-}
-
-.related-card p {
-    font-family: var(--font-sans);
-    font-size: .88rem;
-    color: var(--text-light);
-    margin: 0;
-}
-
-
-/* =========================================================
-   15. FORFATTERSEKSJON
-   ========================================================= */
-
-.author-section {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: 28px;
-    margin-top: 56px;
-}
-
-.author-photo {
-    flex-shrink: 0;
-    width: 72px;
-    height: 72px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.author-eyebrow {
-    font-family: var(--font-sans);
-    font-size: .72rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--gold-dark);
-    margin-bottom: 4px;
-}
-
-.author-name {
-    font-family: var(--font-serif);
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 6px;
-}
-
-.author-bio {
-    font-family: var(--font-sans);
-    font-size: .9rem;
-    color: var(--text-light);
-    margin: 0;
-}
-
-
-/* =========================================================
-   16. FOOTER
-   ========================================================= */
-
-.site-footer {
-    background: var(--navy);
-    color: rgba(255,255,255,.7);
-    padding-top: 56px;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.4fr repeat(3, 1fr);
-    gap: 40px;
-    padding-bottom: 40px;
-}
-
-.footer-logo {
-    font-family: var(--font-serif);
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 10px;
-}
-
-.footer-tagline {
-    font-size: .86rem;
-    line-height: 1.6;
-    max-width: 32ch;
-}
-
-.footer-col h4 {
-    font-family: var(--font-sans);
-    font-size: .74rem;
-    font-weight: 700;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--white);
-    margin-bottom: 14px;
-}
-
-.footer-col ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.footer-col a {
-    font-size: .86rem;
-    transition: color .2s var(--ease);
-}
-
-.footer-col a:hover {
-    color: var(--gold-light);
-}
-
-.footer-social {
-    display: flex;
-    gap: 12px;
-    margin-top: 4px;
-}
-
-.footer-social a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    border: 1px solid rgba(255,255,255,.2);
-    font-size: .78rem;
-    font-weight: 700;
-    transition: background .2s var(--ease), border-color .2s var(--ease);
-}
-
-.footer-social a:hover {
-    background: var(--gold);
-    border-color: var(--gold);
-    color: var(--white);
-}
-
-.footer-bottom {
-    border-top: 1px solid rgba(255,255,255,.12);
-    padding-block: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 12px;
-    font-size: .8rem;
-}
-
-.footer-bottom a {
-    transition: color .2s var(--ease);
-}
-
-.footer-bottom a:hover {
-    color: var(--gold-light);
-}
-
-.footer-legal {
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-
-/* =========================================================
-   17. RESPONSIVT
-   ========================================================= */
-
-@media (max-width: 1100px) {
-
-    .article-layout {
-        grid-template-columns: 1fr 280px;
-    }
-
-    .toc-column {
-        display: none;
-    }
-
-    .related-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 860px) {
-
-    .main-nav {
-        position: fixed;
-        inset: 0 0 0 30%;
-        top: 73px;
-        background: var(--white);
-        border-left: 1px solid var(--border);
-        padding: 24px;
-        transform: translateX(110%);
-        transition: transform .3s var(--ease);
-        overflow-y: auto;
-        z-index: 99;
-    }
-
-    .main-nav ul {
-        flex-direction: column;
-        gap: 2px;
-    }
-
-    .main-nav a {
-        padding: 12px 14px;
-        font-size: .95rem;
-    }
-
-    .nav-toggle-label {
-        display: flex;
-    }
-
-    .nav-toggle:checked ~ .main-nav {
-        transform: translateX(0);
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
-    }
-
-    .article-hero-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-image-wrap {
-        order: -1;
-    }
-
-    .article-layout {
-        grid-template-columns: 1fr;
-        padding-block: 32px;
-    }
-
-    .aside-column {
-        position: static;
-        order: 3;
-    }
-
-    .related-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .author-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 560px) {
-
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .main-nav {
-        inset: 0;
-        top: 73px;
-    }
-
-    .article-figure.figure-wide {
-        margin-inline: 0;
-        padding-inline: 0;
-    }
-}
-
-</style>
-<!-- TODO: Oppdater canonical- og Open Graph-URL-er når produksjonsdomenet er klart. -->
-<link rel="canonical" href="/kristenliv/bonn/troens-bonn/">
-<meta name="keywords" content="Kristenliv, THEOLOGIA, bibelsk teologi, Troens, bønn, Grunnlaget, Bønn, tråd">
-<meta property="og:url" content="/kristenliv/bonn/troens-bonn/">
-<meta property="og:site_name" content="THEOLOGIA">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Troens bønn">
-<meta name="twitter:description" content="En bibelsk studie av troens bønn med utgangspunkt i Jakob 5,15 og sentrale skriftsteder om tro, bønn og Guds vilje.">
-<meta name="twitter:image" content="/images/artikler/troens-bonn-hero.jpg">
 </head>
 <body>
 
-<!-- =========================================================
-     HEADER
-========================================================== -->
 <header class="site-header">
   <div class="container header-inner">
 
     <a href="../../../index.html" class="logo">
-      <span class="logo-title">THEOLOGIA</span>
-      <span class="logo-subtitle">Biblical Truth &middot; Theology &middot; Faith</span>
+      <img src="../../../images/logo.svg" alt="THEOLOGIA Logo">
+      <div class="logo-text">
+        <h1>THEOLOGIA</h1>
+        <p>BIBELSK · TEOLOGISK · FORANKRET</p>
+      </div>
     </a>
 
-    <input type="checkbox" id="nav-toggle" class="nav-toggle">
-    <label for="nav-toggle" class="nav-toggle-label" aria-label="Åpne meny">
-      <span></span><span></span><span></span>
-    </label>
-
-    <nav class="main-nav" aria-label="Hovednavigasjon">
+    <nav class="main-nav">
       <ul>
         <li><a href="../../../index.html">Hjem</a></li>
-        <li><a href="../../index.html">Temaer</a></li>
+        <li><a href="../../index.html" class="active">Temaer</a></li>
         <li><a href="../../ressurser/index.html">Ressurser</a></li>
         <li><a href="../../../artikler/index.html">Artikler</a></li>
         <li><a href="../../../veien-til-jesus/index.html">Veien til Jesus</a></li>
@@ -1109,383 +71,306 @@ hr.section-divider {
   </div>
 </header>
 
-<!-- =========================================================
-     HERO
-========================================================== -->
-<section class="article-hero">
-  <div class="container article-hero-grid">
-
-    <div>
-      <span class="hero-category">Kristenliv</span>
-      <h1>Troens bønn</h1>
-      <p class="hero-subtitle">En bibelsk studie av hva troens bønn er, hvordan tro vokser frem, og hvordan den troende kan be med frimodighet etter Guds vilje.</p>
-
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Publisert</span>
-          <span class="hero-meta-value">2026-08-04</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Oppdatert</span>
-          <span class="hero-meta-value">2026-08-04</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Forfatter</span>
-          <span class="hero-meta-value">THEOLOGIA</span>
-        </div>
-        <div class="hero-meta-item">
-          <span class="hero-meta-label">Lesetid</span>
-          <span class="hero-meta-value">5 min lesetid</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="hero-image-wrap">
-      <img src="../../../images/artikler/troens-bonn-hero.jpg" alt="Troens bønn">
-    </div>
-
-  </div>
-</section>
-
-<!-- =========================================================
-     BREADCRUMB
-========================================================== -->
 <nav class="breadcrumb" aria-label="Brødsmulesti">
   <div class="container">
-    <ol>
+    <ol class="breadcrumb-list">
       <li><a href="../../../index.html">Hjem</a></li>
+      <li><a href="../../index.html">Temaer</a></li>
       <li><a href="../index.html">Kristenliv</a></li>
-      <li aria-current="page">Troens bønn</li>
+      <li><a href="index.html">Bønn</a></li>
+      <li class="breadcrumb-current" aria-current="page">Troens bønn</li>
     </ol>
   </div>
 </nav>
 
-<!-- =========================================================
-     HOVEDLAYOUT
-========================================================== -->
-<div class="container article-layout">
+<main>
 
-  <!-- Venstre: Innholdsfortegnelse -->
-  <aside class="toc-column">
-    <nav class="toc-card" aria-label="Innholdsfortegnelse">
-      <h2>På denne siden</h2>
-      <ol>
-        
-        <li><a href="#innledning">Troens bønn</a></li>
-        
+  <div class="article-page">
+    <article class="article-container fade-in">
 
-        <li><a href="#grunnlaget-for-tro">Grunnlaget for tro</a></li>
-        
+      <header class="article-header">
+        <p class="article-category">TEMAER · KRISTENLIV · BØNN</p>
+        <h1>Troens bønn</h1>
+        <p class="article-subtitle">En bibelsk studie av hva troens bønn er, hvordan tro vokser frem, og hvordan den troende kan be med frimodighet etter Guds vilje.</p>
+        <p class="article-meta">Av THEOLOGIA</p>
+      </header>
 
-        <li><a href="#guds-vilje">Bønn i tråd med Guds vilje</a></li>
-        
+      <section class="article-content">
 
-        <li><a href="#rene-motiver">Rene motiver</a></li>
-        
+        <div class="featured-panel">
+          <span class="panel-tag">På denne siden</span>
+          <h4>Innhold</h4>
+          <ul class="article-list">
+            <li><a href="#innledning"><span class="icon icon-document" aria-hidden="true"></span> Troens bønn</a></li>
+            <li><a href="#grunnlaget-for-tro"><span class="icon icon-document" aria-hidden="true"></span> Grunnlaget for tro</a></li>
+            <li><a href="#guds-vilje"><span class="icon icon-document" aria-hidden="true"></span> Bønn i tråd med Guds vilje</a></li>
+            <li><a href="#rene-motiver"><span class="icon icon-document" aria-hidden="true"></span> Rene motiver</a></li>
+            <li><a href="#kampen-mot-tvil"><span class="icon icon-document" aria-hidden="true"></span> Kampen mot tvil</a></li>
+            <li><a href="#naert-forhold-til-jesus"><span class="icon icon-document" aria-hidden="true"></span> Et nært forhold til Jesus</a></li>
+            <li><a href="#definisjon-av-tro"><span class="icon icon-document" aria-hidden="true"></span> Hva er tro?</a></li>
+            <li><a href="#tro-pa-guds-ord"><span class="icon icon-document" aria-hidden="true"></span> Tro på Guds Ord</a></li>
+            <li><a href="#frimodighet-og-utholdenhet"><span class="icon icon-document" aria-hidden="true"></span> Frimodighet og utholdenhet</a></li>
+            <li><a href="#bonn-i-jesu-navn"><span class="icon icon-document" aria-hidden="true"></span> Bønn i Jesu navn</a></li>
+            <li><a href="#oppsummering"><span class="icon icon-document" aria-hidden="true"></span> Oppsummering</a></li>
+          </ul>
+        </div>
 
-        <li><a href="#kampen-mot-tvil">Kampen mot tvil</a></li>
-        
+        <p><a href="index.html">← Tilbake til Bønn</a></p>
 
-        <li><a href="#naert-forhold-til-jesus">Et nært forhold til Jesus</a></li>
-        
+        <p>Uttrykket «troens bønn» finner vi i Jakob 5,15. Dette verset fremhever en kraftfull dimensjon ved bønn – bønn som er gjennomsyret av tro. Denne artikkelen undersøker hva troens bønn innebærer, hvordan tro oppstår, og hvordan vi kan be i tro basert på Guds Ord.</p>
 
-        <li><a href="#definisjon-av-tro">Hva er tro?</a></li>
-        
+        <h2 id="innledning">Troens bønn</h2>
+        <p>Uttrykket «troens bønn» finner vi i Jakob 5,15: «Og troens bønn skal redde den syke, og Herren skal reise ham opp. Og har han gjort synder, skal de bli ham tilgitt.» Dette verset fremhever at bønn ikke bare handler om ord, men om en bønn som er gjennomsyret av tro. Jesus sier også: «Og alt dere ber om i bønn, skal dere få, dersom dere tror.» Tro er derfor en avgjørende faktor i bønnelivet.</p>
 
-        <li><a href="#tro-pa-guds-ord">Tro på Guds Ord</a></li>
-        
+        <div class="bible-box">
+          <p><em>«Og troens bønn skal redde den syke, og Herren skal reise ham opp. Og har han gjort synder, skal de bli ham tilgitt.»</em><br>
+          <strong>Jakob 5,15 (Bibelen – Guds Ord)</strong></p>
+        </div>
 
-        <li><a href="#frimodighet-og-utholdenhet">Frimodighet og utholdenhet</a></li>
-        
+        <div class="bible-box">
+          <p><em>«Og alt dere ber om i bønn, skal dere få, dersom dere tror.»</em><br>
+          <strong>Matteus 21,22 (Bibelen – Guds Ord)</strong></p>
+        </div>
 
-        <li><a href="#bonn-i-jesu-navn">Bønn i Jesu navn</a></li>
-        
+        <h2 id="grunnlaget-for-tro">Grunnlaget for tro</h2>
+        <p>Tro i bønn springer ikke ut av et blindt håp, men fra en forankret tillit til Gud. Denne tilliten bygger på kunnskap om hvem Gud er, hans karakter, hans løfter og hans vilje slik den er åpenbart i Bibelen. Når Guds Ord bor i oss, styrkes troen, og vi lærer å be i tråd med hans hjerte.</p>
 
-        <li><a href="#oppsummering">Oppsummering</a></li>
-        
-      </ol>
-    </nav>
-  </aside>
+        <div class="bible-box">
+          <p><em>«Dersom dere blir i meg og mine ord blir i dere, be om hva dere vil, og dere skal få det.»</em><br>
+          <strong>Johannes 15,7 (Bibelen – Guds Ord)</strong></p>
+        </div>
 
-  <!-- Midten: Artikkelinnhold -->
-  <main class="article-content">
+        <h3>Kunnskap om Gud og hans Ord</h3>
+        <p>Troens bønn begynner med å kjenne Gud. Bibelsk tro er ikke basert på usikkerhet eller menneskelige følelser, men på det Gud har åpenbart gjennom sitt Ord. Når vi kjenner Gud, lærer vi også hans vilje å kjenne.</p>
 
-    <p class="article-lede">Uttrykket «troens bønn» finner vi i Jakob 5,15. Dette verset fremhever en kraftfull dimensjon ved bønn – bønn som er gjennomsyret av tro. Denne artikkelen undersøker hva troens bønn innebærer, hvordan tro oppstår, og hvordan vi kan be i tro basert på Guds Ord.</p>
+        <h3>Tillit til Guds godhet og makt</h3>
+        <p>Troens bønn forutsetter tillit til at Gud er en god Far som ønsker å gi gode gaver til sine barn, og at han har makt til å oppfylle sine løfter.</p>
 
-    
-    <h2 id="innledning">Troens bønn</h2>
-    <p>Uttrykket «troens bønn» finner vi i Jakob 5,15: «Og troens bønn skal redde den syke, og Herren skal reise ham opp. Og har han gjort synder, skal de bli ham tilgitt.» Dette verset fremhever at bønn ikke bare handler om ord, men om en bønn som er gjennomsyret av tro. Jesus sier også: «Og alt dere ber om i bønn, skal dere få, dersom dere tror.» Tro er derfor en avgjørende faktor i bønnelivet.</p>
-    <div class="scripture-box">
-  <p class="bible-text">Og troens bønn skal redde den syke, og Herren skal reise ham opp. Og har han gjort synder, skal de bli ham tilgitt.</p>
-  <p class="bible-reference">Jakob 5,15 (Bibelen – Guds Ord)</p>
-</div>
+        <h2 id="guds-vilje">Bønn i tråd med Guds vilje</h2>
+        <p>Troens bønn betyr ikke at mennesket forsøker å få Gud til å gjøre det vi ønsker. Bibelsk bønn er en tillitsfull respons på Guds karakter og hans åpenbarte vilje. Når vi kjenner Gud gjennom hans Ord, lærer vi også hva vi kan be om med frimodighet.</p>
 
-<div class="scripture-box">
-  <p class="bible-text">Og alt dere ber om i bønn, skal dere få, dersom dere tror.</p>
-  <p class="bible-reference">Matteus 21,22 (Bibelen – Guds Ord)</p>
-</div>
-    
+        <div class="bible-box">
+          <p><em>«Og dette er frimodigheten vi har for ham, at dersom vi ber om noe som er etter hans vilje, så hører han oss. Og når vi vet at han hører oss, hva vi enn ber om, da vet vi at vi har fått det vi har bedt ham om.»</em><br>
+          <strong>1 Johannes 5,14-15 (Bibelen – Guds Ord)</strong></p>
+        </div>
 
+        <div class="bible-box">
+          <p><em>«Om noen av dere mangler visdom, skal han be til Gud, som gir til alle, villig og uten å bebreide, og han skal få.»</em><br>
+          <strong>Jakob 1,5 (Bibelen – Guds Ord)</strong></p>
+        </div>
 
-    <h2 id="grunnlaget-for-tro">Grunnlaget for tro</h2>
-    <p>Tro i bønn springer ikke ut av et blindt håp, men fra en forankret tillit til Gud. Denne tilliten bygger på kunnskap om hvem Gud er, hans karakter, hans løfter og hans vilje slik den er åpenbart i Bibelen. Når Guds Ord bor i oss, styrkes troen, og vi lærer å be i tråd med hans hjerte.</p>
-    <div class="scripture-box">
-  <p class="bible-text">Dersom dere blir i meg og mine ord blir i dere, be om hva dere vil, og dere skal få det.</p>
-  <p class="bible-reference">Johannes 15,7 (Bibelen – Guds Ord)</p>
-</div>
+        <h3>Å kjenne Guds vilje gjennom Ordet</h3>
+        <p>Gud har ikke overlatt oss uten veiledning. Gjennom Bibelen lærer vi hans karakter, hans løfter og hans hensikt. Troens bønn bygger derfor ikke på usikkerhet, men på tillit til det Gud har sagt.</p>
 
-<h3>Kunnskap om Gud og hans Ord</h3>
-<p>Troens bønn begynner med å kjenne Gud. Bibelsk tro er ikke basert på usikkerhet eller menneskelige følelser, men på det Gud har åpenbart gjennom sitt Ord. Når vi kjenner Gud, lærer vi også hans vilje å kjenne.</p>
+        <h3>Frimodighet i bønn</h3>
+        <p>Når vi ber etter Guds vilje, kan vi komme til ham med frimodighet. Vissheten om at Gud hører bønnene våre bygger ikke på menneskets styrke, men på Guds trofasthet.</p>
 
-<h3>Tillit til Guds godhet og makt</h3>
-<p>Troens bønn forutsetter tillit til at Gud er en god Far som ønsker å gi gode gaver til sine barn, og at han har makt til å oppfylle sine løfter.</p>
-    
+        <h2 id="rene-motiver">Rene motiver</h2>
+        <p>Troens bønn handler ikke bare om hva vi ber om, men også om hvorfor vi ber. Jakob advarer mot bønn som springer ut fra egoistiske ønsker. Bibelsk bønn søker først Guds ære og hans rike.</p>
 
+        <div class="bible-box">
+          <p><em>«Dere ber og får ikke, fordi dere ber galt, for å sløse det bort i deres lyster.»</em><br>
+          <strong>Jakob 4,3 (Bibelen – Guds Ord)</strong></p>
+        </div>
 
-    <h2 id="guds-vilje">Bønn i tråd med Guds vilje</h2>
-    <p>Troens bønn betyr ikke at mennesket forsøker å få Gud til å gjøre det vi ønsker. Bibelsk bønn er en tillitsfull respons på Guds karakter og hans åpenbarte vilje. Når vi kjenner Gud gjennom hans Ord, lærer vi også hva vi kan be om med frimodighet.</p>
-    <div class="scripture-box">
-  <p class="bible-text">Og dette er frimodigheten vi har for ham, at dersom vi ber om noe som er etter hans vilje, så hører han oss. Og når vi vet at han hører oss, hva vi enn ber om, da vet vi at vi har fått det vi har bedt ham om.</p>
-  <p class="bible-reference">1 Johannes 5,14-15 (Bibelen – Guds Ord)</p>
-</div>
+        <div class="important-box">
+          <span class="box-icon" aria-hidden="true">!</span>
+          <div>
+            <span class="box-title">Bønnens motiv</span>
+            Troens bønn handler ikke om å bruke Gud for å oppnå egne ønsker. Den springer ut fra et hjerte som ønsker å følge Guds vilje.
+          </div>
+        </div>
 
-<div class="scripture-box">
-  <p class="bible-text">Om noen av dere mangler visdom, skal han be til Gud, som gir til alle, villig og uten å bebreide, og han skal få.</p>
-  <p class="bible-reference">Jakob 1,5 (Bibelen – Guds Ord)</p>
-</div>
+        <h2 id="kampen-mot-tvil">Kampen mot tvil</h2>
+        <p>Tvil kan utfordre den troendes bønneliv. Bibelen oppmuntrer oss til å holde fast ved Gud selv når omstendighetene er vanskelige. Tro betyr ikke at vi aldri møter kamp, men at vi fortsetter å stole på Gud.</p>
 
-<h3>Å kjenne Guds vilje gjennom Ordet</h3>
-<p>Gud har ikke overlatt oss uten veiledning. Gjennom Bibelen lærer vi hans karakter, hans løfter og hans hensikt. Troens bønn bygger derfor ikke på usikkerhet, men på tillit til det Gud har sagt.</p>
+        <div class="bible-box">
+          <p><em>«Men han må be i tro, uten å tvile. For den som tviler, er lik en bølge på havet som drives og kastes hit og dit.»</em><br>
+          <strong>Jakob 1,6-8 (Bibelen – Guds Ord)</strong></p>
+        </div>
 
-<h3>Frimodighet i bønn</h3>
-<p>Når vi ber etter Guds vilje, kan vi komme til ham med frimodighet. Vissheten om at Gud hører bønnene våre bygger ikke på menneskets styrke, men på Guds trofasthet.</p>
-    
+        <h2 id="naert-forhold-til-jesus">Et nært forhold til Jesus</h2>
+        <p>Troens bønn er uløselig knyttet til et levende forhold til Jesus Kristus. Bønn er ikke bare en handling vi utfører, men et uttrykk for fellesskap med Gud. Når vi blir i Kristus og lar hans Ord bli i oss, formes våre tanker, ønsker og bønner.</p>
 
+        <div class="bible-box">
+          <p><em>«Hvis dere blir i meg og mine ord blir i dere, be da om hva dere vil, og dere skal få det.»</em><br>
+          <strong>Johannes 15,7 (Bibelen – Guds Ord)</strong></p>
+        </div>
 
-    <h2 id="rene-motiver">Rene motiver</h2>
-    <p>Troens bønn handler ikke bare om hva vi ber om, men også om hvorfor vi ber. Jakob advarer mot bønn som springer ut fra egoistiske ønsker. Bibelsk bønn søker først Guds ære og hans rike.</p>
-    <div class="scripture-box">
-  <p class="bible-text">Dere ber og får ikke, fordi dere ber galt, for å sløse det bort i deres lyster.</p>
-  <p class="bible-reference">Jakob 4,3 (Bibelen – Guds Ord)</p>
-</div>
+        <div class="bible-box">
+          <p><em>«Jeg er vintreet, dere er grenene. Den som blir i meg og jeg i ham, bærer mye frukt. For uten meg kan dere ingen ting gjøre.»</em><br>
+          <strong>Johannes 15,5 (Bibelen – Guds Ord)</strong></p>
+        </div>
 
-<div class="important-box">
-  <span class="box-icon" aria-hidden="true">!</span>
-  <div>
-    <span class="box-title">Bønnens motiv</span>
-    Troens bønn handler ikke om å bruke Gud for å oppnå egne ønsker. Den springer ut fra et hjerte som ønsker å følge Guds vilje.
+        <h3>Bønn som fellesskap med Gud</h3>
+        <p>Det kristne bønnelivet bygger på forholdet mellom Gud og hans barn. Gjennom Jesus Kristus har vi fått adgang til Gud, og vi kan komme frem for ham med frimodighet.</p>
+
+        <h3>Et liv som søker Gud</h3>
+        <p>Troens bønn vokser frem fra et liv som stadig søker Gud. Når hjertet er vendt mot Herren, blir bønn en naturlig del av fellesskapet med ham.</p>
+
+        <h2 id="definisjon-av-tro">Hva er tro?</h2>
+        <p>For å forstå troens bønn må vi forstå hva Bibelen mener med tro. Tro er ikke bare en positiv tanke eller en sterk følelse. Bibelsk tro er en fast tillit til Gud som bygger på hans karakter og hans løfter.</p>
+
+        <div class="bible-box">
+          <p><em>«Troen er sikkerhet for det som håpes, visshet om ting en ikke ser.»</em><br>
+          <strong>Hebreerne 11,1 (Bibelen – Guds Ord)</strong></p>
+        </div>
+
+        <div class="important-box">
+          <span class="box-icon" aria-hidden="true">!</span>
+          <div>
+            <span class="box-title">Bibelsk tro</span>
+            Tro er ikke å tro på noe uten grunnlag. Tro er å stole på Gud fordi han har åpenbart seg som trofast og sann.
+          </div>
+        </div>
+
+        <h3>Tro er visshet</h3>
+        <p>Tro gir en indre overbevisning om at Gud er trofast. Den troende holder fast ved Guds løfter fordi Gud selv er pålitelig.</p>
+
+        <h3>Tro er overbevisning om det usynlige</h3>
+        <p>Tro handler om å stole på Guds virkelighet selv om alt ikke kan sees med menneskelige øyne. Den bygger på Guds åpenbaring, ikke på menneskets begrensede forståelse.</p>
+
+        <h2 id="tro-pa-guds-ord">Tro på Guds Ord</h2>
+        <p>Troens grunnlag er Guds Ord. Den kristne troen bygger ikke først og fremst på følelser, erfaringer eller menneskelige vurderinger, men på det Gud har sagt.</p>
+
+        <div class="bible-box">
+          <p><em>«Så kommer da troen av forkynnelsen, og forkynnelsen ved Kristi ord.»</em><br>
+          <strong>Romerne 10,17 (Bibelen – Guds Ord)</strong></p>
+        </div>
+
+        <div class="bible-box">
+          <p><em>«Hver bok i Skriften er innblåst av Gud og nyttig til opplæring, tilrettevisning, veiledning og oppdragelse i rettferdighet.»</em><br>
+          <strong>2 Timoteus 3,16 (Bibelen – Guds Ord)</strong></p>
+        </div>
+
+        <h3>Tro bygger på løftene Gud har gitt</h3>
+        <p>Når Gud taler, kan mennesket stole på hans ord. Troens bønn hviler derfor på Guds løfter og søker å be i samsvar med det han har åpenbart.</p>
+
+        <h3>Følelser kan ikke være troens fundament</h3>
+        <p>Følelser kan forandre seg fra dag til dag, men Guds Ord står fast. Den troende må derfor bygge sitt liv på Guds sannhet fremfor skiftende erfaringer.</p>
+
+        <h2 id="frimodighet-og-utholdenhet">Frimodighet og utholdenhet</h2>
+        <p>Troens bønn innebærer ikke bare tillit, men også utholdenhet. Bibelen oppmuntrer den troende til å holde fast ved Gud og fortsette å be selv når svaret ikke kommer med en gang. Gud arbeider etter sin visdom og sin tid.</p>
+
+        <div class="bible-box">
+          <p><em>«Så fortalte han dem en lignelse om at de alltid skulle be og ikke gi opp.»</em><br>
+          <strong>Lukas 18,1 (Bibelen – Guds Ord)</strong></p>
+        </div>
+
+        <div class="bible-box">
+          <p><em>«Kast derfor ikke bort deres frimodighet, for den gir stor lønn. Dere trenger utholdenhet for å gjøre Guds vilje og få det han har lovet.»</em><br>
+          <strong>Hebreerne 10,35-36 (Bibelen – Guds Ord)</strong></p>
+        </div>
+
+        <h3>Gud hører den troendes bønn</h3>
+        <p>Selv når vi ikke ser umiddelbare resultater, kan vi stole på at Gud hører. Troens bønn hviler på Guds trofasthet, ikke på hvor raskt vi får svaret vi ønsker.</p>
+
+        <h3>Utholdenhet former troen</h3>
+        <p>Ventetid kan være en del av Guds arbeid i oss. Gjennom utholdenhet lærer vi å stole dypere på Gud og hans perfekte vilje.</p>
+
+        <h2 id="bonn-i-jesu-navn">Bønn i Jesu navn</h2>
+        <p>Å be i Jesu navn betyr mer enn å avslutte en bønn med ordene «i Jesu navn». Det handler om å komme til Gud på grunnlag av Jesus Kristus, hans verk og hans autoritet. Bønn i Jesu navn innebærer at våre bønner formes av hvem Jesus er og hva han ønsker.</p>
+
+        <div class="bible-box">
+          <p><em>«Og alt dere ber om i mitt navn, det skal jeg gjøre, for at Far skal bli herliggjort i Sønnen. Dersom dere ber meg om noe i mitt navn, skal jeg gjøre det.»</em><br>
+          <strong>Johannes 14,13-14 (Bibelen – Guds Ord)</strong></p>
+        </div>
+
+        <div class="bible-box">
+          <p><em>«Det dere ber Far om i mitt navn, skal han gi dere. Hittil har dere ikke bedt om noe i mitt navn. Be, og dere skal få, så gleden deres kan være fullkommen.»</em><br>
+          <strong>Johannes 16,23-24 (Bibelen – Guds Ord)</strong></p>
+        </div>
+
+        <h3>Jesus er veien til Gud</h3>
+        <p>Den kristne kan komme frimodig til Gud fordi Jesus har åpnet veien gjennom sitt verk. Vår tilgang til Gud bygger ikke på vår egen verdighet, men på Kristus.</p>
+
+        <h3>Bønner som samsvarer med Kristus</h3>
+        <p>Å be i Jesu navn betyr å søke det som er i samsvar med hans karakter og hensikt. Derfor må bønn alltid være knyttet til et liv i etterfølgelse av Jesus.</p>
+
+        <h2 id="oppsummering">Oppsummering</h2>
+        <p>Troens bønn er en bønn som springer ut fra tillit til Gud. Den bygger på kunnskap om Gud gjennom hans Ord, tillit til hans godhet, underordning under hans vilje og et levende forhold til Jesus Kristus.</p>
+
+        <div class="cross-reference-box">
+          <span class="box-icon" aria-hidden="true">→</span>
+          <div>
+            <span class="box-title">Se også</span>
+            Utforsk flere ressurser om bønn, tro, Den Hellige Ånds arbeid og det kristne livet.
+          </div>
+        </div>
+
+        <h3>Et liv i tro og bønn</h3>
+        <p>Et rikt bønneliv vokser frem når den troende lever nær Gud, søker hans vilje og holder fast ved hans løfter. Troens bønn handler ikke om menneskets styrke, men om Guds trofasthet.</p>
+
+        <h3>Gud inviterer oss til å komme til ham</h3>
+        <p>Gjennom Jesus Kristus kan vi komme til Gud med frimodighet. Han hører sine barns bønner og leder dem etter sin gode og fullkomne vilje.</p>
+
+        <hr class="section-divider">
+
+        <p><a href="index.html">← Tilbake til Bønn</a></p>
+
+      </section>
+
+    </article>
   </div>
-</div>
-    
 
+</main>
 
-    <h2 id="kampen-mot-tvil">Kampen mot tvil</h2>
-    <p>Tvil kan utfordre den troendes bønneliv. Bibelen oppmuntrer oss til å holde fast ved Gud selv når omstendighetene er vanskelige. Tro betyr ikke at vi aldri møter kamp, men at vi fortsetter å stole på Gud.</p>
-    <div class="scripture-box">
-  <p class="bible-text">Men han må be i tro, uten å tvile. For den som tviler, er lik en bølge på havet som drives og kastes hit og dit.</p>
-  <p class="bible-reference">Jakob 1,6-8 (Bibelen – Guds Ord)</p>
-</div>
-    
-
-
-    <h2 id="naert-forhold-til-jesus">Et nært forhold til Jesus</h2>
-    <p>Troens bønn er uløselig knyttet til et levende forhold til Jesus Kristus. Bønn er ikke bare en handling vi utfører, men et uttrykk for fellesskap med Gud. Når vi blir i Kristus og lar hans Ord bli i oss, formes våre tanker, ønsker og bønner.</p>
-    <div class="scripture-box">
-  <p class="bible-text">Hvis dere blir i meg og mine ord blir i dere, be da om hva dere vil, og dere skal få det.</p>
-  <p class="bible-reference">Johannes 15,7 (Bibelen – Guds Ord)</p>
-</div>
-
-<div class="scripture-box">
-  <p class="bible-text">Jeg er vintreet, dere er grenene. Den som blir i meg og jeg i ham, bærer mye frukt. For uten meg kan dere ingen ting gjøre.</p>
-  <p class="bible-reference">Johannes 15,5 (Bibelen – Guds Ord)</p>
-</div>
-
-<h3>Bønn som fellesskap med Gud</h3>
-<p>Det kristne bønnelivet bygger på forholdet mellom Gud og hans barn. Gjennom Jesus Kristus har vi fått adgang til Gud, og vi kan komme frem for ham med frimodighet.</p>
-
-<h3>Et liv som søker Gud</h3>
-<p>Troens bønn vokser frem fra et liv som stadig søker Gud. Når hjertet er vendt mot Herren, blir bønn en naturlig del av fellesskapet med ham.</p>
-    
-
-
-    <h2 id="definisjon-av-tro">Hva er tro?</h2>
-    <p>For å forstå troens bønn må vi forstå hva Bibelen mener med tro. Tro er ikke bare en positiv tanke eller en sterk følelse. Bibelsk tro er en fast tillit til Gud som bygger på hans karakter og hans løfter.</p>
-    <div class="scripture-box">
-  <p class="bible-text">Troen er sikkerhet for det som håpes, visshet om ting en ikke ser.</p>
-  <p class="bible-reference">Hebreerne 11,1 (Bibelen – Guds Ord)</p>
-</div>
-
-<div class="important-box">
-  <span class="box-icon" aria-hidden="true">!</span>
-  <div>
-    <span class="box-title">Bibelsk tro</span>
-    Tro er ikke å tro på noe uten grunnlag. Tro er å stole på Gud fordi han har åpenbart seg som trofast og sann.
-  </div>
-</div>
-
-<h3>Tro er visshet</h3>
-<p>Tro gir en indre overbevisning om at Gud er trofast. Den troende holder fast ved Guds løfter fordi Gud selv er pålitelig.</p>
-
-<h3>Tro er overbevisning om det usynlige</h3>
-<p>Tro handler om å stole på Guds virkelighet selv om alt ikke kan sees med menneskelige øyne. Den bygger på Guds åpenbaring, ikke på menneskets begrensede forståelse.</p>
-    
-
-
-    <h2 id="tro-pa-guds-ord">Tro på Guds Ord</h2>
-    <p>Troens grunnlag er Guds Ord. Den kristne troen bygger ikke først og fremst på følelser, erfaringer eller menneskelige vurderinger, men på det Gud har sagt.</p>
-    <div class="scripture-box">
-  <p class="bible-text">Så kommer da troen av forkynnelsen, og forkynnelsen ved Kristi ord.</p>
-  <p class="bible-reference">Romerne 10,17 (Bibelen – Guds Ord)</p>
-</div>
-
-<div class="scripture-box">
-  <p class="bible-text">Hver bok i Skriften er innblåst av Gud og nyttig til opplæring, tilrettevisning, veiledning og oppdragelse i rettferdighet.</p>
-  <p class="bible-reference">2 Timoteus 3,16 (Bibelen – Guds Ord)</p>
-</div>
-
-<h3>Tro bygger på løftene Gud har gitt</h3>
-<p>Når Gud taler, kan mennesket stole på hans ord. Troens bønn hviler derfor på Guds løfter og søker å be i samsvar med det han har åpenbart.</p>
-
-<h3>Følelser kan ikke være troens fundament</h3>
-<p>Følelser kan forandre seg fra dag til dag, men Guds Ord står fast. Den troende må derfor bygge sitt liv på Guds sannhet fremfor skiftende erfaringer.</p>
-    
-
-
-    <h2 id="frimodighet-og-utholdenhet">Frimodighet og utholdenhet</h2>
-    <p>Troens bønn innebærer ikke bare tillit, men også utholdenhet. Bibelen oppmuntrer den troende til å holde fast ved Gud og fortsette å be selv når svaret ikke kommer med en gang. Gud arbeider etter sin visdom og sin tid.</p>
-    <div class="scripture-box">
-  <p class="bible-text">Så fortalte han dem en lignelse om at de alltid skulle be og ikke gi opp.</p>
-  <p class="bible-reference">Lukas 18,1 (Bibelen – Guds Ord)</p>
-</div>
-
-<div class="scripture-box">
-  <p class="bible-text">Kast derfor ikke bort deres frimodighet, for den gir stor lønn. Dere trenger utholdenhet for å gjøre Guds vilje og få det han har lovet.</p>
-  <p class="bible-reference">Hebreerne 10,35-36 (Bibelen – Guds Ord)</p>
-</div>
-
-<h3>Gud hører den troendes bønn</h3>
-<p>Selv når vi ikke ser umiddelbare resultater, kan vi stole på at Gud hører. Troens bønn hviler på Guds trofasthet, ikke på hvor raskt vi får svaret vi ønsker.</p>
-
-<h3>Utholdenhet former troen</h3>
-<p>Ventetid kan være en del av Guds arbeid i oss. Gjennom utholdenhet lærer vi å stole dypere på Gud og hans perfekte vilje.</p>
-    
-
-
-    <h2 id="bonn-i-jesu-navn">Bønn i Jesu navn</h2>
-    <p>Å be i Jesu navn betyr mer enn å avslutte en bønn med ordene «i Jesu navn». Det handler om å komme til Gud på grunnlag av Jesus Kristus, hans verk og hans autoritet. Bønn i Jesu navn innebærer at våre bønner formes av hvem Jesus er og hva han ønsker.</p>
-    <div class="scripture-box">
-  <p class="bible-text">Og alt dere ber om i mitt navn, det skal jeg gjøre, for at Far skal bli herliggjort i Sønnen. Dersom dere ber meg om noe i mitt navn, skal jeg gjøre det.</p>
-  <p class="bible-reference">Johannes 14,13-14 (Bibelen – Guds Ord)</p>
-</div>
-
-<div class="scripture-box">
-  <p class="bible-text">Det dere ber Far om i mitt navn, skal han gi dere. Hittil har dere ikke bedt om noe i mitt navn. Be, og dere skal få, så gleden deres kan være fullkommen.</p>
-  <p class="bible-reference">Johannes 16,23-24 (Bibelen – Guds Ord)</p>
-</div>
-
-<h3>Jesus er veien til Gud</h3>
-<p>Den kristne kan komme frimodig til Gud fordi Jesus har åpnet veien gjennom sitt verk. Vår tilgang til Gud bygger ikke på vår egen verdighet, men på Kristus.</p>
-
-<h3>Bønner som samsvarer med Kristus</h3>
-<p>Å be i Jesu navn betyr å søke det som er i samsvar med hans karakter og hensikt. Derfor må bønn alltid være knyttet til et liv i etterfølgelse av Jesus.</p>
-    
-
-
-    <h2 id="oppsummering">Oppsummering</h2>
-    <p>Troens bønn er en bønn som springer ut fra tillit til Gud. Den bygger på kunnskap om Gud gjennom hans Ord, tillit til hans godhet, underordning under hans vilje og et levende forhold til Jesus Kristus.</p>
-    <div class="cross-reference-box">
-  <span class="box-icon" aria-hidden="true">→</span>
-  <div>
-    <span class="box-title">Se også</span>
-    Utforsk flere ressurser om bønn, tro, Den Hellige Ånds arbeid og det kristne livet.
-  </div>
-</div>
-
-<h3>Et liv i tro og bønn</h3>
-<p>Et rikt bønneliv vokser frem når den troende lever nær Gud, søker hans vilje og holder fast ved hans løfter. Troens bønn handler ikke om menneskets styrke, men om Guds trofasthet.</p>
-
-<h3>Gud inviterer oss til å komme til ham</h3>
-<p>Gjennom Jesus Kristus kan vi komme til Gud med frimodighet. Han hører sine barns bønner og leder dem etter sin gode og fullkomne vilje.</p>
-    
-
-    <hr class="section-divider">
-
-    <!-- Forfatterseksjon -->
-    <div class="author-section">
-      <img class="author-photo" src="../../../images/forfattere/standard.jpg" alt="THEOLOGIA">
-      <div>
-        <span class="author-eyebrow">Om forfatteren</span>
-        <p class="author-name">THEOLOGIA</p>
-        <p class="author-bio">THEOLOGIA er et digitalt bibliotek med bibelstudier og teologiske ressurser.</p>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- Høyre: Tilleggsinformasjon -->
-  <aside class="aside-column">
-    <div class="toc-card">
-      <h2>Om denne artikkelen</h2>
-      <p style="font-size:.9rem; color:var(--text-light); margin:0;">En studie av hva Bibelen lærer om troens bønn, troens grunnlag, Guds vilje og et liv i tillit til Gud.</p>
-    </div>
-  </aside>
-
-</div>
-
-<!-- =========================================================
-     RELATERTE ARTIKLER
-========================================================== -->
-
-
-<!-- =========================================================
-     FOOTER
-========================================================== -->
 <footer class="site-footer">
-  <div class="container footer-grid">
+  <div class="container footer-inner">
 
-    <div>
-      <p class="footer-logo">THEOLOGIA</p>
-      <p class="footer-tagline">Biblical Truth. Theology. Faith. Et digitalt bibliotek for bibelsk og teologisk fordypning.</p>
-      <div class="footer-social">
-        <a href="../../../folg-oss/index.html" aria-label="YouTube">YT</a>
-        <a href="../../../folg-oss/index.html" aria-label="Facebook">FB</a>
-        <a href="../../../folg-oss/index.html" aria-label="Instagram">IG</a>
-        <a href="../../../folg-oss/index.html" aria-label="X">X</a>
-      </div>
+    <div class="footer-brand">
+      <a href="../../../index.html" class="logo">
+        <img src="../../../images/logo.svg" alt="THEOLOGIA Logo">
+      </a>
+      <p class="footer-tagline">Forankret i Skriften. Bygget på sannhet.</p>
     </div>
 
     <div class="footer-col">
       <h4>Utforsk</h4>
       <ul>
         <li><a href="../../bibelen/index.html">Bibelen</a></li>
+        <li><a href="../../../artikler/index.html">Bibelkommentar</a></li>
         <li><a href="../../evangeliet/index.html">Evangeliet</a></li>
-        <li><a href="../../teologi/index.html">Teologi</a></li>
-        <li><a href="../../apologetikk/index.html">Apologetikk</a></li>
+        <li><a href="../index.html" class="active">Kristenliv</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4>Ressurser</h4>
+      <h4>Mer</h4>
       <ul>
-        <li><a href="../../ressurser/index.html#study-groups">Studiegrupper</a></li>
-        <li><a href="../../ressurser/index.html#books-title">Bøker</a></li>
-        <li><a href="../../ressurser/index.html#videos-title">Videoer</a></li>
-        <li><a href="../../ressurser/index.html#podcasts-title">Podkaster</a></li>
+        <li><a href="../../apologetikk/index.html">Apologetikk</a></li>
+        <li><a href="../../teologi/index.html">Lære</a></li>
+        <li><a href="../../ressurser/index.html">Ressurser</a></li>
+        <li><a href="../../../veien-til-jesus/index.html">Veien til Jesus</a></li>
       </ul>
     </div>
 
     <div class="footer-col">
-      <h4>Kontakt</h4>
+      <h4>Om Theologia</h4>
       <ul>
         <li><a href="../../../om-meg/index.html">Om meg</a></li>
-        <li><a href="mailto:kontakt@theologia.no">kontakt@theologia.no</a></li>
+        <li><a href="../../../vaar-visjon/index.html">Vår visjon</a></li>
+        <li><a href="../../../kontakt/index.html">Kontakt oss</a></li>
+        <li><a href="../../../stott-arbeidet/index.html">Støtt arbeidet</a></li>
       </ul>
+    </div>
+
+    <div class="footer-col footer-social">
+      <h4>Følg oss</h4>
+      <div class="social-icons">
+        <a href="../../../folg-oss/index.html" aria-label="YouTube"><span class="icon icon-youtube" aria-hidden="true"></span></a>
+        <a href="../../../folg-oss/index.html" aria-label="Facebook"><span class="icon icon-facebook" aria-hidden="true"></span></a>
+        <a href="../../../folg-oss/index.html" aria-label="Instagram"><span class="icon icon-instagram" aria-hidden="true"></span></a>
+        <a href="../../../folg-oss/index.html" aria-label="X"><span class="icon icon-x" aria-hidden="true"></span></a>
+      </div>
     </div>
 
   </div>
 
-  <div class="container footer-bottom">
-    <p>&copy; 2026 THEOLOGIA. Alle rettigheter forbeholdt.</p>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>© 2026 THEOLOGIA · Alle rettigheter forbeholdt.</p>
+    </div>
   </div>
 </footer>
 
