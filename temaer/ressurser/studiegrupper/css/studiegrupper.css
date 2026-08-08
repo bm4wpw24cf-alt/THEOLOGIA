@@ -53,6 +53,7 @@
 .book-item {
     counter-increment: book-counter;
     display: flex;
+    align-items: flex-start;
     gap: 20px;
     padding-block: 26px;
     border-bottom: 1px solid var(--border);
@@ -64,6 +65,20 @@
 
 .book-set:last-child .book-item:last-child {
     border-bottom: none;
+}
+
+/* order:-1 plasserer bildet visuelt før nummer-::before under, uten å
+   endre DOM-/genereringsrekkefølgen som counter-increment/::before
+   bygger på – .book-item::before trenger derfor ingen endring. */
+.book-cover {
+    order: -1;
+    flex-shrink: 0;
+    width: 120px;
+    height: 150px;
+    object-fit: contain;
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
 }
 
 .book-item::before {
@@ -121,6 +136,13 @@
 @media (max-width: 600px) {
 
     .book-item {
+        flex-direction: column;
+        align-items: flex-start;
         gap: 14px;
+    }
+
+    .book-cover {
+        width: 96px;
+        height: 120px;
     }
 }
