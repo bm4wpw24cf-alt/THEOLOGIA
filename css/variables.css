@@ -23,6 +23,11 @@
     --radius: 16px;
     --radius-sm: 10px;
 
+    /* Faktisk høyde på .header-inner i header.css (desktop). Delt
+       token slik at sticky/offset-beregninger andre steder (f.eks.
+       .article-toc) ikke må gjette denne verdien selv. */
+    --header-height: 96px;
+
     --shadow-sm: 0 2px 8px rgba(17,17,17,.05);
     --shadow: 0 10px 30px rgba(17,17,17,.08);
     --shadow-lg: 0 24px 60px -12px rgba(17,17,17,.22);

@@ -162,37 +162,112 @@
     margin-bottom: 24px;
 }
 
+/* Klikkbar hovedinngang øverst i ressurskortet (lenker til
+   ressursbibliotekets hovedside). Egen klasse, ikke .panel-tag,
+   siden .panel-tag gjenbrukes andre steder i prosjektet uten
+   denne lenke-/hover-/chevron-oppførselen. */
+.panel-header-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    font-family: "Inter", sans-serif;
+    color: var(--gold);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    transition: color .2s var(--ease);
+}
+
+.panel-header-link .icon {
+    width: 20px;
+    height: 20px;
+    color: var(--gold);
+    flex-shrink: 0;
+}
+
+.panel-header-link::after {
+    content: "›";
+    margin-left: auto;
+    font-size: 1.15rem;
+    line-height: 1;
+    transition: transform .2s var(--ease);
+}
+
+.panel-header-link:hover,
+.panel-header-link:focus-visible {
+    color: var(--gold-dark);
+}
+
+.panel-header-link:hover::after,
+.panel-header-link:focus-visible::after {
+    transform: translateX(3px);
+}
+
+.panel-header-link:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
 .resource-list {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-    margin-bottom: 28px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0;
+}
+
+.resource-list li {
+    border-bottom: 1px solid var(--border);
+}
+
+.resource-list li:last-child {
+    border-bottom: none;
 }
 
 .resource-list a {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 14px;
+    padding: 15px 4px;
     font-family: "Inter", sans-serif;
-    font-size: .92rem;
+    font-size: .95rem;
     color: var(--text);
-    transition: color .2s var(--ease);
+    transition: color .2s var(--ease), background-color .2s var(--ease);
 }
 
 .resource-list a:hover {
     color: var(--gold);
+    background: var(--parchment);
 }
 
 .resource-list a:focus-visible {
     outline: 2px solid var(--gold);
-    outline-offset: 3px;
-    border-radius: 4px;
+    outline-offset: -2px;
+    border-radius: var(--radius-sm);
 }
 
 .resource-list .icon {
     width: 18px;
     height: 18px;
     color: var(--gold);
+    flex-shrink: 0;
+}
+
+.resource-list a::after {
+    content: "›";
+    margin-left: auto;
+    color: var(--gold);
+    font-size: 1.1rem;
+    line-height: 1;
+    transition: transform .2s var(--ease);
+}
+
+.resource-list a:hover::after,
+.resource-list a:focus-visible::after {
+    transform: translateX(3px);
 }
 
 .article-list {

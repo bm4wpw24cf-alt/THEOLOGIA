@@ -71,3 +71,8 @@
     background: var(--navy);
     color: var(--white);
 }
+
+/* Innholdsfortegnelsen som sidefelt (.article-body/.article-main/
+   .article-toc, aktivert via .has-toc på .article-container) er
+   nå en delt standardkomponent i css/article.css, ikke lenger
+   sideegen – se der for denne layouten. */
