@@ -31,6 +31,22 @@
 
 const articles = [
   {
+    title: "Den første årsaken",
+    category: "Apologetikk",
+    subcategory: "Ateisme",
+    date: "2026-08-09",
+    description: "Egenskaper, personlighet og kreativitet – en kosmologisk argumentasjon for at den første årsaken til universet samsvarer med det klassiske teistiske gudsbegrepet.",
+    url: "temaer/apologetikk/artikler/den-forste-arsaken.html"
+  },
+  {
+    title: "Er evig bevisst pine bibelsk?",
+    category: "Endetid",
+    subcategory: "Helvete",
+    date: "2026-08-09",
+    description: "Et svar til læren om utslettelse – en grundig bibelsk og teologisk gjennomgang av om helvete er et sted for evig bevisst pine, eller om annihilasjonisme er den bibelske forståelsen.",
+    url: "temaer/endetid/artikler/er-evig-bevisst-pine-bibelsk.html"
+  },
+  {
     title: "Troens bønn",
     category: "Kristenliv",
     subcategory: "Bønn",
