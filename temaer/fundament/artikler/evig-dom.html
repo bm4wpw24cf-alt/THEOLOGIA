@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evig dom: Guds fullkomne rettferdighet | THEOLOGIA</title>
+<meta name="description" content="Evig dom som Guds tidløse evne til å skille mellom lys og mørke, rett og galt, liv og død – med fullkommen rettferdighet. Et bibelsk-teologisk studium.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1c2a3f;
+    --navy-deep:#111a29;
+    --wine:#6e2a3a;
+    --gold:#b08d57;
+    --gold-light:#cba869;
+    --parchment:#f8f4ea;
+    --parchment-deep:#efe8d8;
+    --text:#2a2f38;
+    --text-light:#5b6270;
+    --serif:'EB Garamond', Georgia, serif;
+    --sans:'Inter', -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--sans);
+    background:var(--parchment);
+    color:var(--text);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  header.site-nav{
+    position:sticky;top:0;z-index:100;
+    background:rgba(248,244,234,0.85);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(176,141,87,0.25);
+    padding:0.9rem 1.5rem;
+  }
+  .nav-inner{
+    max-width:760px;margin:0 auto;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-brand{
+    font-family:var(--serif);font-weight:600;font-size:1.15rem;
+    color:var(--navy);text-decoration:none;letter-spacing:0.02em;
+  }
+  .nav-back{
+    font-size:0.85rem;color:var(--text-light);text-decoration:none;
+    display:flex;align-items:center;gap:0.3rem;transition:color .2s;
+  }
+  .nav-back:hover{color:var(--gold);}
+
+  .hero{
+    max-width:760px;margin:0 auto;padding:3.5rem 1.5rem 2.5rem;
+    text-align:center;
+    opacity:0;transform:translateY(16px);
+    animation:fadeUp .8s ease forwards;
+  }
+  .hero h1{
+    font-family:var(--serif);font-weight:600;font-size:2.35rem;
+    color:var(--navy-deep);line-height:1.22;margin-bottom:1rem;
+  }
+  .hero-subtitle{
+    font-family:var(--serif);font-style:italic;font-size:1.15rem;
+    color:var(--text-light);max-width:560px;margin:0 auto;
+  }
+  .hero-divider{
+    width:60px;height:2px;background:var(--gold);
+    margin:1.8rem auto 0;
+  }
+
+  article{
+    max-width:680px;margin:0 auto;padding:1rem 1.5rem 5rem;
+  }
+  .lede{
+    font-family:var(--serif);font-size:1.3rem;line-height:1.65;
+    color:var(--navy);margin-bottom:2.5rem;
+    opacity:0;transform:translateY(12px);
+  }
+  .lede.in-view{animation:fadeUp .7s ease forwards;}
+
+  section.chapter{
+    margin-bottom:2.6rem;
+    opacity:0;transform:translateY(14px);
+  }
+  section.chapter.in-view{animation:fadeUp .7s ease forwards;}
+
+  .chapter-number{
+    font-family:var(--serif);font-size:0.95rem;color:var(--gold);
+    font-weight:600;letter-spacing:0.05em;margin-bottom:0.25rem;
+    display:block;
+  }
+  h2{
+    font-family:var(--serif);font-weight:600;font-size:1.5rem;
+    color:var(--navy-deep);margin-bottom:0.9rem;line-height:1.3;
+  }
+  h3{
+    font-family:var(--serif);font-weight:600;font-size:1.18rem;
+    color:var(--wine);margin:1.5rem 0 0.7rem;
+  }
+  p{
+    font-size:1.02rem;color:var(--text);margin-bottom:1rem;
+  }
+  p.emphasis{
+    font-family:var(--serif);font-style:italic;font-size:1.15rem;
+    color:var(--navy);margin:1.2rem 0;
+  }
+
+  blockquote{
+    font-family:var(--serif);font-style:italic;font-size:1.12rem;
+    color:var(--wine);
+    border-left:3px solid var(--gold);
+    padding:0.4rem 0 0.4rem 1.3rem;
+    margin:1.3rem 0;
+  }
+  blockquote cite{
+    display:block;font-style:normal;font-family:var(--sans);
+    font-size:0.8rem;font-weight:600;letter-spacing:0.04em;
+    color:var(--gold);text-transform:uppercase;margin-top:0.5rem;
+  }
+
+  .divider{
+    display:flex;align-items:center;justify-content:center;
+    gap:0.8rem;margin:2.6rem 0;
+  }
+  .divider::before,.divider::after{
+    content:"";flex:1;height:1px;
+    background:linear-gradient(to right, transparent, rgba(176,141,87,0.4), transparent);
+  }
+  .divider span{
+    color:var(--gold);font-size:0.9rem;
+  }
+
+  .part-marker{
+    text-align:center;margin:3.5rem 0 2.5rem;
+  }
+  .part-marker span{
+    display:inline-block;
+    font-family:var(--sans);font-size:0.75rem;font-weight:600;
+    letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);
+    border:1px solid rgba(176,141,87,0.4);
+    border-radius:999px;padding:0.45rem 1.1rem;
+  }
+
+  .summary-box{
+    background:var(--navy-deep);
+    border-radius:10px;
+    padding:2.2rem 1.8rem;
+    margin:1.6rem 0;
+    color:var(--parchment);
+  }
+  .summary-box h4{
+    font-family:var(--serif);font-weight:600;color:var(--gold-light);
+    font-size:1.1rem;margin-bottom:1.1rem;text-align:center;
+  }
+  .summary-step{
+    margin-bottom:0.9rem;padding-bottom:0.9rem;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+  }
+  .summary-step:last-child{border:none;margin-bottom:0;padding-bottom:0;}
+  .summary-step .step-title{
+    font-family:var(--serif);font-size:1.08rem;font-weight:600;
+    margin-bottom:0.2rem;
+  }
+  .summary-step .step-desc{
+    font-size:0.92rem;color:rgba(248,244,234,0.75);line-height:1.5;
+  }
+
+  ul.reflection-list{
+    list-style:none;margin:1.2rem 0;
+  }
+  ul.reflection-list li{
+    font-family:var(--serif);font-style:italic;font-size:1.05rem;
+    color:var(--navy);padding:0.5rem 0 0.5rem 1.6rem;
+    position:relative;border-bottom:1px dotted rgba(176,141,87,0.3);
+  }
+  ul.reflection-list li:last-child{border-bottom:none;}
+  ul.reflection-list li::before{
+    content:"→";position:absolute;left:0;color:var(--gold);
+  }
+
+  .verse-card{
+    background:var(--parchment-deep);
+    border:1px solid rgba(176,141,87,0.3);
+    border-radius:6px;
+    padding:1.1rem 1.3rem;
+    margin:0.7rem 0;
+  }
+  .verse-card .ref{
+    font-family:var(--sans);font-size:0.78rem;font-weight:600;
+    letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);
+    display:block;margin-bottom:0.35rem;
+  }
+  .verse-card p{
+    font-family:var(--serif);font-style:italic;color:var(--navy);
+    font-size:1.03rem;margin-bottom:0;
+  }
+
+  .refs-inline{
+    font-size:0.92rem;color:var(--text-light);
+    background:var(--parchment-deep);
+    border-radius:4px;padding:0.6rem 0.9rem;
+    margin:0.8rem 0 1.2rem;
+  }
+  .refs-inline strong{color:var(--navy);}
+
+  ul.plain-list{
+    margin:1rem 0 1rem 1.3rem;
+  }
+  ul.plain-list li{
+    margin-bottom:0.5rem;color:var(--text);
+  }
+
+  .three-aspects{
+    margin:1.5rem 0;
+  }
+  .aspect{
+    border-left:3px solid var(--gold);
+    padding:0.2rem 0 0.2rem 1.3rem;
+    margin-bottom:1.8rem;
+  }
+  .aspect-label{
+    font-family:var(--sans);font-size:0.78rem;font-weight:600;
+    letter-spacing:0.06em;text-transform:uppercase;color:var(--gold);
+    display:block;margin-bottom:0.3rem;
+  }
+  .aspect h4{
+    font-family:var(--serif);font-weight:600;font-size:1.25rem;
+    color:var(--navy-deep);margin-bottom:0.6rem;
+  }
+
+  .closing{
+    text-align:center;padding-top:1rem;
+  }
+  .closing p{
+    font-family:var(--serif);font-size:1.25rem;font-style:italic;
+    color:var(--navy);line-height:1.6;
+  }
+
+  footer.site-footer{
+    max-width:680px;margin:0 auto;padding:2.5rem 1.5rem 3.5rem;
+    text-align:center;border-top:1px solid rgba(176,141,87,0.25);
+  }
+  footer.site-footer p{
+    font-size:0.85rem;color:var(--text-light);
+  }
+  footer.site-footer a{color:var(--gold);text-decoration:none;}
+
+  @keyframes fadeUp{
+    to{opacity:1;transform:translateY(0);}
+  }
+
+  @media (max-width:600px){
+    .hero h1{font-size:1.7rem;}
+    .hero-subtitle{font-size:1rem;}
+    h2{font-size:1.25rem;}
+    .lede{font-size:1.15rem;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="../../../index.html" class="nav-brand">THEOLOGIA</a>
+    <a href="../index.html" class="nav-back">&larr; Fundament</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>Evig dom: Guds fullkomne rettferdighet</h1>
+  <p class="hero-subtitle">Guds evne til å skille mellom lys og mørke, rett og galt, liv og død</p>
+  <div class="hero-divider"></div>
+</div>
+
+<article>
+
+  <p class="lede">Evig dom er ikke bare en fremtidig hendelse, men en tidløs realitet som gjennomsyrer Guds natur og hans forhold til verden. Den handler om Guds evne til å skille mellom lys og mørke, rett og galt, liv og død med fullkommen rettferdighet. For å forstå evig dom, må vi se på dens betydning, dens forskjell fra fordømmelse, dens rolle i den tidlige kristne lære, dens kvalitative natur, dens røtter i Guds skapende handling, og dens uttrykk i Guds evne til å skille — inkludert skillet mellom nærhet til hans godhet og atskillelse som fører til fortapelse.</p>
+
+  <div class="divider"><span>✦</span></div>
+
+  <section class="chapter">
+    <span class="chapter-number">01</span>
+    <h2>Dom er forskjellig fra fordømmelse</h2>
+    <p>Evig dom må ikke forveksles med fordømmelse. Fordømmelse innebærer en endelig avvisning eller fortapelse, mens dom er Guds prosess for å vurdere og skille basert på hans rettferdige standard. Guds dom kan føre til korrigering, renselse eller belønning, avhengig av hjertets tilstand og handlingenes natur.</p>
+    <p>Gjennom Kristus, som Faderen har gitt all dom til (Joh 5,22), blir Guds dom preget av både rettferdighet og nåde, og gir håp om frelse for dem som omvender seg.</p>
+  </section>
+
+  <section class="chapter">
+    <span class="chapter-number">02</span>
+    <h2>Det vi først lærte om Kristus</h2>
+    <p>Hebreerne 6,1–3 gir oss innsikt i de grunnleggende læresetningene om Kristus, som danner fundamentet for troen. Blant disse er undervisningen om evig dom, sammen med omvendelse fra døde gjerninger, tro på Gud, renselsesbad, håndspåleggelse og de dødes oppstandelse.</p>
+    <p>At evig dom er en del av «det første vi lærte» viser dens sentrale plass i tidlig kristen undervisning. Kristus er ikke bare frelser, men også dommer (Apg 10,42), og hans dom reflekterer Guds karakter — rettferdig, men barmhjertig.</p>
+    <p class="emphasis">Denne læren minner oss om at Guds dom er en realitet som både advarer mot synd og peker mot håpet om forsoning gjennom Kristus.</p>
+    <p>Samtidig oppfordrer Hebreerne 6 oss til å gå videre fra disse grunnleggende sannhetene mot modenhet, der evig dom ikke bare er en doktrine, men en levende veiledning for tro og liv.</p>
+  </section>
+
+  <section class="chapter">
+    <span class="chapter-number">03</span>
+    <h2>Betydningen av «evig»: Ikke bare framtidig</h2>
+    <p>Ordet «evig» (gresk <em>aionios</em>) i evig dom handler ikke bare om uendelig tid, men om en kvalitet som tilhører Guds rike. Evig dom er en tidløs handling som reflekterer Guds uforanderlige rettferdighet og sannhet. Den er ikke begrenset til en fremtidig dommedag, men er til stede i Guds skapende og ordnende verk her og nå.</p>
+    <p>I 1. Mosebok 1,1–4 ser vi Guds første dom: han så at lyset var godt, og skilte lys fra mørke. Denne handlingen er «evig» fordi den definerer virkelighetens natur i samsvar med Guds vilje, gyldig til alle tider.</p>
+  </section>
+
+  <section class="chapter">
+    <span class="chapter-number">04</span>
+    <h2>En annen type dom — kvalitet</h2>
+    <p>Evig dom er kvalitativ, ikke bare en mekanisk vurdering av handlinger som «riktig» eller «galt». Den handler om å bedømme essensen av noe i lys av Guds fullkomne standard.</p>
+    <p>I skapelsen vurderte Gud lyset som «godt» (1 Mos 1,4), en dom som bekreftet dets harmoni med hans vilje. På samme måte skiller Gud mellom det som lyder hans befaling og det som ignorerer den. Evig dom er dermed en skapende og ordnende handling som bringer klarhet, rettferdighet og mening til verden.</p>
+  </section>
+
+  <div class="divider"><span>✦</span></div>
+
+  <section class="chapter">
+    <span class="chapter-number">05</span>
+    <h2>Betydningen av dom: Krisis</h2>
+    <p>Det greske ordet for dom, <em>krisis</em>, betyr skille, beslutning eller vurdering. Dette ordet fanger essensen av Guds dom som en handling der sannheten åpenbares, og valg får konsekvenser. Guds dom er en krisis — et øyeblikk av klarhet der det som er i samsvar med hans vilje, skilles fra det som ikke er det.</p>
+    <p>Det første glimtet av Guds dom finner vi i skapelsesberetningen i 1. Mosebok 1,1–4:</p>
+
+    <div class="summary-box">
+      <h4>Første glimt av Guds dom · 1 Mos 1,1–4</h4>
+      <div class="summary-step">
+        <div class="step-title">Gud sa: «Bli lys!»</div>
+        <div class="step-desc">Hans befaling bringer noe nytt inn i tilværelsen.</div>
+      </div>
+      <div class="summary-step">
+        <div class="step-title">Gud så at lyset var godt</div>
+        <div class="step-desc">Han vurderer sin skapelse og bekrefter dens kvalitet i lys av hans standard.</div>
+      </div>
+      <div class="summary-step">
+        <div class="step-title">Gud skilte lys fra mørke</div>
+        <div class="step-desc">Han etablerer en grunnleggende orden ved å skille det som er i harmoni med hans vilje fra det som ikke er det.</div>
+      </div>
+    </div>
+
+    <p>Denne prosessen viser dommens natur: Gud taler, vurderer og skiller. Hans dom er ikke bare en passiv observasjon, men en aktiv, skapende handling som bringer orden og mening. I denne første dommen ser vi at Gud skiller mellom det som lyder hans befaling og det som står utenfor hans vilje. Dette skillet mellom lys og mørke blir et bilde på Guds evige dom, der han med fullkommen rettferdighet vurderer og ordner alt i samsvar med sin natur.</p>
+  </section>
+
+  <section class="chapter">
+    <span class="chapter-number">06</span>
+    <h2>Gud skiller: Fullkommen rettferdighet i handling</h2>
+    <p>Guds evne til å skille er hjertet i evig dom. Gjennom hele Skriften ser vi at Gud skiller mellom det som lyder hans befaling og det som ignorerer den. Dette skillet er ikke vilkårlig, men rotfestet i hans hellige og rettferdige natur.</p>
+
+    <div class="verse-card">
+      <span class="ref">Lys og mørke · 1 Mos 1,4</span>
+      <p>Gud skiller lys fra mørke og etablerer en grunnleggende orden som reflekterer hans vilje. Lyset, som er «godt», representerer det som er i harmoni med Guds skapende hensikt, mens mørket symboliserer det som står utenfor denne hensikten.</p>
+    </div>
+    <div class="verse-card">
+      <span class="ref">Rett og galt · 5 Mos 30,19</span>
+      <p>Gud oppfordrer sitt folk til å «velge livet» ved å følge hans bud, og viser at han skiller mellom lydighet, som fører til velsignelse, og ulydighet, som fører til forbannelse.</p>
+    </div>
+    <div class="verse-card">
+      <span class="ref">Død og liv · Joh 3,18–19</span>
+      <p>Gjennom Kristus åpenbares Guds dom som et skille mellom de som tar imot frelsen og de som avviser den.</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <span class="chapter-number">07</span>
+    <h2>Atskillelse fra Guds godhet kontra evig fortapelse</h2>
+    <p>Guds dom innebærer også et dypere skille — mellom de som lever i hans godhet og nærhet, og de som, gjennom sitt valg, blir atskilt fra ham. Guds godhet og nærhet er kilden til liv, glede og fullkommenhet (Sal 16,11). Å leve i hans nærvær er å oppleve frelsen og fellesskapet med ham, som Kristus tilbyr (Joh 17,3).</p>
+    <p>Men Guds dom respekterer menneskets frie vilje. De som vedvarende avviser Guds kall og nåde, velger en tilstand av atskillelse fra hans godhet — det som ofte beskrives som evig fortapelse.</p>
+    <p>Evig fortapelse er ikke bare en straff pålagt utenfra, men en konsekvens av å vende seg bort fra Guds livgivende nærvær. Jesus beskriver dette i Matteus 25,46, der de rettferdige går til «evig liv», mens de som avviser Gud, går til «evig straff». Denne straffen kan forstås som en tilstand av total atskillelse fra Guds godhet, der mørket, smerten og tomheten råder fordi Guds lys og kjærlighet er fraværende (2 Tess 1,9).</p>
+    <p class="emphasis">Likevel er Guds dom alltid rettferdig; han tvinger ingen til fellesskap med seg, men lar menneskets valg få evige konsekvenser. Gjennom Kristus tilbyr Gud en vei tilbake til hans nærhet, slik at ingen trenger å oppleve fortapelse (2 Pet 3,9).</p>
+    <p>Guds skille er alltid preget av fullkommen rettferdighet. Han ser ikke bare de ytre handlingene, men hjertets intensjoner (1 Sam 16,7), og hans dom er fri for partiskhet eller feil. Evig dom er dermed Guds evne til å skille med en klarhet og rettferdighet som overgår menneskelig forstand — en handling som bringer orden, avslører sannhet og åpner veien for frelse for dem som søker Gud.</p>
+  </section>
+
+  <div class="part-marker"><span>Utvidet skriftstudium</span></div>
+
+  <section class="chapter">
+    <span class="chapter-number">08</span>
+    <h2>Gud er dommeren</h2>
+    <blockquote>
+      «Himmelen forkynner hans rettferd. Han er en Gud som dømmer. Sela.»
+      <cite>Sal 50,6</cite>
+    </blockquote>
+    <p>Skriften vitner gjennomgående om at Gud er den som dømmer, og at hans dom konsekvent reflekterer hans rettferdige natur.</p>
+    <div class="refs-inline"><strong>Se også (uten sitat i kildematerialet):</strong> Dom 11,27 · Sal 94,2 · Hebr 12,24 · Jak 4,12</div>
+
+    <h3>Gud gir den rettferdige rett i sin sak</h3>
+    <div class="verse-card">
+      <span class="ref">Sal 7,9</span>
+      <p>«HERREN dømmer folkene. Gi meg min rett, HERRE, for jeg er rettferdig og hel i min ferd.»</p>
+    </div>
+    <div class="verse-card">
+      <span class="ref">Sal 9,5</span>
+      <p>«For du har gitt meg rett i min sak, du har satt deg på tronen, du rettferdige dommer.»</p>
+    </div>
+
+    <h3>Gud gjør skille</h3>
+    <div class="verse-card">
+      <span class="ref">5 Mos 32,36</span>
+      <p>«Men HERREN vil skaffe sitt folk rett og ha medfølelse med sine tjenere, for han ser at deres makt er borte, det er ute med både fange og fri.»</p>
+    </div>
+    <div class="verse-card">
+      <span class="ref">1 Pet 4,17</span>
+      <p>«For nå er tiden kommet da dommen skal begynne, og den skal begynne med Guds hus. Men kommer dommen over oss først, hvordan går det da til slutt med dem som er ulydige mot Guds evangelium?»</p>
+    </div>
+    <div class="verse-card">
+      <span class="ref">1 Sam 2,10</span>
+      <p>«HERREN knuser sine fiender. Han lar det tordne over dem fra himmelen, HERREN dømmer den vide jord. Han vil gi sin konge styrke og sin salvede stor kraft!»</p>
+    </div>
+    <div class="verse-card">
+      <span class="ref">Sal 9,8–9</span>
+      <p>«Men HERREN troner til evig tid, til dom har han reist sin trone. Han dømmer verden med rettferd, feller rettferdig dom over folkene.»</p>
+    </div>
+    <div class="verse-card">
+      <span class="ref">Sal 50,4</span>
+      <p>«Han kaller på himmelen der oppe og på jorden, for han vil dømme sitt folk.»</p>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <span class="chapter-number">09</span>
+    <h2>Rettferdig dom</h2>
+    <p>Idet Gud utøver sin dom, blir hans rettferdige karakter åpenbart. I virkeligheten er det slik at uttrykkene «dom» og «rettferdighet» ofte blir brukt om hverandre.</p>
+    <div class="verse-card">
+      <span class="ref">Sal 9,17 (NB11)</span>
+      <p>«HERREN gir seg til kjenne, han kommer med rettferd …»</p>
+    </div>
+    <div class="verse-card">
+      <span class="ref">Sal 9,17 (NB)</span>
+      <p>«Herren har vist hvem han er, han har holdt dom …»</p>
+    </div>
+    <p>I Salme 58 fordømmer David den motstridende urettferdighet fra menneskelige herskere og kaller på Gud om å gripe inn, og hevder i Sal 58,12: «Da skal menneskene si: Ja, den rettferdige får sin lønn. Det finnes en Gud som dømmer på jorden.»</p>
+    <p>Jesaja 26,9 (BGO) forteller oss at «… når dine dommer råder på jorden, får alle som bor i verden, lære rettferdighet.» Og Guds ord til Edom var: «Jeg skal gi meg til kjenne blant dem når jeg dømmer deg» (Esek 35,11).</p>
+    <p>Det følger derav at for dem som selv er rettferdige, er det å se Guds rettferdige dom satt ut i kraft, en grunn til stor glede:</p>
+    <div class="verse-card">
+      <span class="ref">Ord 21,15</span>
+      <p>«At en gjør det rette, er en glede for den rettferdige …» (NASB: «Å utøve rett …»)</p>
+    </div>
+    <div class="verse-card">
+      <span class="ref">Sal 101,1</span>
+      <p>«… Jeg vil synge om miskunn og rett, HERRE, for deg vil jeg synge og spille.»</p>
+    </div>
+    <div class="verse-card">
+      <span class="ref">Sal 119,7</span>
+      <p>«Jeg priser deg av et oppriktig hjerte når jeg lærer dine rettferdige lover.» (BGO: «dommer»)</p>
+    </div>
+    <p class="emphasis">Frydesang og takknemlighet fra et rettferdig hjerte er det menneskelige gjensvar til guddommelig dom. Dette er ikke bare et gjensvar fra en enkelt person — det bør være det samlede uttrykk fra det forløste fellesskapet.</p>
+  </section>
+
+  <section class="chapter">
+    <span class="chapter-number">10</span>
+    <h2>Fjellet Sion</h2>
+    <p>Fjellet Sion er en poetisk og profetisk måte å skildre Guds folk på (Hebr 12,22).</p>
+    <blockquote>
+      «Sion-fjellet skal glede seg og Judas døtre juble over dine dommer.»
+      <cite>Sal 48,12</cite>
+    </blockquote>
+  </section>
+
+  <div class="divider"><span>✦</span></div>
+
+  <section class="chapter">
+    <span class="chapter-number">11</span>
+    <h2>Evig dom — vi kjenner dommeren</h2>
+    <p>Gud er satt til å dømme (Joh 3,17; 5,22–23; 5,26–27). Når du kjenner Jesus, får du gudsfrykt.</p>
+
+    <div class="three-aspects">
+      <div class="aspect">
+        <span class="aspect-label">A</span>
+        <h4>Dommen har vært</h4>
+        <p>Nådens år er forkynt (Jes 61,2). Jesus holdt dom over synden i oss (Rom 8,3).</p>
+        <p><strong>Korset:</strong> Jesus er dømt på våre vegne (Jes 53,5–6). Han holdt dom over verden (Joh 12,31; 3,15–21).</p>
+        <p>Å vente på dom uten Kristus betyr fordømmelse. Satan er dømt (Joh 16,11; Hebr 2,14), hans makt og herredømme er avvæpnet (Kol 2,15), og synden er dømt (Rom 8,3).</p>
+      </div>
+
+      <div class="aspect">
+        <span class="aspect-label">B</span>
+        <h4>Dom her og nå</h4>
+        <p>Gud gir en delegert autoritet: «Ja, der står troner for dommere, troner for Davids hus» (Sal 122,5). En dommer er en redningsmann (Apg 7,35; Dom 2,14–18). Israel fikk utvelge dommere etter bestemte krav — dyktige menn, salvet og utrustet, gudfryktige, pålitelige og med hat mot urett vinning (2 Mos 18,13–27; 5 Mos 1,16–18).</p>
+          <blockquote>
+            «Da flammet Herrens vrede opp mot Israel, og han ga dem i hendene på røvere som plyndret dem … Da lot Herren det stå fram dommere som berget dem ut av hendene på røverne. Men heller ikke dommerne adlød de … For Herren fikk medlidenhet med dem når de sukket under dem som plaget og undertrykte dem.»
+            <cite>Dom 2,14–18</cite>
+          </blockquote>
+        <p>Kongehuset og dommerfunksjonen er bundet sammen:</p>
+        <blockquote>
+          «Da skal det i godhet reises en trone. På den skal det i troskap sitte en dommer i Davids telt, en som søker rett og fremmer rettferd.»
+          <cite>Jes 16,5</cite>
+        </blockquote>
+        <p>Vi finner et himmelsk mønster for dette i Åp 4,4:</p>
+        <div class="verse-card">
+          <span class="ref">Ef 4,10</span>
+          <p>«Han som steg ned, er den samme som steg høyt opp over alle himler for å fylle alt.»</p>
+        </div>
+        <p class="emphasis">Å styre uten kjærlighet er tyranni. Å styre med kjærlighet er harmoni.</p>
+        <p>Jesus er selve mønsteret (Jes 11,2–4): «Døm ikke etter det dere ser, døm heller rettferdig!» (Joh 7,24; jf. Matt 7,1–5). Vi skal ikke dømme den som er svak i troen (Rom 14), ikke dømme etter sosial standard (Jak 2,4), ikke dømme noen bak deres rygg (Matt 18), og ikke dømme før tiden (Apg 5,38–39; 1 Kor 5,3–7).</p>
+      </div>
+
+      <div class="aspect">
+        <span class="aspect-label">C</span>
+        <h4>Framtidig dom</h4>
+        <blockquote>
+          «Slik alle mennesker må dø én gang og siden komme for dommen.»
+          <cite>Hebr 9,27</cite>
+        </blockquote>
+        <p>Dommen finner sted på en bestemt dag, utført av Jesus Kristus (Joh 5,22).</p>
+        <div class="verse-card">
+          <span class="ref">Apg 17,31</span>
+          <p>«For han har fastsatt en dag da han skal dømme verden med rettferdighet. Dette skal skje ved den mannen som han har utvalgt til det, etter at han har gitt fullgodt bevis for alle ved å reise ham opp fra de døde.»</p>
+        </div>
+        <div class="verse-card">
+          <span class="ref">Apg 10,42</span>
+          <p>«Han bød oss å forkynne for folket og vitne at han er den som Gud har satt til å være dommer over levende og døde.»</p>
+        </div>
+        <div class="verse-card">
+          <span class="ref">Rom 2,16</span>
+          <p>«… på den dagen når Gud skal dømme det skjulte hos menneskene, etter mitt evangelium, ved Jesus Kristus.»</p>
+        </div>
+        <div class="verse-card">
+          <span class="ref">2 Tim 4,1</span>
+          <p>«Jeg vitner for Gud og Kristus Jesus, som skal dømme levende og døde, og ved hans komme og hans rike.»</p>
+        </div>
+
+        <h3>Fortapelsen</h3>
+        <p>Å vedvarende nekte å godta Jesu herredømme, fører til den andre og evige død — et sted forberedt for å straffe Satan og hans engler.</p>
+        <div class="verse-card">
+          <span class="ref">Matt 25,41</span>
+          <p>«Gå bort fra meg, dere som er forbannet, til den evige ild som er gjort i stand for djevelen og englene hans.»</p>
+        </div>
+        <div class="verse-card">
+          <span class="ref">Åp 19,19–20</span>
+          <p>«… Begge ble kastet levende i ildsjøen som brenner med svovel.»</p>
+        </div>
+        <div class="verse-card">
+          <span class="ref">Åp 20,11–15</span>
+          <p>«… Og om noen ikke var skrevet inn i livets bok, ble han kastet i ildsjøen.»</p>
+        </div>
+        <div class="verse-card">
+          <span class="ref">Åp 21,6–8</span>
+          <p>«Men de feige, de vantro og vanhellige, de som myrder, driver med hor og trolldom, avgudsdyrkere og alle løgnere, deres plass skal være i sjøen som brenner med ild og svovel. Det er den annen død.»</p>
+        </div>
+        <div class="verse-card">
+          <span class="ref">Jud 7</span>
+          <p>«… De ble straffet med evig ild og er blitt et advarende eksempel.»</p>
+        </div>
+        <div class="refs-inline"><strong>Se også (uten sitat i kildematerialet):</strong> 2 Tess 1,6–10 · Hebr 10,26–27</div>
+        <blockquote>
+          «Gud sendte ikke sin Sønn til verden for å dømme verden, men for at verden skulle bli frelst ved ham.»
+          <cite>Joh 3,16–17</cite>
+        </blockquote>
+
+        <h3>Kristi domstol</h3>
+        <p>Ugudelighet og urettferdighet er å ikke tjene Gud (Mal 3,18). For de frelste venter en prøvelse av det som er gjort (2 Kor 4,14–5,10) — lønn eller tap av lønn (1 Mos 15,1; Hebr 11,6; 1 Kor 3,15; Rom 14,10.12), men med frimodighet på dommens dag (1 Joh 4,17).</p>
+
+        <div class="summary-box">
+          <h4>Det du har gjort skal prøves · 1 Kor 3,10–23</h4>
+          <div class="summary-step">
+            <div class="step-title">Er du på en grunnvoll som er lagt av apostler?</div>
+          </div>
+          <div class="summary-step">
+            <div class="step-title">Bygger du på grunnvollen med rette materialer?</div>
+          </div>
+          <div class="summary-step">
+            <div class="step-title">Få lønn — ikke ødelegg Guds hus</div>
+          </div>
+        </div>
+
+        <p>Hva gir lønn?</p>
+        <ul class="reflection-list">
+          <li>Vise godhet — Luk 6,35</li>
+          <li>Forfølgelse og motstand — Matt 5,10–12</li>
+          <li>Gi til «de små» — Matt 10,42</li>
+          <li>Den som høster, får lønn — Joh 4,36</li>
+          <li>Gjøre alt vi gjør for Herren — Kol 3,23–25</li>
+          <li>Stole på Gud og gjøre godt — 1 Tim 6,17–19</li>
+        </ul>
+
+        <p>Jesus talte mye om lønn (Matt 5,12.46; 6,1–2.5; 10,41–42). Løpet er målrettet, ikke i det uvisse (1 Kor 9,25–26) — mot seiersprisen (Fil 3,14) og rettferdighetens krans (2 Tim 4,7–8). Vi skal ikke miste kronen (Åp 3,11): Jesus kommer med lønn (Åp 22,12), og vi skal ikke miste lønnen (2 Joh v.8).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <span class="chapter-number">12</span>
+    <h2>Ikke døm andre</h2>
+    <p>«Det mål du måler med, det du sier» (Luk 6,37–45). Døm ikke etter det du ser (Joh 7,24), og ikke før tiden (1 Kor 4,5). Godta hverandres samvittighet (Rom 14,1ff).</p>
+    <blockquote>
+      «For det finnes intet skjult som ikke skal bli synlig, og intet hemmelig som ikke skal bli kjent og komme for dagen. Pass derfor på hvordan dere hører! For den som har, skal få. Men den som ikke har, skal bli fratatt selv det han tror han har.»
+      <cite>Luk 8,17–18</cite>
+    </blockquote>
+    <blockquote>
+      «Men alt kommer for dagen når det blir avslørt av lyset.»
+      <cite>Ef 5,13</cite>
+    </blockquote>
+  </section>
+
+  <div class="divider"><span>✦</span></div>
+
+  <section class="chapter">
+    <h2>Husk</h2>
+    <p class="emphasis">Rettferdig dom er livsatmosfæren som menigheten er skapt til å fungere i.</p>
+    <p>Å leve i Guds evige dom er et treningsprogram for Guds folk, som forbereder oss på vår rolle i den kommende tidsalder. Vi er forvaltere av Guds store plan og hensikt.</p>
+  </section>
+
+  <section class="chapter">
+    <h2>Konklusjon</h2>
+    <p>Evig dom er Guds tidløse og fullkomne prosess for å skille og vurdere i samsvar med hans rettferdighet. Den er forskjellig fra fordømmelse ved sin mulighet for nåde og frelse, spesielt gjennom Kristus. Som en del av det første vi lærte om Kristus (Hebr 6,1–3), minner evig dom oss om Guds rolle som dommer og om vårt kall til å vokse i tro mot modenhet.</p>
+    <p>Dens evige natur peker på dens tidløse kvalitet, og dens fokus på kvalitet viser at Guds dom er en skapende handling som bringer orden og håp. Gjennom krisis — Guds skille mellom lys og mørke, som vi ser allerede i skapelsen (1 Mos 1,1–4) — åpenbares Guds rettferdighet.</p>
+    <p>Guds evne til å skille mellom det som lyder hans befaling og det som ignorerer den, mellom lys og mørke, rett og galt, død og liv, kulminerer i skillet mellom nærhet til hans godhet og atskillelse som fører til fortapelse. Ved å leve i lys av denne dommen, formes vi til å søke Guds vei og reflektere hans rettferdighet i våre liv.</p>
+  </section>
+
+  <div class="closing">
+    <p>«Å, dyp av rikdom og visdom og kunnskap hos Gud! Hvor uransakelige hans dommer er, hvor ufattelige hans veier!»<br>— Rom 11,33</p>
+  </div>
+
+</article>
+
+<footer class="site-footer">
+  <p>THEOLOGIA — en bibelsk-teologisk ressurs · <a href="../../../index.html">Til forsiden</a> · <a href="../index.html">Fundament</a></p>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('section.chapter, .lede').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

@@ -78,3 +78,19 @@
     padding: 12px 24px;
     font-size: .78rem;
 }
+
+/* .btn-outline forutsetter en mørk bakgrunn (hvit tekst/kant).
+   Denne varianten er for bruk på lyse/pergament-sider (f.eks.
+   en "Tilbake"-knapp), der .btn-outline ville vært usynlig. */
+.btn-outline-light {
+    border-color: var(--border);
+    color: var(--text);
+    background: var(--white);
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus-visible {
+    border-color: var(--gold);
+    color: var(--gold-dark);
+    background: var(--parchment);
+}
