@@ -32,6 +32,12 @@ export default function BonnPage() {
           – en bibelsk studie av hva troens bønn er, hvordan tro vokser frem, og hvordan den troende kan be med
           frimodighet etter Guds vilje.
         </p>
+        <p>
+          <Link href="/temaer/kristenliv/bonn/effektiv-bonn">
+            <strong>Effektiv bønn</strong>
+          </Link>{" "}
+          – hvordan få mer ut av ditt personlige bønneliv.
+        </p>
 
         <ComingSoon>Flere artikler om bønn kommer snart.</ComingSoon>
       </ArticleLayout>

@@ -57,6 +57,17 @@ export const articles: ArticleMeta[] = [
     migrated: true,
   },
   {
+    slug: "effektiv-bonn",
+    title: "Effektiv bønn",
+    category: "Kristenliv",
+    subcategory: "Bønn",
+    date: "2026-08-15",
+    description: "Hvordan få mer ut av ditt personlige bønneliv.",
+    href: "/temaer/kristenliv/bonn/effektiv-bonn",
+    design: "shared",
+    migrated: true,
+  },
+  {
     slug: "hvordan-lese-bibelen-med-forstaelse",
     title: "Hvordan leser Bibelen med forståelse",
     category: "",
