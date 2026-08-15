@@ -38,6 +38,12 @@ export default function BonnPage() {
           </Link>{" "}
           – hvordan få mer ut av ditt personlige bønneliv.
         </p>
+        <p>
+          <Link href="/temaer/kristenliv/bonn/be-for-familien">
+            <strong>Be for familien</strong>
+          </Link>{" "}
+          – bønneemner og bibelske referanser for foreldre som ønsker å be for familien sin.
+        </p>
 
         <ComingSoon>Flere artikler om bønn kommer snart.</ComingSoon>
       </ArticleLayout>

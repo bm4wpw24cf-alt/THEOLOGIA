@@ -68,6 +68,17 @@ export const articles: ArticleMeta[] = [
     migrated: true,
   },
   {
+    slug: "be-for-familien",
+    title: "Be for familien",
+    category: "Kristenliv",
+    subcategory: "Bønn",
+    date: "2026-08-15",
+    description: "Bønneemner og bibelske referanser for foreldre som ønsker å be for familien sin.",
+    href: "/temaer/kristenliv/bonn/be-for-familien",
+    design: "shared",
+    migrated: true,
+  },
+  {
     slug: "hvordan-lese-bibelen-med-forstaelse",
     title: "Hvordan leser Bibelen med forståelse",
     category: "",
