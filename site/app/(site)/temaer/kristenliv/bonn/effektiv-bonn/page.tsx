@@ -22,11 +22,14 @@ export const metadata: Metadata = {
 };
 
 const TOC = [
-  { id: "hvordan-star-det-til-med-ditt-bonneliv", label: "Hvordan står det til med ditt bønneliv?" },
+  { id: "hvordan-fa-mer-ut-av-ditt-personlige-bonneliv", label: "Hvordan få mer ut av ditt personlige bønneliv" },
   { id: "bibelske-rollemodeller", label: "Bibelske rollemodeller" },
-  { id: "disiplin-og-trening", label: "Disiplin og trening" },
-  { id: "hva-skal-du-be-for", label: "Hva skal du be for?" },
-  { id: "et-dypere-bonneliv", label: "Et dypere bønneliv" },
+  { id: "bonn-krever-disiplin-og-trening", label: "Bønn krever disiplin og trening" },
+  { id: "hva-skal-vi-be-for", label: "Hva skal vi be for?" },
+  { id: "et-dypere-bonneliv-a-baere-en-bonnebyrde", label: "Et dypere bønneliv – å bære en bønnebyrde" },
+  { id: "a-sta-i-gapet", label: "Å stå i gapet" },
+  { id: "bonn-og-faste", label: "Bønn og faste" },
+  { id: "et-bonneliv-som-vokser", label: "Et bønneliv som vokser" },
 ];
 
 export default function EffektivBonnPage() {

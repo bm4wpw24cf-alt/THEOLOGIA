@@ -68,7 +68,7 @@ Verifisert direkte mot `site/app/`:
 | `/temaer/kristenliv/bibellesning` | `app/(site)/temaer/kristenliv/bibellesning/page.tsx` | `(site)` |
 | `/temaer/kristenliv/bonn` | `app/(site)/temaer/kristenliv/bonn/page.tsx` | `(site)` |
 | `/temaer/kristenliv/bonn/troens-bonn` | `app/(site)/temaer/kristenliv/bonn/troens-bonn/page.tsx` | `(site)` |
-| `/temaer/kristenliv/bonn/effektiv-bonn` | `app/(site)/temaer/kristenliv/bonn/effektiv-bonn/page.tsx` | `(site)` — nytt innhold, portert fra `Effektiv bønn.docx` (ikke fra gammel HTML) |
+| `/temaer/kristenliv/bonn/effektiv-bonn` | `app/(site)/temaer/kristenliv/bonn/effektiv-bonn/page.tsx` | `(site)` — nytt innhold, ikke fra gammel HTML (opprinnelig portert fra `Effektiv bønn.docx`, senere erstattet med en redigert artikkeltekst levert direkte av redaktøren) |
 | `/temaer/kristenliv/disippelskap` | `app/(site)/temaer/kristenliv/disippelskap/page.tsx` | `(site)` |
 | `/temaer/kristenliv/evangelisering` | `app/(site)/temaer/kristenliv/evangelisering/page.tsx` | `(site)` |
 | `/temaer/kristenliv/familie` | `app/(site)/temaer/kristenliv/familie/page.tsx` | `(site)` |
@@ -94,7 +94,7 @@ Verifisert direkte mot `site/app/`:
 | `/veien-til-jesus/kom-til-kristus` | `app/(site)/veien-til-jesus/kom-til-kristus/page.tsx` | `(site)` |
 | `/stott-arbeidet` | `app/(site)/stott-arbeidet/page.tsx` | `(site)` |
 
-**42 fungerende ruter totalt** (39 migrert fra gammel HTML + 1 nytt artikkelinnhold uten gammelt HTML-forbilde, `effektiv-bonn`, portert fra `Effektiv bønn.docx` + 2 nye temastrukturer uten fagtekst). `app/temaer/kristenliv/bonn/troens-bonn/` (uten `(site)`) er en tom mappe uten `page.tsx` — bidrar ikke til routing (se `Rutearkitektur`).
+**42 fungerende ruter totalt** (39 migrert fra gammel HTML + 1 nytt artikkelinnhold uten gammelt HTML-forbilde, `effektiv-bonn` + 2 nye temastrukturer uten fagtekst). `app/temaer/kristenliv/bonn/troens-bonn/` (uten `(site)`) er en tom mappe uten `page.tsx` — bidrar ikke til routing (se `Rutearkitektur`).
 
 **Merk:** `app/(site)/temaer/fundament/page.tsx` eksisterer allerede og er
 innholdsmessig komplett (hero + full tema-kort-grid, identisk struktur med den
