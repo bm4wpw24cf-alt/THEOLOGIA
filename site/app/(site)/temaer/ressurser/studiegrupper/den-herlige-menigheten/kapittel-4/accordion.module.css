@@ -1,0 +1,18 @@
+/* Portert fra css/study.css ".accordion-header[aria-expanded=true] + .accordion-content"
+   sin fadeIn-animasjon (og tilsvarende for .sub-content). Visning styres av
+   React-state (ikke CSS-attributtselektor), men selve fadeIn-keyframen er
+   identisk med originalen (css/animations.css). Skopet hit siden det kun
+   trengs av disse to komponentene. */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 0.35s var(--ease);
+}

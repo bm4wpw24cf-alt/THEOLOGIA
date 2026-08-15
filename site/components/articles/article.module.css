@@ -1,0 +1,473 @@
+/* Portert nær-ordrett fra css/article.css og css/components.css sitt
+   breadcrumb-motstykke er ikke med her (se Breadcrumbs.tsx). Beholdt som
+   ren CSS (ikke Tailwind-utilities) per Fase 1-planen: sticky/scrollbar
+   TOC-systemet sine calc()-uttrykk ville blitt uleselig som
+   arbitrary-value-strenger for null gevinst. */
+
+.articlePage {
+  background: var(--parchment);
+  padding: 90px 20px;
+}
+
+.articleContainer {
+  width: min(900px, 100%);
+  margin-inline: auto;
+  background: var(--white);
+  padding: 70px 80px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.articleContainer.hasToc {
+  width: min(1280px, 100%);
+}
+
+.articleCategory {
+  display: inline-block;
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+.articleHeader h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5vw, 3.6rem);
+  font-weight: 600;
+  color: var(--black);
+  line-height: 1.1;
+  margin-bottom: 18px;
+}
+
+.articleSubtitle {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: var(--text-light);
+  margin-bottom: 20px;
+}
+
+.articleMeta {
+  font-family: var(--font-sans);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 35px;
+}
+
+.articleContent {
+  font-family: var(--font-sans);
+}
+
+.articleContent :global(h2) {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  color: var(--black);
+  margin-top: 55px;
+  margin-bottom: 18px;
+}
+
+.articleContent :global(h3) {
+  font-size: 1.35rem;
+  margin-top: 35px;
+  margin-bottom: 15px;
+}
+
+.articleContent :global(h4) {
+  font-family: var(--font-sans);
+  font-size: 1.08rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.articleContent :global(p) {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.95;
+  margin-bottom: 25px;
+}
+
+.articleContent :global(ul),
+.articleContent :global(ol) {
+  margin: 0 0 28px;
+  padding-left: 1.3em;
+}
+
+.articleContent :global(ul) {
+  list-style: disc;
+}
+
+.articleContent :global(ol) {
+  list-style: decimal;
+}
+
+.articleContent :global(li) {
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.9;
+  margin-bottom: 14px;
+}
+
+.articleContent :global(li:last-child) {
+  margin-bottom: 0;
+}
+
+.articleContent :global(a) {
+  color: var(--gold-dark);
+  font-weight: 600;
+}
+
+.articleContent :global(a:hover) {
+  color: var(--gold);
+}
+
+/* Bibelvers */
+
+.bibleBox {
+  background: var(--parchment-dark);
+  border-left: 4px solid var(--gold);
+  padding: 30px 35px;
+  margin: 40px 0;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.bibleBox em {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: var(--text);
+  font-style: italic;
+}
+
+.bibleBox strong {
+  display: block;
+  margin-top: 5px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--gold-dark);
+}
+
+/* Kontakt-e-post (om-meg) */
+
+.contactEmail {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+/* Enkel punktliste i artikkeltekst */
+
+.contentList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px 32px;
+  margin: 0 0 40px;
+  list-style: none;
+  padding-left: 0;
+}
+
+.contentList li {
+  position: relative;
+  padding-left: 22px;
+  font-family: var(--font-sans);
+  font-size: 1.02rem;
+  color: var(--text);
+  margin-bottom: 0;
+}
+
+.contentList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+/* important-box / cross-reference-box, portert fra
+   temaer/kristenliv/bonn/css/troens-bonn.css – løftet inn som delte
+   MDX-komponenter slik at fremtidige artikler gjenbruker samme klasser
+   i stedet for å finne opp samme løsning på nytt per side. */
+
+.importantBox,
+.crossReferenceBox {
+  display: flex;
+  gap: 16px;
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  margin: 2em 0;
+  font-size: 0.96rem;
+  line-height: 1.7;
+}
+
+.boxIcon {
+  flex-shrink: 0;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 0.78rem;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxTitle {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.importantBox {
+  background: var(--parchment-dark);
+  border: 1px solid var(--border);
+  color: var(--navy-mid);
+}
+
+.importantBox .boxIcon {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.crossReferenceBox {
+  background: var(--white);
+  border: 1px dashed var(--border);
+  color: var(--text);
+}
+
+.crossReferenceBox .boxIcon {
+  background: var(--navy);
+  color: var(--white);
+}
+
+/* Artikkel med innholdsfortegnelse som sidefelt */
+
+.articleBody {
+  display: grid;
+  grid-template-columns: 1fr 240px;
+  grid-template-areas: "main toc";
+  align-items: start;
+  gap: 48px;
+}
+
+.articleMain {
+  grid-area: main;
+  min-width: 0;
+}
+
+.articleMain > :global(:first-child) {
+  margin-top: 0;
+}
+
+.articleToc {
+  grid-area: toc;
+  position: sticky;
+  top: calc(var(--header-height) + 20px);
+  max-height: calc(100vh - var(--header-height) - 40px);
+  overflow-y: auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 24px 22px;
+}
+
+.articleToc :global(.panel-tag) {
+  margin-bottom: 10px;
+}
+
+.articleToc h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--black);
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+.tocList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 0;
+  list-style: none;
+  padding-left: 0;
+}
+
+.tocList a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  color: var(--text);
+  transition: color 0.2s var(--ease);
+}
+
+.tocList a:hover {
+  color: var(--gold);
+}
+
+.tocList svg {
+  width: 16px;
+  height: 16px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.sectionDivider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 40px 0;
+}
+
+/* Kommer snart / TODO-boks, portert fra css/utilities.css ".coming-soon" */
+
+.comingSoon {
+  margin-top: 40px;
+  padding: 32px 28px;
+  background: var(--parchment-dark);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.comingSoon .comingSoonIcon {
+  width: 28px;
+  height: 28px;
+  color: var(--gold);
+  margin: 0 auto 14px;
+}
+
+.comingSoon h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.comingSoon p {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* PDF-visning, portert fra css/article.css ".pdf-actions"/".pdf-embed" */
+
+.pdfActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 8px 0 40px;
+}
+
+.pdfEmbed {
+  margin: 40px 0;
+}
+
+.pdfEmbed h2 {
+  margin-top: 0;
+}
+
+.pdfEmbedFrame {
+  width: 100%;
+  height: 85vh;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--parchment-dark);
+}
+
+.pdfEmbedFallback {
+  display: none;
+}
+
+/* Enkel punktliste, portert fra css/utilities.css ".simple-list". Egne
+   regler nøstet under .articleContent for å slå den mer generelle
+   ".articleContent :global(ul)"-regelen (disc) på spesifisitet. */
+
+.simpleList {
+  margin: 0 0 25px;
+  padding-left: 4px;
+}
+
+.articleContent .simpleList {
+  list-style: none;
+}
+
+.simpleList li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.articleContent .simpleList li {
+  list-style: none;
+}
+
+.simpleList li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+@media (max-width: 1024px) {
+  .articleBody {
+    display: block;
+  }
+
+  .articleToc {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .articlePage {
+    padding: 50px 15px;
+  }
+
+  .articleContainer {
+    padding: 35px 25px;
+  }
+
+  .articleHeader h1 {
+    font-size: 2.4rem;
+  }
+
+  .articleSubtitle {
+    font-size: 1.2rem;
+  }
+
+  .contentList {
+    grid-template-columns: 1fr;
+  }
+
+  /* Innebygde PDF-er rendres upålitelig i mobilnettlesere (ofte tom
+     boks eller nedlastingsprompt) og kan skape utilsiktet horisontal
+     scroll. Skjul iframen og vis i stedet en tydelig lenke. */
+  .pdfEmbedFrame {
+    display: none;
+  }
+
+  .pdfEmbedFallback {
+    display: block;
+  }
+}

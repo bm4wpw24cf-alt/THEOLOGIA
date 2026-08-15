@@ -1,0 +1,439 @@
+import type { Metadata } from "next";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
+import { ArticleLayout } from "@/components/articles/ArticleLayout";
+import { BibleBox } from "@/components/articles/BibleBox";
+import { GiscusComments } from "./GiscusComments";
+import styles from "./kom-til-kristus.module.css";
+
+const title = "Kom til Kristus";
+const description = "Guds karakter, menneskets situasjon og Kristi kors – en bibelsk vei til Kristus.";
+const url = "/veien-til-jesus/kom-til-kristus";
+
+export const metadata: Metadata = {
+  title: `${title} | THEOLOGIA`,
+  description,
+  authors: [{ name: "Eirik Storesletten" }],
+  alternates: {
+    canonical: url,
+  },
+  openGraph: {
+    type: "article",
+    title,
+    description,
+    url,
+    siteName: "THEOLOGIA",
+  },
+  twitter: {
+    card: "summary",
+    title,
+    description,
+  },
+};
+
+const TOC = [
+  { id: "kap1", label: "Guds hellighet" },
+  { id: "kap2", label: "Guds rettferdighet" },
+  { id: "kap3", label: "Mennesket er under fordømmelse" },
+  { id: "kap4", label: "Det store dilemmaet" },
+  { id: "kap5", label: "Guds handling – motivert av kjærlighet" },
+  { id: "kap6", label: "Kristi kors" },
+  { id: "kap7", label: "Kristi blod" },
+  { id: "kap8", label: "Vårt svar – omvendelse" },
+  { id: "kap9", label: "Tro – definert og begrunnet" },
+];
+
+export default function KomTilKristusPage() {
+  return (
+    <main>
+      <Breadcrumbs
+        items={[
+          { label: "Hjem", href: "/" },
+          { label: "Veien til Jesus", href: "/veien-til-jesus" },
+          { label: "Kom til Kristus" },
+        ]}
+      />
+
+      <ArticleLayout
+        category="Veien til Jesus · Kom til Kristus"
+        title="Veien til Gud"
+        subtitle="Guds karakter, menneskets situasjon og Kristi kors"
+        meta="Av Eirik Storesletten"
+        toc={TOC}
+      >
+        <section id="kap1">
+          <p className="panel-tag">Kapittel 1</p>
+          <h2>Guds hellighet</h2>
+          <p>
+            For å forstå hva Kristus har gjort, må vi først forstå hvem Gud er. Bibelen åpenbarer en Gud som er
+            fullstendig hellig – ren fra all synd og urettferdighet.
+          </p>
+
+          <BibleBox>
+            <em>
+              «Øynene er for rene til å se det onde, ulykke orker du ikke å se på. Så hvordan kan du se på de
+              troløse og tie når den urettferdige sluker den som er mer rettferdig enn han selv?»
+            </em>
+            <br />{" "}
+            <strong>Habakkuk 1:13</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «Nei, det er skylden som skiller dere fra deres Gud. Syndene deres skjuler ansiktet hans så han ikke
+              hører dere.»
+            </em>
+            <br />{" "}
+            <strong>Jesaja 59:2</strong>
+          </BibleBox>
+
+          <p>
+            Guds hellighet er ikke en kald juridisk egenskap – den er kjernen i hans vesen. Han kan ikke ignorere
+            synd uten å opphøre å være den han er.
+          </p>
+        </section>
+
+        <section id="kap2">
+          <p className="panel-tag">Kapittel 2</p>
+          <h2>Guds rettferdighet</h2>
+          <p>
+            Gud er ikke bare hellig – han er også rettferdig. Han handler rett, dømmer rettferdig og krever at rett
+            skjer.
+          </p>
+
+          <BibleBox>
+            <em>«Rettferdig er Herren, han elsker rettferdige gjerninger. De oppriktige får se hans ansikt.»</em>
+            <br />{" "}
+            <strong>Salme 11:7</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>«Men Herren over hærskarene er opphøyd i dommen, den hellige Gud helliges ved rettferd.»</em>
+            <br />{" "}
+            <strong>Jesaja 5:16</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «Gud er en rettferdig dommer, en Gud som alltid kan bli harm. Om noen ikke vender om, vil han slipe
+              sverdet, spenne buen og sikte, gjøre sine dødelige våpen klare og sette fyr på sine piler.»
+            </em>
+            <br />{" "}
+            <strong>Salme 7:11–12</strong>
+          </BibleBox>
+        </section>
+
+        <BibleBox>
+          <em>
+            «For så høyt har Gud elsket verden at han ga sin Sønn, den enbårne, for at hver den som tror på ham,
+            ikke skal gå fortapt, men ha evig liv.»
+          </em>
+          <br />{" "}
+          <strong>Johannes 3:16</strong>
+        </BibleBox>
+
+        <section id="kap3">
+          <p className="panel-tag">Kapittel 3</p>
+          <h2>Mennesket er under fordømmelse</h2>
+          <p>
+            Bibelen er klar: ingen mennesker lever opp til Guds standard. Alle har syndet og er skyldige for Gud.
+          </p>
+
+          <BibleBox>
+            <em>«For alle har syndet og mangler Guds herlighet.»</em>
+            <br />{" "}
+            <strong>Romerne 3:23</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «Alle ble vi som urene, all vår rettferd som urent tøy. Vi visnet alle som løv, vår skyld tar oss bort
+              som en vind.»
+            </em>
+            <br />{" "}
+            <strong>Jesaja 64:5</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «Men de som holder seg til lovgjerninger, er under forbannelse. For det står skrevet: Forbannet er
+              hver den som ikke holder fast ved alt som står i lovboken, og gjør det den sier.»
+            </em>
+            <br />{" "}
+            <strong>Galaterne 3:10</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>«Syndens lønn er døden, men Guds nådegave er evig liv i Kristus Jesus, vår Herre.»</em>
+            <br />{" "}
+            <strong>Romerne 6:23</strong>
+          </BibleBox>
+        </section>
+
+        <section id="kap4">
+          <p className="panel-tag">Kapittel 4</p>
+          <h2>Det store dilemmaet</h2>
+          <p>
+            Her oppstår et tilsynelatende uløselig problem: Gud er hellig og rettferdig og kan ikke la synden gå
+            ustraffet. Samtidig er han kjærlig og ønsker å frelse. Hvordan kan begge deler være sant?
+          </p>
+
+          <BibleBox>
+            <em>«Å frikjenne en skyldig eller å dømme en som har rett – Herren avskyr begge deler.»</em>
+            <br />{" "}
+            <strong>Ordspråkene 17:15</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «Det ligner ikke deg å gjøre noe slikt, å la rettferdige dø sammen med urettferdige! Skal det gå den
+              rettferdige på samme måte som den urettferdige? Det ligner ikke deg! Må ikke hele jordens dommer gjøre
+              det som rett er?»
+            </em>
+            <br />{" "}
+            <strong>1. Mosebok 18:25</strong>
+          </BibleBox>
+
+          <p>
+            Dilemmaet er reelt: Gud kan ikke bare se bort fra synden uten å krenke sin rettferdighet. Men han kan
+            heller ikke bare dømme uten å krenke sin kjærlighet. Svaret finnes i Kristus.
+          </p>
+        </section>
+
+        <section id="kap5">
+          <p className="panel-tag">Kapittel 5</p>
+          <h2>Guds handling – motivert av kjærlighet</h2>
+          <p>
+            Mens Gud opprettholder sin hellighet og rettferdighet, bekrefter Bibelen at Gud er kjærlighet, og at han
+            i kjærlighet har svart på menneskets situasjon.
+          </p>
+
+          <BibleBox>
+            <em>
+              «Den som ikke elsker, har aldri kjent Gud, for Gud er kjærlighet. Og ved dette ble Guds kjærlighet
+              åpenbart blant oss, at Gud sendte sin enbårne Sønn til verden for at vi skulle leve ved ham. Ja, dette
+              er kjærligheten, ikke at vi har elsket Gud, men at han har elsket oss og sendt sin Sønn til soning for
+              våre synder.»
+            </em>
+            <br />{" "}
+            <strong>1. Johannes 4:8–10</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>«Men Gud viser sin kjærlighet til oss ved at Kristus døde for oss mens vi ennå var syndere.»</em>
+            <br />{" "}
+            <strong>Romerne 5:8</strong>
+          </BibleBox>
+        </section>
+
+        <section id="kap6">
+          <p className="panel-tag">Kapittel 6</p>
+          <h2>Kristi kors</h2>
+          <p>
+            På korset møtes Guds hellighet og Guds kjærlighet. Jesus bærer syndens straff, slik at syndere kan bli
+            frikjent – ikke fordi straffen overses, men fordi den er sonet.
+          </p>
+
+          <BibleBox>
+            <em>
+              «For alle har syndet og mangler Guds herlighet. Men ufortjent og av hans nåde blir de kjent
+              rettferdige, frikjøpt i Kristus Jesus. Ham har God stilt synlig fram for at han ved sitt blod skulle
+              være soningsstedet for dem som tror. Slik viste Gud sin rettferdighet... både at han selv er
+              rettferdig, og at han kjenner den rettferdig som tror på Jesus.»
+            </em>
+            <br />{" "}
+            <strong>Romerne 3:23–26</strong>
+          </BibleBox>
+
+          <p>
+            Korset er ikke en omgåelse av Guds rettferdighet – det er rettferdighetens høyeste uttrykk. Og det er
+            samtidig kjærlighetens høyeste uttrykk.
+          </p>
+        </section>
+
+        <section id="kap7">
+          <p className="panel-tag">Kapittel 7</p>
+          <h2>Kristi blod</h2>
+          <p>
+            Gjennom hele Bibelen er blodet knyttet til liv, soning og tilgivelse. Jesu blod er oppfyllelsen av alt
+            ofringssystemet i Det gamle testamente pekte frem mot.
+          </p>
+
+          <BibleBox>
+            <em>
+              «Etter loven blir jo nesten alt renset med blod, og uten at blod blir utøst, er det ingen som får
+              tilgivelse.»
+            </em>
+            <br />{" "}
+            <strong>Hebreerne 9:22</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «For en skapnings liv er i blodet, og jeg har gitt dere blodet på alteret til soning for livet deres.
+              Blodet soner fordi livet er i det.»
+            </em>
+            <br />{" "}
+            <strong>3. Mosebok 17:11</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «Ikke med blod av bukker og kalver, men med sitt eget blod gikk han inn i helligdommen én gang for
+              alle og kjøpte oss fri for evig.»
+            </em>
+            <br />{" "}
+            <strong>Hebreerne 9:12</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «Dere vet at det ikke var med forgjengelige ting som sølv eller gull dere ble kjøpt fri fra det tomme
+              livet dere overtok fra fedrene, det var med Kristi dyrebare blod, blodet av et lam uten feil og lyte.»
+            </em>
+            <br />{" "}
+            <strong>1. Peter 1:18–19</strong>
+          </BibleBox>
+        </section>
+
+        <section id="kap8">
+          <p className="panel-tag">Kapittel 8</p>
+          <h2>Vårt svar – omvendelse</h2>
+          <p>
+            Omvendelse begynner med en erkjennelse og tilståelse av at det Gud sier om oss er sant – at vi har
+            syndet.
+          </p>
+
+          <BibleBox>
+            <em>
+              «For mine lovbrudd kjenner jeg, min synd står alltid for meg. Mot deg alene har jeg syndet, det som er
+              ondt i dine øyne, har jeg gjort.»
+            </em>
+            <br />{" "}
+            <strong>Salme 51:5–6</strong>
+          </BibleBox>
+
+          <p>
+            En ekte erkjennelse av vår syndighet og skyld vil også føre til ekte sorg og avsky for det vi har gjort:
+          </p>
+
+          <BibleBox>
+            <em>«For jeg forstår ikke hva jeg selv gjør. Det jeg vil, gjør jeg ikke, og det jeg avskyr, det gjør jeg.»</em>
+            <br />{" "}
+            <strong>Romerne 7:15</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>«Jeg ulykkelige menneske! Hvem skal fri meg fra denne dødens kropp?»</em>
+            <br />{" "}
+            <strong>Romerne 7:24</strong>
+          </BibleBox>
+
+          <p>
+            Tilsynelatende oppriktighet av tilståelse alene er aldri et klart bevis på ekte omvendelse. Det må
+            ledsages av at en vender seg bort fra synden:
+          </p>
+
+          <BibleBox>
+            <em>«Vask dere, gjør dere rene! Få de onde gjerningene bort fra mine øyne, hold opp med å gjøre ondt.»</em>
+            <br />{" "}
+            <strong>Jesaja 1:16</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «Øksen ligger allerede ved roten av trærne; hvert tre som ikke bærer god frukt, blir hugget ned og
+              kastet på ilden.»
+            </em>
+            <br />{" "}
+            <strong>Matteus 3:10</strong>
+          </BibleBox>
+        </section>
+
+        <section id="kap9">
+          <p className="panel-tag">Kapittel 9</p>
+          <h2>Tro – definert og begrunnet</h2>
+
+          <h3>Hva er tro?</h3>
+
+          <BibleBox>
+            <em>«Troen er et pant på det vi håper, et bevis for det vi ikke ser.»</em>
+            <br />{" "}
+            <strong>Hebreerne 11:1</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>«For han var overbevist om at det Gud hadde lovet, hadde han også makt til å gjøre.»</em>
+            <br />{" "}
+            <strong>Romerne 4:21</strong>
+          </BibleBox>
+
+          <h3>Troen er basert på Guds løfter</h3>
+
+          <BibleBox>
+            <em>
+              «For så høyt har Gud elsket verden at han ga sin Sønn, den enbårne, for at hver den som tror på ham,
+              ikke skal gå fortapt, men ha evig liv.»
+            </em>
+            <br />{" "}
+            <strong>Johannes 3:16</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>«Sannelig, sannelig, jeg sier dere: Den som tror, har evig liv.»</em>
+            <br />{" "}
+            <strong>Johannes 6:47</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «Jesus sier til henne: Jeg er oppstandelsen og livet. Den som tror på meg, skal leve om han enn dør.»
+            </em>
+            <br />{" "}
+            <strong>Johannes 11:25</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>«De svarte: Tro på Herren Jesus, så skal du og alle i ditt hus bli frelst.»</em>
+            <br />{" "}
+            <strong>Apostlenes gjerninger 16:31</strong>
+          </BibleBox>
+
+          <BibleBox>
+            <em>
+              «For hvis du med din munn bekjenner at Jesus er Herre, og i ditt hjerte tror at Gud har oppreist ham
+              fra de døde, da skal du bli frelst.»
+            </em>
+            <br />{" "}
+            <strong>Romerne 10:9</strong>
+          </BibleBox>
+
+          <div className={styles.featuredPanel}>
+            <span className="panel-tag">Oppsummering</span>
+            <p>
+              Gud er hellig og rettferdig – synden kan ikke ignoreres. Mennesket er syndige og skyldige for Gud. Men
+              Gud er også kjærlighet, og han sendte sin Sønn for å sone synden på korset.
+            </p>
+            <p>
+              Svaret er omvendelse og tro: vend deg bort fra synden, og stol på Jesus Kristus alene for frelse. Hans
+              blod renser, hans rettferdighet er din gave, og hans oppstandelse er ditt håp.
+            </p>
+            <p>«Den som kommer til meg, vil jeg slett ikke støte bort.» – Johannes 6:37</p>
+          </div>
+        </section>
+      </ArticleLayout>
+
+      <section id="kommentarer" className="bg-parchment-dark py-[120px]">
+        <div className="mx-auto w-[min(1280px,92%)]">
+          <div className="mb-11 text-left">
+            <h2 className="mb-4 text-[2.6rem]">Kommentarer</h2>
+            <p className="text-[1.08rem] text-text-light">
+              Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.
+            </p>
+          </div>
+
+          <GiscusComments />
+        </div>
+      </section>
+    </main>
+  );
+}

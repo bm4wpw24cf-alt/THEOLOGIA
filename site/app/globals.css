@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+/* =========================================================
+   Design tokens — portert fra ../css/variables.css (uendret).
+   Fase 1-plan: referer var(--token) i @theme i stedet for å
+   duplisere hex-verdier, slik at dette forblir én kilde.
+   ========================================================= */
+
+:root {
+  --white: #ffffff;
+  --black: #111111;
+
+  --text: #4a4a4a;
+  --text-light: #7a7a7a;
+
+  --gold: #b8872b;
+  --gold-light: #e0ac52;
+  --gold-dark: #96701f;
+
+  --navy: #0c1726;
+  --navy-deep: #060d17;
+  --navy-mid: #16273e;
+  --navy-light: #24405f;
+
+  --parchment: #faf6ee;
+  --parchment-dark: #f1ead9;
+
+  --border: #ece5d6;
+
+  --radius: 16px;
+  --radius-sm: 10px;
+
+  /* Faktisk høyde på headeren (desktop). Delt token slik at
+     sticky/offset-beregninger (f.eks. .article-toc) ikke må
+     gjette denne verdien selv. */
+  --header-height: 96px;
+
+  --shadow-color-sm: 0 2px 8px rgba(17, 17, 17, 0.05);
+  --shadow-color: 0 10px 30px rgba(17, 17, 17, 0.08);
+  --shadow-color-lg: 0 24px 60px -12px rgba(17, 17, 17, 0.22);
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@theme inline {
+  --color-white: var(--white);
+  --color-ink: var(--black);
+
+  --color-text: var(--text);
+  --color-text-light: var(--text-light);
+
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-navy-mid: var(--navy-mid);
+  --color-navy-light: var(--navy-light);
+
+  --color-parchment: var(--parchment);
+  --color-parchment-dark: var(--parchment-dark);
+
+  --color-border: var(--border);
+
+  --radius-radius: var(--radius);
+  --radius-radius-sm: var(--radius-sm);
+
+  --shadow-sm: var(--shadow-color-sm);
+  --shadow: var(--shadow-color);
+  --shadow-lg: var(--shadow-color-lg);
+
+  --font-serif: var(--font-eb-garamond), Georgia, serif;
+  --font-sans: var(--font-inter), -apple-system, sans-serif;
+
+  --ease-theologia: var(--ease);
+}
+
+/* =========================================================
+   Base-reset — portert fra ../css/base.css. Tailwind har sin
+   egen preflight-reset, men body-typografi/farge/line-height
+   og noen få element-standarder er sideegne designvalg som må
+   bevares eksplisitt.
+
+   Alt her ligger i @layer base/components (ikke som ulaget CSS)
+   fordi Tailwind v4 sine "cascade layers" gjør at ulaget CSS
+   ALLTID vinner over @layer-regler, uansett spesifisitet. Uten
+   dette ville f.eks. .text-white på en <h1> tapt mot denne
+   filens h1{color:var(--black)} – nøyaktig bugen som gjorde
+   Hero-overskriften mørk i stedet for hvit.
+   ========================================================= */
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--parchment);
+    color: var(--text);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    font: inherit;
+  }
+
+  p {
+    color: var(--text-light);
+  }
+
+  /* Typografi — portert fra ../css/typography.css */
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    color: var(--black);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: 0.2px;
+  }
+}
+
+@layer components {
+  .panel-tag {
+    display: inline-block;
+    font-family: var(--font-sans);
+    color: var(--gold);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+}
