@@ -79,6 +79,18 @@ export const articles: ArticleMeta[] = [
     migrated: true,
   },
   {
+    slug: "juridisk-modell-for-forsoningen",
+    title: "En juridisk, ikke-PSA modell for forsoningen",
+    category: "Evangeliet",
+    subcategory: "Forsoningen",
+    date: "2026-08-16",
+    description:
+      "En bibelsk og juridisk analyse av forsoningen med utgangspunkt i Romerne 3,24–26 og Kolosserne 2,14 – uten å forutsette penal substitutionary atonement.",
+    href: "/temaer/evangeliet/artikler/juridisk-modell-for-forsoningen",
+    design: "shared",
+    migrated: true,
+  },
+  {
     slug: "hvordan-lese-bibelen-med-forstaelse",
     title: "Hvordan leser Bibelen med forståelse",
     category: "",
