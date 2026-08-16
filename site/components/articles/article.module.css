@@ -30,7 +30,7 @@
   font-weight: 700;
   letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
 
 .articleHeader h1 {
@@ -39,14 +39,14 @@
   font-weight: 600;
   color: var(--black);
   line-height: 1.1;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .articleSubtitle {
   font-family: var(--font-serif);
   font-size: 1.45rem;
   color: var(--text-light);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 
 .articleMeta {
@@ -56,7 +56,7 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--gold-dark);
-  margin-bottom: 35px;
+  margin-bottom: 28px;
 }
 
 .articleContent {
@@ -67,14 +67,14 @@
   font-family: var(--font-serif);
   font-size: 2rem;
   color: var(--black);
-  margin-top: 55px;
-  margin-bottom: 18px;
+  margin-top: 44px;
+  margin-bottom: 16px;
 }
 
 .articleContent :global(h3) {
   font-size: 1.35rem;
-  margin-top: 35px;
-  margin-bottom: 15px;
+  margin-top: 30px;
+  margin-bottom: 12px;
 }
 
 .articleContent :global(h4) {
@@ -82,20 +82,20 @@
   font-size: 1.08rem;
   font-weight: 700;
   color: var(--black);
-  margin-top: 28px;
-  margin-bottom: 12px;
+  margin-top: 24px;
+  margin-bottom: 10px;
 }
 
 .articleContent :global(p) {
   color: var(--text);
   font-size: 1.05rem;
-  line-height: 1.95;
-  margin-bottom: 25px;
+  line-height: 1.85;
+  margin-bottom: 20px;
 }
 
 .articleContent :global(ul),
 .articleContent :global(ol) {
-  margin: 0 0 28px;
+  margin: 0 0 22px;
   padding-left: 1.3em;
 }
 
@@ -110,8 +110,8 @@
 .articleContent :global(li) {
   color: var(--text);
   font-size: 1.05rem;
-  line-height: 1.9;
-  margin-bottom: 14px;
+  line-height: 1.8;
+  margin-bottom: 10px;
 }
 
 .articleContent :global(li:last-child) {
@@ -132,8 +132,8 @@
 .bibleBox {
   background: var(--parchment-dark);
   border-left: 4px solid var(--gold);
-  padding: 30px 35px;
-  margin: 40px 0;
+  padding: 26px 32px;
+  margin: 32px 0;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
 }
 
@@ -141,17 +141,25 @@
   display: block;
   font-family: var(--font-serif);
   font-size: 1.25rem;
-  line-height: 1.7;
+  line-height: 1.65;
   color: var(--text);
   font-style: italic;
 }
 
 .bibleBox strong {
   display: block;
-  margin-top: 5px;
+  margin-top: 6px;
   font-family: var(--font-sans);
   font-size: 0.9rem;
   color: var(--gold-dark);
+}
+
+/* MDX-innholdet setter <br/> mellom <em> og <strong> (jf. gammel markup der
+   begge var inline). Nå som begge er display:block skaper br-en en egen
+   anonym blokk-boks med en tom linje mellom bibeltekst og henvisning, så
+   den skjules her i stedet for å endre MDX-filene. */
+.bibleBox br {
+  display: none;
 }
 
 /* Kontakt-e-post (om-meg) */
@@ -166,8 +174,8 @@
 .contentList {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px 32px;
-  margin: 0 0 40px;
+  gap: 12px 32px;
+  margin: 0 0 32px;
   list-style: none;
   padding-left: 0;
 }
@@ -203,7 +211,7 @@
   gap: 16px;
   border-radius: var(--radius-sm);
   padding: 20px 24px;
-  margin: 2em 0;
+  margin: 1.6em 0;
   font-size: 0.96rem;
   line-height: 1.7;
 }
@@ -326,13 +334,13 @@
 .sectionDivider {
   border: none;
   border-top: 1px solid var(--border);
-  margin: 40px 0;
+  margin: 32px 0;
 }
 
 /* Kommer snart / TODO-boks, portert fra css/utilities.css ".coming-soon" */
 
 .comingSoon {
-  margin-top: 40px;
+  margin-top: 32px;
   padding: 32px 28px;
   background: var(--parchment-dark);
   border: 1px dashed var(--border);
@@ -366,11 +374,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin: 8px 0 40px;
+  margin: 8px 0 32px;
 }
 
 .pdfEmbed {
-  margin: 40px 0;
+  margin: 32px 0;
 }
 
 .pdfEmbed h2 {
@@ -394,7 +402,7 @@
    ".articleContent :global(ul)"-regelen (disc) på spesifisitet. */
 
 .simpleList {
-  margin: 0 0 25px;
+  margin: 0 0 20px;
   padding-left: 4px;
 }
 
