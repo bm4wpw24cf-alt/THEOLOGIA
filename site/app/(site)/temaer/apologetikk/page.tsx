@@ -36,6 +36,13 @@ export default function ApologetikkPage() {
           – egenskaper, personlighet og kreativitet: en kosmologisk argumentasjon for at den første årsaken til
           universet samsvarer med det klassiske teistiske gudsbegrepet.
         </p>
+        <p>
+          <Link href="/temaer/apologetikk/artikler/det-islamske-dilemmaet">
+            <strong>Det islamske dilemmaet</strong>
+          </Link>{" "}
+          – en undersøkelse av Koranens forhold til Toraen og evangeliet, den historiske tekstsituasjonen på
+          600-tallet og de teologiske konfliktene mellom Koranen og Bibelen.
+        </p>
 
         <ComingSoon>Flere artikler om apologetikk kommer snart.</ComingSoon>
       </ArticleLayout>

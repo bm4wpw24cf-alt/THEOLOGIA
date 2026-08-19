@@ -33,6 +33,18 @@ export const articles: ArticleMeta[] = [
     migrated: true,
   },
   {
+    slug: "det-islamske-dilemmaet",
+    title: "Det islamske dilemmaet",
+    category: "Apologetikk",
+    subcategory: "Islam",
+    date: "2026-08-19",
+    description:
+      "En undersøkelse av Koranens forhold til Toraen og evangeliet, den historiske tekstsituasjonen på 600-tallet og de teologiske konfliktene mellom Koranen og Bibelen.",
+    href: "/temaer/apologetikk/artikler/det-islamske-dilemmaet",
+    design: "shared",
+    migrated: true,
+  },
+  {
     slug: "er-evig-bevisst-pine-bibelsk",
     title: "Er evig bevisst pine bibelsk?",
     category: "Endetid",
