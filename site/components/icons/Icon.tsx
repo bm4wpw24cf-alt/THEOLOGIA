@@ -2,6 +2,7 @@ import type { SVGProps } from "react";
 
 export type IconName =
   | "search"
+  | "menu"
   | "book"
   | "books"
   | "heart"
@@ -52,6 +53,17 @@ const icons: Record<
       <>
         <circle cx="11" cy="11" r="7" />
         <path d="M21 21l-4.3-4.3" />
+      </>
+    ),
+  },
+  menu: {
+    viewBox: "0 0 24 24",
+    strokeWidth: "1.8",
+    content: (
+      <>
+        <path d="M3 6h18" />
+        <path d="M3 12h18" />
+        <path d="M3 18h18" />
       </>
     ),
   },

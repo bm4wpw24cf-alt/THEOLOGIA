@@ -2,18 +2,19 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Cormorant_Garamond } from "next/font/google";
+import { Header } from "@/components/layout/Header";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Icon } from "@/components/icons/Icon";
 
 /**
  * Ressurser-huben (temaer/ressurser/index.html) er et bevisst spesialtilfelle,
  * på samme måte som app/temaer/fundament/artikler/dap-i-vann/page.tsx:
- * originalen har en annen nav-rekkefølge (Artikler før Ressurser) og en
- * minimal egen footer (kun copyright, ingen kolonner) i stedet for standard
- * site-wide Header/Footer. Siden ligger derfor bevisst utenfor `(site)`-
- * gruppen med egen header/footer bygget inn i selve siden, i stedet for å
- * endre de delte Header/Footer-komponentene (som ville påvirket alle andre
- * sider).
+ * originalen har en minimal egen footer (kun copyright, ingen kolonner) i
+ * stedet for standard site-wide Footer. Siden ligger derfor bevisst utenfor
+ * `(site)`-gruppen med egen footer bygget inn i selve siden. Headeren er
+ * derimot standardisert til den delte `Header`-komponenten (global
+ * mobilheader-standardisering) – den tidligere side-egne headeren var en
+ * eldre kopi av samme markup uten mobilmeny/søkeknapp.
  *
  * Originalen laster også sin egen Google Font (Cormorant Garamond) for
  * overskrifter, forskjellig fra sitewide EB Garamond – lastet skopet til
@@ -25,15 +26,6 @@ export const metadata: Metadata = {
   title: "Ressurser | THEOLOGIA",
   description: "Studiegrupper, bøker, videoer, podkaster og digitale studieverktøy for bibelstudier og kristen fordypning.",
 };
-
-const NAV_ITEMS = [
-  { href: "/", label: "Hjem" },
-  { href: "/temaer", label: "Temaer" },
-  { href: "/artikler", label: "Artikler" },
-  { href: "/temaer/ressurser", label: "Ressurser", active: true },
-  { href: "/veien-til-jesus", label: "Veien til Jesus" },
-  { href: "/om-meg", label: "Om meg" },
-];
 
 const STUDY_CHAPTERS = [
   { label: "Guds plan og Guds hvile" },
@@ -59,36 +51,7 @@ function ResourceCoverImage({ src, alt }: { src: string; alt: string }) {
 export default function RessurserPage() {
   return (
     <div>
-      <header className="sticky top-0 z-[1000] bg-white/[.94] backdrop-blur-[10px] shadow-[0_1px_0_rgba(17,17,17,0.06)]">
-        <div className="mx-auto flex h-24 w-[min(1280px,92%)] flex-wrap items-center justify-between gap-4 max-[992px]:h-auto max-[992px]:min-h-24 max-[992px]:py-3.5">
-          <Link href="/" className="flex items-center gap-3.5">
-            <Image src="/images/logo.svg" alt="THEOLOGIA Logo" width={70} height={70} className="h-auto w-[70px] translate-y-[5px]" />
-            <div>
-              <h1 className="mb-[3px] text-[1.9rem] font-bold tracking-[0.4px]">THEOLOGIA</h1>
-              <p className="font-sans text-[0.68rem] font-semibold tracking-[2.6px] text-gold uppercase">BIBELSK · TEOLOGISK · FORANKRET</p>
-            </div>
-          </Link>
-
-          <nav>
-            <ul className="flex items-center gap-10 max-[992px]:flex-wrap max-[992px]:justify-center max-[992px]:gap-3">
-              {NAV_ITEMS.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={`relative py-2 text-[0.96rem] font-medium transition-colors duration-200 ${
-                      item.active
-                        ? "text-gold-dark after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-full after:rounded-full after:bg-gold after:content-['']"
-                        : "text-ink hover:text-gold"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-      </header>
+      <Header />
 
       <Breadcrumbs items={[{ label: "Hjem", href: "/" }, { label: "Temaer", href: "/temaer" }, { label: "Ressurser" }]} />
 

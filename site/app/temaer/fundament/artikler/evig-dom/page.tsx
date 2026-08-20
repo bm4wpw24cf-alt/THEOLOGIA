@@ -2,6 +2,8 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { Header } from "@/components/layout/Header";
+import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import styles from "./evig-dom.module.css";
 
 /**
@@ -62,16 +64,15 @@ export default function EvigDomPage() {
 
   return (
     <div className={styles.page} ref={rootRef}>
-      <header className={styles.siteNav}>
-        <div className={styles.navInner}>
-          <Link href="/" className={styles.navBrand}>
-            THEOLOGIA
-          </Link>
-          <Link href="/temaer/fundament" className={styles.navBack}>
-            ← Fundament
-          </Link>
-        </div>
-      </header>
+      <Header />
+      <Breadcrumbs
+        items={[
+          { label: "Hjem", href: "/" },
+          { label: "Temaer", href: "/temaer" },
+          { label: "Fundament", href: "/temaer/fundament" },
+          { label: "Evig dom" },
+        ]}
+      />
 
       <div className={styles.hero}>
         <h1 className={styles.heroTitle}>Evig dom: Guds fullkomne rettferdighet</h1>
