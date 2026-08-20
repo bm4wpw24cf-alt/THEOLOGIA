@@ -57,6 +57,13 @@ export default function ApologetikkPage() {
           – en dypere gjennomgang av de mest sentrale muslimske innvendingene mot Bibelen, med fokus på Koranens
           syn på tidligere skrifter, tahrif-anklagen og hvordan vi kan svare på dem.
         </p>
+        <p>
+          <Link href="/temaer/apologetikk/artikler/bibelen-og-koranen-i-rettens-lys">
+            <strong>Bibelen og Koranen i rettens lys</strong>
+          </Link>{" "}
+          – en vurdering av Bibelen og Koranen som bevismateriale i et domstolsperspektiv, med fokus på vitneutsagn,
+          uavhengige kilder og bevisstruktur.
+        </p>
 
         <ComingSoon>Flere artikler om apologetikk kommer snart.</ComingSoon>
       </ArticleLayout>

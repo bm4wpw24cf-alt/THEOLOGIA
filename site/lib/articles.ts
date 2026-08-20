@@ -45,6 +45,18 @@ export const articles: ArticleMeta[] = [
     migrated: true,
   },
   {
+    slug: "bibelen-og-koranen-i-rettens-lys",
+    title: "Bibelen og Koranen i rettens lys",
+    category: "Apologetikk",
+    subcategory: "Islam",
+    date: "2026-08-20",
+    description:
+      "En vurdering av Bibelen og Koranen som bevismateriale i et domstolsperspektiv, med fokus på vitneutsagn, uavhengige kilder og bevisstruktur.",
+    href: "/temaer/apologetikk/artikler/bibelen-og-koranen-i-rettens-lys",
+    design: "shared",
+    migrated: true,
+  },
+  {
     slug: "forsoning",
     title: "Forsoning",
     category: "Evangeliet",
