@@ -43,6 +43,20 @@ export default function ApologetikkPage() {
           – en undersøkelse av Koranens forhold til Toraen og evangeliet, den historiske tekstsituasjonen på
           600-tallet og de teologiske konfliktene mellom Koranen og Bibelen.
         </p>
+        <p>
+          <Link href="/temaer/apologetikk/artikler/hva-er-en-mushaf">
+            <strong>Hva er en mushaf?</strong>
+          </Link>{" "}
+          – en historisk og teologisk gjennomgang av begrepet mushaf, Koranens skriftlige samling og hvordan den
+          ble bevart og standardisert.
+        </p>
+        <p>
+          <Link href="/temaer/apologetikk/artikler/muslimske-innvendinger">
+            <strong>De viktigste muslimske innvendingene</strong>
+          </Link>{" "}
+          – en dypere gjennomgang av de mest sentrale muslimske innvendingene mot Bibelen, med fokus på Koranens
+          syn på tidligere skrifter, tahrif-anklagen og hvordan vi kan svare på dem.
+        </p>
 
         <ComingSoon>Flere artikler om apologetikk kommer snart.</ComingSoon>
       </ArticleLayout>
