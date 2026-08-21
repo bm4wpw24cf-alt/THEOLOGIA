@@ -64,6 +64,13 @@ export default function ApologetikkPage() {
           – en vurdering av Bibelen og Koranen som bevismateriale i et domstolsperspektiv, med fokus på vitneutsagn,
           uavhengige kilder og bevisstruktur.
         </p>
+        <p>
+          <Link href="/temaer/apologetikk/artikler/slaveri-og-rase-i-islam">
+            <strong>Slaveri og rase i islam</strong>
+          </Link>{" "}
+          – en kritisk gjennomgang av islamske primærkilder om slaveri, hudfarge og menneskeverd i lys av bibelsk
+          antropologi og etiske vurderinger.
+        </p>
 
         <ComingSoon>Flere artikler om apologetikk kommer snart.</ComingSoon>
       </ArticleLayout>

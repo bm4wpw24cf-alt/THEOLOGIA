@@ -57,6 +57,18 @@ export const articles: ArticleMeta[] = [
     migrated: true,
   },
   {
+    slug: "slaveri-og-rase-i-islam",
+    title: "Slaveri og rase i islam",
+    category: "Apologetikk",
+    subcategory: "Islam",
+    date: "2026-08-21",
+    description:
+      "En kritisk gjennomgang av islamske primærkilder om slaveri, hudfarge og menneskeverd i lys av bibelsk antropologi og etiske vurderinger.",
+    href: "/temaer/apologetikk/artikler/slaveri-og-rase-i-islam",
+    design: "shared",
+    migrated: true,
+  },
+  {
     slug: "forsoning",
     title: "Forsoning",
     category: "Evangeliet",
@@ -101,6 +113,18 @@ export const articles: ArticleMeta[] = [
     description:
       "En historisk og teologisk gjennomgang av begrepet mushaf, Koranens skriftlige samling og hvordan den ble bevart og standardisert.",
     href: "/temaer/apologetikk/artikler/hva-er-en-mushaf",
+    design: "shared",
+    migrated: true,
+  },
+  {
+    slug: "evolusjonen-ubekreftet",
+    title: "Evolusjonen – ubekreftet",
+    category: "Apologetikk",
+    subcategory: "Ateisme",
+    date: "2026-08-21",
+    description:
+      "Om vitenskapens grenser, det skjulte premisset bak utviklingslæren og hvorfor evolusjonsteorien ofte fungerer som et sirkelresonnement i stedet for et bevis.",
+    href: "/temaer/apologetikk/artikler/evolusjonen-ubekreftet",
     design: "shared",
     migrated: true,
   },
