@@ -69,6 +69,42 @@ export const articles: ArticleMeta[] = [
     migrated: true,
   },
   {
+    slug: "koranen-teksthistorie",
+    title: "Koranens teksthistorie",
+    category: "Apologetikk",
+    subcategory: "Islam",
+    date: "2026-08-21",
+    description:
+      "En historisk og tekstkritisk vurdering av Koranens skrift, qirāʾāt, overlevering og spørsmål om bevaring gjennom arabisk skrifttradisjon.",
+    href: "/temaer/apologetikk/artikler/koranen-teksthistorie",
+    design: "shared",
+    migrated: true,
+  },
+  {
+    slug: "laerer-koranen-kjaerlighet",
+    title: "Lærer Koranen kjærlighet?",
+    category: "Apologetikk",
+    subcategory: "Islam",
+    date: "2026-08-21",
+    description:
+      "En sammenligning av Koranens og Bibelens undervisning om kjærlighet, Gud, fiender og evangeliet.",
+    href: "/temaer/apologetikk/artikler/laerer-koranen-kjaerlighet",
+    design: "shared",
+    migrated: true,
+  },
+  {
+    slug: "jesus-i-koranen",
+    title: "Jesus i Koranen",
+    category: "Apologetikk",
+    subcategory: "Islam",
+    date: "2026-08-21",
+    description:
+      "En nærlesning av Koranens beskrivelser av Jesus og hvorfor hans profil i Koranen skiller seg ut fra andre profeter.",
+    href: "/temaer/apologetikk/artikler/jesus-i-koranen",
+    design: "shared",
+    migrated: true,
+  },
+  {
     slug: "forsoning",
     title: "Forsoning",
     category: "Evangeliet",

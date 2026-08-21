@@ -29,48 +29,68 @@ export default function ApologetikkPage() {
         </SimpleList>
 
         <h2>Tilgjengelig nå</h2>
-        <p>
-          <Link href="/temaer/apologetikk/artikler/den-forste-arsaken">
-            <strong>Den første årsaken</strong>
-          </Link>{" "}
-          – egenskaper, personlighet og kreativitet: en kosmologisk argumentasjon for at den første årsaken til
-          universet samsvarer med det klassiske teistiske gudsbegrepet.
-        </p>
-        <p>
-          <Link href="/temaer/apologetikk/artikler/det-islamske-dilemmaet">
-            <strong>Det islamske dilemmaet</strong>
-          </Link>{" "}
-          – en undersøkelse av Koranens forhold til Toraen og evangeliet, den historiske tekstsituasjonen på
-          600-tallet og de teologiske konfliktene mellom Koranen og Bibelen.
-        </p>
-        <p>
-          <Link href="/temaer/apologetikk/artikler/hva-er-en-mushaf">
-            <strong>Hva er en mushaf?</strong>
-          </Link>{" "}
-          – en historisk og teologisk gjennomgang av begrepet mushaf, Koranens skriftlige samling og hvordan den
-          ble bevart og standardisert.
-        </p>
-        <p>
-          <Link href="/temaer/apologetikk/artikler/muslimske-innvendinger">
-            <strong>De viktigste muslimske innvendingene</strong>
-          </Link>{" "}
-          – en dypere gjennomgang av de mest sentrale muslimske innvendingene mot Bibelen, med fokus på Koranens
-          syn på tidligere skrifter, tahrif-anklagen og hvordan vi kan svare på dem.
-        </p>
-        <p>
-          <Link href="/temaer/apologetikk/artikler/bibelen-og-koranen-i-rettens-lys">
-            <strong>Bibelen og Koranen i rettens lys</strong>
-          </Link>{" "}
-          – en vurdering av Bibelen og Koranen som bevismateriale i et domstolsperspektiv, med fokus på vitneutsagn,
-          uavhengige kilder og bevisstruktur.
-        </p>
-        <p>
-          <Link href="/temaer/apologetikk/artikler/slaveri-og-rase-i-islam">
-            <strong>Slaveri og rase i islam</strong>
-          </Link>{" "}
-          – en kritisk gjennomgang av islamske primærkilder om slaveri, hudfarge og menneskeverd i lys av bibelsk
-          antropologi og etiske vurderinger.
-        </p>
+
+        <h3>GUD OG SKAPELSEN</h3>
+        <ul>
+          <li>
+            <Link href="/temaer/apologetikk/artikler/den-forste-arsaken">
+              <strong>Den første årsaken</strong>
+            </Link>
+          </li>
+          <li>
+            <Link href="/temaer/apologetikk/artikler/evolusjonen-ubekreftet">
+              <strong>Evolusjonen – ubekreftet</strong>
+            </Link>
+          </li>
+        </ul>
+
+        <h3>BIBELEN OG TROVERDIGHET</h3>
+        <ul>
+          <li>
+            <Link href="/temaer/apologetikk/artikler/bibelen-og-koranen-i-rettens-lys">
+              <strong>Bibelen og Koranen i rettens lys</strong>
+            </Link>
+          </li>
+        </ul>
+
+        <h3>ISLAM OG KORANEN</h3>
+        <ul>
+          <li>
+            <Link href="/temaer/apologetikk/artikler/det-islamske-dilemmaet">
+              <strong>Det islamske dilemmaet</strong>
+            </Link>
+          </li>
+          <li>
+            <Link href="/temaer/apologetikk/artikler/hva-er-en-mushaf">
+              <strong>Hva er en mushaf?</strong>
+            </Link>
+          </li>
+          <li>
+            <Link href="/temaer/apologetikk/artikler/muslimske-innvendinger">
+              <strong>De viktigste muslimske innvendingene</strong>
+            </Link>
+          </li>
+          <li>
+            <Link href="/temaer/apologetikk/artikler/slaveri-og-rase-i-islam">
+              <strong>Slaveri og rase i islam</strong>
+            </Link>
+          </li>
+          <li>
+            <Link href="/temaer/apologetikk/artikler/koranen-teksthistorie">
+              <strong>Koranens teksthistorie</strong>
+            </Link>
+          </li>
+          <li>
+            <Link href="/temaer/apologetikk/artikler/laerer-koranen-kjaerlighet">
+              <strong>Lærer Koranen kjærlighet?</strong>
+            </Link>
+          </li>
+          <li>
+            <Link href="/temaer/apologetikk/artikler/jesus-i-koranen">
+              <strong>Jesus i Koranen</strong>
+            </Link>
+          </li>
+        </ul>
 
         <ComingSoon>Flere artikler om apologetikk kommer snart.</ComingSoon>
       </ArticleLayout>

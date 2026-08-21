@@ -11,7 +11,7 @@ const NAV_ITEMS = [
   { href: "/temaer", label: "Utforsk temaer" },
   { href: "/temaer/ressurser", label: "Ressurser" },
   { href: "/artikler", label: "Artikler" },
-  { href: "/veien-til-jesus/kom-til-kristus", label: "Veien til Jesus" },
+  { href: "/veien-til-jesus", label: "Veien til Jesus" },
   { href: "/om-meg", label: "Om meg" },
 ];
 

@@ -44,7 +44,7 @@ export function Hero() {
           </div>
 
           <Link
-            href="/veien-til-jesus/kom-til-kristus"
+            href="/veien-til-jesus"
             className="flex w-full max-w-[340px] items-center gap-6 self-center justify-self-start rounded-[20px] bg-white p-8 text-ink shadow-[0_20px_50px_rgba(0,0,0,.25)] max-[1100px]:mx-auto max-[1100px]:w-full max-[1100px]:justify-self-center"
           >
             <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-gold/[.12] text-gold">
