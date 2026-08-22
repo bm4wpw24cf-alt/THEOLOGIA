@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/eirikstoresletten/Projects/konservativt-politikk/**)",
+      "Bash(npm install *)",
+      "Bash(cd /Users/eirikstoresletten/Projects/konservativt-politikk && find . -maxdepth 2 -not -path \"./node_modules*\" -not -path \"./.git*\" | sort)",
+      "Bash(grep -n \"^## Kapittel 11\\\\|^## Kapittel 12\" /Users/eirikstoresletten/Projects/konservativt-politikk/docs/innholdskartlegging.md | head -5)",
+      "Read(//Users/eirikstoresletten/Projects/konservativt-politikk/docs/**)"
+    ],
+    "additionalDirectories": [
+      "/Users/eirikstoresletten/Projects/konservativt-politikk/content/politikk/chapters"
+    ]
+  }
+}

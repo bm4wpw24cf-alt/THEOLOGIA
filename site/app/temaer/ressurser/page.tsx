@@ -5,6 +5,8 @@ import { Cormorant_Garamond } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Icon } from "@/components/icons/Icon";
+import { StudyToolsGrid } from "@/components/resources/StudyToolsGrid";
+import { videoCategories } from "@/lib/videoCategories";
 
 /**
  * Ressurser-huben (temaer/ressurser/index.html) er et bevisst spesialtilfelle,
@@ -34,6 +36,15 @@ const STUDY_CHAPTERS = [
   { label: "«Og hun fødte … et guttebarn»", live: true },
   { label: "Den hellige stad – Det nye Jerusalem" },
 ];
+
+const THEOLOGICAL_SITES = [
+  { label: "Ligonier", href: "https://www.ligonier.org/" },
+  { label: "Monergism", href: "https://www.monergism.com/" },
+  { label: "GotQuestions", href: "https://www.gotquestions.org/" },
+  { label: "BibleProject", href: "https://bibleproject.com/" },
+  { label: "Bibelselskapet", href: "https://bibel.no/" },
+];
+
 
 function ResourceCoverImage({ src, alt }: { src: string; alt: string }) {
   return (
@@ -340,37 +351,46 @@ export default function RessurserPage() {
                 aria-labelledby="videos-title"
                 className="grid grid-cols-[285px_minmax(0,1fr)_74px] items-stretch gap-[18px] rounded-radius-sm border border-border bg-white p-[16px_18px] max-[1000px]:grid-cols-[245px_minmax(0,1fr)] max-[700px]:block max-[700px]:p-5"
               >
-                <div className="flex items-center gap-[17px] border-r border-border pr-[17px] max-[700px]:border-0 max-[700px]:pr-0 max-[700px]:pb-[18px]">
+                <Link
+                  href="/temaer/ressurser/videoer"
+                  className="group flex items-center gap-[17px] border-r border-border pr-[17px] transition-colors duration-200 max-[700px]:border-0 max-[700px]:pr-0 max-[700px]:pb-[18px] focus-visible:rounded focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold"
+                >
                   <span className="grid h-[58px] w-[58px] flex-none place-items-center rounded-full bg-[#faf8f3] p-[17px] text-navy">
                     <Icon name="video" className="h-full w-full" />
                   </span>
                   <div>
-                    <h2 id="videos-title" className="mb-[5px] text-[1.28rem] text-navy">
+                    <h2 id="videos-title" className="mb-[5px] text-[1.28rem] text-navy transition-colors duration-200 group-hover:text-gold">
                       Videoer
                     </h2>
                     <p className="text-[.7rem] leading-[1.55] text-text-light">Bibelundervisning, konferanser, debatter og dokumentarer.</p>
                   </div>
-                </div>
+                </Link>
 
                 <div className="grid min-w-0 grid-cols-4 items-center gap-4 max-[700px]:mt-1 max-[700px]:grid-cols-2 max-[700px]:gap-[14px]">
-                  {[
-                    { label: "Bibelundervisning", sub: "(undervisningsserier)", pos: "center" },
-                    { label: "Konferanser", sub: "og taler", pos: "75% center" },
-                    { label: "Apologetikk", sub: "og debatter", pos: "40% 40%" },
-                    { label: "Dokumentarer", sub: "og intervjuer", pos: "90% bottom" },
-                  ].map((v) => (
-                    <a key={v.label} href="#videos-title" className="min-w-0 text-[.66rem] leading-[1.25] text-text">
-                      <span
-                        className="relative grid h-[61px] place-items-center overflow-hidden rounded-[4px] bg-navy bg-[linear-gradient(130deg,rgba(255,255,255,.08),transparent_55%),url('/images/hero/hero-bible.jpg')] bg-cover max-[700px]:h-[82px]"
-                        style={{ backgroundPosition: v.pos }}
-                      >
-                        <span className="absolute inset-0 bg-[rgba(5,13,23,.3)]" aria-hidden="true" />
-                        <Icon name="video" className="relative z-10 h-[17px] w-[17px] text-white drop-shadow-[0_1px_4px_rgba(0,0,0,.7)]" />
-                      </span>
-                      <strong className="mt-1.5 block truncate text-[.64rem] text-ink">{v.label}</strong>
-                      <small className="block truncate text-[.61rem] text-text-light">{v.sub}</small>
-                    </a>
-                  ))}
+                  {videoCategories.map((v) => {
+                    const thumbnail = (
+                      <>
+                        <span
+                          className="relative grid h-[61px] place-items-center overflow-hidden rounded-[4px] bg-navy bg-[linear-gradient(130deg,rgba(255,255,255,.08),transparent_55%),url('/images/hero/hero-bible.jpg')] bg-cover max-[700px]:h-[82px]"
+                          style={{ backgroundPosition: v.backgroundPosition }}
+                        >
+                          <span className="absolute inset-0 bg-[rgba(5,13,23,.3)]" aria-hidden="true" />
+                          <Icon name="video" className="relative z-10 h-[17px] w-[17px] text-white drop-shadow-[0_1px_4px_rgba(0,0,0,.7)]" />
+                        </span>
+                        <strong className="mt-1.5 block truncate text-[.64rem] text-ink">{v.label}</strong>
+                        <small className="block truncate text-[.61rem] text-text-light">{v.sub}</small>
+                      </>
+                    );
+                    return v.href.startsWith("#") ? (
+                      <a key={v.label} href={v.href} className="min-w-0 text-[.66rem] leading-[1.25] text-text">
+                        {thumbnail}
+                      </a>
+                    ) : (
+                      <Link key={v.label} href={v.href} className="min-w-0 text-[.66rem] leading-[1.25] text-text">
+                        {thumbnail}
+                      </Link>
+                    );
+                  })}
                 </div>
 
                 <a href="#videos-title" className="hidden self-center text-[.7rem] font-semibold whitespace-nowrap text-gold-dark max-[1000px]:block max-[1000px]:col-span-2 max-[1000px]:justify-self-end max-[700px]:mt-[18px]">
@@ -444,12 +464,54 @@ export default function RessurserPage() {
                 </a>
               </section>
 
-              {/* STUDIEVERKTØY */}
+              {/* TEOLOGISKE NETTSTEDER */}
               <section
-                aria-labelledby="tools-title"
-                className="grid grid-cols-[285px_minmax(0,1fr)_74px] items-stretch gap-[18px] rounded-radius-sm border border-border bg-white p-[16px_18px] max-[1000px]:grid-cols-[245px_minmax(0,1fr)] max-[700px]:block max-[700px]:p-5"
+                aria-labelledby="theological-sites-title"
+                className="grid grid-cols-[285px_minmax(0,1fr)] items-stretch gap-[18px] rounded-radius-sm border border-border bg-white p-[16px_18px] max-[700px]:block max-[700px]:p-5"
               >
                 <div className="flex items-center gap-[17px] border-r border-border pr-[17px] max-[700px]:border-0 max-[700px]:pr-0 max-[700px]:pb-[18px]">
+                  <span className="grid h-[58px] w-[58px] flex-none place-items-center rounded-full bg-[#faf8f3] p-[17px] text-navy">
+                    <Icon name="globe" className="h-full w-full" />
+                  </span>
+                  <div>
+                    <h2 id="theological-sites-title" className="mb-[5px] text-[1.28rem] text-navy">
+                      Teologiske nettsteder
+                    </h2>
+                    <p className="text-[.7rem] leading-[1.55] text-text-light">
+                      Nettsteder og plattformer med teologisk, bibelsk og apologetisk undervisning.
+                    </p>
+                  </div>
+                </div>
+
+                <ul
+                  aria-label="Teologiske nettsteder"
+                  className="grid min-w-0 grid-cols-5 gap-2.5 max-[1000px]:grid-cols-3 max-[700px]:mt-1 max-[700px]:grid-cols-2 max-[700px]:gap-[14px]"
+                >
+                  {THEOLOGICAL_SITES.map((site) => (
+                    <li key={site.href}>
+                      <a
+                        href={site.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex h-full items-center gap-2 rounded-[6px] border border-border p-[10px_12px] text-[.72rem] font-semibold text-ink transition-all duration-200 hover:-translate-y-0.5 hover:border-gold/35 hover:bg-parchment hover:text-gold hover:shadow-sm"
+                      >
+                        <Icon name="globe" className="h-[15px] w-[15px] shrink-0 text-gold" />
+                        <span className="min-w-0 truncate">{site.label}</span>
+                        <span
+                          aria-hidden="true"
+                          className="ml-auto text-[.9rem] leading-none text-gold transition-transform duration-200 group-hover:translate-x-1"
+                        >
+                          ›
+                        </span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+
+              {/* STUDIEVERKTØY */}
+              <section aria-labelledby="tools-title" className="rounded-radius-sm border border-border bg-white p-[16px_18px] max-[700px]:p-5">
+                <div className="mb-5 flex items-center gap-[17px]">
                   <span className="grid h-[58px] w-[58px] flex-none place-items-center rounded-full bg-[#faf8f3] p-[17px] text-navy">
                     <Icon name="books" className="h-full w-full" />
                   </span>
@@ -457,43 +519,13 @@ export default function RessurserPage() {
                     <h2 id="tools-title" className="mb-[5px] text-[1.28rem] text-navy">
                       Studieverktøy
                     </h2>
-                    <p className="text-[.7rem] leading-[1.55] text-text-light">Kart, tidslinjer, bibelordbøker, leseplaner og oversikter.</p>
+                    <p className="text-[.7rem] leading-[1.55] text-text-light">
+                      Nyttige digitale verktøy for bibelstudium, originalspråk og teologisk forskning.
+                    </p>
                   </div>
                 </div>
 
-                <div aria-label="Studieverktøy" className="grid min-w-0 grid-cols-4 items-center gap-[13px] max-[700px]:mt-1 max-[700px]:grid-cols-2 max-[700px]:gap-[14px]">
-                  <a href="#tools-title" className="text-center text-[1.25rem] leading-[.88] font-bold text-[#3d5c87]">
-                    STEP
-                    <br />
-                    <small className="text-[0.65em] font-medium">Bible</small>
-                  </a>
-                  <a href="#tools-title" className="text-center text-[.88rem] leading-[.88] font-bold text-[#347ec3]">
-                    ◒ Bible Hub
-                  </a>
-                  <a href="#tools-title" className="text-center text-[.78rem] leading-[.88] font-bold text-[#1d3a67]">
-                    ▰ Blue Letter
-                    <br />
-                    Bible
-                  </a>
-                  <a href="#tools-title" className="text-center text-[.8rem] leading-[.88] font-bold text-[#15365d]">
-                    ▰ BibleProject
-                  </a>
-                </div>
-
-                <a
-                  href="#tools-title"
-                  className="flex flex-col items-center justify-center gap-[7px] rounded-[6px] bg-[#faf8f3] p-[10px_4px] text-center text-[.62rem] text-gold-dark max-[1000px]:hidden"
-                >
-                  <Icon name="books" className="h-5 w-5" />
-                  <span>
-                    Flere
-                    <br />
-                    verktøy
-                  </span>
-                </a>
-                <a href="#tools-title" className="hidden self-center text-[.7rem] font-semibold whitespace-nowrap text-gold-dark max-[1000px]:block max-[1000px]:col-span-2 max-[1000px]:justify-self-end max-[700px]:mt-[18px]">
-                  Se alle verktøy <span aria-hidden="true">→</span>
-                </a>
+                <StudyToolsGrid />
               </section>
             </div>
 

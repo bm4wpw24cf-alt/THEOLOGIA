@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ArticleLayout } from "@/components/articles/ArticleLayout";
 import { Icon } from "@/components/icons/Icon";
 import { getArticleBySlug } from "@/lib/articles";
+import { GiscusComments } from "./GiscusComments";
 import ErEvigBevisstPineBibelskContent from "@/content/articles/er-evig-bevisst-pine-bibelsk.mdx";
 import styles from "@/components/articles/article.module.css";
 
@@ -118,6 +119,17 @@ export default function ErEvigBevisstPineBibelskPage() {
           </p>
         </div>
       </ArticleLayout>
+
+      <section id="kommentarer" className="bg-parchment-dark py-[120px]">
+        <div className="mx-auto w-[min(1280px,92%)]">
+          <div className="mb-11 text-left">
+            <h2 className="mb-4 text-[2.6rem]">Kommentarer</h2>
+            <p className="text-[1.08rem] text-text-light">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+          </div>
+
+          <GiscusComments />
+        </div>
+      </section>
     </main>
   );
 }

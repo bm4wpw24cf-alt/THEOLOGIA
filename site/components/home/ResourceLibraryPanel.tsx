@@ -10,19 +10,23 @@ export interface ResourceLink {
 const RESOURCES: ResourceLink[] = [
   { icon: "users", label: "Studiegrupper", href: "/temaer/ressurser/studiegrupper" },
   { icon: "book", label: "Gratis kristne bøker", href: "/temaer/ressurser/boker" },
-  { icon: "video", label: "Videoer", href: "/ressurser/videoer/" },
+  { icon: "video", label: "Videoer", href: "/temaer/ressurser/videoer" },
   { icon: "podcast", label: "Podkaster", href: "/ressurser/podkaster/" },
-  { icon: "globe", label: "Nettressurser", href: "/ressurser/nettressurser/" },
-  { icon: "tools", label: "Studieverktøy", href: "/ressurser/studieverktoy/" },
+  { icon: "globe", label: "Teologiske nettsteder", href: "/temaer/ressurser#theological-sites-title" },
+  { icon: "tools", label: "Studieverktøy", href: "/temaer/ressurser/studieverktoy" },
 ];
 
 /**
  * Portert fra index.html sin .featured/.featured-panel/.resource-list
- * (css/cards.css "13. FEATURED / MÅNEDENS TEMA"). De fire siste lenkene
- * ("Videoer", "Podkaster", "Nettressurser", "Studieverktøy") peker til
- * absolutte "/ressurser/..."-stier som ikke finnes noe sted i det
- * eksisterende prosjektet – dette er allerede slik i originalen, ikke
- * noe denne migreringen skal finne opp en destinasjon for.
+ * (css/cards.css "13. FEATURED / MÅNEDENS TEMA"). "Podkaster" peker
+ * fortsatt til en absolutt "/ressurser/..."-sti som ikke finnes noe
+ * sted i det eksisterende prosjektet – dette er allerede slik i
+ * originalen, ikke noe denne migreringen skal finne opp en destinasjon
+ * for. De øvrige har alle en faktisk destinasjon: "Teologiske
+ * nettsteder" (tidligere "Nettressurser") peker til
+ * #theological-sites-title-seksjonen på /temaer/ressurser,
+ * "Studieverktøy" til /temaer/ressurser/studieverktoy, og "Videoer" til
+ * /temaer/ressurser/videoer.
  */
 export function ResourceLibraryPanel() {
   return (
