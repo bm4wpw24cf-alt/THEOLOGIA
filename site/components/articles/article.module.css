@@ -277,6 +277,34 @@
   margin-top: 0;
 }
 
+/* Bunn-navigasjon (forrige/oversikt/neste del) for flerdelte serier,
+   f.eks. "Omvendelse fra døde gjerninger". Samme gull-hover-språk som
+   resten av artikkelsystemet (.articleCategory, .boxTitle osv.). */
+
+.partNavLink,
+.partNavLinkMuted {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.partNavLink {
+  color: var(--gold-dark);
+}
+
+.partNavLink:hover {
+  color: var(--gold);
+}
+
+.partNavLinkMuted {
+  color: var(--text-light);
+}
+
+.partNavLinkMuted:hover {
+  color: var(--gold);
+}
+
 /* Tabeller i artikkeltekst, portert fra samme kildes "table.contrast".
    Skrollbar wrapper rundt selve tabellen holder layouten intakt på mobil
    uten å klippe innhold (jf. designstandardens krav om lesbare tabeller). */

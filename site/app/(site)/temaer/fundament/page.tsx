@@ -23,7 +23,7 @@ const TOPICS: Topic[] = [
     icon: "path",
     title: "Omvendelse fra døde gjerninger",
     description: "Et oppgjør med gjerninger uten liv, og et bevisst vendepunkt mot et liv i samsvar med Guds vilje.",
-    href: "#",
+    href: "/temaer/fundament/artikler/omvendelse-fra-dode-gjerninger",
     cta: "Les mer",
   },
   {
