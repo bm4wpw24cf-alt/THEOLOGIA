@@ -36,8 +36,9 @@ const TOPICS: Topic[] = [
   {
     icon: "cross",
     title: "Dåp i vann",
-    description: "Et synlig vitnesbyrd om at den troende er begravet og oppreist med Kristus til et nytt liv.",
-    href: "/temaer/fundament/artikler/dap-i-vann",
+    description:
+      "Artikler om dåp i vann, dåpens betydning og spørsmålet om dåpen er en nødvendig del av den nytestamentlige frelsesresponsen.",
+    href: "/temaer/fundament/dap-i-vann",
     cta: "Les mer",
   },
   {

@@ -137,12 +137,12 @@ export default function RessurserPage() {
                   ))}
                 </ul>
 
-                <a
-                  href="#study-groups"
+                <Link
+                  href="/temaer/ressurser/studiegrupper"
                   className="inline-flex items-center gap-2.5 rounded-full bg-gold px-6 py-3 text-[.78rem] font-semibold tracking-[1px] text-white uppercase transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold-dark"
                 >
                   Åpne studiet <span aria-hidden="true">→</span>
-                </a>
+                </Link>
               </div>
 
               <aside aria-labelledby="study-outline-title" className="self-stretch rounded-radius-sm border border-border bg-white p-5 max-[1000px]:col-span-2 max-[700px]:col-span-1">

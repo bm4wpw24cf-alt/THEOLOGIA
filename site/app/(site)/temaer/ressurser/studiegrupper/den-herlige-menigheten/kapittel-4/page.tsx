@@ -13,8 +13,6 @@ export const metadata: Metadata = {
 };
 
 const OVERVIEW_HREF = "/temaer/ressurser/studiegrupper/den-herlige-menigheten";
-const CH3_HREF = `${OVERVIEW_HREF}/kapittel-3`;
-const CH5_HREF = `${OVERVIEW_HREF}/kapittel-5`;
 
 export default function Kapittel4Page() {
   return (
@@ -166,81 +164,11 @@ export default function Kapittel4Page() {
             {/* Sidebar */}
             <aside className="sticky top-[116px] flex flex-col gap-5 max-[1100px]:static">
               <ZoomGroupModal />
-
-              <div className="rounded-radius border border-border bg-white p-7 shadow-sm">
-                <div className="mb-3.5 flex items-center gap-3">
-                  <Icon name="comment" aria-hidden="true" className="h-[22px] w-[22px] flex-none text-gold" />
-                  <h3 className="mb-0 font-serif text-[1.05rem] font-semibold text-ink">Kommentarer</h3>
-                </div>
-                <p className="mb-4.5 font-sans text-[.92rem] leading-[1.6] text-text">Del dine tanker om dette kapitlet med andre.</p>
-                <a
-                  href="#commentary"
-                  className="inline-flex w-full items-center justify-center gap-2.5 rounded-full border border-gold bg-transparent px-6 py-4 text-[.88rem] font-semibold tracking-[1px] text-gold-dark uppercase transition-all duration-200 hover:-translate-y-0.5 hover:bg-parchment"
-                >
-                  Åpne kommentarfeltet
-                </a>
-              </div>
             </aside>
           </div>
         </div>
       </section>
 
-      {/* RELATERTE RESSURSER */}
-      <section className="border-t border-border py-[90px]">
-        <div className="mx-auto w-[min(1280px,92%)]">
-          <header className="mb-11 text-left">
-            <span className="mb-3.5 inline-block font-sans text-[.76rem] font-bold tracking-[2.4px] text-gold uppercase">VIDERE STUDIUM</span>
-            <h2 className="text-[2.6rem]">Relaterte ressurser</h2>
-          </header>
-
-          {/* Ressurskort uten tittel/beskrivelse er bevisst i original (se kildekommentar):
-              ingen konkrete kort finnes ennå å gjenbruke, så strukturen står klar uten
-              oppdiktet tekst i stedet for å finne på titler/beskrivelser. */}
-          <div className="grid grid-cols-4 gap-6 max-[1100px]:grid-cols-2 max-[720px]:grid-cols-1">
-            {(["books", "video", "document"] as const).map((icon, i) => (
-              <article
-                key={icon}
-                className="rounded-radius border border-border bg-white p-[30px] shadow-sm transition-[transform,box-shadow] duration-300 hover:-translate-y-1.5 hover:shadow-lg"
-              >
-                <span className={`mb-5 flex h-12 w-12 items-center justify-center rounded-full text-white ${i % 2 === 1 ? "bg-gold" : "bg-navy"}`}>
-                  <Icon name={icon} aria-hidden="true" className="h-5 w-5" />
-                </span>
-                <h3 className="mb-2.5 text-[1.1rem]" />
-                <p className="mb-4.5 font-sans text-[.9rem] leading-[1.6]" />
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* KAPITTELNAVIGASJON */}
-      <section className="pt-0 pb-[100px]">
-        <div className="mx-auto w-[min(1280px,92%)]">
-          <nav className="grid grid-cols-[1fr_1.4fr_1fr] gap-5 max-[720px]:grid-cols-1">
-            <Link
-              href={CH3_HREF}
-              aria-disabled="true"
-              tabIndex={-1}
-              className="pointer-events-none relative flex flex-col justify-center rounded-radius border border-border bg-white p-[30px_34px] opacity-60"
-            >
-              <span className="mb-1.5 font-sans text-[.78rem] font-bold tracking-[1px] text-gold-dark uppercase">← Forrige</span>
-              <strong className="font-serif text-[1.3rem] font-semibold text-ink">Kapittel 3</strong>
-            </Link>
-
-            <div />
-
-            <Link
-              href={CH5_HREF}
-              aria-disabled="true"
-              tabIndex={-1}
-              className="pointer-events-none relative flex flex-col items-end justify-center rounded-radius border border-border bg-white p-[30px_34px] text-right opacity-60 max-[720px]:items-start max-[720px]:text-left"
-            >
-              <span className="mb-1.5 font-sans text-[.78rem] font-bold tracking-[1px] text-gold-dark uppercase">Neste →</span>
-              <strong className="font-serif text-[1.3rem] font-semibold text-ink">Kapittel 5</strong>
-            </Link>
-          </nav>
-        </div>
-      </section>
     </main>
   );
 }

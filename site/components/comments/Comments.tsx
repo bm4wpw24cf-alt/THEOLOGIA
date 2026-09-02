@@ -4,13 +4,17 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 /**
- * Kommentarfelt for artikler. Erstatter den tidligere Giscus-integrasjonen.
+ * Kommentarfelt for artikler og studiesider. Erstatter den tidligere
+ * Giscus-integrasjonen.
  *
  * - Henter godkjente kommentarer fra `/api/comments` (lagres i Postgres).
  * - Nye kommentarer sendes til samme endepunkt og lagres som «venter på
  *   godkjenning» – de vises ikke før en moderator godkjenner dem.
- * - Artikkelen identifiseres av `usePathname()` (samme nøkkel som Giscus
- *   sin `pathname`-mapping brukte).
+ * - Siden identifiseres normalt av `usePathname()` (samme nøkkel som Giscus
+ *   sin `pathname`-mapping brukte). En eksplisitt `article`-prop kan sendes
+ *   inn når komponenten gjenbrukes i en annen kontekst (f.eks. et
+ *   utvidbart kommentarpanel på studiesidene) – nøkkelen forblir da
+ *   robust knyttet til riktig kapittel/URL.
  */
 
 type Comment = {
@@ -35,8 +39,9 @@ const dateFormatter = new Intl.DateTimeFormat("nb-NO", {
   year: "numeric",
 });
 
-export function Comments() {
+export function Comments({ article }: { article?: string } = {}) {
   const pathname = usePathname();
+  const articleKey = article ?? pathname;
   const [comments, setComments] = useState<Comment[]>([]);
   const [loadState, setLoadState] = useState<"loading" | "loaded" | "error">("loading");
   const [submit, setSubmit] = useState<SubmitState>({ status: "idle" });
@@ -46,7 +51,7 @@ export function Comments() {
 
   const loadComments = useCallback(async () => {
     try {
-      const res = await fetch(`/api/comments?article=${encodeURIComponent(pathname)}`, {
+      const res = await fetch(`/api/comments?article=${encodeURIComponent(articleKey)}`, {
         cache: "no-store",
       });
       if (!res.ok) throw new Error("bad status");
@@ -56,7 +61,7 @@ export function Comments() {
     } catch {
       setLoadState("error");
     }
-  }, [pathname]);
+  }, [articleKey]);
 
   useEffect(() => {
     // Henter kommentarer når komponenten monteres / stien endres. All
@@ -86,7 +91,7 @@ export function Comments() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          article: pathname,
+          article: articleKey,
           author: trimmedAuthor,
           body: trimmedBody,
           website: honeypotRef.current?.value ?? "",

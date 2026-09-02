@@ -3,13 +3,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Icon } from "@/components/icons/Icon";
+import { chapterHref, studyChapters } from "@/lib/denHerligeMenigheten";
 
 export const metadata: Metadata = {
   title: "Den herlige menigheten – Studieoversikt | THEOLOGIA",
   description: "Studieoversikt for «Den herlige menigheten» av Watchman Nee. Se alle kapitler og fortsett der du slapp.",
 };
-
-const BASE = "/temaer/ressurser/studiegrupper/den-herlige-menigheten";
 
 /**
  * Erstatter js/study-overview.js: originalen leser .book-toc (DOM) i
@@ -24,16 +23,20 @@ interface Chapter {
   title: string;
   description: string;
   href: string;
-  status: "done" | "active" | "upcoming";
+  /**
+   * done / active = publisert studieside. coming-soon = kapitlet finnes i boken,
+   * men studiesiden er ikke publisert ennå (klikkbar, egen "kommer senere"-side).
+   * upcoming = ikke klikkbar (reservert for evt. kapitler utover boken).
+   */
+  status: "done" | "active" | "coming-soon" | "upcoming";
 }
 
-const CHAPTERS: Chapter[] = [
-  { title: "Kapittel 1", description: "Guds plan og Guds hvile", href: `${BASE}/kapittel-1`, status: "done" },
-  { title: "Kapittel 2", description: "Eva – et forbilde på menigheten", href: `${BASE}/kapittel-2`, status: "done" },
-  { title: "Kapittel 3", description: "Kristi kropp og Kristi brud", href: `${BASE}/kapittel-3`, status: "done" },
-  { title: "Kapittel 4", description: "«Og hun fødte … et guttebarn»", href: `${BASE}/kapittel-4`, status: "active" },
-  { title: "Kapittel 5", description: "Den hellige stad – Det nye Jerusalem", href: `${BASE}/kapittel-5`, status: "upcoming" },
-];
+const CHAPTERS: Chapter[] = studyChapters.map((chapter) => ({
+  title: chapter.title,
+  description: chapter.description,
+  href: chapterHref(chapter.slug),
+  status: chapter.status,
+}));
 
 const activeIndex = CHAPTERS.findIndex((c) => c.status === "active");
 const total = CHAPTERS.length;
@@ -45,7 +48,8 @@ const nextChapter = CHAPTERS[activeIndex + 1];
 
 function PaginationCard({ chapter, label, align }: { chapter?: Chapter; label: string; align?: "end" }) {
   if (!chapter) return <div />;
-  const disabled = chapter.status !== "active";
+  // Kun kommende kapitler er deaktivert; fullførte og aktive er klikkbare.
+  const disabled = chapter.status === "upcoming";
   return (
     <Link
       href={chapter.href}
@@ -161,7 +165,10 @@ export default function DenHerligeMenighetenPage() {
             {CHAPTERS.map((chapter) => {
               const isActive = chapter.status === "active";
               const isDone = chapter.status === "done";
-              const disabled = !isActive;
+              const isComingSoon = chapter.status === "coming-soon";
+              const isPublished = isDone || isActive;
+              // Publiserte og "kommer senere"-kapitler er klikkbare; kun upcoming er deaktivert.
+              const disabled = chapter.status === "upcoming";
 
               return (
                 <Link
@@ -181,7 +188,7 @@ export default function DenHerligeMenighetenPage() {
                   <span
                     aria-hidden="true"
                     className={`flex h-8 w-8 flex-none items-center justify-center rounded-full border-2 text-[.8rem] font-bold ${
-                      isDone || isActive ? "border-gold bg-gold text-white" : "border-border text-text-light"
+                      isPublished ? "border-gold bg-gold text-white" : "border-border text-text-light"
                     }`}
                   >
                     {isDone ? "✓" : isActive ? "▶" : "○"}
@@ -191,6 +198,16 @@ export default function DenHerligeMenighetenPage() {
                     {isActive && (
                       <span className="mb-2 inline-block rounded-full bg-gold px-2.5 py-[3px] font-sans text-[.68rem] font-bold tracking-[1px] text-white uppercase">
                         Aktivt
+                      </span>
+                    )}
+                    {isDone && (
+                      <span className="mb-2 inline-block rounded-full border border-gold/45 px-2.5 py-[3px] font-sans text-[.68rem] font-bold tracking-[1px] text-gold-dark uppercase">
+                        Publisert
+                      </span>
+                    )}
+                    {isComingSoon && (
+                      <span className="mb-2 inline-block rounded-full bg-parchment-dark px-2.5 py-[3px] font-sans text-[.68rem] font-bold tracking-[1px] text-text-light uppercase">
+                        Kommer senere
                       </span>
                     )}
                     <strong className="block font-sans text-[.78rem] font-semibold tracking-[.4px] text-gold-dark uppercase">{chapter.title}</strong>
