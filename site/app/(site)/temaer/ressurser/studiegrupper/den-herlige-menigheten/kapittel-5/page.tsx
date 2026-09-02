@@ -94,7 +94,7 @@ export default function Kapittel5Page() {
           <div className="grid grid-cols-[1fr_340px] items-start gap-10 max-[1100px]:grid-cols-1">
             {/* Hovedspalte */}
             <div className="flex flex-col gap-5">
-              <AccordionSection icon="document" title="Presentasjon" description="Introduksjon til kapittel 5" defaultOpen>
+              <AccordionSection icon="document" title="Presentasjon" description="Introduksjon til kapittel 5">
                 <h3>Introduksjon til kapittel 5</h3>
                 <p>
                   Kapittel 5 fører studiet fram til målet. Etter å ha fulgt menigheten fra Guds plan i begynnelsen,
@@ -478,39 +478,422 @@ export default function Kapittel5Page() {
                 </SubAccordion>
               </AccordionSection>
 
-              <AccordionSection iconText="?" title="Studiespørsmål" description="Seks spørsmål for refleksjon og gruppesamtale" count={6}>
-                <ol className="m-0 flex list-decimal flex-col gap-4 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+              <AccordionSection iconText="?" title="Studiespørsmål" description="Velg sideområde · refleksjon og gruppesamtale" count={10}>
+                <SubAccordion title="Side 102–103 · Den hellige stad, Det nye Jerusalem">
+
+                <h3>1. Det nye Jerusalem og begynnelsen i 1. Mosebok</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
                   <li>
-                    Bibelen begynner i en hage og ender i en by. Hva sier det om Guds hensikt at endepunktet er et
-                    helt folk som bor sammen med Gud, og ikke bare enkeltmennesker som er reddet? Les 1. Mosebok 2–3
-                    og Åpenbaringen 21–22 ved siden av hverandre.
+                    Hvilke likheter finner teksten mellom <strong>1. Mosebok 1–3</strong> og{" "}
+                    <strong>Åpenbaringen 21–22</strong>?
                   </li>
+                  <li>Hva finner vi både i Eden og i Det nye Jerusalem når det gjelder livets tre og elven?</li>
+                  <li>Hvilke likheter nevnes når det gjelder gull, perle og kostelige steiner?</li>
                   <li>
-                    Engelen kaller den hellige stad for «bruden, Lammets hustru» (Åp 21,9–10). Hva forandrer det for
-                    din forståelse av menigheten at staden og bruden er samme virkelighet? På hvilke måter kan et
-                    fellesskap leve som «bosted» uten å leve som «brud»?
-                  </li>
-                  <li>
-                    Efeserne 5,25–27 sier at Kristus renser menigheten «ved vannbadet i Ordet» for å stille den fram
-                    «uten flekk eller rynke». Hvordan ser denne renselsen ut i praksis i et fellesskap i dag? Hva er
-                    vår del, og hva er Kristi del?
-                  </li>
-                  <li>
-                    Hebreerne 12,22 sier at de troende allerede «er kommet til … det himmelske Jerusalem». Hvordan
-                    kan denne nåværende virkeligheten prege måten vi møtes, tilber og bærer motgang på – uten at vi
-                    mister lengselen etter den fullendte staden?
-                  </li>
-                  <li>
-                    Babylon «opphøyer seg selv» (Åp 18,7); Det nye Jerusalem «kommer ned fra Gud» og bærer hans
-                    herlighet (Åp 21,2.11). Hvor kjenner du igjen «Babylons mønster» – jaget etter synlighet, tall
-                    eller innflytelse – i eget liv eller i kristent arbeid? Hvordan ser det motsatte ut?
-                  </li>
-                  <li>
-                    Jesus lovet at det fra den troendes indre skal «renne strømmer av levende vann» om Ånden (Joh
-                    7,38–39), og i staden renner elven fra tronen (Åp 22,1). Hva kan i praksis demme opp for dette
-                    livet i et fellesskap, og hva kan åpne for at det får strømme fritt?
+                    Hva er forskjellen mellom menneskets tilstand etter fallet i <strong>1. Mosebok 3</strong> og
+                    tilstanden i Det nye Jerusalem?
                   </li>
                 </ol>
+
+                <h3>2. Lammets hustru</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvem er Lammets hustru ifølge teksten?</li>
+                  <li>
+                    Hvorfor sier teksten at <strong>Det nye Jerusalem</strong> er Lammets hustru?
+                  </li>
+                  <li>Hva betyr det at Guds evige hensikt blir oppfylt i denne kvinnen?</li>
+                  <li>Hva forteller bildet av Lammets hustru oss om Guds mål med sitt folk?</li>
+                </ol>
+
+                <h3>3. De fire kvinnene</h3>
+                <p>Teksten presenterer fire kvinner:</p>
+                <ol className="m-0 mb-4 flex list-decimal flex-col gap-1.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>
+                    <strong>Eva</strong> – 1. Mosebok 2
+                  </li>
+                  <li>
+                    <strong>Hustruen/menigheten</strong> – Efeserne 5
+                  </li>
+                  <li>
+                    <strong>Kvinnen i visjonen</strong> – Åpenbaringen 12
+                  </li>
+                  <li>
+                    <strong>Lammets hustru</strong> – Åpenbaringen 21
+                  </li>
+                </ol>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvordan beskriver teksten forholdet mellom disse fire kvinnene?</li>
+                  <li>
+                    Hvorfor sier den at de egentlig er <strong>én kvinne</strong>?
+                  </li>
+                  <li>
+                    Hva menes med at historien hennes kan deles inn i <strong>fire stadier</strong>?
+                  </li>
+                  <li>Hvilket stadium representerer hver av de fire kvinnene?</li>
+                </ol>
+
+                <h3>4. Fra evighet til evighet</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>
+                    Hvilket stadium beskrives som den <strong>evige fortid</strong>?
+                  </li>
+                  <li>Hvilke to stadier finner sted mellom de to evighetene?</li>
+                  <li>
+                    Hvilket stadium beskrives som den <strong>evige fremtid</strong>?
+                  </li>
+                  <li>Hva viser disse fire stadiene om Guds gjerning fra evighet til evighet?</li>
+                </ol>
+
+                <h3>5. Menigheten og Kristus</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>
+                    Hvorfor knytter teksten <strong>Efeserne 5</strong> sammen med Lammets hustru i Åpenbaringen 21?
+                  </li>
+                  <li>Hva betyr det at menigheten blir «gjort i stand av Gud for Kristus»?</li>
+                  <li>Hvordan fremstilles forholdet mellom Kristus og menigheten i dette bildet?</li>
+                </ol>
+
+                <h3>6. Kvinnen i Åpenbaringen 12</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva skjer med kvinnen når hun blir forfulgt av den store dragen?</li>
+                  <li>Hvilken rolle har overvinnerne ifølge teksten?</li>
+                  <li>Hvordan skal kvinnen i Åpenbaringen 12 «introdusere» kvinnen i Åpenbaringen 21?</li>
+                  <li>
+                    Hva sier dette om sammenhengen mellom menighetens historie og dens endelige herliggjørelse?
+                  </li>
+                </ol>
+
+                <h3>7. Guds hensikt</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva er ifølge teksten Guds hensikt med kvinnen?</li>
+                  <li>
+                    Hva menes med at hun skal være en <strong>«rådende kvinne»</strong>?
+                  </li>
+                  <li>Hvilken rolle har Satans endelige nederlag i denne hensikten?</li>
+                  <li>Hva betyr det at Gud til slutt vil ha en hustru for Lammet?</li>
+                </ol>
+
+                <h3>8. Helheten</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>
+                    Hvorfor er det viktig å se de fire kvinnene som én helhet i stedet for bare å studere dem hver for
+                    seg?
+                  </li>
+                  <li>
+                    Hvordan beveger teksten seg fra{" "}
+                    <strong>Eva → menigheten → kvinnen i Åpenbaringen 12 → Lammets hustru</strong>?
+                  </li>
+                  <li>Hva viser denne utviklingen om Guds plan for mennesket og menigheten?</li>
+                  <li>
+                    Hva er hovedbudskapet i dette avsnittet om hvordan Guds hensikt til slutt blir fullbyrdet?
+                  </li>
+                </ol>
+
+                <h3>Fordypningsspørsmål</h3>
+                <ol
+                  start={9}
+                  className="m-0 flex list-decimal flex-col gap-4 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark"
+                >
+                  <li>
+                    Les <strong>1. Mosebok 2–3, Efeserne 5:25–32 og Åpenbaringen 21:1–10</strong>. Hvilke forbindelser
+                    mellom disse tekstene finner du?
+                  </li>
+                  <li>
+                    Teksten sier at de fire kvinnene «tilsynelatende er forskjellige når vi taler om dem atskilt», men
+                    at de er «den samme kvinnen når vi ser på dem som en helhet». Hvordan forstår du dette utsagnet?
+                  </li>
+                  <li>
+                    Hva kan vi lære av kontrasten mellom begynnelsen i <strong>Eden</strong> og avslutningen i{" "}
+                    <strong>Det nye Jerusalem</strong> om Guds evne til å fullføre sin hensikt til tross for menneskets
+                    fall?
+                  </li>
+                  <li>
+                    Hvis Åpenbaringen 21 viser kvinnen i hennes endelige tilstand, hva sier det om målet Gud har for
+                    menigheten?
+                  </li>
+                </ol>
+
+                <h3>Hovedspørsmål til samtale</h3>
+                <ol
+                  start={13}
+                  className="m-0 flex list-decimal flex-col gap-4 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark"
+                >
+                  <li>
+                    Når du ser hele utviklingen fra Eva til Lammets hustru:{" "}
+                    <strong>Hva mener du er det viktigste bildet teksten gir av Guds evige hensikt?</strong>
+                  </li>
+                </ol>
+                </SubAccordion>
+
+                <SubAccordion title="Side 103–117 · Babylons fall">
+
+                <h3>1. Babylon og den store skjøgen</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvilke to kvinner blir satt opp mot hverandre i Åpenbaringen 17 og 21?</li>
+                  <li>Hvilke forskjeller finner teksten mellom den store skjøgen og bruden?</li>
+                  <li>Hvorfor mener teksten at denne parallelle oppbygningen i Åpenbaringen hjelper oss til å forstå Guds hensikt?</li>
+                </ol>
+
+                <h3>2. Babels prinsipp</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva er forbindelsen mellom Babylon og Babels tårn?</li>
+                  <li>Hva er forskjellen mellom <strong>stein</strong>, som er laget av Gud, og <strong>murstein</strong>, som er laget av mennesker?</li>
+                  <li>Hva representerer mursteinen i tekstens forståelse av Babylon?</li>
+                  <li>Hva menes med menneskets forsøk på å bygge noe «fra jorden» som skal nå «til himmelen»?</li>
+                </ol>
+
+                <h3>3. Menneskelig kraft og Guds verk</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvordan beskriver teksten faren ved å bruke menneskelige evner i åndelige ting?</li>
+                  <li>Hvilke eksempler gir teksten på menneskelig dyktighet som kan bli «murstein»?</li>
+                  <li>Hvorfor sier teksten at himmelske ting bare kan komme fra himmelen?</li>
+                  <li>Hva lærer Babels tårn oss om menneskets begrensninger i åndelige spørsmål?</li>
+                </ol>
+
+                <h3>4. Den babylonske klesdrakten</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva skjedde med Akan da han så den babylonske klesdrakten?</li>
+                  <li>Hva mener teksten at den vakre klesdrakten symboliserer?</li>
+                  <li>Hvordan forbindes Akans synd med Ananias og Saffira?</li>
+                  <li>Hva betyr det å bruke en «klesdrakt» som ikke samsvarer med vår virkelige åndelige tilstand?</li>
+                </ol>
+
+                <h3>5. Hykleri og falsk åndelighet</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva beskrives som Babylons prinsipp?</li>
+                  <li>Hvorfor er ønsket om menneskers ære en fare for Guds barn?</li>
+                  <li>Hvordan kan falsk åndelighet komme til uttrykk i bønn, tjeneste eller menighetsliv?</li>
+                  <li>Hva betyr det å være en ekte person overfor Gud og mennesker?</li>
+                  <li>Hvordan står dette i kontrast til brudens holdning?</li>
+                </ol>
+
+                <h3>6. «Jeg sitter som dronning»</h3>
+                <p>Les <strong>Åpenbaringen 18:7</strong>.</p>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva uttrykker Babylons utsagn: «Jeg sitter som dronning, jeg er ingen enke»?</li>
+                  <li>Hva sier teksten om forholdet mellom Babylon og trofastheten mot Herren Jesus?</li>
+                  <li>Hvorfor beskrives dette som en fordervet kristenhet?</li>
+                </ol>
+
+                <h3>7. Luksus og menneskelige lyster</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvilket skille gjør teksten mellom å bruke materielle ting og å leve i luksus?</li>
+                  <li>Hva mener teksten med å leve etter <strong>behovets prinsipp</strong>?</li>
+                  <li>Hvordan skiller dette seg fra å leve etter sine lyster?</li>
+                  <li>Hvordan kan vi undersøke våre egne holdninger til materielle ting i lys av dette?</li>
+                </ol>
+
+                <h3>8. En blandet kristenhet</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva betyr det å blande det som er av mennesket med Guds Ord?</li>
+                  <li>Hva betyr det å blande det som er av kjødet med det som er av Ånden?</li>
+                  <li>Hvorfor beskrives Babylon som en «blandet og fordervet kristenhet»?</li>
+                  <li>Hvordan kan Guds folk skille mellom det som er fra Gud og det som bare ser åndelig ut?</li>
+                </ol>
+
+                <h3>9. «Kom ut fra henne»</h3>
+                <p>Les <strong>Åpenbaringen 18:4</strong> og <strong>2. Korinterbrev 6:17–18</strong>.</p>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva befaler Gud sitt folk å gjøre i møte med Babylon?</li>
+                  <li>Hva betyr det å komme ut fra noe som har Babylons karakter?</li>
+                  <li>Hvilke tre ting nevnes som kan bli blandet med Guds gjerning: menneskets kraft, menneskets evner og menneskets meninger?</li>
+                  <li>Hvorfor er det nødvendig å skille seg fra det som er urent?</li>
+                </ol>
+
+                <h3>10. Babylons dom</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva forteller Åpenbaringen 19:1–4 om Babylons endelige dom?</li>
+                  <li>Hvorfor beskrives det som en grunn til å rope «Halleluja»?</li>
+                  <li>Hva er forskjellen mellom den endelige dommen Gud skal utføre i fremtiden og den åndelige dommen Guds barn skal gjøre i dag?</li>
+                  <li>Hvorfor mener teksten at Guds folk må lære å hate Babylons prinsipp?</li>
+                </ol>
+
+                <h3>11. Babylon i oss</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva betyr det at ethvert område av vårt liv som ikke er fullstendig for Gud, kan beskrives som «Babylon»?</li>
+                  <li>Hvorfor trenger vi at Gud opplyser oss om slike områder?</li>
+                  <li>Hva innebærer det å dømme oss selv i Guds lys?</li>
+                  <li>Hvordan kan vi unngå å søke herlighet eller ære utenfor Kristus?</li>
+                </ol>
+
+                <h3>12. Lovprisningen i himmelen</h3>
+                <p>Les <strong>Åpenbaringen 19:5–6</strong>.</p>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva kunngjøres fra tronen?</li>
+                  <li>Hvordan beskrives responsen fra den store skaren?</li>
+                  <li>Hvorfor er det ikke først og fremst vår egen belønning eller vår egen regjering som er grunnen til lovprisningen?</li>
+                  <li>Hva betyr det at Herren vår Gud, Den Allmektige, hersker som konge?</li>
+                </ol>
+
+                <h3>13. Gud regjerer – Kristus regjerer</h3>
+                <p>Les <strong>Åpenbaringen 11:15</strong> og <strong>19:6</strong>.</p>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvordan forklarer teksten forholdet mellom Guds rike og Kristi rike?</li>
+                  <li>Hva betyr det at når Gud regjerer, så regjerer Kristus?</li>
+                  <li>Hvorfor er Guds herredømme selve grunnen til glede og lovprisning?</li>
+                </ol>
+
+                <h3>14. Lammets bryllup</h3>
+                <p>Les <strong>Åpenbaringen 19:7–9</strong>.</p>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvilke to grunner til lovprisning fremhever teksten?</li>
+                  <li>Hva betyr det at «Lammets bryllup er kommet»?</li>
+                  <li>Hva betyr det at «Hans hustru har gjort seg rede»?</li>
+                  <li>Hvorfor uttrykker teksten tillit til at Gud til slutt vil oppnå det Han har bestemt?</li>
+                </ol>
+
+                <h3>15. Hustruen og bruden</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvilken forskjell gjør teksten mellom begivenhetene i Åpenbaringen 19 og Åpenbaringen 21?</li>
+                  <li>Når sier teksten at Lammets hustru har gjort seg rede?</li>
+                  <li>Når beskrives Det nye Jerusalem som bruden?</li>
+                  <li>Hvilken betydning har de tusen årene mellom disse begivenhetene i tekstens fremstilling?</li>
+                </ol>
+
+                <h3>16. Overvinnerne</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvem er det som ifølge teksten er rede når kunngjøringen i Åpenbaringen 19 blir gitt?</li>
+                  <li>Hvorfor kan overvinnernes beredskap omtales som at hele hustruen er rede?</li>
+                  <li>Hva betyr det at overvinnerne kjemper mot Satan på vegne av hele Kristi kropp?</li>
+                  <li>Hvordan påvirker dette ditt syn på personlig åndelig vekst?</li>
+                </ol>
+
+                <h3>17. Kroppen og de enkelte lemmene</h3>
+                <p>Les <strong>1. Korinterbrev 12:26</strong>.</p>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvorfor er det enkelte lem mottar fra Gud ikke bare til dets eget beste?</li>
+                  <li>Hvordan bruker teksten bildet av øret og munnen for å forklare dette?</li>
+                  <li>Hvordan henger overvinnernes seier sammen med hele menigheten?</li>
+                  <li>Hva betyr det praktisk at vi er medlemmer av én kropp?</li>
+                </ol>
+
+                <h3>18. De to klesplaggene</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvilke to klesplagg beskriver teksten for den kristne?</li>
+                  <li>Hva representerer Herren Jesus som vårt klesplagg?</li>
+                  <li>Hva representerer det fine linet i Åpenbaringen 19:8?</li>
+                  <li>Hva er forskjellen mellom Guds rettferdighet som vi mottar gjennom Kristus og de helliges rettferdige gjerninger?</li>
+                </ol>
+
+                <h3>19. Det broderte klesplagget</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvorfor sammenlignes de helliges rettferdige gjerninger med brodering?</li>
+                  <li>Hvordan beskriver teksten Den Hellige Ånds arbeid i den troende?</li>
+                  <li>Hvorfor skjer denne «broderingen» dag for dag?</li>
+                  <li>Hvilke eksempler gir teksten på rettferdige gjerninger som springer ut av kjærlighet til Herren?</li>
+                </ol>
+
+                <h3>20. Hvitt og skinnende</h3>
+                <p>Les <strong>Åpenbaringen 7:9, 14 og 19:8</strong>.</p>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvorfor må de helliges klær vaskes og gjøres hvite i Lammets blod?</li>
+                  <li>Hvorfor sier teksten at også våre gode gjerninger trenger renselse?</li>
+                  <li>Hva er forskjellen mellom å være <strong>hvit</strong> og å være <strong>skinnende</strong>?</li>
+                  <li>Hvorfor mener teksten at prøvelser og lidelser kan bidra til at en kristen blir «skinnende»?</li>
+                  <li>Hvordan kan vanskeligheter forme en kristens karakter?</li>
+                </ol>
+
+                <h3>21. Fint lin og Den Hellige Ånds verk</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva representerer ull og hva representerer fint lin i tekstens forklaring?</li>
+                  <li>Hvorfor knyttes ull til Kristi gjenløsende verk?</li>
+                  <li>Hvorfor knyttes det fine linet til Den Hellige Ånds verk i mennesket?</li>
+                  <li>Hvordan viser dette at de rettferdige gjerningene ikke er produsert av menneskets naturlige kraft?</li>
+                </ol>
+
+                <h3>22. Nåde og våre gjerninger</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hva betyr uttrykket «det ble gitt henne» i Åpenbaringen 19:8 slik teksten forklarer det?</li>
+                  <li>Hvordan kan noe være våre gjerninger og samtidig være gitt oss av Gud?</li>
+                  <li>Hvorfor oppfordrer teksten oss til å be: «Herre, gi det til meg»?</li>
+                  <li>Hvordan bør dette påvirke vår holdning til tjeneste, lydighet og gode gjerninger?</li>
+                </ol>
+
+                <h3>23. Byrder og åndelig vekst</h3>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvordan reagerer vi ofte når en byrde blir for tung?</li>
+                  <li>Hvilken annen bønn foreslår teksten?</li>
+                  <li>Hva kan forskjellen mellom «Herre, utfri meg» og «Herre, gjør det mulig for meg å bære byrden» lære oss om åndelig vekst?</li>
+                </ol>
+
+                <h3>24. Bryllupsmåltidet</h3>
+                <p>Les <strong>Åpenbaringen 19:9</strong>.</p>
+                <ol className="m-0 flex list-[lower-alpha] flex-col gap-2.5 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark">
+                  <li>Hvem beskrives som salige?</li>
+                  <li>Hva betyr det å være innbudt til Lammets bryllupsmåltid?</li>
+                  <li>Hvilken forskjell gjør teksten mellom de innbudte til bryllupsmåltidet og Lammets brud?</li>
+                  <li>Hvilken tidsperiode knytter teksten bryllupsmåltidet til?</li>
+                  <li>Hva slags fellesskap med Herren beskrives for dem som er innbudt?</li>
+                </ol>
+
+                <h3>Fordypningsspørsmål</h3>
+                <ol
+                  start={25}
+                  className="m-0 flex list-decimal flex-col gap-4 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark"
+                >
+                  <li>Les <strong>Åpenbaringen 17–19</strong> og sammenlign Babylon med Lammets hustru. Hvilke kontraster finner du når det gjelder deres natur, gjerninger, forhold til Gud, klær og endelige skjebne?</li>
+                  <li>Hva er forskjellen mellom <strong>menneskelig anstrengelse</strong> og <strong>Den Hellige Ånds verk</strong> slik dette kapittelet fremstiller det?</li>
+                  <li>Hvordan kan vi i praksis avsløre «Babylons prinsipp» i våre egne holdninger, handlinger og menighetsliv?</li>
+                  <li>Hvordan henger <strong>Kristus som vårt klesplagg</strong>, <strong>de helliges rettferdige gjerninger</strong> og <strong>Den Hellige Ånds verk</strong> sammen?</li>
+                  <li>Hva betyr det for deg personlig at det Gud gjør i én troende, ifølge teksten, også kan være til gagn for hele Kristi kropp?</li>
+                </ol>
+
+                <h3>Hovedspørsmål til samtale</h3>
+                <ol
+                  start={30}
+                  className="m-0 flex list-decimal flex-col gap-4 pl-[22px] font-sans text-[.98rem] leading-[1.8] text-text marker:font-semibold marker:text-gold-dark"
+                >
+                  <li>Hva mener du er den viktigste forskjellen mellom <strong>Babylons prinsipp</strong> og <strong>brudens prinsipp</strong>, og hvordan bør denne forskjellen påvirke vårt kristne liv?</li>
+                </ol>
+                </SubAccordion>
+
+                <SubAccordion title="Side 123–127 · Den hellige staden som stiger ned fra himmelen">
+                  <p>
+                    <em>Studiespørsmål for dette sideområdet er ikke publisert ennå.</em>
+                  </p>
+                </SubAccordion>
+
+                <SubAccordion title="Side 127–128 · Den hellige stadens lys">
+                  <p>
+                    <em>Studiespørsmål for dette sideområdet er ikke publisert ennå.</em>
+                  </p>
+                </SubAccordion>
+
+                <SubAccordion title="Side 128–130 · Den hellige stads innbyggere">
+                  <p>
+                    <em>Studiespørsmål for dette sideområdet er ikke publisert ennå.</em>
+                  </p>
+                </SubAccordion>
+
+                <SubAccordion title="Side 130–134 · Staden, portene og muren">
+                  <p>
+                    <em>Studiespørsmål for dette sideområdet er ikke publisert ennå.</em>
+                  </p>
+                </SubAccordion>
+
+                <SubAccordion title="Side 134–143 · Det nye Jerusalems herlighet og dybde">
+                  <p>
+                    <em>Studiespørsmål for dette sideområdet er ikke publisert ennå.</em>
+                  </p>
+                </SubAccordion>
+
+                <SubAccordion title="Side 143–146 · Templet og stadens lys">
+                  <p>
+                    <em>Studiespørsmål for dette sideområdet er ikke publisert ennå.</em>
+                  </p>
+                </SubAccordion>
+
+                <SubAccordion title="Side 146–149 · Elven med livets vann og livets tre">
+                  <p>
+                    <em>Studiespørsmål for dette sideområdet er ikke publisert ennå.</em>
+                  </p>
+                </SubAccordion>
+
+                <SubAccordion title="Side 149–152 · For evig og alltid">
+                  <p>
+                    <em>Studiespørsmål for dette sideområdet er ikke publisert ennå.</em>
+                  </p>
+                </SubAccordion>
               </AccordionSection>
             </div>
 

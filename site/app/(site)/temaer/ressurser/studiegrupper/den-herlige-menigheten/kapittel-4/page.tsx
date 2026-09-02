@@ -83,7 +83,7 @@ export default function Kapittel4Page() {
           <div className="grid grid-cols-[1fr_340px] items-start gap-10 max-[1100px]:grid-cols-1">
             {/* Hovedspalte */}
             <div className="flex flex-col gap-5">
-              <AccordionSection icon="document" title="Presentasjon" description="Introduksjon til kapittel 4" defaultOpen>
+              <AccordionSection icon="document" title="Presentasjon" description="Introduksjon til kapittel 4">
                 <p>
                   I dette kapittelet løfter Watchman Nee blikket mot et av de mest dramatiske avsnittene i Bibelen –
                   kvinnen og guttebarnet i Åpenbaringen 12. Kapittelet undersøker hvordan Gud fullfører sin plan
