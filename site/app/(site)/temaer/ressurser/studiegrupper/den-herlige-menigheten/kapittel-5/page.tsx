@@ -6,6 +6,7 @@ import { Icon } from "@/components/icons/Icon";
 import { AccordionSection } from "../kapittel-4/AccordionSection";
 import { SubAccordion } from "../kapittel-4/SubAccordion";
 import { ZoomGroupModal } from "../kapittel-4/ZoomGroupModal";
+import { InfographicGallery } from "./InfographicGallery";
 
 export const metadata: Metadata = {
   title: "Kapittel 5 – Den hellige stad: Det nye Jerusalem | THEOLOGIA",
@@ -214,6 +215,16 @@ export default function Kapittel5Page() {
 
                 <SubAccordion title="Efeserne 5,25–27" description="Kristus renser sin menighet og gjør bruden hellig og herlig">
                   <SubBody>
+                    <h4>Bibeltekst</h4>
+                    <p>
+                      <strong>Ef 5:25–27:</strong>{" "}
+                      <em>
+                        Dere menn, elsk konene deres, slik Kristus elsket kirken og ga seg selv for den, for å gjøre
+                        den hellig gjennom å rense den med badet i vann, i kraft av et ord. Slik ville han selv føre
+                        kirken fram for seg i herlighet, uten den minste flekk eller rynke. Hellig og uten feil skulle
+                        den være.
+                      </em>
+                    </p>
                     <h4>Kontekst</h4>
                     <p>
                       Paulus underviser om livet i menigheten og hjemmet og bruker ekteskapet som bilde på forholdet
@@ -240,6 +251,17 @@ export default function Kapittel5Page() {
 
                 <SubAccordion title="Hebreerne 12,22–24" description="Den himmelske staden som allerede er en virkelighet for de troende">
                   <SubBody>
+                    <h4>Bibeltekst</h4>
+                    <p>
+                      <strong>Hebr 12:22–24:</strong>{" "}
+                      <em>
+                        Nei, dere er kommet til fjellet Sion, til den levende Guds by, det himmelske Jerusalem, til ti
+                        tusener av engler, til en høytidsfeiring, til forsamlingen av de førstefødte som er oppskrevet i
+                        himmelen. Dere er kommet til en dommer som er alles Gud, til åndene av de rettferdige som har
+                        nådd fullendelsen, til Jesus, mellommannen for en ny pakt, og til det rensende blodet som taler
+                        sterkere enn Abels blod.
+                      </em>
+                    </p>
                     <h4>Kontekst</h4>
                     <p>
                       Hebreerbrevet er skrevet til kristne som fristes til å gi opp. Forfatteren stiller Sinai –
@@ -267,6 +289,16 @@ export default function Kapittel5Page() {
 
                 <SubAccordion title="Johannes 7,37–39" description="Ånden som gir byens elv dens kilde – levende vann allerede nå">
                   <SubBody>
+                    <h4>Bibeltekst</h4>
+                    <p>
+                      <strong>Joh 7:37–39:</strong>{" "}
+                      <em>
+                        På den siste dagen i høytiden, den store festdagen, sto Jesus fram og ropte: «Den som tørster,
+                        skal komme til meg og drikke! Den som tror på meg, fra hans indre skal det, som skriftordet
+                        sier, renne elver av levende vann.» Dette sa han om Ånden de skulle få, de som trodde på ham.
+                        Ånden var ennå ikke kommet, for Jesus var ennå ikke blitt herliggjort.
+                      </em>
+                    </p>
                     <h4>Kontekst</h4>
                     <p>
                       Jesus står fram <em>«på den siste og store dagen i høytiden»</em>, løvhyttefesten, da man bar
@@ -299,74 +331,8 @@ export default function Kapittel5Page() {
                 </p>
               </AccordionSection>
 
-              <AccordionSection icon="column" title="Infografikk" description="Tre visuelle oversikter – tittel, innhold og forslag til oppbygging" count={3}>
-                <SubAccordion title="1. Fra hagen til staden – Bibelens store bue" description="Skapelse, fall og gjenopprettelse i én linje">
-                  <SubBody>
-                    <h4>Innhold</h4>
-                    <p>
-                      En tidslinje som viser hvordan Bibelen begynner og ender med de samme motivene, nå fullendt.
-                      Fire holdepunkter: Eden <strong>(1 Mos 2)</strong>, fallet og bortvisningen{" "}
-                      <strong>(1 Mos 3)</strong>, Kristus og menigheten <strong>(Ef 5; Joh 7)</strong>, og Det nye
-                      Jerusalem <strong>(Åp 21–22)</strong>. Under hvert punkt vises tre gjennomgående motiv: Guds
-                      nærvær, livets tre / livets vann, og folkets tilstand (fellesskap – brudd – renselse –
-                      herlighet).
-                    </p>
-                    <h4>Slik kan den bygges visuelt</h4>
-                    <p>
-                      En horisontal akse fra venstre (hage) til høyre (by), med en rolig overgang fra grønt og
-                      organisk til gull og lys. Tre tynne, parallelle «spor» løper gjennom hele figuren – ett for
-                      nærvær, ett for liv (tre/vann), ett for folket. Ved Eden er sporene hele; ved fallet brytes de
-                      av et synlig gap; ved Kristus knyttes de sammen igjen; ved staden er de brede og lysende. Bruk
-                      enkle ikoner: et tre, en elv, en åpen port. Hold fargene til nettstedets navy og gull.
-                      Bildetekst: «Bibelen ender ikke der den begynte – den ender høyere.»
-                    </p>
-                  </SubBody>
-                </SubAccordion>
-
-                <SubAccordion title="2. To byer – Babylon og Det nye Jerusalem" description="Menneskelig storhet mot Guds hellighet">
-                  <SubBody>
-                    <h4>Innhold</h4>
-                    <p>
-                      En todelt sammenstilling – ikke for å demonisere kultur, men for å vise to måter å bygge på.
-                      Venstre: Babylon <strong>(Åp 17–18)</strong> – stiger opp fra jorden, samler ære til seg selv,
-                      bygget på handel, makt og selvhevdelse, faller brått. Høyre: Det nye Jerusalem{" "}
-                      <strong>(Åp 21–22)</strong> – kommer ned fra Gud, gjenspeiler hans herlighet, hviler på
-                      apostlenes og profetenes grunnvoll, står evig. Rader å sammenligne: opprinnelse, lys, tempel,
-                      hvem æren tilhører, forhold til folkeslagene, varighet.
-                    </p>
-                    <h4>Slik kan den bygges visuelt</h4>
-                    <p>
-                      To vertikale kolonner side ved side, adskilt av en tynn midtlinje. Venstre kolonne med en
-                      nedadgående pil (fall); høyre med en pil som kommer ned ovenfra, fra en liten lyskilde.
-                      Øverst i hver kolonne en enkel bysilhuett – tett og oppadstrebende til venstre, lav, åpen og
-                      med porter til høyre. Sammenligningsradene som en enkel tabell under. Unngå skremmende bilder;
-                      poenget er kontrasten i retning og grunnlag, ikke frykt.
-                    </p>
-                  </SubBody>
-                </SubAccordion>
-
-                <SubAccordion title="3. Staden innenfra – hva Johannes ser" description="Nærvær, lys, vann og tre som ett bilde">
-                  <SubBody>
-                    <h4>Innhold</h4>
-                    <p>
-                      Et konsentrisk diagram over elementene i <strong>Åp 21,3 – 22,5</strong>, ordnet slik at Guds
-                      nærvær står i sentrum og alt annet springer ut fra det: i midten <em>«Gud bor hos dem»</em>{" "}
-                      <strong>(21,3)</strong>; rundt: Gud og Lammet som tempel <strong>(21,22)</strong>, Guds
-                      herlighet som lys <strong>(21,23)</strong>, elven med livets vann <strong>(22,1)</strong>,
-                      livets tre til legedom for folkene <strong>(22,2)</strong>, <em>«de skal se hans ansikt»</em>{" "}
-                      <strong>(22,4)</strong>, <em>«ingen natt mer»</em> <strong>(22,5)</strong>. Ytterst: de tolv
-                      portene som alltid står åpne <strong>(21,25)</strong>.
-                    </p>
-                    <h4>Slik kan den bygges visuelt</h4>
-                    <p>
-                      Konsentriske ringer. I sentrum en enkel trone eller bare ordet «NÆRVÆR». Neste ring delt i
-                      fire felt – Tempel, Lys, Vann, Tre – hver med et lite ikon og en henvisning. Ytterste ring:
-                      tolv små porter jevnt fordelt, tegnet som åpne. Tynne linjer fra sentrum og utover i alle
-                      retninger, for å vise at alt utstråler fra Guds nærvær. Navy og gull. Tekst under: «Alt i
-                      staden er én ting: Gud er der.»
-                    </p>
-                  </SubBody>
-                </SubAccordion>
+              <AccordionSection icon="column" title="Infografikk" description="Kapittelet oppsummert i elleve visuelle oversikter">
+                <InfographicGallery />
               </AccordionSection>
 
               <AccordionSection id="commentary" icon="comment" title="Kommentarer" description="Åtte utfyllende, teologiske kommentarer" count={8}>
