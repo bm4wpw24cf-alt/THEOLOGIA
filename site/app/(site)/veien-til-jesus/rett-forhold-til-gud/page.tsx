@@ -3,7 +3,9 @@ import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ArticleLayout } from "@/components/articles/ArticleLayout";
 import { BibleBox } from "@/components/articles/BibleBox";
-import { GiscusComments } from "./GiscusComments";
+import { ConclusionBox } from "@/components/articles/ConclusionBox";
+import { Comments } from "@/components/comments/Comments";
+import styles from "@/components/articles/article.module.css";
 
 const title = "Hvordan oppnå rett forhold til Gud?";
 const description = "Frelsen er ikke en prestasjon, men en gave mottatt ved tro på Jesus Kristus.";
@@ -184,23 +186,21 @@ export default function RettForholdTilGudPage() {
           </p>
         </section>
 
-        <div className="my-12 rounded-[18px] bg-[#1f1d19] p-8 text-[#f3efe6] shadow-[0_15px_35px_rgba(17,17,17,0.14)]">
-          <p className="mb-4">
-            <strong className="text-[#d9c9a3]">All ære tilhører Gud.</strong> Paulus peker til slutt all ære tilbake til Gud:
+        <ConclusionBox>
+          <p>
+            <strong>All ære tilhører Gud.</strong> Paulus peker til slutt all ære tilbake til Gud:
             «Hva har vi da å være stolte av? Ingenting! … For vi hevder at mennesket blir rettferdig ved tro, uten
             lovgjerninger.» (Romerne 3:27–28)
           </p>
-          <p className="mb-0">
+          <p>
             Når et menneske kommer til Gud i tro, kan det ikke skryte av seg selv. Frelsen er av nåde fra begynnelse til
             slutt. Derfor tilhører all ære Gud alene. Den rettferdige skal leve ved tro.
           </p>
-        </div>
+        </ConclusionBox>
 
-        <p className="my-12 text-center text-[1.9rem] italic leading-[1.6] text-ink-soft">
+        <p className={styles.closingQuote}>
           «Den rettferdige skal leve ved tro.»
-          <span className="mt-3 block text-[0.76rem] font-sans font-semibold tracking-[0.12em] text-gold uppercase">
-            Romerne 1:17
-          </span>
+          <span className={styles.closingQuoteSource}>Romerne 1:17</span>
         </p>
       </ArticleLayout>
 
@@ -208,10 +208,10 @@ export default function RettForholdTilGudPage() {
         <div className="mx-auto w-[min(1280px,92%)]">
           <div className="mb-11 text-left">
             <h2 className="mb-4 text-[2.6rem]">Kommentarer</h2>
-            <p className="text-[1.08rem] text-text-light">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+            <p className="text-[1.08rem] text-text-light">Del dine tanker eller spørsmål.</p>
           </div>
 
-          <GiscusComments />
+          <Comments />
         </div>
       </section>
     </main>

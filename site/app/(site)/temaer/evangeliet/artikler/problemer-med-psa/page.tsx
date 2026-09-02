@@ -4,7 +4,7 @@ import { ArticleLayout } from "@/components/articles/ArticleLayout";
 import { BibleBox } from "@/components/articles/BibleBox";
 import { ImportantBox } from "@/components/articles/ImportantBox";
 import { getArticleBySlug } from "@/lib/articles";
-import { GiscusComments } from "./GiscusComments";
+import { Comments } from "@/components/comments/Comments";
 
 const article = getArticleBySlug("problemer-med-psa")!;
 
@@ -254,11 +254,11 @@ export default function ProblemerMedPsaPage() {
           <div className="mb-11 text-left">
             <h2 className="mb-4 text-[2.6rem]">Kommentarer</h2>
             <p className="text-[1.08rem] text-text-light">
-              Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.
+              Del dine tanker eller spørsmål.
             </p>
           </div>
 
-          <GiscusComments />
+          <Comments />
         </div>
       </section>
     </main>

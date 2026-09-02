@@ -101,7 +101,12 @@ export function Footer() {
         </div>
 
         <div className="border-t border-white/[.08] py-[26px]">
-          <p className="text-center font-sans text-[0.82rem] text-white/40">© 2026 THEOLOGIA · Alle rettigheter forbeholdt.</p>
+          <p className="text-center font-sans text-[0.82rem] text-white/40">
+            © 2026 THEOLOGIA · Alle rettigheter forbeholdt. ·{" "}
+            <Link href="/admin" className="transition-colors duration-200 hover:text-gold-light">
+              Admin
+            </Link>
+          </p>
         </div>
       </div>
 
@@ -115,7 +120,12 @@ export function Footer() {
           eistore@icloud.com
         </a>
         <div className="mx-auto my-6 h-px w-14 bg-white/[.14]" />
-        <p className="font-sans text-[0.72rem] tracking-[0.05em] text-white/35">THEOLOGIA © 2026</p>
+        <p className="font-sans text-[0.72rem] tracking-[0.05em] text-white/35">
+          THEOLOGIA © 2026 ·{" "}
+          <Link href="/admin" className="transition-colors duration-200 hover:text-gold-light">
+            Admin
+          </Link>
+        </p>
       </div>
     </footer>
   );

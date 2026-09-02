@@ -3,7 +3,7 @@ import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { ArticleLayout } from "@/components/articles/ArticleLayout";
 import { BibleBox } from "@/components/articles/BibleBox";
 import { getArticleBySlug } from "@/lib/articles";
-import { GiscusComments } from "./GiscusComments";
+import { Comments } from "@/components/comments/Comments";
 
 const article = getArticleBySlug("koranen-teksthistorie")!;
 
@@ -310,10 +310,10 @@ export default function KoranenTeksthistoriePage() {
         <div className="mx-auto w-[min(1280px,92%)]">
           <div className="mb-11 text-left">
             <h2 className="mb-4 text-[2.6rem]">Kommentarer</h2>
-            <p className="text-[1.08rem] text-text-light">Del dine tanker eller spørsmål. Du trenger en GitHub-konto for å kommentere.</p>
+            <p className="text-[1.08rem] text-text-light">Del dine tanker eller spørsmål.</p>
           </div>
 
-          <GiscusComments />
+          <Comments />
         </div>
       </section>
     </main>
