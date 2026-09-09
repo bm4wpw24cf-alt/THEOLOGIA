@@ -28,6 +28,7 @@ const BOOK_SETS: { title: string; books: Book[] }[] = [
         image: "/images/studiegrupper/volum-1.png",
         width: 1122,
         height: 1402,
+        href: "/temaer/ressurser/studiegrupper/det-kristne-livets-grunnleggende-prinsipper-volum-1",
       },
       {
         title: "Det kristne livets grunnleggende prinsipper, Volum 2",

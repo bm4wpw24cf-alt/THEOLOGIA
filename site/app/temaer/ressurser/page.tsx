@@ -219,9 +219,9 @@ export default function RessurserPage() {
                     </span>
                   </Link>
 
-                  <span
-                    aria-disabled="true"
-                    className="grid min-w-0 grid-cols-[51px_minmax(0,1fr)] content-center gap-x-[9px] cursor-default opacity-55"
+                  <Link
+                    href="/temaer/ressurser/studiegrupper/det-kristne-livets-grunnleggende-prinsipper-volum-1"
+                    className="grid min-w-0 grid-cols-[51px_minmax(0,1fr)] content-center gap-x-[9px]"
                   >
                     <ResourceCoverImage
                       src="/images/resources/det-kristne-livets-grunnleggende-prinsipper-volum-1.png"
@@ -234,7 +234,7 @@ export default function RessurserPage() {
                     <span className="col-start-2 mt-[3px] line-clamp-2 text-[.57rem] leading-[1.35] text-text-light">
                       Legger et bibelsk fundament for det kristne livet og sentrale erfaringer i troen.
                     </span>
-                  </span>
+                  </Link>
 
                   <span
                     aria-disabled="true"
