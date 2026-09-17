@@ -225,65 +225,6 @@ export default function Kapittel1Page() {
                 </p>
               </SubAccordion>
 
-              <SubAccordion title="Alternativ kommentar – En bibelsk vurdering av «ånd → sjel → kropp»" description="Alternativ kommentar til punkt 6">
-                <p>
-                  Her bør det gjøres en viktig teologisk presisering. Teksten beskriver frelsen etter gjenfødelsen som en bestemt bevegelse: Guds liv mottas først i menneskets ånd, deretter «sprer» Gud seg fra ånden til sjelen, og til slutt blir kroppen gjennomsyret av dette livet ved herliggjørelsen. Dette følger naturlig av bokens tredelte antropologi, der mennesket fremstilles som «kropp, sjel og ånd», og ånden beskrives som menneskets innerste område, spesielt skapt for å kontakte og motta Gud. I punkt 5 sies derfor at mennesket ved gjenfødelsen «mottar Guds liv inn i sin ånd», før punkt 6 utvikler dette til en frelsesprosess fra ånd → sjel → kropp.
-                </p>
-                <p>
-                  Min innvending gjelder ikke at Bibelen lærer gjenfødelse, helliggjørelse og herliggjørelse. Disse er tydelig bibelske realiteter. Innvendingen gjelder den mer spesifikke påstanden om at Skriften lærer en bestemt progresjon hvor Guds liv først kommer inn i menneskets ånd, deretter sprer seg fra ånden til sjelen og til slutt gjennomtrenger kroppen. Jeg finner ikke denne bestemte rekkefølgen uttrykkelig lært i Skriften.
-                </p>
-                <p>
-                  <strong>Efeserne 3:17</strong> sier at Kristus skal bo i de troendes hjerter ved troen. Paulus sier i sammenhengen at de skal styrkes med kraft ved Guds Ånd i «det indre menneske» (<strong>Ef 3:16</strong>), men han beskriver ikke dette som en prosess hvor Kristus beveger seg fra menneskets ånd til sjelen. Å bruke Efeserne 3:17 som direkte bevis for en slik «ånd → sjel»-prosess går derfor lenger enn selve teksten.
-                </p>
-                <p>
-                  Det samme gjelder <strong>Romerne 12:2</strong>. Paulus lærer virkelig om forvandling: «Bli forvandlet ved fornyelsen av deres sinn.» Dette handler om en virkelig og pågående forvandling av den troende. Men Paulus sier ikke at denne forvandlingen skjer fordi Guds liv sprer seg fra ånden til sjelen. Romerne 12:2 gir derfor godt grunnlag for helliggjørelse og fornyelse, men ikke nødvendigvis for den bestemte antropologiske mekanismen som presenteres i boken.
-                </p>
-                <p>
-                  <strong>Filipperne 2:12–13</strong> gir også et tydelig grunnlag for menneskets samarbeid med Gud:
-                </p>
-                <p className="italic">
-                  «Arbeid på deres frelse med frykt og beven. For det er Gud som virker i dere både å ville og å virke etter hans gode vilje.»
-                </p>
-                <p>
-                  Her ser vi både Guds virke og menneskets ansvar. Men heller ikke dette avsnittet beskriver en bevegelse fra ånd til sjel.
-                </p>
-                <p>
-                  Det er også grunn til å være forsiktig med å gjøre ånd, sjel og kropp til tre nærmest separate beholdere i mennesket. Bibelen kan skjelne mellom ånd, sjel og kropp, men den gir ikke nødvendigvis et detaljert antropologisk system hvor Guds liv må bevege seg gjennom disse delene i en bestemt rekkefølge. Bibelen bruker også begrepet «hjerte» svært omfattende om menneskets indre liv. Kristus skal bo i hjertet ved troen (<strong>Ef 3:17</strong>), Guds kjærlighet er utøst i våre hjerter ved Den hellige ånd (<strong>Rom 5:5</strong>), og mennesket tror med hjertet (<strong>Rom 10:10</strong>).
-                </p>
-                <p>
-                  <strong>1 Tessaloniker 5:23</strong> sier:
-                </p>
-                <p className="italic">
-                  «Må deres ånd og sjel og kropp bli bevart fullkomment, ulastelig ved vår Herre Jesu Kristi komme.»
-                </p>
-                <p>
-                  Dette viser at Paulus kan skjelne mellom ånd, sjel og kropp. Men verset sier ikke at frelsen beveger seg gjennom disse tre delene i rekkefølgen ånd → sjel → kropp. Poenget synes snarere å være at Gud vil bevare og helliggjøre hele mennesket.
-                </p>
-                <p>Det bibelske mønsteret kan derfor uttrykkes sikrere som:</p>
-                <p className="text-center font-serif italic text-ink">
-                  Gjenfødelse → helliggjørelse/forvandling → herliggjørelse
-                </p>
-                <p>
-                  Ved gjenfødelsen gjør Gud mennesket levende ved sin Ånd og gir den troende nytt liv i Kristus (<strong>Joh 3:3–8</strong>; <strong>Ef 2:4–5</strong>; <strong>Tit 3:5</strong>).
-                </p>
-                <p>
-                  Deretter følger den pågående helliggjørelsen og forvandlingen. Gud virker i den troende, sinnet fornyes, synden bekjempes, og menneskets liv formes stadig mer etter Kristi bilde (<strong>Rom 12:2</strong>; <strong>2 Kor 3:18</strong>; <strong>Gal 5:16–25</strong>; <strong>Fil 2:12–13</strong>; <strong>Kol 3:1–17</strong>). Dette gjelder mennesket som helhet og trenger ikke forklares som en bevegelse fra én del av mennesket til en annen.
-                </p>
-                <p>
-                  Til slutt kommer herliggjørelsen. <strong>Filipperne 3:21</strong> lærer at Kristus ved sin gjenkomst skal forvandle vårt forgjengelige legeme så det blir likt hans herlighetslegeme. <strong>1 Korinterbrev 15:42–53</strong> beskriver den samme framtidige oppstandelsen og forvandlingen av kroppen.
-                </p>
-                <p>
-                  Det er derfor godt bibelsk grunnlag for å tale om Guds fulle frelse som et verk som omfatter hele mennesket. Men det er et viktig skille mellom denne bibelske sannheten og den mer spesifikke modellen om at Guds liv «sprer seg» fra ånden til sjelen og deretter til kroppen. Den siste modellen finner jeg ikke uttrykkelig formulert i Skriften.
-                </p>
-                <p>En mer bibelnær formulering kan derfor være:</p>
-                <p className="border-l-2 border-gold/40 pl-4 not-italic text-text">
-                  «Guds frelsesverk omfatter hele mennesket. Ved gjenfødelsen gjør Gud den troende levende ved Den hellige ånd og gir ham nytt liv i Kristus. Deretter virker Gud kontinuerlig i den troende gjennom helliggjørelse og forvandling, hvor sinnet fornyes og menneskets liv stadig mer formes etter Kristi bilde. Denne forvandlingen innebærer også den troendes aktive respons i tro og lydighet. Ved Kristi gjenkomst fullføres frelsesverket når også vårt dødelige legeme blir oppreist og forvandlet til likhet med Kristi herlighetslegeme.»
-                </p>
-                <p>
-                  Hovedinnvendingen er altså ikke mot læren om gjenfødelse, helliggjørelse eller herliggjørelse. Innvendingen gjelder den spesifikke mekanismen «ånd → sjel → kropp». Bibelen lærer tydelig at Gud frelser og forvandler hele mennesket, men de tekstene som brukes i punkt 6, gir ikke et tydelig grunnlag for å si at Guds liv må forstås som en prosess hvor det først befinner seg i ånden og deretter gradvis sprer seg til sjelen og kroppen.
-                </p>
-              </SubAccordion>
-
               <SubAccordion title="Menneskelivets mysterium" description="Alternativ kommentar til kapittel 1">
                 <p className="italic text-text">
                   Dette er en alternativ, supplerende gjennomgang av hele kapittel 1. Den erstatter ikke originalteksten ovenfor, men belyser de samme seks punktene fra en annen innfallsvinkel.
