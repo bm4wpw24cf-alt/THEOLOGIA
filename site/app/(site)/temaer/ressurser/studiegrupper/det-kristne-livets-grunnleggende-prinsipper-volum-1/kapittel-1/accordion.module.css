@@ -1,0 +1,19 @@
+/* Samme fadeIn-mekanisme som den-herlige-menigheten/kapittel-4/accordion.module.css,
+   brukt her for kommentarfeltets to accordion-nivåer. Pakket inn i en
+   prefers-reduced-motion-sjekk slik at brukere som har skrudd av
+   bevegelseseffekter i OS-et, ikke får fade-overgangen. */
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    animation: fadeIn 0.35s var(--ease);
+  }
+}

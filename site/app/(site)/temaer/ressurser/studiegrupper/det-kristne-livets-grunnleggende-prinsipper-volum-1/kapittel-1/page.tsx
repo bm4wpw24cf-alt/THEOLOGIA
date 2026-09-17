@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/layout/Breadcrumbs";
 import { Kapittel1Infographic } from "./Kapittel1Infographic";
+import { CommentarySection } from "./CommentarySection";
+import { SubAccordion } from "./SubAccordion";
 
 export const metadata: Metadata = {
   title: "Kapittel 1 – Menneskelivets mysterium | THEOLOGIA",
@@ -148,27 +150,23 @@ export default function Kapittel1Page() {
               </p>
             </Section>
 
-            <Section title="Kommentar">
-              <p>
-                Det er viktig å skille mellom det Bibelen uttrykkelig sier, og den teologiske modellen som oppstår når vi drøfter menneskets natur. En velkjent modell er <strong>trikotomi</strong>: mennesket består av kropp, sjel og ånd. En annen er <strong>dikotomi</strong>: mennesket består av kropp og sjel/ånd som et mer samlet hele. Begge modellene forsøker å håndtere det samme mysterium, men de gjør det på forskjellige måter.
-              </p>
-              <p>
-                Den teologiske modellen er nyttig, men den må brukes med forsiktighet. Bibelen lærer klart at mennesket er et helt, men at det også har forskjellige dimensjoner. Det er derfor korrekt å si at mennesket er en helhetlig enhet, uten å være blind for at det også kan beskrives i komponenter. Det er ikke så mye et spørsmål om «enten» eller «eller», som et spørsmål om hvordan vi taler om det samme mennesket fra forskjellige synsvinkler.
-              </p>
-              <p>
-                Det er derfor også nyttig å merke seg <strong>1 Tess 5:23</strong>: «Måtte hele deres ånd, sjel og kropp bevares feilfrie til vår Herre Jesu Kristi komme.» Her ser vi en helhetlig betraktning av mennesket, hvor ånd, sjel og kropp inngår i samme liv. <strong>Hebr 4:12</strong> viser at Guds ord er levende og skarpt, og det skiller sjel og ånd fra hverandre. <strong>1 Mos 2:7</strong> beskriver hvordan mennesket ble gjort levende da Gud blåste liv i det. Her er det også naturlig å se på det hebraiske <em>nephesh</em> («sjel»), det greske <em>psychē</em> og <em>pneuma</em> («ånd»).
-              </p>
-              <p>
-                Dette betyr ikke at den teologiske modellen er feil, men at vi bør være tydelige på når vi beveger oss fra <strong>bibelsk tekst</strong> til <strong>teologisk tolkning</strong>. Det Bibelen uttrykkelig sier, er at mennesket er skapt av Gud og er et levende vesen. Den teologiske modellen er en påfølgende formulering som forsøker å gi systematisk klarhet. Det er derfor riktig å respektere teksten først, og deretter bruke modellen som en hjelperedskap, ikke som et løft over Skriften.
-              </p>
+            <CommentarySection title="Kommentar" defaultOpen>
+              <SubAccordion title="Kommentar til kapittel 1" description="Trikotomi og dikotomi">
+                <p>
+                  Det er viktig å skille mellom det Bibelen uttrykkelig sier, og den teologiske modellen som oppstår når vi drøfter menneskets natur. En velkjent modell er <strong>trikotomi</strong>: mennesket består av kropp, sjel og ånd. En annen er <strong>dikotomi</strong>: mennesket består av kropp og sjel/ånd som et mer samlet hele. Begge modellene forsøker å håndtere det samme mysterium, men de gjør det på forskjellige måter.
+                </p>
+                <p>
+                  Den teologiske modellen er nyttig, men den må brukes med forsiktighet. Bibelen lærer klart at mennesket er et helt, men at det også har forskjellige dimensjoner. Det er derfor korrekt å si at mennesket er en helhetlig enhet, uten å være blind for at det også kan beskrives i komponenter. Det er ikke så mye et spørsmål om «enten» eller «eller», som et spørsmål om hvordan vi taler om det samme mennesket fra forskjellige synsvinkler.
+                </p>
+                <p>
+                  Det er derfor også nyttig å merke seg <strong>1 Tess 5:23</strong>: «Måtte hele deres ånd, sjel og kropp bevares feilfrie til vår Herre Jesu Kristi komme.» Her ser vi en helhetlig betraktning av mennesket, hvor ånd, sjel og kropp inngår i samme liv. <strong>Hebr 4:12</strong> viser at Guds ord er levende og skarpt, og det skiller sjel og ånd fra hverandre. <strong>1 Mos 2:7</strong> beskriver hvordan mennesket ble gjort levende da Gud blåste liv i det. Her er det også naturlig å se på det hebraiske <em>nephesh</em> («sjel»), det greske <em>psychē</em> og <em>pneuma</em> («ånd»).
+                </p>
+                <p>
+                  Dette betyr ikke at den teologiske modellen er feil, men at vi bør være tydelige på når vi beveger oss fra <strong>bibelsk tekst</strong> til <strong>teologisk tolkning</strong>. Det Bibelen uttrykkelig sier, er at mennesket er skapt av Gud og er et levende vesen. Den teologiske modellen er en påfølgende formulering som forsøker å gi systematisk klarhet. Det er derfor riktig å respektere teksten først, og deretter bruke modellen som en hjelperedskap, ikke som et løft over Skriften.
+                </p>
+              </SubAccordion>
 
-              <div className="mt-6 space-y-4 rounded-radius border border-gold/40 bg-parchment-dark p-5">
-                <span className="inline-block font-sans text-[.76rem] font-bold tracking-[2.4px] text-gold uppercase">
-                  Alternativ kommentar til punkt 6
-                </span>
-                <h3 className="font-serif text-[1.25rem] text-ink">
-                  Alternativ kommentar – Guds fulle frelse og forholdet mellom ånd, sjel og kropp
-                </h3>
+              <SubAccordion title="Alternativ kommentar – Guds fulle frelse og forholdet mellom ånd, sjel og kropp" description="Alternativ kommentar til punkt 6">
                 <p>
                   Her bør det gjøres en viktig teologisk presisering. Teksten beskriver frelsen etter gjenfødelsen som en bestemt bevegelse: Guds liv mottas først i menneskets ånd, deretter «sprer» Gud seg fra ånden til sjelen, og til slutt blir kroppen gjennomsyret av dette livet ved herliggjørelsen. Dette følger naturlig av bokens tredelte antropologi, der mennesket fremstilles som «kropp, sjel og ånd», og ånden beskrives som menneskets innerste område, spesielt skapt for å kontakte og motta Gud. I punkt 5 sies derfor at mennesket ved gjenfødelsen «mottar Guds liv inn i sin ånd», før punkt 6 utvikler dette til en frelsesprosess fra ånd → sjel → kropp.
                 </p>
@@ -225,15 +223,9 @@ export default function Kapittel1Page() {
                 <p>
                   Hovedinnvendingen er altså ikke mot læren om gjenfødelse, helliggjørelse eller herliggjørelse. Innvendingen gjelder den spesifikke mekanismen «ånd → sjel → kropp». Bibelen lærer tydelig at Gud frelser og forvandler hele mennesket, men de tekstene som brukes i punkt 6, gir ikke et tydelig grunnlag for å si at Guds liv må forstås som en prosess hvor det først befinner seg i ånden og deretter gradvis sprer seg til sjelen og kroppen.
                 </p>
-              </div>
+              </SubAccordion>
 
-              <div className="mt-6 space-y-4 rounded-radius border border-gold/40 bg-parchment-dark p-5">
-                <span className="inline-block font-sans text-[.76rem] font-bold tracking-[2.4px] text-gold uppercase">
-                  Alternativ kommentar til punkt 6
-                </span>
-                <h3 className="font-serif text-[1.25rem] text-ink">
-                  Alternativ kommentar – En bibelsk vurdering av «ånd → sjel → kropp»
-                </h3>
+              <SubAccordion title="Alternativ kommentar – En bibelsk vurdering av «ånd → sjel → kropp»" description="Alternativ kommentar til punkt 6">
                 <p>
                   Her bør det gjøres en viktig teologisk presisering. Teksten beskriver frelsen etter gjenfødelsen som en bestemt bevegelse: Guds liv mottas først i menneskets ånd, deretter «sprer» Gud seg fra ånden til sjelen, og til slutt blir kroppen gjennomsyret av dette livet ved herliggjørelsen. Dette følger naturlig av bokens tredelte antropologi, der mennesket fremstilles som «kropp, sjel og ånd», og ånden beskrives som menneskets innerste område, spesielt skapt for å kontakte og motta Gud. I punkt 5 sies derfor at mennesket ved gjenfødelsen «mottar Guds liv inn i sin ånd», før punkt 6 utvikler dette til en frelsesprosess fra ånd → sjel → kropp.
                 </p>
@@ -290,15 +282,9 @@ export default function Kapittel1Page() {
                 <p>
                   Hovedinnvendingen er altså ikke mot læren om gjenfødelse, helliggjørelse eller herliggjørelse. Innvendingen gjelder den spesifikke mekanismen «ånd → sjel → kropp». Bibelen lærer tydelig at Gud frelser og forvandler hele mennesket, men de tekstene som brukes i punkt 6, gir ikke et tydelig grunnlag for å si at Guds liv må forstås som en prosess hvor det først befinner seg i ånden og deretter gradvis sprer seg til sjelen og kroppen.
                 </p>
-              </div>
+              </SubAccordion>
 
-              <div className="mt-6 space-y-4 rounded-radius border border-gold/40 bg-parchment-dark p-5">
-                <span className="inline-block font-sans text-[.76rem] font-bold tracking-[2.4px] text-gold uppercase">
-                  Alternativ kommentar til kapittel 1
-                </span>
-                <h3 className="font-serif text-[1.25rem] text-ink">
-                  Menneskelivets mysterium
-                </h3>
+              <SubAccordion title="Menneskelivets mysterium" description="Alternativ kommentar til kapittel 1">
                 <p className="italic text-text">
                   Dette er en alternativ, supplerende gjennomgang av hele kapittel 1. Den erstatter ikke originalteksten ovenfor, men belyser de samme seks punktene fra en annen innfallsvinkel.
                 </p>
@@ -532,8 +518,8 @@ export default function Kapittel1Page() {
                 <p>
                   Mennesket ble skapt av Gud og for Gud. Synden førte mennesket bort fra Gud, men Kristus kom for å gjenløse det. Gjennom tro, omvendelse og dåp i Jesu Kristi navn blir mennesket født av vann og Ånd og begynner det nye livet. Deretter virker Gud videre i mennesket gjennom tro, lydighet og forvandling, inntil Hans frelsesplan blir fullført.
                 </p>
-              </div>
-            </Section>
+              </SubAccordion>
+            </CommentarySection>
 
             <Section title="Viktige bibeltekster">
               <ul className="list-disc pl-6">
